@@ -19,16 +19,16 @@ excel_files <-
 ###### Corresponding destination directories (one level up from the working dir) ######
 dest_dirs <- 
   c(
-    "../dna_extractions_sheets",
+    "../db_files/dna_extractions_sheets",
     "../other_sheets",
-    "../lots_sheets",
+    "../db_files/lots_sheets",
     "../other_sheets",
-    "../sampling_sites_sheets",
-    "../individuals_sheets",
+    "../db_files/sampling_sites_sheets",
+    "../db_files/individuals_sheets",
     "../other_sheets",
-    "../sequence_info_sheets",
-    "../shipments_sheets",
-    "../species_sheets"
+    "../db_files/sequence_info_sheets",
+    "../db_files/shipments_sheets",
+    "../db_files/species_sheets"
   )
 
 #### INITIALIZE ####
