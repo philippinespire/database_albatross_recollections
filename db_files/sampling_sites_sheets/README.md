@@ -13,3 +13,13 @@ Has data on the sites from which fish samples were taken.
 * lon: longitude, in decimal degrees east
 * match_id: a four letter match between Albatross and Contemporary sites that can be compared to each other (generally within 80 km of each other)
 * notes: any notes that don't fit in the columns
+
+---
+
+site names, hierarchical from smallest to largest classification:
+
+* Barangay
+* Municipality_City
+* Province
+* Region:  there are 13
+* Island Group: Luzan, Visayas, Minanao
