@@ -7,6 +7,43 @@
 
 ---
 
+---
+
+## Custom Functions
+
+#### `install_and_load_packages()`
+
+function to install packages if they don't exist
+
+* Run with defaults (tidyverse, janitor, readxl):
+	```r
+	install_and_load()
+	```
+	
+* Add nondefault cran packages as well as Bioc and GitHub packages:
+
+	```R
+	extras <- list(
+	  list(pkg = "Biostrings", source = "Bioc",   repo = "Biostrings"),
+	  list(pkg = "ggimage",    source = "GitHub", repo = "GuangchuangYu/ggimage",
+		   install_options = list(build_vignettes = FALSE))
+	)
+
+	install_and_load(
+	  cran_packages    = 
+		c(
+			"tidyverse", 
+			"janitor", 
+			"readxl", 
+			"patchwork"
+		),
+	  special_packages = extras
+	)
+
+	```
+
+---
+
 ## Helper Scripts
 
 ---
