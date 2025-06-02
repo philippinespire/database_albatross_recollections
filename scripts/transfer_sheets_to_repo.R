@@ -21,14 +21,14 @@ dest_dirs <-
   c(
     "../dna_extractions_sheets",
     "../other_sheets",
-    "../lot_sheets",
+    "../lots_sheets",
     "../other_sheets",
     "../sampling_sites_sheets",
     "../individuals_sheets",
     "../other_sheets",
     "../other_sheets",
     "../shipments_sheets",
-    "../species_sheet"
+    "../species_sheets"
   )
 
 #### INITIALIZE ####
