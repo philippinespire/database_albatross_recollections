@@ -7,6 +7,14 @@
 
 ---
 
+#### `wrangle_db_files.R`
+
+Primarily sourced by other scripts `voltron_db.R` and `troubleshoot_database_key_identification.R`. Reads in and concatentates database files (moved and reformatted from Onedrive with `transfer_sheets_to_repo.R`). Output is a named list of dataframes suitable for use by the [`dm`](https://dm.cynkra.com/) package. 
+
+---
+
+#### `voltron_db.R`
+
 ---
 
 ## Custom Functions
@@ -66,4 +74,9 @@ transfers files from the Carpenter Lab Philippines Database dir to the GitHub Re
 
 Script to be used interactively to read all excel files found in `Philippines_PIRE_project/Field Collections` to identify any which contain the column `Lot_ID`. Checks to see if any of these Lot_IDs are missing in the `Philippines_PIRE_project/Database/Lot_sheet.xlsx`
 
+---
+
+#### `troubleshoot_database_key_identification.R`
+
+Script used to identify problems with primary and foreign keys to be used in joining the database together.
 ---

@@ -1,6 +1,3 @@
-#### User Defined Variables ####
-onedrive_path = "../../../Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project (1)/Database/"
-
 #### Packages ####
 source("functions.R")
 
@@ -9,23 +6,36 @@ install_and_load_packages(
     c(
       "tidyverse", 
       "janitor", 
-      "readxl"
+      "readxl",
+      "janitor"
     )
 )
 
-#### Find Files ####
-
-list.files("../db_files", 
-           pattern = 'tsv$',
-           full.names = TRUE, 
-           recursive = TRUE) %>%
+#### Find & Read Files ####
+initial_database <- list.files("../db_files", 
+                                   pattern = 'tsv$',
+                                   full.names = TRUE, 
+                                   recursive = TRUE) %>%
   tibble(file = .) %>%
   mutate(file_type = dirname(file) %>%
            str_remove('^.*/db_files/')) %>%
-  slice(8) %>%
   rowwise %>%
   mutate(sheet = read_delim(file, 
                             delim = '\t', 
                             show_col_types = FALSE, 
-                            na = c("", "NA", "None")) %>%
-           list())
+                            na = c("", "NA", "None"),
+                            id = str_c(file_type, 'file_path'),
+                            guess_max = 1e6) %>%
+           list()) %>%
+  ungroup %>%
+  summarise(sheet = bind_rows(sheet) %>%
+              list(),
+            .by = file_type) %>%
+  rowwise %>%
+  mutate(sheet = distinct(sheet) %>%
+           rename_with(~str_to_lower(.x)) %>%
+           list()) %>%
+  ungroup %>%
+  mutate(sheet = set_names(sheet, file_type)) %>%
+  pull(sheet)
+
