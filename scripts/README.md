@@ -13,7 +13,8 @@ Primarily sourced by other scripts `voltron_db.R` and `troubleshoot_database_key
 
 ---
 
-#### `voltron_db.R`
+#### `voltron_db.R`:
+This function makes the database.
 
 ---
 
