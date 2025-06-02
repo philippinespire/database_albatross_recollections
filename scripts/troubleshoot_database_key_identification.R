@@ -57,11 +57,13 @@ initial_database$shipments_sheets %>%
 
 
 
-  dm_add_pk(sampling_sites_sheets,
-            columns = c(site_id)) %>%
-  dm_add_pk(sequence_info_sheets,
-            columns = c(sequencing_batch_id)) 
-  
-  
+initial_database$shipments_sheets %>%
+  filter(item_type == 'elution') %>%
+  filter(n() > 1,
+         .by = plate_box_id) %>%
+  count(plate_box_id) %>%
+  write_csv('../troubleshooting_files/duplicated_shipment_plateBoxID.csv')
 
+initial_database$shipments_sheets %>%
+  filter(plate_box_id == 'Adu-C_001') %>% View
 

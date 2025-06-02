@@ -38,8 +38,8 @@ Cvi	C	Pal	Bali	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_process
 Dar	A	Jol	Jolo	LCWGS	21	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
 Dar	C	Jol	Jolo	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
 Dar	C	Jol	Jolo	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Dar	A	Jol	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Dar	C	Jol	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Dar	A	Jol	Jolo	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Dar	C	Jol	Jolo	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Eps	C	Bai	Bais	SSL	0	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/encrasicholina_pseudoheteroloba	PE 150	dropped_species	NA	NA	NA	NA	NA	NA	Sequencing_data_weird-dropping_from_priority_list
 Gma	C	Rag	RagR	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_macracanthus	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
 Gmi	A	Bas	Basu	CSSL	28	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE 150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
@@ -85,14 +85,14 @@ Hte	C	Pnd	Pand	LCWGS	NA	2	No	Boh-2021-03_08	/archive/carpenterlab/pire/pire_hypo
 Hte	A	Taw	Tawi	LCWGS	78	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
 Hte	C	Taw	Tawi	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
 Hte	C	Tic	MatB	SSL	0	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/hypoatherina_temminckii	PE 150	NA	NA	NA	NA	NA	NA	NA	Directory only has probe design
-Hte	A	Bur	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Bur	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Jol	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Jol	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Mvi	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Mvi	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Taw	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Taw	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte	A	Bur	CanB	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte	C	Bur	CanB	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte	A	Jol	Jolo	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte	C	Jol	Jolo	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte	A	Mvi	Masi	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte	C	Mvi	Masi	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte	A	Taw	Tawi	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte	C	Taw	Tawi	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Leq	A	Bas	SMig	CSSL	52	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
 Leq	C	Mig	SMig	CSSL	62	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
 Leq	A	Bas	SMig	CSSL	46	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
@@ -212,8 +212,8 @@ Sne	C	Taw	Tawi	LCWGS	56	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_proc
 Sne	C	Taw	Tawi	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
 Sne	A	Bir	Bali	LCWGS	NA	3	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Sne	C	Cab	Bali	LCWGS	NA	3	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sne	A	Rom	NA	NA	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sne	C	Rom	NA	NA	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sne	A	Rom	Romb	LCWGS	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sne	C	Rom	Romb	LCWGS	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Sob	A	Pnd	Pand	LCWGS	96	1	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sob_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
 Sob	C	Pnd	Pand	LCWGS	64	1	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sob_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
 Sob	A	Pnd	Pand	LCWGS	48	2	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Sob_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA

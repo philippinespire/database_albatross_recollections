@@ -28,9 +28,9 @@ db_with_pk <- do.call(dm,
   dm_add_pk(lots_sheets,
             columns = c(lot_id)) %>%
   dm_add_pk(sampling_sites_sheets,
-            columns = c(site_id)) %>%
+            columns = c(site_sp_primary_key)) %>%
   dm_add_pk(shipments_sheets,
-            columns = c(shipment_id)) %>%
+            columns = c(shipment_id, plate_box_id)) %>%
   # dm_add_pk(sequence_info_sheets,
   #           columns = c(sequencing_batch_id)) %>%
   identity()
@@ -53,11 +53,23 @@ full_db <- db_with_pk %>%
   dm_add_fk(table = individuals_sheets, 
             columns = collection_site, 
             ref_table = sampling_sites_sheets) %>%
-
   dm_add_fk(table = lots_sheets, 
             columns = site_id, 
-            ref_table = sampling_sites_sheets)
+            ref_table = sampling_sites_sheets,
+            ref_columns = site_id) %>%
+  dm_add_fk(table = sampling_sites_sheets,
+            columns = species_id,
+            ref_table = species_sheets) %>%
+  dm_add_fk(table = dna_extractions_sheets,
+            columns = plateid,
+            ref_table = shipments_sheets,
+            ref_col = plate_box_id)
   
+initial_database$shi %>% colnames
+
+%>% colnames()
+species_id
+
 full_db %>%
   dm_draw(rankdir = "TB", view_type = "all")
 
