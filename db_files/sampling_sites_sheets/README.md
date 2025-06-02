@@ -6,10 +6,10 @@ Has data on the sites from which fish samples were taken.
 * site_id: a three letter site ID
 * species_id: a three letter species ID
 * site_name: long species name
-* barangay_name: name of the barangay (if available)
-* local_government_unit_name: name of the Local Government Unit
-* province_name: name of the province
-* region:  there are 13 options
+* barangay: name of the barangay (if available)
+* local_government_unit: name of the Local Government Unit
+* province: name of the province
+* region: there are 13 options
 * island_group: Luzon, Visayas, or Mindanao
 * lat: latitude, in decimal degrees north
 * lon: longitude, in decimal degrees east
