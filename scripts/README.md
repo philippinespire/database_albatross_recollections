@@ -19,6 +19,7 @@ This function makes the database.
 ---
 
 ## Custom Functions
+Source the functions.R script to load these.
 
 #### `install_and_load_packages()`
 
