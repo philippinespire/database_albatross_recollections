@@ -17,3 +17,6 @@
   * `dm` should be used to create the database object
  
   * 
+
+## How to use this repo
+Run scripts/voltron_db.R to create the database as a `dm` object
