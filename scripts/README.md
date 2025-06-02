@@ -7,6 +7,12 @@
 
 ---
 
+#### `wrangle_db_files.R`
+
+---
+
+#### `merge_db.R
+
 ---
 
 ## Custom Functions
@@ -65,5 +71,10 @@ transfers files from the Carpenter Lab Philippines Database dir to the GitHub Re
 	* Must be able to sync OneDrive files to local computer
 
 Script to be used interactively to read all excel files found in `Philippines_PIRE_project/Field Collections` to identify any which contain the column `Lot_ID`. Checks to see if any of these Lot_IDs are missing in the `Philippines_PIRE_project/Database/Lot_sheet.xlsx`
+
+---
+
+#### `troubleshoot_database_key_identification.R
+
 
 ---

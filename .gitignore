@@ -35,3 +35,4 @@ po/*~
 rsconnect/
 # Mac files
 .DS_Store
+/troubleshooting_files
