@@ -8,7 +8,6 @@ excel_files <-
     "Library_Contents_sheet.xlsx",
     "Lot_sheet.xlsx",
     "Sequence_info_sheet.xlsx",
-    "Site_sheet.xlsx",
     "Individual_sheet.xlsx",
     "Library_Info_sheet.xlsx",
     "Sequence_info_sheet.xlsx",
@@ -23,7 +22,6 @@ dest_dirs <-
     "../other_sheets",
     "../db_files/lots_sheets",
     "../other_sheets",
-    "../db_files/sampling_sites_sheets",
     "../db_files/individuals_sheets",
     "../other_sheets",
     "../db_files/sequence_info_sheets",
@@ -141,7 +139,8 @@ purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   
   # Read the first sheet of the workbook and write as TSV
   read_excel(in_path) %>%
-    write_tsv(out_path)
+    strip_newlines() %>%
+    write_tsv(out_path, eol = "\n")
   
   message("✅ Wrote ", out_path)
 })

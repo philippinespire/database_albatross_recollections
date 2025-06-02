@@ -18,9 +18,14 @@ check_correct_file <- function(filepath){
           NA_character_)
 }
 
+standardize_lot_id <- function(ID){
+  str_to_lower(ID) %>%
+    str_replace_all('-', '_')
+}
+
 #### Identify Files ####
 field_sheet_dir <- str_c(onedrive_path, '/Field Collections')
-lot_sheet_file <- str_c(onedrive_path, 'Database/Lot_sheet.xlsx')
+lot_sheet_file <- str_c(onedrive_path, '/Database/Lot_sheet.xlsx')
 
 all_files <- list.files(field_sheet_dir, 
            recursive = TRUE,
@@ -35,7 +40,8 @@ correct_files <- all_files %>%
 all_files[!all_files %in% correct_files]
 
 lot_data <- read_excel(lot_sheet_file) %>%
-  janitor::clean_names()
+  janitor::clean_names() %>%
+  mutate(lot_id = standardize_lot_id(lot_id))
 sum(is.na(lot_data$lot_id))
 
 field_data <- correct_files %>%
@@ -45,7 +51,8 @@ field_data <- correct_files %>%
                            'size_direct_observation_mm',
                            'bottles'))), 
           .id = 'file') %>%
-  mutate(file = correct_files[as.integer(file)])
+  mutate(file = correct_files[as.integer(file)],
+         lot_id = standardize_lot_id(lot_id))
 
 # Number of Field Samples missing lot_ids
 summarise(field_data,
@@ -72,7 +79,8 @@ anti_join(distinct(field_data, file, lot_id) %>%
           by = 'lot_id') %>%
   filter(!str_detect(file, 'preliminary')) %>%
   left_join(field_data,
-            by = c('file', 'lot_id')) 
+            by = c('file', 'lot_id')) %>%
+  mutate(file = str_remove(file, str_c(onedrive_path, '/')))
 
 # lot_ids with both a field_collection_file and lot_sheet_file
 inner_join(distinct(lot_data, lot_id),
