@@ -7,19 +7,12 @@ Has data on the sites from which fish samples were taken.
 * species_id: a three letter species ID
 * site_name: long species name
 * barangay_name: name of the barangay (if available)
-* lgu_name: name of the Local Government Unit
+* local_government_unit_name: name of the Local Government Unit
 * province_name: name of the province
+* region:  there are 13 options
+* island_group: Luzon, Visayas, or Mindanao
 * lat: latitude, in decimal degrees north
 * lon: longitude, in decimal degrees east
 * match_id: a four letter match between Albatross and Contemporary sites that can be compared to each other (generally within 80 km of each other)
 * notes: any notes that don't fit in the columns
 
----
-
-site names, hierarchical from smallest to largest classification:
-
-* Barangay
-* Municipality_City
-* Province
-* Region:  there are 13
-* Island Group: Luzan, Visayas, Minanao
