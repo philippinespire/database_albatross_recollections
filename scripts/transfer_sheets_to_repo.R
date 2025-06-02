@@ -11,7 +11,7 @@ excel_files <-
     "Site_sheet.xlsx",
     "Individual_sheet.xlsx",
     "Library_Info_sheet.xlsx",
-    "Sequence_Contents_sheet.xlsx",
+    "Sequence_info_sheet.xlsx",
     "Shipment_sheet.xlsx",
     "Species_sheet.xlsx"
   )
@@ -26,7 +26,7 @@ dest_dirs <-
     "../sampling_sites_sheets",
     "../individuals_sheets",
     "../other_sheets",
-    "../other_sheets",
+    "../sequence_info_sheets",
     "../shipments_sheets",
     "../species_sheets"
   )
