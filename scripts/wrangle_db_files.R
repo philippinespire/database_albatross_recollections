@@ -13,5 +13,19 @@ install_and_load_packages(
     )
 )
 
-#### ####
-list.files("../db_files", full.names = TRUE, recursive = TRUE)
+#### Find Files ####
+
+list.files("../db_files", 
+           pattern = 'tsv$',
+           full.names = TRUE, 
+           recursive = TRUE) %>%
+  tibble(file = .) %>%
+  mutate(file_type = dirname(file) %>%
+           str_remove('^.*/db_files/')) %>%
+  slice(8) %>%
+  rowwise %>%
+  mutate(sheet = read_delim(file, 
+                            delim = '\t', 
+                            show_col_types = FALSE, 
+                            na = c("", "NA", "None")) %>%
+           list())
