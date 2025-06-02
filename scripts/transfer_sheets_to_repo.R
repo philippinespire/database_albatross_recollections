@@ -128,6 +128,12 @@ for (pkg_info in special_packages) {
 rm(special_packages, cran_packages, pkg, pkg_info)
 
 #### convert files from xlsx to tsv and save to repo ####
+###### Helper: strip ALL embedded CR/LF characters inside text cells ######
+strip_newlines <- function(df) {
+  df %>%
+    mutate(across(where(is.character),
+                  ~ str_replace_all(.x, "[\r\n]+", " ") |> str_squish()))
+}
 
 purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   # Construct full paths
