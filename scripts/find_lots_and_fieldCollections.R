@@ -4,8 +4,7 @@ library(tidyverse)
 library(readxl)
 
 #### User Inputs ####
-field_sheet_dir <- 'C:/Users/jdsel/Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project/Field Collections'
-lot_sheet_file <- 'C:/Users/jdsel/Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project/Database/Lot_sheet.xlsx'
+onedrive_path <- 'C:/Users/jdsel/Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project'
 
 #### Functions ####
 check_correct_file <- function(filepath){
@@ -20,6 +19,9 @@ check_correct_file <- function(filepath){
 }
 
 #### Identify Files ####
+field_sheet_dir <- str_c(onedrive_path, '/Field Collections')
+lot_sheet_file <- str_c(onedrive_path, 'Database/Lot_sheet.xlsx')
+
 all_files <- list.files(field_sheet_dir, 
            recursive = TRUE,
            pattern = 'xlsx$',
