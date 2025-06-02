@@ -89,17 +89,3 @@ Script used to identify problems with primary and foreign keys to be used in joi
 
 ---
 
-#### fix_lot_dates.R 
-
-create a set of columns for collection date:
-
-    collection_year_start
-    collection_month_start
-    collection_day_start
-    collection_year_end
-    collection_month_end
-    collection_day_end
-
-and leave any missing information blank
-
----
