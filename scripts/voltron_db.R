@@ -73,10 +73,15 @@ initial_database$shi %>% colnames
 #species_id
 
 #### visualize db ####
-full_db %>%
+erd_image <-
+  full_db %>%
   dm_draw(rankdir = "TB", view_type = "keys_only")
 
-full_db %>%
+erd_image
+
+
+
+  full_db %>%
   dm_draw(rankdir = "TB", view_type = "all")
 
 

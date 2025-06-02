@@ -2,6 +2,10 @@
 
 ---
 
+![](database_erd.png)
+
+---
+
 ## Basic Structure
 
 * every data file is tidy
