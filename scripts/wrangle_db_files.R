@@ -4,4 +4,14 @@ onedrive_path = "../../../Old Dominion University/Carpenter Molecular Lab - Phil
 #### Packages ####
 source("functions.R")
 
-install_and_load_packages()
+install_and_load_packages(
+  cran_packages    = 
+    c(
+      "tidyverse", 
+      "janitor", 
+      "readxl"
+    )
+)
+
+#### ####
+list.files("../db_files", full.names = TRUE, recursive = TRUE)
