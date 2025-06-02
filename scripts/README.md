@@ -13,11 +13,13 @@ Primarily sourced by other scripts `voltron_db.R` and `troubleshoot_database_key
 
 ---
 
-#### `voltron_db.R`
+#### `voltron_db.R`:
+This function makes the database.
 
 ---
 
 ## Custom Functions
+Source the functions.R script to load these.
 
 #### `install_and_load_packages()`
 
@@ -64,8 +66,9 @@ transfers files from the Carpenter Lab Philippines Database dir to the GitHub Re
 
 	* Must be able to sync OneDrive files to local computer
 	
-
 ---
+
+## Troubleshooting Scripts
 
 #### `find_lots_and_fieldCollections.R`
 * the path to the OneDrive dir `onedrive_path` must be set separately for each user/computer who runs this script.
@@ -79,4 +82,10 @@ Script to be used interactively to read all excel files found in `Philippines_PI
 #### `troubleshoot_database_key_identification.R`
 
 Script used to identify problems with primary and foreign keys to be used in joining the database together.
+
 ---
+
+## Scripts to Fix files
+
+---
+

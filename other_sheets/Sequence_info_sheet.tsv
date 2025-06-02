@@ -1,258 +1,253 @@
-Species_Code	Era	Location_Code	Match_ID	Sequencing_Type	#_of_individuals	Seq_run_number	Seq_Complete?	Lot_ID	HPC_path	Read_Length	Project_Owner	Data_Uploaded_By	GEOME_Expedition_Name	GEOME_Expedition_GUID	NCBI_Bioproject_Accession_Number	NCBI_Project_Title	NCBI_Data_Public?	Sequencing_Notes
-Abu	A	Pnd	Pand	LCWGS	55	1	Yes	180039	/archive/carpenterlab/pire/pire_ambassis_buruensis_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Abu_1909_CebuMarket_Cebu_lcwgs	NA	NA	NA	NA	NA
-Abu	C	Pnd	Pand	LCWGS	64	1	Yes	Boh-2021-02_01	/archive/carpenterlab/pire/pire_ambassis_buruensis_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Abu_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Abu	A	Pnd	Pand	LCWGS	48	2	Yes	180039	/archive/carpenterlab/pire/pire_ambassis_buruensis_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Abu_1909_CebuMarket_Cebu_lcwgs	NA	NA	NA	NA	NA
-Abu	C	Pnd	Pand	LCWGS	48	2	Yes	Boh-2021-02_01	/archive/carpenterlab/pire/pire_ambassis_buruensis_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Abu_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Abu	C	Pnd	Pand	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis	PE 150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
-Adu	A	Sub	SubB	LCWGS	48	1	Yes	NA	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Sub	SubB	LCWGS	48	1	Yes	NA	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Adu	A	Sub	SubB	LCWGS	48	2	Yes	NA	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/2nd_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Sub	SubB	LCWGS	48	2	Yes	NA	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/2nd_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Tag	Tagb	LCWGS	64	1	NA	NA	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	A	Tag	Tagb	LCWGS	40	1	NA	NA	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Tag	Tagb	LCWGS	48	2	NA	NA	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/4th_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	A	Tag	Tagb	LCWGS	40	2	NA	NA	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/4th_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	A	Gui	Guij	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Gui	Guij	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Gal	PGal	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	A	Ham	HamC	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Ham	HamC	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	A	Mat	MatB	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Mat	MatB	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	A	Taw	Tawi	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Adu	C	Taw	Tawi	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Aen	A	Ham	HamC	CSSL	60	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis	PE 150	Rene_Clark	Kyra_Fitz	Aen_1908_Nasugbu_Batangas	https://n2t.net/ark:/21547/FLX2	PRJNA990820	Atherinomorus_endrachtensis_1908_Nasugbu_Batangas_CaptureSeq	Yes	NA
-Aen	C	Bat	HamC	CSSL	95	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis	PE 150	Rene_Clark	Kyra_Fitz	Aen_2018_Nasugbu_Batangas	https://n2t.net/ark:/21547/FLd2	PRJNA991591	Atherinomorus_endrachtensis_2018_Nasugbu_Batangas_CaptureSeq	Yes	NA
-Cha	A	Pnd	Pand	LCWGS	NA	1	No	138826	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Cha_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Cha	A	Pnd	Pand	LCWGS	NA	1	No	138831	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Cha_1908_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Cha	C	Pnd	Pand	LCWGS	64	1	No	Boh-2021-03_03	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Cha_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Cha	A	Pnd	Pand	LCWGS	NA	2	No	138826	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Cha_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Cha	A	Pnd	Pand	LCWGS	NA	2	No	138831	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Cha_1908_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Cha	C	Pnd	Pand	LCWGS	48	2	No	Boh-2021-03_03	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Cha_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Cha	C	Pnd	Pand	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus	PE 150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
-Cvi	A	Pal	Bali	LCWGS	40	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Cvi	C	Pal	Bali	LCWGS	64	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Cvi	A	Pal	Bali	LCWGS	40	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/2nd_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Cvi	C	Pal	Bali	LCWGS	48	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/2nd_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Cvi	C	Pal	Bali	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Dar	A	Jol	Jolo	LCWGS	21	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Dar	C	Jol	Jolo	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Dar	C	Jol	Jolo	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Dar	A	Jol	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Dar	C	Jol	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Eps	C	Bai	Bais	SSL	0	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/encrasicholina_pseudoheteroloba	PE 150	dropped_species	NA	NA	NA	NA	NA	NA	Sequencing_data_weird-dropping_from_priority_list
-Gma	C	Rag	RagR	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_macracanthus	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Gmi	A	Bas	Basu	CSSL	28	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE 150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
-Gmi	C	Bas	Basu	CSSL	92	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE 150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
-Gmi	A	Bas	Basu	CSSL	52	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run	PE 150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
-Gmi	C	Bas	Basu	CSSL	61	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run	PE 150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
-Gmi	A	Ham	HamC	CSSL	33	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE 150	Rene_Clark	Kyra_Fitz	Gmi_1908_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMB2	PRJNA998057	Gazza_minuta_1908_Nasugbu_Batangas_CaptureSeq	No	NA
-Gmi	C	Bat	HamC	CSSL	96	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE 150	Rene_Clark	Kyra_Fitz	Gmi_2018_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMH2	PRJNA998814	Gazza_minuta_2018_Nasugbu_Batangas_CaptureSeq	No	NA
-Gmi	A	Ham	HamC	CSSL	68	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run	PE 150	Rene_Clark	Kyra_Fitz	Gmi_1908_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMB2	PRJNA998057	Gazza_minuta_1908_Nasugbu_Batangas_CaptureSeq	No	NA
-Gmi	C	Bat	HamC	CSSL	64	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run	PE 150	Rene_Clark	Kyra_Fitz	Gmi_2018_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMH2	PRJNA998814	Gazza_minuta_2018_Nasugbu_Batangas_CaptureSeq	No	NA
-Goy	A	Pnd	Pand	LCWGS	54	1	Yes	NA	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/1st_sequencing_run	PE 150	John_Whalen	Gianna_Mazzei	Goy_1909_Getafe_Bohol_lcwgs	https://n2t.net/ark:/21547/FvB2	PRJNA1193264	Gerres_oyena_1909_Getafe_Bohol_lcwgs	No	Albatross separated into two expeditions since individuals (001-054) and (055-067) differed by year and municipality
-Goy	A	Pnd	Pand	LCWGS	13	1	Yes	NA	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/1st_sequencing_run	PE 150	John_Whalen	Gianna_Mazzei	Goy_1908_Calape_Bohol_lcwgs	https://n2t.net/ark:/21547/FvH2	PRJNA1193122	Gerres_oyena_1908_Calape_Bohol_lcwgs	No	Albatross separated into two expeditions since individuals (001-054) and (055-067) differed by year and municipality
-Goy	C	Pnd	Pand	LCWGS	64	1	Yes	NA	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/1st_sequencing_run	PE 150	John_Whalen	Gianna_Mazzei	Goy_2021_Getafe_Bohol_lcwgs	https://n2t.net/ark:/21547/FvN2	PRJNA1193268	Gerres_oyena_2021_Getafe_Bohol_lcwgs	No	NA
-Goy	A	Pnd	Pand	LCWGS	41	2	Yes	NA	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	Gianna_Mazzei	Goy_1909_Getafe_Bohol_lcwgs	https://n2t.net/ark:/21547/FvB2	PRJNA1193264	Gerres_oyena_1909_Getafe_Bohol_lcwgs	No	Albatross separated into two expeditions since individuals (001-054) and (055-067) differed by year and municipality
-Goy	A	Pnd	Pand	LCWGS	7	2	Yes	NA	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	Gianna_Mazzei	Goy_1908_Calape_Bohol_lcwgs	https://n2t.net/ark:/21547/FvH2	PRJNA1193122	Gerres_oyena_1908_Calape_Bohol_lcwgs	No	Albatross separated into two expeditions since individuals (001-054) and (055-067) differed by year and municipality
-Goy	C	Pnd	Pand	LCWGS	48	2	Yes	NA	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	Gianna_Mazzei	Goy_2021_Getafe_Bohol_lcwgs	https://n2t.net/ark:/21547/FvN2	PRJNA1193268	Gerres_oyena_2021_Getafe_Bohol_lcwgs	No	NA
-Goy	C	Pas	RagR	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena	PE 150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
-Hmi	C	Bas	Daet	CSSL	47	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus	PE 150	Brendan_Reid	Gianna_Mazzei	Hmi_2019_Mercedes_Camarines-Norte_cssl	https://n2t.net/ark:/21547/FwF2	PRJNA1197495	Halichoeres_miniatus_2019_Mercedes_Camarines-Norte_CaptureSeq	No	low coverage, in the queue for more sequencing as of 12/20/2023 (René and Brendan)
-Hmi	C	Par	Daet	CSSL	48	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus	PE 150	Brendan_Reid	Gianna_Mazzei	Hmi_2019_Paracale_Camarines-Norte_cssl	https://n2t.net/ark:/21547/FwL2	PRJNA1197494	Halichoeres_miniatus_2019_Paracale_Camarines-Norte_CaptureSeq	No	low coverage, in the queue for more sequencing as of 12/20/2023 (René and Brendan)
-Hmi	C	Bas	Daet	CSSL	47	2	Yes	NA	/archive/carpenterlab/pire/pire_halichoeres_miniatus_cssl/2nd_sequencing_run	PE 150	NA	Gianna_Mazzei	Hmi_2019_Mercedes_Camarines-Norte_cssl	https://n2t.net/ark:/21547/FwF2	PRJNA1197495	Halichoeres_miniatus_2019_Mercedes_Camarines-Norte_CaptureSeq	No	NA
-Hmi	C	Par	Daet	CSSL	48	2	Yes	NA	/archive/carpenterlab/pire/pire_halichoeres_miniatus_cssl/2nd_sequencing_run	PE 150	NA	Gianna_Mazzei	Hmi_2019_Paracale_Camarines-Norte_cssl	https://n2t.net/ark:/21547/FwL2	PRJNA1197494	Halichoeres_miniatus_2019_Paracale_Camarines-Norte_CaptureSeq	No	NA
-Hmi	A	Bas	Daet	CSSL	43	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus	PE 150	Brendan_Reid	Gianna_Mazzei	Hmi_1909_Mercedes_Camarines-Norte_cssl	https://n2t.net/ark:/21547/Fvt2	PRJNA1197750	Halichoeres_miniatus_1909_Mercedes_Camarines-Norte_CaptureSeq	No	low coverage, in the queue for more sequencing as of 12/20/2023 (René and Brendan)
-Hmi	A	Mac	Daet	CSSL	49	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus	PE 150	Brendan_Reid	Gianna_Mazzei	Hmi_1909_Paracale_Camarines-Norte_cssl	https://n2t.net/ark:/21547/Fvz2	PRJNA1197752	Halichoeres_miniatus_1909_Paracale_Camarines-Norte_CaptureSeq	No	low coverage, in the queue for more sequencing as of 12/20/2023 (René and Brendan)
-Hmi	C	Par	Daet	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Hqu	C	Nas	Nasu	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Tic	MatB	CSSL	54	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/hypoatherina_temminckii	PE 150	NA	NA	NA	NA	NA	NA	NA	Per lot sheet, this appears to be a mix of H. temminckii and H. panatela (M. Pinsky 2023-11-14)
-Hte	A	Bur	CanB	LCWGS	95	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Bur	CanB	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Jol	Jolo	LCWGS	96	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Jol	Jolo	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Mvi	Masi	LCWGS	57	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Mvi	Masi	LCWGS	58	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Tic	MatB	LCWGS	82	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Tic	MatB	LCWGS	63	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Pnd	Pand	LCWGS	19	1	No	136727	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Hte_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Hte	A	Pnd	Pand	LCWGS	13	1	No	136730	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Hte_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Hte	C	Pnd	Pand	LCWGS	NA	1	No	Boh-2021-02_04	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Hte_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Hte	C	Pnd	Pand	LCWGS	NA	1	No	Boh-2021-03_08	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Hte_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Hte	A	Pnd	Pand	LCWGS	19	2	No	136727	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Hte_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Hte	A	Pnd	Pand	LCWGS	13	2	No	136730	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Hte_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Hte	C	Pnd	Pand	LCWGS	NA	2	No	Boh-2021-02_04	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Hte_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Hte	C	Pnd	Pand	LCWGS	NA	2	No	Boh-2021-03_08	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Hte_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Hte	A	Taw	Tawi	LCWGS	78	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Taw	Tawi	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Tic	MatB	SSL	0	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/hypoatherina_temminckii	PE 150	NA	NA	NA	NA	NA	NA	NA	Directory only has probe design
-Hte	A	Bur	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Bur	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Jol	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Jol	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Mvi	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Mvi	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	A	Taw	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hte	C	Taw	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Leq	A	Bas	SMig	CSSL	52	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Leq	C	Mig	SMig	CSSL	62	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Leq	A	Bas	SMig	CSSL	46	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Leq	C	Mig	SMig	CSSL	6	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Lle	A	Ham	HamC	CSSL	32	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus	PE 150	Rene_Clark	Kyra_Fitz	Ela_1908_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMR2	PRJNA998845	Equulites_laterofenestra_1908_Nasugbu_Batangas_CaptureSeq	No	Originally identified as Leiognathus leuciscus, later identification corrected to Equulites laterofenestra
-Lle	C	Nas	HamC	CSSL	96	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus	PE 150	Rene_Clark	Kyra_Fitz	Ela_2018_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMX2	PRJNA999299	Equulites_laterofenestra_2018_Nasugbu_Batangas_CaptureSeq	No	Originally identified as Leiognathus leuciscus, later identification corrected to Equulites laterofenestra
-ls	C	Bas	Basu	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Lva	A	Pnd	Pand	LCWGS	47	1	No	NA	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Lva_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Lva	C	Pnd	Pand	LCWGS	48	1	No	NA	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Lva_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Lva	A	Pnd	Pand	LCWGS	47	2	NA	NA	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Lva_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Lva	C	Pnd	Pand	LCWGS	48	2	NA	NA	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Lva_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Lva	A	Pnd	Pand	LCWGS	47	3	NA	NA	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/3rd_sequencing_run	PE 150	John_Whalen	NA	Lva_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Lva	C	Pnd	Pand	LCWGS	48	3	NA	NA	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/3rd_sequencing_run	PE 150	John_Whalen	NA	Lva_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Lva	C	Pnd	Pand	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus	PE 150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
-Och	C	Tum	Tumi	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Och	A	Cat	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	A	Tum	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	C	Cat	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	C	Tum	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	A	Cat	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	A	Tum	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	C	Cat	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	C	Tum	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	A	Can	NA	LCWGS	NA	3	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	C	Bur	NA	LCWGS	NA	3	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	A	Can	NA	LCWGS	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	A	Cat	NA	LCWGS	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	A	Tum	NA	LCWGS	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	C	Bur	NA	LCWGS	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	C	Cat	NA	LCWGS	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Och	C	Tum	NA	LCWGS	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Par	A	Rag	RagR	LCWGS	21	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/periophthalmus_argentilineatus/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Par	C	Pas	RagR	LCWGS	50	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/periophthalmus_argentilineatus/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Par	A	Rag	RagR	LCWGS	21	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/periophthalmus_argentilineatus/2nd_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Par	C	Rag	RagR	LCWGS	50	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/periophthalmus_argentilineatus/2nd_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Par	C	Pas	RagR	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Tat	Tata	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_brachialis	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Bir	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Bur	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Gal	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Mar	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Pal	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Tat	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Cab	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Mas	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Tat	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Ver	NA	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Bir	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Bur	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Gal	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Mar	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Pal	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	A	Tat	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Cab	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Mas	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Tat	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pba	C	Ver	NA	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Pbb	A	Gal	PGal	LCWGS	36	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/parupeneus_barberinus/1st_sequencing_run	PE 150	NA	Gianna_Mazzei	Pbb_1908_Puerto-Galera_Oriental-Mindoro_lcwgs	https://n2t.net/ark:/21547/Fpk2	PRJNA1171860	Parupeneus_barberinus_1908_Puerto-Galera_Oriental-Mindoro_lcwgs	No	NA
-Pbb	C	Gal	PGal	LCWGS	36	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/parupeneus_barberinus/1st_sequencing_run	PE 150	NA	Gianna_Mazzei	Pbb_2022_Batangas-City_Batangas_lcwgs	https://n2t.net/ark:/21547/FqK2	PRJNA1170328	Parupeneus_barberinus_2022_Batangas-City_Batangas_lcwgs	No	2 location codes: individuals 001-008 CGal, 009 and on CVer. All are from the same lot- naming convention changed after 001-008 were used as probes
-Pbb	C	Ver	PGal	LCWGS	8	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/parupeneus_barberinus/1st_sequencing_run	PE 150	NA	Gianna_Mazzei	Pbb_2022_Batangas-City_Batangas_lcwgs	https://n2t.net/ark:/21547/FqK2	PRJNA1170328	Parupeneus_barberinus_2022_Batangas-City_Batangas_lcwgs	No	2 location codes: individuals 001-008 CGal, 009 and on CVer. All are from the same lot- naming convention changed after 001-008 were used as probes
-Pbb	A	Gal	PGal	LCWGS	32	2	Yes	NA	/archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/2nd_sequencing run	PE 150	NA	Gianna_Mazzei	Pbb_1908_Puerto-Galera_Oriental-Mindoro_lcwgs	https://n2t.net/ark:/21547/Fpk2	PRJNA1171860	Parupeneus_barberinus_1908_Puerto-Galera_Oriental-Mindoro_lcwgs	No	NA
-Pbb	C	Gal	PGal	LCWGS	36	2	Yes	NA	/archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/2nd_sequencing run	PE 150	NA	Gianna_Mazzei	Pbb_2022_Batangas-City_Batangas_lcwgs	https://n2t.net/ark:/21547/FqK2	PRJNA1170328	Parupeneus_barberinus_2022_Batangas-City_Batangas_lcwgs	No	2 location codes: individuals 001-008 CGal, 009 and on CVer. All are from the same lot- naming convention changed after 001-008 were used as probes
-Pbb	C	Ver	PGal	LCWGS	8	2	Yes	NA	/archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/2nd_sequencing run	PE 150	NA	Gianna_Mazzei	Pbb_2022_Batangas-City_Batangas_lcwgs	https://n2t.net/ark:/21547/FqK2	PRJNA1170328	Parupeneus_barberinus_2022_Batangas-City_Batangas_lcwgs	No	2 location codes: individuals 001-008 CGal, 009 and on CVer. All are from the same lot- naming convention changed after 001-008 were used as probes
-Pbb	C	Gal	PGal	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Pli	A	Mvi	Masi	LCWGS	96	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/plotosus_lineatus/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Pli	C	Mvi	Masi	LCWGS	54	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/plotosus_lineatus/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Pli	C	Mvi	Masi	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Ppa	C	Pnd	Pand	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Psq	A	Gal	PGal	LCWGS	87	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/pseudanthias_squamipinnis/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Psq	C	Ver	PGal	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/pseudanthias_squamipinnis/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Psq	C	Gal	PGal	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Psq	A	Gal	PGal	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Psq	C	Ver	PGal	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sde	A	Mat	MatB	CSSL	90	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus	PE 150	Eric_Garcia	Gianna_Mazzei	Sde_1909_Matnog_Sorsogon_cssl	https://n2t.net/ark:/21547/FwY2	PRJNA1197748	Spratelloides_delicatulus_1909_Matnog_Sorsogon_CaptureSeq	No	NA
-Sde	C	Mat	MatB	CSSL	87	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus	PE 150	Eric_Garcia	Gianna_Mazzei	Sde_2017_Bulan_Sorsogon_cssl	https://n2t.net/ark:/21547/FwS2	PRJNA1197565	Spratelloides_delicatulus_2017_Bulan_Sorsogon_CaptureSeq	No	NA
-Sde	A	Mat	MatB	CSSL	2	2	Yes	NA	/archive/carpenterlab/pire/pire_spratelloides_delicatulus_cssl/2nd_sequencing_run	PE 150	NA	Gianna_Mazzei	Sde_1909_Matnog_Sorsogon_cssl	https://n2t.net/ark:/21547/FwY2	PRJNA1197748	Spratelloides_delicatulus_1909_Matnog_Sorsogon_CaptureSeq	No	NA
-Sde	C	Mat	MatB	CSSL	2	2	Yes	NA	/archive/carpenterlab/pire/pire_spratelloides_delicatulus_cssl/2nd_sequencing_run	PE 150	NA	Gianna_Mazzei	Sde_2017_Bulan_Sorsogon_cssl	https://n2t.net/ark:/21547/FwS2	PRJNA1197565	Spratelloides_delicatulus_2017_Bulan_Sorsogon_CaptureSeq	No	NA
-Sde	A	Mar	PMar	CSSL	59	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus	PE 150	Eric_Garcia	NA	NA	NA	NA	NA	NA	NA
-Sde	C	Ham	PMar	CSSL	58	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus	PE 150	Eric_Garcia	NA	NA	NA	NA	NA	NA	NA
-Sde	A	Bol	Mala	LCWGS	71	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/spratelloides_delicatulus/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Sde	C	Mal	Mala	LCWGS	63	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/spratelloides_delicatulus/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Sde	C	Mat	MatB	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus	PE 150	Eric_Garcia	NA	NA	NA	NA	NA	NA	NA
-Sfa	A	Bas	Basu	CSSL	32	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus	PE 150	Jem_Baldisimo	John_Schaeffer	NA	NA	NA	NA	NA	NA
-Sfa	C	Bas	Basu	CSSL	49	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus	PE 150	Jem_Baldisimo	John_Schaeffer	NA	NA	NA	NA	NA	NA
-Sfa	A	Bas	Basu	LCWGS	32	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/1st_sequencing_run	PE 150	Jem_Baldisimo	Gianna_Mazzei	Sfa_1909_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvh2	PRJNA1197747	Salarias_fasciatus_1909_Mercedes_Camarines-Norte_lcwgs	No	NA
-Sfa	C	Bas	Basu	LCWGS	49	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/1st_sequencing_run	PE 150	Jem_Baldisimo	Gianna_Mazzei	Sfa_2019_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvn2	PRJNA1196103	Salarias_fasciatus_2019_Mercedes_Camarines-Norte_lcwgs	No	NA
-Sfa	A	Bas	Basu	LCWGS	35	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/2nd_sequencing_run	PE 150	Jem_Baldisimo	Gianna_Mazzei	Sfa_1909_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvh2	PRJNA1197747	Salarias_fasciatus_1909_Mercedes_Camarines-Norte_lcwgs	No	NA
-Sfa	C	Bas	Basu	LCWGS	64	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/2nd_sequencing_run	PE 150	Jem_Baldisimo	Gianna_Mazzei	Sfa_2019_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvn2	PRJNA1196103	Salarias_fasciatus_2019_Mercedes_Camarines-Norte_lcwgs	No	NA
-Sfa	A	Bas	Basu	LCWGS	35	3	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/3rd_sequencing_run	PE 150	Jem_Baldisimo	Gianna_Mazzei	Sfa_1909_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvh2	PRJNA1197747	Salarias_fasciatus_1909_Mercedes_Camarines-Norte_lcwgs	No	NA
-Sfa	C	Bas	Basu	LCWGS	48	3	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/3rd_sequencing_run	PE 150	Jem_Baldisimo	Gianna_Mazzei	Sfa_2019_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvn2	PRJNA1196103	Salarias_fasciatus_2019_Mercedes_Camarines-Norte_lcwgs	No	NA
-Sfu	A	Bai	Bais	LCWGS	8	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/siganus_fuscescens/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Sfu	C	Bai	Bais	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/siganus_fuscescens	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Sgr	A	Jol	Jolo	CSSL	92	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE 150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
-Sgr	C	Jol	Jolo	CSSL	61	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE 150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
-Sgr	A	Mvi	Masi	CSSL	86	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE 150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
-Sgr	C	Mvi	Masi	CSSL	64	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE 150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
-Sgr	A	Pal	Samr	CSSL	37	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE 150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
-Sgr	C	Bir	Samr	CSSL	61	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE 150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
-Sgr	C	Mvi	Masi	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Sgr	A	Jol	Jolo	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sgr	C	Jol	Jolo	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sgr	A	Mvi	Masi	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sgr	C	Mvi	Masi	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sgr	A	Pal	Samr	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sgr	C	Bir	Samr	LCWGS	NA	1	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sin	A	Pnd	Pand	LCWGS	25	1	No	159904	/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sin_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sin	C	Pnd	Pand	LCWGS	NA	1	No	Boh-2021-01_01	/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sin_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sin	C	Pnd	Pand	LCWGS	NA	1	No	Boh-2021-01_02	/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sin_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sin	C	Pnd	Pand	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta	PE 150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
-Sin	A	Pnd	Pand	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sin	C	Pnd	Pand	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sin	C	Pnd	Pand	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sne	A	Bir	Bali	LCWGS	25	2	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_nematoptera/2nd_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Sne	C	Cab	Bali	LCWGS	64	2	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_nematoptera/2nd_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Sne	A	Taw	Tawi	LCWGS	27	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_nematoptera/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Sne	C	Taw	Tawi	LCWGS	56	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_nematoptera/1st_sequencing_run	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Sne	C	Taw	Tawi	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera	PE 150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
-Sne	A	Bir	Bali	LCWGS	NA	3	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sne	C	Cab	Bali	LCWGS	NA	3	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sne	A	Rom	NA	NA	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sne	C	Rom	NA	NA	NA	4	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sob	A	Pnd	Pand	LCWGS	96	1	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sob_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sob	C	Pnd	Pand	LCWGS	64	1	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sob_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sob	A	Pnd	Pand	LCWGS	48	2	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Sob_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sob	C	Pnd	Pand	LCWGS	48	2	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Sob_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sob	A	Pnd	Pand	LCWGS	48	3	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/3rd_sequencing_run	PE 150	John_Whalen	NA	Sob_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sob	C	Pnd	Pand	LCWGS	48	3	NA	NA	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/3rd_sequencing_run	PE 150	John_Whalen	NA	Sob_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sob	C	Kal	Connectivity	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata	PE 150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
-Sor	A	Bur	CanB	LCWGS	16	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_orbicularis/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Sor	A	Can	CanB	LCWGS	55	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_orbicularis/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Sor	C	Bur	CanB	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_orbicularis/1st_sequencing_run	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Sor	C	NA	NA	SSL	0	NA	no	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_orbicularis	PE 150	NA	NA	NA	NA	NA	NA	NA	probes were designed from the published genome in NCBI. Thus, we didn't use one of our individuals for SSL
-Sor	A	Ceb	Pand	LCWGS	22	1	No	NA	/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sor_CebuMarket_Cebu_lcwgs	NA	NA	NA	NA	NA
-Sor	C	Pnd	Pand	LCWGS	64	1	No	NA	/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/1st_sequencing_run	PE 150	John_Whalen	NA	Sor_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sor	A	Ceb	Pand	LCWGS	22	2	No	NA	/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Sor_CebuMarket_Cebu_lcwgs	NA	NA	NA	NA	NA
-Sor	C	Pnd	Pand	LCWGS	48	2	No	NA	/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run	PE 150	John_Whalen	NA	Sor_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
-Sor	C	Pnd	Pand	LCWGS	NA	3	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Ssp	A	Atu	AtuB	CSSL	43	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Ssp	C	Gub	AtuB	CSSL	55	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/1st_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Ssp	A	Atu	AtuB	CSSL	43	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run	PE 150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
-Tbi	A	Ros	Rosa	CSSL	31	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/1st_sequencing_run	PE 150	Brendan_Reid	Brendan_Reid	Tbi_1909_RosaId_CamarinesSur	https://n2t.net/ark:/21547/FPb2	NA	NA	NA	NA
-Tbi	C	Jos	Rosa	CSSL	63	1	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/1st_sequencing_run	PE 150	Brendan_Reid	Brendan_Reid	Tbi_2019_SanJose_CamarinesSur	https://n2t.net/ark:/21547/FPV2	NA	NA	NA	NA
-Tbi	A	Ros	Rosa	CSSL	31	2	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run	PE 150	Brendan_Reid	Brendan_Reid	Tbi_1909_RosaId_CamarinesSur	https://n2t.net/ark:/21547/FPb2	NA	NA	NA	NA
-Tcr	C	Jol	Jolo	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/tylosurus_crocodilus	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Tzo	A	Mvi	Masi	CSSL	48	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora	PE 150	NA	Gianna_Mazzei	Tzo_1908_MatalvisIsland_Zambales_cssl	https://n2t.net/ark:/21547/Fwk2	PRJNA1199564	Taeniamia_zosterophora_1908_MatalvisIsland_Zambales_CaptureSeq	No	raw data in /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/fq_raw_cssl
-Tzo	C	Mvi	Masi	CSSL	55	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora	PE 150	NA	Gianna_Mazzei	Tzo_2019_MatalvisIsland_Zambales_cssl	https://n2t.net/ark:/21547/Fwe2	PRJNA1199563	Taeniamia_zosterophora_2019_MatalvisIsland_Zambales_CaptureSeq	No	raw data in /RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/fq_raw_cssl
-Tzo	A	Mta	Boho	LCWGS	34	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE 150	Kyra_Fitz	Kyra_Fitz	Tzo_1908_Mantatao_Bohol_lcwgs	https://n2t.net/ark:/21547/FtY2	PRJNA1185271	Taeniamia_zosterophora_1908_Mantatao_Bohol_lcwgs	Yes	NA
-Tzo	C	Mta	Boho	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE 150	Kyra_Fitz	Kyra_Fitz	Tzo_2021_Mantatao_Bohol_lcwgs	https://n2t.net/ark:/21547/Fte2	PRJNA1185264	Taeniamia_zosterophora_2021_Mantatao_Bohol_lcwgs	Yes	NA
-Tzo	A	Bol	Mala	LCWGS	65	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE 150	Kyra_Fitz	Kyra_Fitz	Tzo_1908_Malampaya_Palawan_lcwgs	https://n2t.net/ark:/21547/FtD2	PRJNA1185294	Taeniamia_zosterophora_1908_Malampaya_Palawan_lcwgs	Yes	NA
-Tzo	C	Mal	Mala	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE 150	Kyra_Fitz	Kyra_Fitz	Tzo_2022_Malampaya_Palawan_lcwgs	https://n2t.net/ark:/21547/FtS2	PRJNA1185280	Taeniamia_zosterophora_2022_Malampaya_Palawan_lcwgs	Yes	NA
-Tzo	A	Mvi	Masi	LCWGS	48	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE 150	Kyra_Fitz	Kyra_Fitz	Tzo_1908_MatalvisIsland_Zambales_lcwgs	https://n2t.net/ark:/21547/Ftk2	PRJNA1185224	Taeniamia_zosterophora_1908_MatalvisIsland_Zambales_lcwgs	Yes	NA
-Tzo	C	Mvi	Masi	LCWGS	64	1	No	NA	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE 150	Kyra_Fitz	Kyra_Fitz	Tzo_2019_MatalvisIsland_Zambales_lcwgs	https://n2t.net/ark:/21547/Ftq2	PRJNA1185258	Taeniamia_zosterophora_2019_MatalvisIsland_Zambales_lcwgs	Yes	NA
-Tzo	C	Mvi	Masi	SSL	1	NA	Yes	NA	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora	PE 150	NA	NA	NA	NA	NA	NA	NA	NA
-Tzo	A	Mta	Boho	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Tzo	C	Mta	Boho	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Tzo	A	Bol	Mala	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Tzo	C	Mal	Mala	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Tzo	A	Mvi	Masi	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Tzo	C	Mvi	Masi	LCWGS	NA	2	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Zdi	A	Dup	Dupo	LCWGS	47	1	Yes	NA	/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run	PE 150	Ty Burris	Gianna_Mazzei	Zdi_1908_Isabel_Leyte_lcwgs	https://n2t.net/ark:/21547/Fpq2	PRJNA1171961	Zenarchopterus_dispar_1908_Isabel_Leyte_lcwgs	No	NA
-Zdi	C	Dup	Dupo	LCWGS	64	1	Yes	NA	/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run	PE 150	Ty Burris	Gianna_Mazzei	Zdi_2022_Isabel_Leyte_lcwgs	https://n2t.net/ark:/21547/Fpw2	PRJNA1171888	Zenarchopterus_dispar_2022_Isabel_Leyte_lcwgs	No	NA
-Zdi	A	Dup	Dupo	LCWGS	47	2	Yes	NA	/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run	PE 150	Ty Burris	Gianna_Mazzei	Zdi_1908_Isabel_Leyte_lcwgs	https://n2t.net/ark:/21547/Fpq2	PRJNA1171961	Zenarchopterus_dispar_1908_Isabel_Leyte_lcwgs	No	NA
-Zdi	C	Dup	Dupo	LCWGS	49	2	Yes	NA	/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run	PE 150	Ty Burris	Gianna_Mazzei	Zdi_2022_Isabel_Leyte_lcwgs	https://n2t.net/ark:/21547/Fpw2	PRJNA1171888	Zenarchopterus_dispar_2022_Isabel_Leyte_lcwgs	No	NA
+sequencing_batch_id	Species_Code	Era	Site_ID	Match_ID	Sequencing_Type	#_of_individuals	Seq_run_number	Seq_Complete?	HPC_name	HPC_path	Read_Length	Project_Owner	Data_Uploaded_By	GEOME_Expedition_Name	GEOME_Expedition_GUID	NCBI_Bioproject_Accession_Number	NCBI_Project_Title	NCBI_Data_Public?	Sequencing_Notes
+Abu_APnd_LCWGS_1	Abu	A	Pnd	Pand	LCWGS	55	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_ambassis_buruensis_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Abu_1909_CebuMarket_Cebu_lcwgs	NA	NA	NA	NA	NA
+Abu_CPnd_LCWGS_1	Abu	C	Pnd	Pand	LCWGS	64	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_ambassis_buruensis_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Abu_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Abu_APnd_LCWGS_2	Abu	A	Pnd	Pand	LCWGS	48	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_ambassis_buruensis_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Abu_1909_CebuMarket_Cebu_lcwgs	NA	NA	NA	NA	NA
+Abu_CPnd_LCWGS_2	Abu	C	Pnd	Pand	LCWGS	48	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_ambassis_buruensis_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Abu_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Abu_CPnd_SSL_1	Abu	C	Pnd	Pand	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ambassis_buruensis	PE_150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
+Adu_ASub_LCWGS_1	Adu	A	Sub	SubB	LCWGS	48	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Adu_CSub_LCWGS_1	Adu	C	Sub	SubB	LCWGS	48	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Adu_ASub_LCWGS_2	Adu	A	Sub	SubB	LCWGS	48	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/2nd_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Adu_CSub_LCWGS_2	Adu	C	Sub	SubB	LCWGS	48	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/2nd_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Adu_CTag_LCWGS_1	Adu	C	Tag	Tagb	LCWGS	64	1	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_ATag_LCWGS_1	Adu	A	Tag	Tagb	LCWGS	40	1	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_CTag_LCWGS_2	Adu	C	Tag	Tagb	LCWGS	48	2	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/4th_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_ATag_LCWGS_2	Adu	A	Tag	Tagb	LCWGS	40	2	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_atherinomorus_duodecimalis_lcwgs/4th_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_AGui_LCWGS_1	Adu	A	Gui	Guij	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_CGui_LCWGS_1	Adu	C	Gui	Guij	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_CGal_LCWGS_1	Adu	C	Gal	PGal	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_AHam_LCWGS_1	Adu	A	Ham	HamC	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_CHam_LCWGS_1	Adu	C	Ham	HamC	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_AMat_LCWGS_1	Adu	A	Mat	MatB	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_CMat_LCWGS_1	Adu	C	Mat	MatB	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_ATaw_LCWGS_1	Adu	A	Taw	Tawi	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Adu_CTaw_LCWGS_1	Adu	C	Taw	Tawi	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Aen_AHam_CSSL_1	Aen	A	Ham	HamC	CSSL	60	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis	PE_150	Rene_Clark	Kyra_Fitz	Aen_1908_Nasugbu_Batangas	https://n2t.net/ark:/21547/FLX2	PRJNA990820	Atherinomorus_endrachtensis_1908_Nasugbu_Batangas_CaptureSeq	Yes	NA
+Aen_CBat_CSSL_1	Aen	C	Bat	HamC	CSSL	95	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/atherinomorus_endrachtensis	PE_150	Rene_Clark	Kyra_Fitz	Aen_2018_Nasugbu_Batangas	https://n2t.net/ark:/21547/FLd2	PRJNA991591	Atherinomorus_endrachtensis_2018_Nasugbu_Batangas_CaptureSeq	Yes	NA
+Cha_APnd_LCWGS_1	Cha	A	Pnd	Pand	LCWGS	NA	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Cha_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Cha_ACeb_LCWGS_1	Cha	A	Ceb	Pand	LCWGS	NA	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Cha_1908_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	SiteID_Pnd_on_Wahab
+Cha_CPnd_LCWGS_1	Cha	C	Pnd	Pand	LCWGS	64	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Cha_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Cha_APnd_LCWGS_2	Cha	A	Pnd	Pand	LCWGS	NA	2	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Cha_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Cha_ACeb_LCWGS_2	Cha	A	Ceb	Pand	LCWGS	NA	2	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Cha_1908_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	SiteID_Pnd_on_Wahab
+Cha_CPnd_LCWGS_2	Cha	C	Pnd	Pand	LCWGS	48	2	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_corythoichthys_haematopterus_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Cha_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Cha_CPnd_SSL_1	Cha	C	Pnd	Pand	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/corythoichthys_haematopterus	PE_150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
+Cvi_APal_LCWGS_1	Cvi	A	Pal	Bali	LCWGS	40	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Cvi_CPal_LCWGS_1	Cvi	C	Pal	Bali	LCWGS	64	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Cvi_APal_LCWGS_2	Cvi	A	Pal	Bali	LCWGS	40	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/2nd_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Cvi_CPal_LCWGS_2	Cvi	C	Pal	Bali	LCWGS	48	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/2nd_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Cvi_CPal_SSL_1	Cvi	C	Pal	Bali	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Dar_AJol_LCWGS_1	Dar	A	Jol	Jolo	LCWGS	21	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Dar_CJol_LCWGS_1	Dar	C	Jol	Jolo	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Dar_CJol_SSL_1	Dar	C	Jol	Jolo	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Dar_AJol_LCWGS_2	Dar	A	Jol	Jolo	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Dar_CJol_LCWGS_2	Dar	C	Jol	Jolo	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Eps_CBai_SSL_1	Eps	C	Bai	Bais	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/encrasicholina_pseudoheteroloba	PE_150	dropped_species	NA	NA	NA	NA	NA	NA	Sequencing_data_weird-dropping_from_priority_list
+Gma_CRag_SSL_1	Gma	C	Rag	RagR	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_macracanthus	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Gmi_ABas_CSSL_1	Gmi	A	Bas	Basu	CSSL	28	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE_150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
+Gmi_CBas_CSSL_1	Gmi	C	Bas	Basu	CSSL	92	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE_150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
+Gmi_ABas_CSSL_2	Gmi	A	Bas	Basu	CSSL	52	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run	PE_150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
+Gmi_CBas_CSSL_2	Gmi	C	Bas	Basu	CSSL	61	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run	PE_150	Chandy_Jablonski	NA	NA	NA	NA	NA	NA	NA
+Gmi_AHam_CSSL_1	Gmi	A	Ham	HamC	CSSL	33	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE_150	Rene_Clark	Kyra_Fitz	Gmi_1908_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMB2	PRJNA998057	Gazza_minuta_1908_Nasugbu_Batangas_CaptureSeq	No	NA
+Gmi_CBat_CSSL_1	Gmi	C	Bat	HamC	CSSL	96	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/1st_sequencing_run	PE_150	Rene_Clark	Kyra_Fitz	Gmi_2018_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMH2	PRJNA998814	Gazza_minuta_2018_Nasugbu_Batangas_CaptureSeq	No	NA
+Gmi_AHam_CSSL_2	Gmi	A	Ham	HamC	CSSL	68	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run	PE_150	Rene_Clark	Kyra_Fitz	Gmi_1908_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMB2	PRJNA998057	Gazza_minuta_1908_Nasugbu_Batangas_CaptureSeq	No	NA
+Gmi_CBat_CSSL_2	Gmi	C	Bat	HamC	CSSL	64	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/gazza_minuta/2nd_sequencing_run	PE_150	Rene_Clark	Kyra_Fitz	Gmi_2018_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMH2	PRJNA998814	Gazza_minuta_2018_Nasugbu_Batangas_CaptureSeq	No	NA
+Goy_APnd_LCWGS_1	Goy	A	Pnd	Pand	LCWGS	67	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/1st_sequencing_run	PE_150	John_Whalen	Gianna_Mazzei	Goy_1909_Getafe_Bohol_lcwgs	https://n2t.net/ark:/21547/FvB2	PRJNA1193264	Gerres_oyena_1909_Getafe_Bohol_lcwgs	No	Albatross_separated_into_two_expeditions_since_individuals_(001-054)_and_(055-067)_differed_by_year_and_municipality
+Goy_AMta_LCWGS_1	Goy	A	Mta	Pand	LCWGS	13	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/1st_sequencing_run	PE_150	John_Whalen	Gianna_Mazzei	Goy_1908_Calape_Bohol_lcwgs	https://n2t.net/ark:/21547/FvH2	PRJNA1193122	Gerres_oyena_1908_Calape_Bohol_lcwgs	No	Albatross_separated_into_two_expeditions_since_individuals_(001-054)_and_(055-067)_differed_by_year_and_municipality.SiteID_Pnd_on_Wahab
+Goy_CPnd_LCWGS_1	Goy	C	Pnd	Pand	LCWGS	64	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/1st_sequencing_run	PE_150	John_Whalen	Gianna_Mazzei	Goy_2021_Getafe_Bohol_lcwgs	https://n2t.net/ark:/21547/FvN2	PRJNA1193268	Gerres_oyena_2021_Getafe_Bohol_lcwgs	No	NA
+Goy_APnd_LCWGS_2	Goy	A	Pnd	Pand	LCWGS	48	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	Gianna_Mazzei	Goy_1909_Getafe_Bohol_lcwgs	https://n2t.net/ark:/21547/FvB2	PRJNA1193264	Gerres_oyena_1909_Getafe_Bohol_lcwgs	No	Albatross_separated_into_two_expeditions_since_individuals_(001-054)_and_(055-067)_differed_by_year_and_municipality
+Goy_AMta_LCWGS_2	Goy	A	Mta	Pand	LCWGS	7	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	Gianna_Mazzei	Goy_1908_Calape_Bohol_lcwgs	https://n2t.net/ark:/21547/FvH2	PRJNA1193122	Gerres_oyena_1908_Calape_Bohol_lcwgs	No	Albatross_separated_into_two_expeditions_since_individuals_(001-054)_and_(055-067)_differed_by_year_and_municipality.SiteID_Pnd_on_Wahab
+Goy_CPnd_LCWGS_2	Goy	C	Pnd	Pand	LCWGS	48	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_gerres_oyena_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	Gianna_Mazzei	Goy_2021_Getafe_Bohol_lcwgs	https://n2t.net/ark:/21547/FvN2	PRJNA1193268	Gerres_oyena_2021_Getafe_Bohol_lcwgs	No	NA
+Goy_CPas_SSL_1	Goy	C	Pas	RagR	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/gerres_oyena	PE_150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
+Hmi_CBas_CSSL_1	Hmi	C	Bas	Daet	CSSL	47	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus	PE_150	Brendan_Reid	Gianna_Mazzei	Hmi_2019_Mercedes_Camarines-Norte_cssl	https://n2t.net/ark:/21547/FwF2	PRJNA1197495	Halichoeres_miniatus_2019_Mercedes_Camarines-Norte_CaptureSeq	No	low_coverage,_in_the_queue_for_more_sequencing_as_of_12/20/2023_(René_and_Brendan)
+Hmi_CPar_CSSL_1	Hmi	C	Par	Daet	CSSL	48	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus	PE_150	Brendan_Reid	Gianna_Mazzei	Hmi_2019_Paracale_Camarines-Norte_cssl	https://n2t.net/ark:/21547/FwL2	PRJNA1197494	Halichoeres_miniatus_2019_Paracale_Camarines-Norte_CaptureSeq	No	low_coverage,_in_the_queue_for_more_sequencing_as_of_12/20/2023_(René_and_Brendan)
+Hmi_CBas_CSSL_2	Hmi	C	Bas	Daet	CSSL	47	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_halichoeres_miniatus_cssl/2nd_sequencing_run	PE_150	NA	Gianna_Mazzei	Hmi_2019_Mercedes_Camarines-Norte_cssl	https://n2t.net/ark:/21547/FwF2	PRJNA1197495	Halichoeres_miniatus_2019_Mercedes_Camarines-Norte_CaptureSeq	No	NA
+Hmi_CPar_CSSL_2	Hmi	C	Par	Daet	CSSL	48	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_halichoeres_miniatus_cssl/2nd_sequencing_run	PE_150	NA	Gianna_Mazzei	Hmi_2019_Paracale_Camarines-Norte_cssl	https://n2t.net/ark:/21547/FwL2	PRJNA1197494	Halichoeres_miniatus_2019_Paracale_Camarines-Norte_CaptureSeq	No	NA
+Hmi_ABas_CSSL_1	Hmi	A	Bas	Daet	CSSL	43	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus	PE_150	Brendan_Reid	Gianna_Mazzei	Hmi_1909_Mercedes_Camarines-Norte_cssl	https://n2t.net/ark:/21547/Fvt2	PRJNA1197750	Halichoeres_miniatus_1909_Mercedes_Camarines-Norte_CaptureSeq	No	low_coverage,_in_the_queue_for_more_sequencing_as_of_12/20/2023_(René_and_Brendan)
+Hmi_AMac_CSSL_1	Hmi	A	Mac	Daet	CSSL	49	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/halichoeres_miniatus	PE_150	Brendan_Reid	Gianna_Mazzei	Hmi_1909_Paracale_Camarines-Norte_cssl	https://n2t.net/ark:/21547/Fvz2	PRJNA1197752	Halichoeres_miniatus_1909_Paracale_Camarines-Norte_CaptureSeq	No	low_coverage,_in_the_queue_for_more_sequencing_as_of_12/20/2023_(René_and_Brendan)
+Hmi_CPar_SSL_1	Hmi	C	Par	Daet	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/halichoeres_miniatus	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Hqu_CNas_SSL_1	Hqu	C	Nas	Nasu	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/herklotsichthys_quadrimaculatus	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Hte_ATic_CSSL_1	Hte	A	Tic	MatB	CSSL	54	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/hypoatherina_temminckii	PE_150	NA	NA	NA	NA	NA	NA	NA	Per_lot_sheet,_this_appears_to_be_a_mix_of_H._temminckii_and_H._panatela_(M._Pinsky_2023-11-14)
+Hte_ABur_LCWGS_1	Hte	A	Bur	CanB	LCWGS	95	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Hte_CBur_LCWGS_1	Hte	C	Bur	CanB	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Hte_AJol_LCWGS_1	Hte	A	Jol	Jolo	LCWGS	96	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CJol_LCWGS_1	Hte	C	Jol	Jolo	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_AMvi_LCWGS_1	Hte	A	Mvi	Masi	LCWGS	57	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CMvi_LCWGS_1	Hte	C	Mvi	Masi	LCWGS	58	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_ATic_LCWGS_1	Hte	A	Tic	MatB	LCWGS	82	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CTic_LCWGS_1	Hte	C	Tic	MatB	LCWGS	63	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_APnd_LCWGS_1	Hte	A	Pnd	Pand	LCWGS	32	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Hte_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Hte_CPnd_LCWGS_1	Hte	C	Pnd	Pand	LCWGS	NA	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Hte_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Hte_APnd_LCWGS_2	Hte	A	Pnd	Pand	LCWGS	32	2	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Hte_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Hte_CPnd_LCWGS_2	Hte	C	Pnd	Pand	LCWGS	NA	2	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_hypoatherina_temminckii_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Hte_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Hte_ATaw_LCWGS_1	Hte	A	Taw	Tawi	LCWGS	78	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CTaw_LCWGS_1	Hte	C	Taw	Tawi	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/hypoatherina_temminckii/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CTic_SSL_1	Hte	C	Tic	MatB	SSL	0	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/hypoatherina_temminckii	PE_150	NA	NA	NA	NA	NA	NA	NA	Directory_only_has_probe_design
+Hte_ABur_LCWGS_2	Hte	A	Bur	CanB	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CBur_LCWGS_2	Hte	C	Bur	CanB	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_AJol_LCWGS_2	Hte	A	Jol	Jolo	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CJol_LCWGS_2	Hte	C	Jol	Jolo	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_AMvi_LCWGS_2	Hte	A	Mvi	Masi	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CMvi_LCWGS_2	Hte	C	Mvi	Masi	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_ATaw_LCWGS_2	Hte	A	Taw	Tawi	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Hte_CTaw_LCWGS_2	Hte	C	Taw	Tawi	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Leq_ABas_CSSL_1	Leq	A	Bas	SMig	CSSL	52	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Leq_CMig_CSSL_1	Leq	C	Mig	SMig	CSSL	62	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Leq_ABas_CSSL_2	Leq	A	Bas	SMig	CSSL	46	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Leq_CMig_CSSL_2	Leq	C	Mig	SMig	CSSL	6	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_equula/2nd_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Lle_AHam_CSSL_1	Lle	A	Ham	HamC	CSSL	32	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus	PE_150	Rene_Clark	Kyra_Fitz	Ela_1908_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMR2	PRJNA998845	Equulites_laterofenestra_1908_Nasugbu_Batangas_CaptureSeq	No	Originally_identified_as_Leiognathus_leuciscus,_later_identification_corrected_to_Equulites_laterofenestra
+Lle_CNas_CSSL_1	Lle	C	Nas	HamC	CSSL	96	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/leiognathus_leuciscus	PE_150	Rene_Clark	Kyra_Fitz	Ela_2018_Nasugbu_Batangas	https://n2t.net/ark:/21547/FMX2	PRJNA999299	Equulites_laterofenestra_2018_Nasugbu_Batangas_CaptureSeq	No	Originally_identified_as_Leiognathus_leuciscus,_later_identification_corrected_to_Equulites_laterofenestra
+Sfa_CBas_SSL_1	Sfa	C	Bas	Basu	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/salarias_fasciatus	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Lva_APnd_LCWGS_1	Lva	A	Pnd	Pand	LCWGS	47	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Lva_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Lva_CPnd_LCWGS_1	Lva	C	Pnd	Pand	LCWGS	48	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Lva_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Lva_APnd_LCWGS_2	Lva	A	Pnd	Pand	LCWGS	47	2	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Lva_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Lva_CPnd_LCWGS_2	Lva	C	Pnd	Pand	LCWGS	48	2	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Lva_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Lva_APnd_LCWGS_3	Lva	A	Pnd	Pand	LCWGS	47	3	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/3rd_sequencing_run	PE_150	John_Whalen	NA	Lva_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Lva_CPnd_LCWGS_3	Lva	C	Pnd	Pand	LCWGS	48	3	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_lethrinus_variegatus_lcwgs/3rd_sequencing_run	PE_150	John_Whalen	NA	Lva_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Lva_CPnd_SSL_1	Lva	C	Pnd	Pand	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/lethrinus_variegatus	PE_150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
+Och_CTum_SSL_1	Och	C	Tum	Tumi	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/ostorhinchus_chrysopomus	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Och_ACat_LCWGS_1	Och	A	Cat	Catb	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_ATum_LCWGS_1	Och	A	Tum	Tumi	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_CCat_LCWGS_1	Och	C	Cat	Catb	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_CTum_LCWGS_1	Och	C	Tum	Tumi	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_ACat_LCWGS_2	Och	A	Cat	Catb	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_ATum_LCWGS_2	Och	A	Tum	Tumi	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_CCat_LCWGS_2	Och	C	Cat	Catb	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_CTum_LCWGS_2	Och	C	Tum	Tumi	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_ACan_LCWGS_3	Och	A	Can	CanB	LCWGS	NA	3	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_CBur_LCWGS_3	Och	C	Bur	CanB	LCWGS	NA	3	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_ACan_LCWGS_4	Och	A	Can	CanB	LCWGS	NA	4	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_ACat_LCWGS_4	Och	A	Cat	Catb	LCWGS	NA	4	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_ATum_LCWGS_4	Och	A	Tum	Tumi	LCWGS	NA	4	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_CBur_LCWGS_4	Och	C	Bur	CanB	LCWGS	NA	4	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_CCat_LCWGS_4	Och	C	Cat	Catb	LCWGS	NA	4	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Och_CTum_LCWGS_4	Och	C	Tum	Tumi	LCWGS	NA	4	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Par_ARag_LCWGS_1	Par	A	Rag	RagR	LCWGS	21	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/periophthalmus_argentilineatus/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Par_CPas_LCWGS_1	Par	C	Pas	RagR	LCWGS	50	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/periophthalmus_argentilineatus/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Par_ARag_LCWGS_2	Par	A	Rag	RagR	LCWGS	21	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/periophthalmus_argentilineatus/2nd_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Par_CRag_LCWGS_2	Par	C	Rag	RagR	LCWGS	50	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/periophthalmus_argentilineatus/2nd_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Par_CPas_SSL_1	Par	C	Pas	RagR	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/periophthalmus_argentilineatus	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Pba_CTat_SSL_1	Pba	C	Tat	Tata	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_brachialis	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Pba_ABir_LCWGS_1	Pba	A	Bir	Bali	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_ABur_LCWGS_1	Pba	A	Bur	Buri	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_AGal_LCWGS_1	Pba	A	Gal	PGal	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_AMar_LCWGS_1	Pba	A	Mar	PGal	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_APal_LCWGS_1	Pba	A	Pal	Bali	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_ATat_LCWGS_1	Pba	A	Tat	Tata	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_CCab_LCWGS_1	Pba	C	Cab	Bali	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_CMas_LCWGS_1	Pba	C	Mas	Buri	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_CTat_LCWGS_1	Pba	C	Tat	Tata	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_CVer_LCWGS_1	Pba	C	Ver	PGal	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_ABir_LCWGS_2	Pba	A	Bir	Bali	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_ABur_LCWGS_2	Pba	A	Bur	Buri	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_AGal_LCWGS_2	Pba	A	Gal	PGal	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_AMar_LCWGS_2	Pba	A	Mar	PGal	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_APal_LCWGS_2	Pba	A	Pal	Bali	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_ATat_LCWGS_2	Pba	A	Tat	Tata	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_CCab_LCWGS_2	Pba	C	Cab	Bali	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_CMas_LCWGS_2	Pba	C	Mas	Buri	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_CTat_LCWGS_2	Pba	C	Tat	Tata	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pba_CVer_LCWGS_2	Pba	C	Ver	PGal	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pbb_AGal_LCWGS_1	Pbb	A	Gal	PGal	LCWGS	36	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/parupeneus_barberinus/1st_sequencing_run	PE_150	NA	Gianna_Mazzei	Pbb_1908_Puerto-Galera_Oriental-Mindoro_lcwgs	https://n2t.net/ark:/21547/Fpk2	PRJNA1171860	Parupeneus_barberinus_1908_Puerto-Galera_Oriental-Mindoro_lcwgs	No	NA
+Pbb_CGal_LCWGS_1	Pbb	C	Gal	PGal	LCWGS	36	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/parupeneus_barberinus/1st_sequencing_run	PE_150	NA	Gianna_Mazzei	Pbb_2022_Batangas-City_Batangas_lcwgs	https://n2t.net/ark:/21547/FqK2	PRJNA1170328	Parupeneus_barberinus_2022_Batangas-City_Batangas_lcwgs	No	2_location_codes:_individuals_001-008_CGal,_009_and_on_CVer._All_are_from_the_same_lot-_naming_convention_changed_after_001-008_were_used_as_probes
+Pbb_CVer_LCWGS_1	Pbb	C	Ver	PGal	LCWGS	8	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/parupeneus_barberinus/1st_sequencing_run	PE_150	NA	Gianna_Mazzei	Pbb_2022_Batangas-City_Batangas_lcwgs	https://n2t.net/ark:/21547/FqK2	PRJNA1170328	Parupeneus_barberinus_2022_Batangas-City_Batangas_lcwgs	No	2_location_codes:_individuals_001-008_CGal,_009_and_on_CVer._All_are_from_the_same_lot-_naming_convention_changed_after_001-008_were_used_as_probes
+Pbb_AGal_LCWGS_2	Pbb	A	Gal	PGal	LCWGS	32	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/2nd_sequencing_run	PE_150	NA	Gianna_Mazzei	Pbb_1908_Puerto-Galera_Oriental-Mindoro_lcwgs	https://n2t.net/ark:/21547/Fpk2	PRJNA1171860	Parupeneus_barberinus_1908_Puerto-Galera_Oriental-Mindoro_lcwgs	No	NA
+Pbb_CGal_LCWGS_2	Pbb	C	Gal	PGal	LCWGS	36	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/2nd_sequencing_run	PE_150	NA	Gianna_Mazzei	Pbb_2022_Batangas-City_Batangas_lcwgs	https://n2t.net/ark:/21547/FqK2	PRJNA1170328	Parupeneus_barberinus_2022_Batangas-City_Batangas_lcwgs	No	2_location_codes:_individuals_001-008_CGal,_009_and_on_CVer._All_are_from_the_same_lot-_naming_convention_changed_after_001-008_were_used_as_probes
+Pbb_CVer_LCWGS_2	Pbb	C	Ver	PGal	LCWGS	8	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_parupeneus_barberinus_lcwgs/2nd_sequencing_run	PE_150	NA	Gianna_Mazzei	Pbb_2022_Batangas-City_Batangas_lcwgs	https://n2t.net/ark:/21547/FqK2	PRJNA1170328	Parupeneus_barberinus_2022_Batangas-City_Batangas_lcwgs	No	2_location_codes:_individuals_001-008_CGal,_009_and_on_CVer._All_are_from_the_same_lot-_naming_convention_changed_after_001-008_were_used_as_probes
+Pbb_CGal_SSL_1	Pbb	C	Gal	PGal	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/parupeneus_barberinus	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Pli_AMvi_LCWGS_1	Pli	A	Mvi	Masi	LCWGS	96	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/plotosus_lineatus/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Pli_CMvi_LCWGS_1	Pli	C	Mvi	Masi	LCWGS	54	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/plotosus_lineatus/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Pli_CMvi_SSL_1	Pli	C	Mvi	Masi	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/plotosus_lineatus	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Ppa_CPnd_SSL_1	Ppa	C	Pnd	Pand	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pomacentrus_pavo	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Psq_AGal_LCWGS_1	Psq	A	Gal	PGal	LCWGS	87	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/pseudanthias_squamipinnis/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Psq_CVer_LCWGS_1	Psq	C	Ver	PGal	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/pseudanthias_squamipinnis/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Psq_CGal_SSL_1	Psq	C	Gal	PGal	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/pseudanthias_squamipinnis	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Psq_AGal_LCWGS_2	Psq	A	Gal	PGal	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Psq_CVer_LCWGS_2	Psq	C	Ver	PGal	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sde_AMat_CSSL_1	Sde	A	Mat	MatB	CSSL	90	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus	PE_150	Eric_Garcia	Gianna_Mazzei	Sde_1909_Matnog_Sorsogon_cssl	https://n2t.net/ark:/21547/FwY2	PRJNA1197748	Spratelloides_delicatulus_1909_Matnog_Sorsogon_CaptureSeq	No	NA
+Sde_CMat_CSSL_1	Sde	C	Mat	MatB	CSSL	87	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus	PE_150	Eric_Garcia	Gianna_Mazzei	Sde_2017_Bulan_Sorsogon_cssl	https://n2t.net/ark:/21547/FwS2	PRJNA1197565	Spratelloides_delicatulus_2017_Bulan_Sorsogon_CaptureSeq	No	NA
+Sde_AMat_CSSL_2	Sde	A	Mat	MatB	CSSL	2	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_spratelloides_delicatulus_cssl/2nd_sequencing_run	PE_150	NA	Gianna_Mazzei	Sde_1909_Matnog_Sorsogon_cssl	https://n2t.net/ark:/21547/FwY2	PRJNA1197748	Spratelloides_delicatulus_1909_Matnog_Sorsogon_CaptureSeq	No	NA
+Sde_CMat_CSSL_2	Sde	C	Mat	MatB	CSSL	2	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_spratelloides_delicatulus_cssl/2nd_sequencing_run	PE_150	NA	Gianna_Mazzei	Sde_2017_Bulan_Sorsogon_cssl	https://n2t.net/ark:/21547/FwS2	PRJNA1197565	Spratelloides_delicatulus_2017_Bulan_Sorsogon_CaptureSeq	No	NA
+Sde_AMar_CSSL_1	Sde	A	Mar	PMar	CSSL	59	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus	PE_150	Eric_Garcia	NA	NA	NA	NA	NA	NA	NA
+Sde_CHam_CSSL_1	Sde	C	Ham	PMar	CSSL	58	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_delicatulus	PE_150	Eric_Garcia	NA	NA	NA	NA	NA	NA	NA
+Sde_ABol_LCWGS_1	Sde	A	Bol	Mala	LCWGS	71	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/spratelloides_delicatulus/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Sde_CMal_LCWGS_1	Sde	C	Mal	Mala	LCWGS	63	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/spratelloides_delicatulus/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Sde_CMat_SSL_1	Sde	C	Mat	MatB	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_delicatulus	PE_150	Eric_Garcia	NA	NA	NA	NA	NA	NA	NA
+Sfa_ABas_CSSL_1	Sfa	A	Bas	Basu	CSSL	32	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus	PE_150	Jem_Baldisimo	John_Schaeffer	NA	NA	NA	NA	NA	NA
+Sfa_CBas_CSSL_1	Sfa	C	Bas	Basu	CSSL	49	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/salarias_fasciatus	PE_150	Jem_Baldisimo	John_Schaeffer	NA	NA	NA	NA	NA	NA
+Sfa_ABas_LCWGS_1	Sfa	A	Bas	Basu	LCWGS	32	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/1st_sequencing_run	PE_150	Jem_Baldisimo	Gianna_Mazzei	Sfa_1909_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvh2	PRJNA1197747	Salarias_fasciatus_1909_Mercedes_Camarines-Norte_lcwgs	No	NA
+Sfa_CBas_LCWGS_1	Sfa	C	Bas	Basu	LCWGS	49	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/1st_sequencing_run	PE_150	Jem_Baldisimo	Gianna_Mazzei	Sfa_2019_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvn2	PRJNA1196103	Salarias_fasciatus_2019_Mercedes_Camarines-Norte_lcwgs	No	NA
+Sfa_ABas_LCWGS_2	Sfa	A	Bas	Basu	LCWGS	35	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/2nd_sequencing_run	PE_150	Jem_Baldisimo	Gianna_Mazzei	Sfa_1909_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvh2	PRJNA1197747	Salarias_fasciatus_1909_Mercedes_Camarines-Norte_lcwgs	No	NA
+Sfa_CBas_LCWGS_2	Sfa	C	Bas	Basu	LCWGS	64	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/2nd_sequencing_run	PE_150	Jem_Baldisimo	Gianna_Mazzei	Sfa_2019_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvn2	PRJNA1196103	Salarias_fasciatus_2019_Mercedes_Camarines-Norte_lcwgs	No	NA
+Sfa_ABas_LCWGS_3	Sfa	A	Bas	Basu	LCWGS	35	3	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/3rd_sequencing_run	PE_150	Jem_Baldisimo	Gianna_Mazzei	Sfa_1909_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvh2	PRJNA1197747	Salarias_fasciatus_1909_Mercedes_Camarines-Norte_lcwgs	No	NA
+Sfa_CBas_LCWGS_3	Sfa	C	Bas	Basu	LCWGS	48	3	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/salarias_fasciatus/3rd_sequencing_run	PE_150	Jem_Baldisimo	Gianna_Mazzei	Sfa_2019_Mercedes_Camarines-Norte_lcwgs	https://n2t.net/ark:/21547/Fvn2	PRJNA1196103	Salarias_fasciatus_2019_Mercedes_Camarines-Norte_lcwgs	No	NA
+Sfu_ABai_LCWGS_1	Sfu	A	Bai	Bais	LCWGS	8	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/siganus_fuscescens/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Sfu_CBai_SSL_1	Sfu	C	Bai	Bais	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/siganus_fuscescens	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Sgr_AJol_CSSL_1	Sgr	A	Jol	Jolo	CSSL	92	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE_150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
+Sgr_CJol_CSSL_1	Sgr	C	Jol	Jolo	CSSL	61	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE_150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
+Sgr_AMvi_CSSL_1	Sgr	A	Mvi	Masi	CSSL	86	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE_150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
+Sgr_CMvi_CSSL_1	Sgr	C	Mvi	Masi	CSSL	64	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE_150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
+Sgr_APal_CSSL_1	Sgr	A	Pal	Samr	CSSL	37	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE_150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
+Sgr_CBir_CSSL_1	Sgr	C	Bir	Samr	CSSL	61	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/spratelloides_gracilis	PE_150	NA	NA	NA	NA	NA	NA	NA	coverage_was_very_low
+Sgr_CMvi_SSL_1	Sgr	C	Mvi	Masi	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/spratelloides_gracilis	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Sgr_AJol_LCWGS_1	Sgr	A	Jol	Jolo	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sgr_CJol_LCWGS_1	Sgr	C	Jol	Jolo	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sgr_AMvi_LCWGS_1	Sgr	A	Mvi	Masi	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sgr_CMvi_LCWGS_1	Sgr	C	Mvi	Masi	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sgr_APal_LCWGS_1	Sgr	A	Pal	Samr	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sgr_CBir_LCWGS_1	Sgr	C	Bir	Samr	LCWGS	NA	1	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sin_APnd_LCWGS_1	Sin	A	Pnd	Pand	LCWGS	25	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Sin_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sin_CPnd_LCWGS_1	Sin	C	Pnd	Pand	LCWGS	NA	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_stethojulis_interrupta_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Sin_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sin_CPnd_SSL_1	Sin	C	Pnd	Pand	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/stethojulis_interrupta	PE_150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
+Sin_APnd_LCWGS_2	Sin	A	Pnd	Pand	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sin_CPnd_LCWGS_2	Sin	C	Pnd	Pand	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sin_CPnd_LCWGS_3	Sin	C	Pnd	Pand	LCWGS	NA	3	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sne_ABir_LCWGS_2	Sne	A	Bir	Bali	LCWGS	25	2	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_nematoptera/2nd_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Sne_CCab_LCWGS_2	Sne	C	Cab	Bali	LCWGS	64	2	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_nematoptera/2nd_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Sne_ATaw_LCWGS_1	Sne	A	Taw	Tawi	LCWGS	27	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_nematoptera/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Sne_CTaw_LCWGS_1	Sne	C	Taw	Tawi	LCWGS	56	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_nematoptera/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Sne_CTaw_SSL_1	Sne	C	Taw	Tawi	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_nematoptera	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA
+Sne_ABir_LCWGS_3	Sne	A	Bir	Bali	LCWGS	NA	3	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sne_CCab_LCWGS_3	Sne	C	Cab	Bali	LCWGS	NA	3	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sne_ARom_LCWGS_4	Sne	A	Rom	Romb	LCWGS	NA	4	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sne_CRom_LCWGS_4	Sne	C	Rom	Romb	LCWGS	NA	4	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sob_APnd_LCWGS_1	Sob	A	Pnd	Pand	LCWGS	96	1	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Sob_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sob_CPnd_LCWGS_1	Sob	C	Pnd	Pand	LCWGS	64	1	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Sob_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sob_APnd_LCWGS_2	Sob	A	Pnd	Pand	LCWGS	48	2	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Sob_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sob_CPnd_LCWGS_2	Sob	C	Pnd	Pand	LCWGS	48	2	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Sob_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sob_APnd_LCWGS_3	Sob	A	Pnd	Pand	LCWGS	48	3	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/3rd_sequencing_run	PE_150	John_Whalen	NA	Sob_1909_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sob_CPnd_LCWGS_3	Sob	C	Pnd	Pand	LCWGS	48	3	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphyraena_obtusata_lcwgs/3rd_sequencing_run	PE_150	John_Whalen	NA	Sob_2021_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sob_CKal_SSL_1	Sob	C	Kal	Connectivity	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphyraena_obtusata	PE_150	John_Whalen	NA	NA	NA	NA	NA	NA	NA
+Sor_ABur_LCWGS_1	Sor	A	Bur	CanB	LCWGS	16	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_orbicularis/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Sor_ACan_LCWGS_1	Sor	A	Can	CanB	LCWGS	55	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_orbicularis/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Sor_CBur_LCWGS_1	Sor	C	Bur	CanB	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/sphaeramia_orbicularis/1st_sequencing_run	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Sor_CNA_SSL_1	Sor	C	NA	NA	SSL	1	1	no	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/sphaeramia_orbicularis	PE_150	NA	NA	NA	NA	NA	NA	NA	probes_were_designed_from_the_published_genome_in_NCBI._Thus,_we_didn't_use_one_of_our_individuals_for_SSL
+Sor_ACeb_LCWGS_1	Sor	A	Ceb	Pand	LCWGS	22	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Sor_CebuMarket_Cebu_lcwgs	NA	NA	NA	NA	NA
+Sor_CPnd_LCWGS_1	Sor	C	Pnd	Pand	LCWGS	64	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/1st_sequencing_run	PE_150	John_Whalen	NA	Sor_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sor_ACeb_LCWGS_2	Sor	A	Ceb	Pand	LCWGS	22	2	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Sor_CebuMarket_Cebu_lcwgs	NA	NA	NA	NA	NA
+Sor_CPnd_LCWGS_2	Sor	C	Pnd	Pand	LCWGS	48	2	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_sphaeramia_orbicularis_lcwgs/2nd_sequencing_run	PE_150	John_Whalen	NA	Sor_PandanonIsland_Bohol_lcwgs	NA	NA	NA	NA	NA
+Sor_CPnd_LCWGS_3	Sor	C	Pnd	Pand	LCWGS	NA	3	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Ssp_AAtu_CSSL_1	Ssp	A	Atu	AtuB	CSSL	43	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Ssp_CGub_CSSL_1	Ssp	C	Gub	AtuB	CSSL	55	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/1st_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Ssp_AAtu_CSSL_2	Ssp	A	Atu	AtuB	CSSL	43	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/siganus_spinus/2nd_sequencing_run	PE_150	Brendan_Reid	NA	NA	NA	NA	NA	NA	NA
+Tbi_ARos_CSSL_1	Tbi	A	Ros	Rosa	CSSL	31	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/1st_sequencing_run	PE_150	Brendan_Reid	Brendan_Reid	Tbi_1909_RosaId_CamarinesSur	https://n2t.net/ark:/21547/FPb2	NA	NA	NA	NA
+Tbi_CJos_CSSL_1	Tbi	C	Jos	Rosa	CSSL	63	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/1st_sequencing_run	PE_150	Brendan_Reid	Brendan_Reid	Tbi_2019_SanJose_CamarinesSur	https://n2t.net/ark:/21547/FPV2	NA	NA	NA	NA
+Tbi_ARos_CSSL_2	Tbi	A	Ros	Rosa	CSSL	31	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_biguttata/2nd_sequencing_run	PE_150	Brendan_Reid	Brendan_Reid	Tbi_1909_RosaId_CamarinesSur	https://n2t.net/ark:/21547/FPb2	NA	NA	NA	NA
+Tcr_CJol_SSL_1	Tcr	C	Jol	Jolo	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/tylosurus_crocodilus	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Tzo_AMvi_CSSL_1	Tzo	A	Mvi	Masi	CSSL	48	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora	PE_150	NA	Gianna_Mazzei	Tzo_1908_MatalvisIsland_Zambales_cssl	https://n2t.net/ark:/21547/Fwk2	PRJNA1199564	Taeniamia_zosterophora_1908_MatalvisIsland_Zambales_CaptureSeq	No	raw_data_in_/RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/fq_raw_cssl
+Tzo_CMvi_CSSL_1	Tzo	C	Mvi	Masi	CSSL	55	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora	PE_150	NA	Gianna_Mazzei	Tzo_2019_MatalvisIsland_Zambales_cssl	https://n2t.net/ark:/21547/Fwe2	PRJNA1199563	Taeniamia_zosterophora_2019_MatalvisIsland_Zambales_CaptureSeq	No	raw_data_in_/RC/group/rc_carpenterlab_ngs/shotgun_PIRE/pire_cssl_data_processing/taeniamia_zosterophora/fq_raw_cssl
+Tzo_AMta_LCWGS_1	Tzo	A	Mta	Boho	LCWGS	34	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE_150	Kyra_Fitz	Kyra_Fitz	Tzo_1908_Mantatao_Bohol_lcwgs	https://n2t.net/ark:/21547/FtY2	PRJNA1185271	Taeniamia_zosterophora_1908_Mantatao_Bohol_lcwgs	Yes	NA
+Tzo_CMta_LCWGS_1	Tzo	C	Mta	Boho	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE_150	Kyra_Fitz	Kyra_Fitz	Tzo_2021_Mantatao_Bohol_lcwgs	https://n2t.net/ark:/21547/Fte2	PRJNA1185264	Taeniamia_zosterophora_2021_Mantatao_Bohol_lcwgs	Yes	NA
+Tzo_ABol_LCWGS_1	Tzo	A	Bol	Mala	LCWGS	65	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE_150	Kyra_Fitz	Kyra_Fitz	Tzo_1908_Malampaya_Palawan_lcwgs	https://n2t.net/ark:/21547/FtD2	PRJNA1185294	Taeniamia_zosterophora_1908_Malampaya_Palawan_lcwgs	Yes	NA
+Tzo_CMal_LCWGS_1	Tzo	C	Mal	Mala	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE_150	Kyra_Fitz	Kyra_Fitz	Tzo_2022_Malampaya_Palawan_lcwgs	https://n2t.net/ark:/21547/FtS2	PRJNA1185280	Taeniamia_zosterophora_2022_Malampaya_Palawan_lcwgs	Yes	NA
+Tzo_AMvi_LCWGS_1	Tzo	A	Mvi	Masi	LCWGS	48	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE_150	Kyra_Fitz	Kyra_Fitz	Tzo_1908_MatalvisIsland_Zambales_lcwgs	https://n2t.net/ark:/21547/Ftk2	PRJNA1185224	Taeniamia_zosterophora_1908_MatalvisIsland_Zambales_lcwgs	Yes	NA
+Tzo_CMvi_LCWGS_1	Tzo	C	Mvi	Masi	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/taeniamia_zosterophora/1st_sequencing_run	PE_150	Kyra_Fitz	Kyra_Fitz	Tzo_2019_MatalvisIsland_Zambales_lcwgs	https://n2t.net/ark:/21547/Ftq2	PRJNA1185258	Taeniamia_zosterophora_2019_MatalvisIsland_Zambales_lcwgs	Yes	NA
+Tzo_CMvi_SSL_1	Tzo	C	Mvi	Masi	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/taeniamia_zosterophora	PE_150	NA	NA	NA	NA	NA	NA	NA	NA
+Tzo_AMta_LCWGS_2	Tzo	A	Mta	Boho	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Tzo_CMta_LCWGS_2	Tzo	C	Mta	Boho	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Tzo_ABol_LCWGS_2	Tzo	A	Bol	Mala	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Tzo_CMal_LCWGS_2	Tzo	C	Mal	Mala	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Tzo_AMvi_LCWGS_2	Tzo	A	Mvi	Masi	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Tzo_CMvi_LCWGS_2	Tzo	C	Mvi	Masi	LCWGS	NA	2	NA	wahab.hpc.odu.edu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Zdi_ADup_LCWGS_1	Zdi	A	Dup	Dupo	LCWGS	47	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run	PE_150	Ty_Burris	Gianna_Mazzei	Zdi_1908_Isabel_Leyte_lcwgs	https://n2t.net/ark:/21547/Fpq2	PRJNA1171961	Zenarchopterus_dispar_1908_Isabel_Leyte_lcwgs	No	NA
+Zdi_CDup_LCWGS_1	Zdi	C	Dup	Dupo	LCWGS	64	1	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/1st_sequencing_run	PE_150	Ty_Burris	Gianna_Mazzei	Zdi_2022_Isabel_Leyte_lcwgs	https://n2t.net/ark:/21547/Fpw2	PRJNA1171888	Zenarchopterus_dispar_2022_Isabel_Leyte_lcwgs	No	NA
+Zdi_ADup_LCWGS_2	Zdi	A	Dup	Dupo	LCWGS	47	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run	PE_150	Ty_Burris	Gianna_Mazzei	Zdi_1908_Isabel_Leyte_lcwgs	https://n2t.net/ark:/21547/Fpq2	PRJNA1171961	Zenarchopterus_dispar_1908_Isabel_Leyte_lcwgs	No	NA
+Zdi_CDup_LCWGS_2	Zdi	C	Dup	Dupo	LCWGS	49	2	Yes	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_zenarchopterus_dispar_lcwgs/2nd_sequencing_run	PE_150	Ty_Burris	Gianna_Mazzei	Zdi_2022_Isabel_Leyte_lcwgs	https://n2t.net/ark:/21547/Fpw2	PRJNA1171888	Zenarchopterus_dispar_2022_Isabel_Leyte_lcwgs	No	NA

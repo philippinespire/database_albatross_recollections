@@ -34,8 +34,10 @@ initial_database <- list.files("../db_files",
   rowwise %>%
   mutate(sheet = distinct(sheet) %>%
            rename_with(~str_to_lower(.x)) %>%
+           mutate(across(matches("filter_out_this_row"), ~replace_na(., FALSE))) %>%
+           filter(if_any(matches("filter_out_this_row"), ~!.)) %>%
+           select(-matches('filter_out_this_row')) %>%
            list()) %>%
   ungroup %>%
   mutate(sheet = set_names(sheet, file_type)) %>%
   pull(sheet)
-
