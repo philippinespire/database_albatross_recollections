@@ -1,0 +1,4 @@
+gel_id	gel_file_name	gel_laboratory	gel_person	gel_loading_volume_ul	gel_date	gel_ladder_brand	gel_ladder_model	gel_agarose_pct	gel_buffer	gel_buffer_concentration_x	gel_nucleotide_stain_brand	gel_nuceotide_stain_model	gel_nucleotide_stain_concentration_x	gel_electrophoresis_volts	gel_electrophoresis_duration_minutes
+Sde-C_010_dna-plate_elution-01_2025-05-27	Sde-C_010_dna-plate_elution-01_2025-05-27.pdf	TAMUCC	Kevin_Labrador	1	5/27/2025	bioline	HyperLadder 1kb	1	TAE	1	Lonza	GelStar	0.025	90	45
+Sde-C_011_dna-plate_elution-01_2025-05-29	Sde-C_011_dna-plate_elution-01_2025-05-29.pdf	TAMUCC	Kevin_Labrador	1	5/29/2025	bioline	HyperLadder 1kb	1	TAE	1	Lonza	GelStar	0.025	90	45
+Sde-C_011_dna-plate_elution-02_2025-05-29	Sde-C_011_dna-plate_elution-02_2025-05-29.pdf	TAMUCC	Michael_Pool	1	5/29/2025	bioline	HyperLadder 1kb	1	TAE	1	Lonza	GelStar	0.025	90	45
