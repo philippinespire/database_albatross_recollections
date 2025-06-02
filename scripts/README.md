@@ -58,3 +58,12 @@ transfers files from the Carpenter Lab Philippines Database dir to the GitHub Re
 	
 
 ---
+
+#### `find_lots_and_fieldCollections.R`
+* the path to the OneDrive dir `onedrive_path` must be set separately for each user/computer who runs this script.
+
+	* Must be able to sync OneDrive files to local computer
+
+Script to be used interactively to read all excel files found in `Philippines_PIRE_project/Field Collections` to identify any which contain the column `Lot_ID`. Checks to see if any of these Lot_IDs are missing in the `Philippines_PIRE_project/Database/Lot_sheet.xlsx`
+
+---
