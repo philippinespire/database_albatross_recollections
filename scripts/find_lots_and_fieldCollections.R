@@ -25,8 +25,7 @@ lot_sheet_file <- str_c(onedrive_path, 'Database/Lot_sheet.xlsx')
 all_files <- list.files(field_sheet_dir, 
            recursive = TRUE,
            pattern = 'xlsx$',
-           full.names = TRUE) %>%
-  str_subset('20[0-9]{2}')
+           full.names = TRUE) 
 
 correct_files <- all_files %>%
   map_chr(check_correct_file) %>%
