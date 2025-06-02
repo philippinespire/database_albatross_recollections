@@ -1,9 +1,13 @@
 ## Code to identify samples that are found in the "Field Collection" data but is missing in the Lot sheet
-## Set the working directory to be inside the main "Philippines_PIRE_project" folder
 
 library(tidyverse)
 library(readxl)
 
+#### User Inputs ####
+field_sheet_dir <- 'C:/Users/jdsel/Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project/Field Collections'
+lot_sheet_file <- 'C:/Users/jdsel/Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project/Database/Lot_sheet.xlsx'
+
+#### Functions ####
 check_correct_file <- function(filepath){
   exists <- read_excel(filepath) %>%
     colnames() %>%
@@ -15,7 +19,8 @@ check_correct_file <- function(filepath){
           NA_character_)
 }
 
-all_files <- list.files('Field Collections/', 
+#### Identify Files ####
+all_files <- list.files(field_sheet_dir, 
            recursive = TRUE,
            pattern = 'xlsx$',
            full.names = TRUE) %>%
@@ -28,7 +33,7 @@ correct_files <- all_files %>%
 
 all_files[!all_files %in% correct_files]
 
-lot_data <- read_excel('Database/Lot_sheet.xlsx') %>%
+lot_data <- read_excel(lot_sheet_file) %>%
   janitor::clean_names()
 sum(is.na(lot_data$lot_id))
 
@@ -36,26 +41,30 @@ field_data <- correct_files %>%
   map_dfr(~read_excel(.x) %>%
             janitor::clean_names() %>%
             select(-any_of(c('individuals',
-                           'size_direct_observation_mm'))), 
+                           'size_direct_observation_mm',
+                           'bottles'))), 
           .id = 'file') %>%
   mutate(file = correct_files[as.integer(file)])
 
+# Number of Field Samples missing lot_ids
 summarise(field_data,
           n_missing = sum(is.na(lot_id)),
           .by = file)
 
-
+# Number of duplicated lot ids
 inner_join(distinct(lot_data, lot_id),
            distinct(field_data, file, lot_id) %>%
              filter(!is.na(lot_id)),
           by = 'lot_id') %>% filter(n() > 1, .by = lot_id) %>% count(file)
 
+# Lot_ids in the lot_sheet_file without a field collection file - not a problem
 anti_join(distinct(lot_data, lot_id),
           distinct(field_data, file, lot_id) %>%
             filter(!is.na(lot_id)),
           by = 'lot_id') %>%
   filter(!str_detect(lot_id, '^[0-9]+$')) 
 
+# Lot_ids in a field collection file - which are not present in the lot_sheet_file - problem
 anti_join(distinct(field_data, file, lot_id) %>%
             filter(!is.na(lot_id)),
           distinct(lot_data, lot_id),
@@ -64,13 +73,15 @@ anti_join(distinct(field_data, file, lot_id) %>%
   left_join(field_data,
             by = c('file', 'lot_id')) 
 
-
+# lot_ids with both a field_collection_file and lot_sheet_file
 inner_join(distinct(lot_data, lot_id),
            distinct(field_data, file, lot_id) %>%
              filter(!is.na(lot_id)),
            by = 'lot_id') %>%
   distinct(lot_id)
 
+
+#### Summary Notes ####
 # 49 samples with no lot ID in the "Field Collections/Palawan-Mainland 2022/Palawan Collections preliminary.xlsx"
 # 16 lot_id duplicated between "Field Collections/Palawan-Mainland 2022/Palawan 2022 Collections - Mainland.xlsx" and "Field Collections/Palawan-Mainland 2022/Palawan Collections preliminary.xlsx" and "Field Collections/Palawan-Mainland 2022/Palawan Collections preliminary.xlsx"
 
