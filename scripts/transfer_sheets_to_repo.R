@@ -1,5 +1,10 @@
 #### User Defined Variables ####
-onedrive_path = "../../../Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project (1)/Database/"
+if(Sys.info()['user'] == 'jdsel'){
+  onedrive_path = "~/../Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project/Database"
+} else {
+  onedrive_path = "../../../Old Dominion University/Carpenter Molecular Lab - Philippines_PIRE_project (1)/Database/"
+}
+
 
 ###### Vector of source Excel files ######
 excel_files <- 
@@ -145,6 +150,7 @@ purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   
   # Read the first sheet of the workbook and write as TSV
   read_excel(in_path) %>%
+    janitor::remove_empty(which = c('rows', 'cols')) %>%
     strip_newlines() %>%
     write_tsv(out_path, eol = "\n")
   
