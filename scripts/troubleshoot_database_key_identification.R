@@ -17,9 +17,9 @@ source('wrangle_db_files.R')
 dir.create('../troubleshooting_files')
 # Samples with either duplicated of missing Extraction IDs
 initial_database$dna_extractions_sheets %>%
-  filter(n() > 1 | is.na(Extraction_ID),
-         .by = Extraction_ID) %>%
-  distinct(Individual_ID, Extraction_ID) %>%
+  filter(n() > 1 | is.na(extraction_id),
+         .by = extraction_id) %>%
+  distinct(individual_id, extraction_id) %>%
   write_csv('../troubleshooting_files/Extractions_sheet_xlsx_issues.csv')
 
 
@@ -29,57 +29,39 @@ initial_database$dna_extractions_gels %>%
 
 
 initial_database$species_sheets %>%
-  filter(n() > 1 | is.na(Species_Code),
-         .by = Species_Code)
+  filter(n() > 1 | is.na(species_code),
+         .by = species_code)
 
 
 initial_database$individuals_sheets %>%
-  filter(is.na(Individual_ID))
+  filter(is.na(individual_id))
 
 initial_database$individuals_sheets %>%
-  filter(n() > 1 | is.na(Individual_ID),
-         .by = Individual_ID) %>%
-  distinct(Individual_ID) %>%
-  filter(!is.na(Individual_ID)) %>%
+  filter(n() > 1 | is.na(individual_id),
+         .by = individual_id) %>%
+  distinct(individual_id) %>%
+  filter(!is.na(individual_id)) %>%
   write_csv('../troubleshooting_files/Individual_sheet_xlsx_issues.csv')
   
   
 initial_database$lots_sheets %>%
-  filter(n() > 1 | is.na(Lot_ID),
-         .by = Lot_ID) %>%
-  distinct(Lot_ID)
+  filter(n() > 1 | is.na(lot_id),
+         .by = lot_id) %>%
+  distinct(lot_id)
 
 initial_database$shipments_sheets %>%
-  filter(n() > 1 | is.na(Shipment_ID),
-         .by = Shipment_ID) %>%
-  distinct(Shipment_ID) %>%
+  filter(n() > 1 | is.na(shipment_id),
+         .by = shipment_id) %>%
+  distinct(shipment_id) %>%
   write_csv('../troubleshooting_files/Shipment_sheet_xlsx_issues.csv')
+
 
 
   dm_add_pk(sampling_sites_sheets,
             columns = c(site_id)) %>%
   dm_add_pk(sequence_info_sheets,
             columns = c(sequencing_batch_id)) 
+  
+  
 
-
-
-
-names(initial_database)
-initial_database$dna_extractions_sheets %>% colnames
-filter(Individual_ID == 'Ssp-AAtu_008') %>%
-  select(Individual_ID, Extraction_ID)
-
-initial_database$dna_extractions_sheets %>%
-  filter(is.na(Extraction_ID)) %>%
-  select(Individual_ID, Extraction_ID)
-
-initial_database$dna_extractions_sheets %>%
-  filter(Individual_ID == 'Dba-CKal_001') %>%
-  select(Individual_ID, Extraction_ID)
-
-initial_database$dna_extractions_sheets %>%
-  filter(Extraction_ID == 'Gma-ARag_001-Ex1') %>% View
-
-initial_database %>%
-  dm_enum_pk_candidates(table = 'dna_extractions_sheets')
 

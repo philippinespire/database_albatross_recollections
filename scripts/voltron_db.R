@@ -20,17 +20,17 @@ db_with_pk <- do.call(dm,
   dm_add_pk(table = dna_extractions_gels,
             columns = gel_id) %>%
   dm_add_pk(table = species_sheets,
-            columns = Species_Code) %>%
+            columns = species_code) %>%
   dm_add_pk(dna_extractions_sheets,
-            columns = c(Extraction_ID)) %>%
+            columns = c(extraction_id)) %>%
   dm_add_pk(individuals_sheets,
-            columns = c(Individual_ID)) %>%
+            columns = c(individual_id)) %>%
   dm_add_pk(lots_sheets,
-            columns = c(Lot_ID)) %>%
+            columns = c(lot_id)) %>%
   dm_add_pk(sampling_sites_sheets,
             columns = c(site_id)) %>%
   dm_add_pk(shipments_sheets,
-            columns = c(Shipment_ID)) %>%
+            columns = c(shipment_id)) %>%
   # dm_add_pk(sequence_info_sheets,
   #           columns = c(sequencing_batch_id)) %>%
   identity()
@@ -40,24 +40,27 @@ dm_get_all_pks(db_with_pk)
 
 #### Add Foreign Keys ####
 full_db <- db_with_pk %>%
+  dm_add_fk(table = dna_extractions_sheets, 
+            columns = individual_id, 
+            ref_table = individuals_sheets) %>%
   dm_add_fk(table = individuals_sheets, 
-            columns = Lot_ID, 
+            columns = lot_id, 
             ref_table = lots_sheets) %>%
   dm_add_fk(table = individuals_sheets, 
-            columns = Species_valid_name, 
+            columns = species_valid_name, 
             ref_table = species_sheets,
-            ref_columns = Species_valid_name) %>%
+            ref_columns = species_valid_name) %>%
   dm_add_fk(table = individuals_sheets, 
-            columns = Collection_site, 
+            columns = collection_site, 
             ref_table = sampling_sites_sheets) %>%
-  dm_add_fk(table = dna_extractions_sheets, 
-            columns = Individual_ID, 
-            ref_table = individuals_sheets) %>%
+
   dm_add_fk(table = lots_sheets, 
-            columns = Site_ID, 
+            columns = site_id, 
             ref_table = sampling_sites_sheets)
   
 full_db %>%
   dm_draw(rankdir = "TB", view_type = "all")
 
 
+full_db %>%
+  dm_draw(rankdir = "TB", view_type = "keys_only")
