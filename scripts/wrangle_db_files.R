@@ -6,8 +6,7 @@ install_and_load_packages(
     c(
       "tidyverse", 
       "janitor", 
-      "readxl",
-      'dm'
+      "readxl"
     )
 )
 
@@ -36,6 +35,5 @@ initial_database <- list.files("../db_files",
            list()) %>%
   ungroup %>%
   mutate(sheet = set_names(sheet, file_type)) %>%
-  pull(sheet) %>%
-  do.call(dm, .)
+  pull(sheet)
 

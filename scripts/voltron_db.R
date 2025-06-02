@@ -15,7 +15,8 @@ source('wrangle_db_files.R')
 
 
 #### Make Primary Keys ####
-db_with_pk <- initial_database %>%
+db_with_pk <- do.call(dm, 
+          initial_database) %>%
   dm_add_pk(table = dna_extractions_gels,
             columns = gel_id) %>%
   dm_add_pk(table = species_sheets,

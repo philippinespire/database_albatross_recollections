@@ -6,8 +6,7 @@ install_and_load_packages(
     c(
       "tidyverse", 
       "janitor", 
-      "readxl",
-      'dm'
+      "readxl"
     )
 )
 
