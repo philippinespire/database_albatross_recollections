@@ -9,11 +9,11 @@
 
 #### `wrangle_db_files.R`
 
-Primarily sourced by other scripts `voltron_db.R` and `troubleshoot_database_key_identification.R`. Reads in and concatentates database files (moved and reformatted from Onedrive with `transfer_sheets_to_repo.R`). Output is a named list of dataframes suitable for use by the [`dm`](https://dm.cynkra.com/) package. 
+Primarily sourced by other scripts `assemble_db.R` and `troubleshoot_database_key_identification.R`. Reads in and concatentates database files (moved and reformatted from Onedrive with `transfer_sheets_to_repo.R`). Output is a named list of dataframes suitable for use by the [`dm`](https://dm.cynkra.com/) package. 
 
 ---
 
-#### `voltron_db.R`:
+#### `assemble_db.R`:
 This function makes the database.
 
 ---
