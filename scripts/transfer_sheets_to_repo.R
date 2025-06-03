@@ -66,7 +66,9 @@ purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   if (!dir.exists(ddir)) dir.create(ddir, recursive = TRUE)
   
   # Read the first sheet of the workbook and write as TSV
-  read_excel(in_path) %>%
+  read_excel(in_path, 
+             na = c('', 'NA', 'N/A', '?'),
+             guess_max = 1e6) %>%
     janitor::remove_empty(which = c('rows', 'cols')) %>%
     strip_newlines() %>%
     write_tsv(out_path, eol = "\n")
