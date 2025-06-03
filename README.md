@@ -19,4 +19,10 @@
   * 
 
 ## How to use this repo
+Clone the repo locally.
 Run scripts/voltron_db.R to create the database as a `dm` object
+
+## How to edit the database
+Add a new table to the relevant subdirectory in `db_files`. Be sure to use the exact same column names and cell formatting as the existing table in that directory. 
+Use an informative name of the format INITIALS-YEAR-MONTH-DAY-DESC.tsv, where you're using your initials, the 4-digit year, the 2-digit month, and a short description without any punctuation or spaces.
+The database creation script reads in and row-binds all files in a given directory to create the relevant database tables.
