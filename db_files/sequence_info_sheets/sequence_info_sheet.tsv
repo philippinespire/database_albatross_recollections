@@ -37,7 +37,7 @@ Cvi_CPal_2022_LCWGS_1	Cvi	C	Pal	Bali	2022	LCWGS	64	1	Yes	wahab.hpc.odu.edu	/home
 Cvi_APal_1909_LCWGS_2	Cvi	A	Pal	Bali	1909	LCWGS	40	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/2nd_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA	NA
 Cvi_CPal_2022_LCWGS_2	Cvi	C	Pal	Bali	2022	LCWGS	48	2	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/chromis_viridis/2nd_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA	NA
 Cvi_CPal_2022_SSL_1	Cvi	C	Pal	Bali	2022	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/chromis_viridis	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA	NA
-Dar_AJol__LCWGS_1	Dar	A	Jol	Jolo	NA	LCWGS	21	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA	NA
+Dar_AJol_1908_LCWGS_1	Dar	A	Jol	Jolo	1908	LCWGS	21	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA	NA
 Dar_CJol_2021_LCWGS_1	Dar	C	Jol	Jolo	2021	LCWGS	64	1	No	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_lcwgs_data_processing/dascyllus_aruanus/1st_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA	NA
 Dar_CJol_2021_SSL_1	Dar	C	Jol	Jolo	2021	SSL	1	1	Yes	wahab.hpc.odu.edu	/home/e1garcia/shotgun_PIRE/pire_ssl_data_processing/dascyllus_aruanus	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA	NA
 Dar_AJol__LCWGS_2	Dar	A	Jol	Jolo	NA	LCWGS	NA	2	NA	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_dascyllus_aruanus_lcwgs/2nd_sequencing_run	PE_150	Jem_Baldisimo	NA	NA	NA	NA	NA	NA	NA	NA
