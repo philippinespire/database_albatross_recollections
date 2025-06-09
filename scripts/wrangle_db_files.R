@@ -12,7 +12,7 @@ install_and_load_packages(
 )
 
 #### Find & Read Files ####
-initial_database <- list.files("../db_files", 
+database_inputs <- list.files("../db_files", 
                                    pattern = 'tsv$',
                                    full.names = TRUE, 
                                    recursive = TRUE) %>%
