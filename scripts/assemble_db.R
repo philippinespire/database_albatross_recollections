@@ -1,3 +1,5 @@
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
 #### Packages ####
 source("functions.R")
 
