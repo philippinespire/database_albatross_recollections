@@ -1,3 +1,5 @@
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
 #### Packages ####
 source("functions.R")
 
@@ -18,7 +20,7 @@ source('wrangle_db_files.R')
 #### Make Primary Keys ####
 db_with_pk <- 
   do.call(dm, 
-          initial_database) %>%
+          database_inputs) %>%
   dm_add_pk(sampling_sites_sheets,
             columns = c(site_sp_primary_key)) %>%
   dm_add_pk(lots_sheets,
