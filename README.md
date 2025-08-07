@@ -19,8 +19,9 @@
   * 
 
 ## How to use this repo
-Clone the repo locally.
-Run scripts/voltron_db.R to create the database as a `dm` object
+1. Clone the repo locally.
+2. Open the `database_albatross_recollections.Rproj` file which will automatically load the [`scripts/assemble_db.R`](scripts/assemble_db.R) into the Rstudio editor
+3. Run `scripts/assemble_db.R` to create the database locally as a `dm` object
 
 ## How to edit the database
 After cloning the repo locally:
