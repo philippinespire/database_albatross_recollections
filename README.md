@@ -21,7 +21,7 @@
 ## How to use this repo
 1. Clone this repository
 2. Open `database_albatross_recollections.Rproj` in RStudio
-3. When prompted, run `renv::restore()` to install all required packages
+3. If this is the first time cloning the repo run `setup_project()` to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10)
 4. Open and run `scripts/assemble_db.R` or use `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object
 
 ## How to edit the database
