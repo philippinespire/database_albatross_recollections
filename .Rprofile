@@ -1,145 +1,134 @@
 source("renv/activate.R")
 
-# .Rprofile - Ensures proper environment setup and package installation
+# .Rprofile - Project setup and dependency checking
 
 if (interactive()) {
   
   # Set working directory to project root
   if (exists(".rs.getProjectDirectory")) {
-    project_dir <- .rs.getProjectDirectory()
-    setwd(project_dir)
+    setwd(.rs.getProjectDirectory())
   } else if (file.exists("database_albatross_recollections.Rproj")) {
-    project_dir <- getwd()
+    setwd(getwd())
   }
   
-  # Display startup message
-  cat("\n", rep("=", 60), sep = "")
-  cat("\n PROJECT: database_albatross_recollections")
-  cat("\n", rep("=", 60), sep = "")
+  # Simple startup message
+  cat("\n============================================================\n")
+  cat(" PROJECT: database_albatross_recollections\n")
+  cat("============================================================\n")
   
-  # Verify working directory
-  cat("\n\n📁 Working directory:")
-  cat("\n   ", getwd())
-  
-  # Verify renv is active
-  cat("\n\n📦 Package library (renv):")
-  cat("\n   ", .libPaths()[1])
-  
-  # Check if renv packages are installed
-  cat("\n\n📋 Checking package dependencies...")
-  
-  # Check if renv.lock exists
-  if (file.exists("renv.lock")) {
+  # Check if packages need to be installed
+  .check_dependencies <- function(silent = FALSE) {
+    if (!file.exists("renv.lock")) {
+      if (!silent) cat("\n⚠️  No renv.lock file found\n")
+      return(invisible(FALSE))
+    }
     
-    # Parse the renv.lock file to check packages
     lockfile <- renv::lockfile_read("renv.lock")
-    required_packages <- names(lockfile$Packages)
+    required <- names(lockfile$Packages)
+    installed <- rownames(installed.packages())
+    missing <- setdiff(required, installed)
     
-    # Get currently installed packages
-    installed_packages <- rownames(installed.packages())
-    
-    # Find missing packages
-    missing_packages <- setdiff(required_packages, installed_packages)
-    
-    if (length(missing_packages) > 0) {
-      cat("\n\n", rep("⚠", 3), " MISSING PACKAGES DETECTED ", rep("⚠", 3), sep = "")
-      cat("\n\n   Missing", length(missing_packages), "out of", length(required_packages), "required packages")
-      cat("\n   Examples:", paste(head(missing_packages, 5), collapse = ", "))
-      if (length(missing_packages) > 5) {
-        cat("\n   ... and", length(missing_packages) - 5, "more")
+    if (length(missing) > 0) {
+      if (!silent) {
+        cat("\n⚠️  PACKAGES NEED TO BE INSTALLED\n")
+        cat("   Missing", length(missing), "packages\n\n")
       }
-      
-      cat("\n\n", rep("🔧", 30), sep = "")
-      cat("\n TO INSTALL ALL REQUIRED PACKAGES, RUN:")
-      cat("\n", rep("🔧", 30), sep = "")
-      cat("\n\n   renv::restore()")
-      cat("\n\n This will install all packages with the exact versions")
-      cat("\n specified in renv.lock, ensuring reproducibility.")
-      cat("\n", rep("=", 60), sep = "")
-      
-      # Offer to install automatically
-      cat("\n\n Would you like to install missing packages now?")
-      cat("\n Type 'yes' to run renv::restore() or 'no' to skip: ")
-      
-      # Set up a one-time prompt
-      if (!exists(".renv_restore_prompted")) {
-        .renv_restore_prompted <<- TRUE
-        
-        # Use a callback to handle the response after user can type
-        addTaskCallback(function(...) {
-          response <- readline("")
-          if (tolower(trimws(response)) %in% c("yes", "y")) {
-            cat("\n Installing packages... This may take a few minutes.\n")
-            cat(" (Subsequent users won't need to do this)\n\n")
-            renv::restore(prompt = FALSE)
-            cat("\n✅ Package installation complete!")
-            cat("\n   Please restart R to ensure all packages are loaded correctly.")
-            cat("\n   (Session → Restart R or Ctrl+Shift+F10)\n")
-          } else {
-            cat("\n Skipping package installation.")
-            cat("\n Remember to run renv::restore() before running project scripts.\n")
-          }
-          return(FALSE)  # Remove this callback
-        })
-      }
-      
+      return(invisible(FALSE))
     } else {
-      cat("\n   ✅ All", length(required_packages), "required packages are installed")
-      
-      # Optionally show key packages
-      key_packages <- c("tidyverse", "data.table", "ggplot2", "dplyr", "readr")
-      key_installed <- intersect(key_packages, required_packages)
-      if (length(key_installed) > 0) {
-        cat("\n\n📚 Key packages available:")
-        for (pkg in key_installed) {
-          pkg_version <- packageVersion(pkg)
-          cat("\n   •", pkg, paste0("(v", pkg_version, ")"))
-        }
-      }
-    }
-    
-  } else {
-    cat("\n\n ⚠️  WARNING: renv.lock file not found!")
-    cat("\n    The project's package dependencies are not specified.")
-    cat("\n    You may need to:")
-    cat("\n    1. Run renv::init() to initialize renv, or")
-    cat("\n    2. Get the renv.lock file from the repository")
-  }
-  
-  # Check critical files
-  cat("\n\n✓ Project structure:")
-  critical_files <- c(
-    "scripts/assemble_db.R",
-    "renv.lock",
-    ".Rprofile"
-  )
-  
-  for (file in critical_files) {
-    if (file.exists(file)) {
-      cat("\n   ✓", file)
-    } else {
-      cat("\n   ✗", file, "NOT FOUND")
+      if (!silent) cat("\n✅ All packages installed\n")
+      return(invisible(TRUE))
     }
   }
   
-  # Instructions
-  cat("\n\n", rep("-", 60), sep = "")
-  cat("\n 🚀 TO GET STARTED:")
-  cat("\n", rep("-", 60), sep = "")
-  cat("\n\n 1. Ensure packages are installed: renv::restore()")
-  cat("\n 2. Open the main script: file.edit('scripts/assemble_db.R')")
-  cat("\n 3. All paths in scripts are relative to:", basename(getwd()))
-  cat("\n", rep("=", 60), sep = "")
+  # Check dependencies on startup
+  deps_ok <- .check_dependencies(silent = FALSE)
   
-  # Helper function
+  if (!deps_ok) {
+    cat("============================================================\n")
+    cat(" ACTION REQUIRED:\n")
+    cat("============================================================\n")
+    cat("\n Run this command to install all required packages:\n\n")
+    cat("   renv::restore()\n\n")
+    cat(" This will take a few minutes on first setup.\n")
+    cat(" After installation, restart R (Session → Restart R)\n")
+    cat("============================================================\n\n")
+  }
+  
+  # Create helper functions
+  setup_project <- function() {
+    cat("\n📦 Installing all project dependencies...\n")
+    cat("   This may take several minutes on first run.\n\n")
+    renv::restore(prompt = FALSE)
+    cat("\n✅ Installation complete!\n")
+    cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
+    cat("   Then run: open_main_script()\n")
+  }
+  
   open_main_script <- function() {
-    if (file.exists("scripts/assemble_db.R")) {
-      file.edit("scripts/assemble_db.R")
+    # First check if packages are installed
+    if (!.check_dependencies(silent = TRUE)) {
+      cat("\n⚠️  Packages not installed yet!\n")
+      cat("   Please run: setup_project()\n")
+      cat("   Then restart R and try again.\n")
+      return(invisible(NULL))
+    }
+    
+    script_path <- "scripts/assemble_db.R"
+    if (file.exists(script_path)) {
+      cat("Opening:", script_path, "\n")
+      file.edit(script_path)
     } else {
-      stop("scripts/assemble_db.R not found.")
+      stop("File not found: ", script_path)
     }
   }
-  assign("open_main_script", open_main_script, envir = .GlobalEnv)
   
-  cat("\n\n💡 Type open_main_script() to open the main script\n\n")
+  check_setup <- function() {
+    cat("\n📋 SETUP CHECK\n")
+    cat("====================\n")
+    
+    # Working directory
+    cat("\n📁 Working directory:\n   ", getwd(), "\n")
+    
+    # renv library
+    cat("\n📚 Package library:\n   ", .libPaths()[1], "\n")
+    
+    # Check packages
+    cat("\n📦 Package status:\n")
+    .check_dependencies(silent = FALSE)
+    
+    # Check files
+    cat("\n📄 Project files:\n")
+    files <- c("scripts/assemble_db.R", "renv.lock", ".Rprofile")
+    for (f in files) {
+      if (file.exists(f)) {
+        cat("   ✓", f, "\n")
+      } else {
+        cat("   ✗", f, "NOT FOUND\n")
+      }
+    }
+    
+    cat("\n====================\n")
+    if (!.check_dependencies(silent = TRUE)) {
+      cat("\n➡️  Next step: Run setup_project()\n")
+    } else {
+      cat("\n➡️  Ready! Run open_main_script()\n")
+    }
+  }
+  
+  # Make functions available globally
+  assign("setup_project", setup_project, envir = .GlobalEnv)
+  assign("open_main_script", open_main_script, envir = .GlobalEnv)
+  assign("check_setup", check_setup, envir = .GlobalEnv)
+  
+  # Final instructions based on status
+  if (deps_ok) {
+    cat("\n🎉 Project ready! Commands available:\n")
+    cat("   • open_main_script() - Open the main script\n")
+    cat("   • check_setup()      - Check project status\n\n")
+  } else {
+    cat("📌 Commands available:\n")
+    cat("   • setup_project()    - Install all packages (run this first!)\n")
+    cat("   • check_setup()      - Check project status\n")
+    cat("   • open_main_script() - Open main script (after setup)\n\n")
+  }
 }
