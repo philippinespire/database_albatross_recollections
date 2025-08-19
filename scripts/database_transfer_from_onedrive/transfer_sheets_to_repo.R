@@ -57,6 +57,7 @@ strip_newlines <- function(df) {
                   ~ str_replace_all(.x, "[\r\n]+", " ") |> str_squish()))
 }
 
+
 purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   # Construct full paths
   in_path  <- file.path(onedrive_path, fname)
@@ -66,12 +67,57 @@ purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   if (!dir.exists(ddir)) dir.create(ddir, recursive = TRUE)
   
   # Read the first sheet of the workbook and write as TSV
-  read_excel(in_path, 
+  in_file <- read_excel(in_path, 
              na = c('', 'NA', 'N/A', '?'),
              guess_max = 1e6) %>%
     janitor::remove_empty(which = c('rows', 'cols')) %>%
-    strip_newlines() %>%
-    write_tsv(out_path, eol = "\n")
+    strip_newlines() 
+  
+  if(fname == "Individual_sheet.xlsx"){
+      
+      suppressWarnings(
+          #Warnings are known and related to parsing the dates not something to pay attention to
+          processed_file <- mutate(in_file,
+                                   Species_ID_date = case_when(str_detect(Species_ID_date, "^[0-9]{5}$") ~ as.integer(Species_ID_date) |> 
+                                                                   as.Date(origin = as.Date("1899-12-30")) %>% as.character(),
+                                                               TRUE ~ as.character(Species_ID_date))) %>%
+              mutate(Species_ID_year = case_when(str_detect(Species_ID_date, "^[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") ~ mdy(Species_ID_date) %>% year(), 
+                                                 str_detect(Species_ID_date, "^[0-9]{2,4}[/-][0-9]{1,2}[/-][0-9]{1,2}$") ~ ymd(Species_ID_date) %>% year(), 
+                                                 str_detect(Species_ID_date, "^[0-9]{2,4}[/-][0-9]{1,2}$") ~ str_c(Species_ID_date, '/', '01') %>% ymd() %>% year(), 
+                                                 str_detect(Species_ID_date, "^[0-9]{4}$") ~ as.integer(Species_ID_date),
+                                                 str_detect(Species_ID_date,
+                                                            "^[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}-[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") ~ 
+                                                     str_extract(Species_ID_date, "[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") %>%
+                                                     mdy() %>% year(), 
+                                                 TRUE ~ NA_integer_),
+                     Species_ID_month = case_when(str_detect(Species_ID_date, "^[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") ~ mdy(Species_ID_date) %>% month(), 
+                                                  str_detect(Species_ID_date, "^[0-9]{2,4}[/-][0-9]{1,2}[/-][0-9]{1,2}$") ~ ymd(Species_ID_date) %>% month(), 
+                                                  str_detect(Species_ID_date, "^[0-9]{2,4}[/-][0-9]{1,2}$") ~ str_c(Species_ID_date, '/', '01') %>% ymd() %>% month(), 
+                                                  str_detect(Species_ID_date, "^[0-9]{4}$") ~ NA_integer_,
+                                                  str_detect(Species_ID_date,
+                                                             "^[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}-[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") ~ 
+                                                      str_extract(Species_ID_date, "[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") %>%
+                                                      mdy() %>% month(), 
+                                                  TRUE ~ NA_integer_),
+                     Species_ID_day = case_when(str_detect(Species_ID_date, "^[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") ~ mdy(Species_ID_date) %>% day(), 
+                                                str_detect(Species_ID_date, "^[0-9]{2,4}[/-][0-9]{1,2}[/-][0-9]{1,2}$") ~ ymd(Species_ID_date) %>% day(), 
+                                                str_detect(Species_ID_date, "^[0-9]{2,4}[/-][0-9]{1,2}$") ~ NA_integer_, 
+                                                str_detect(Species_ID_date, "^[0-9]{4}$") ~ NA_integer_,
+                                                str_detect(Species_ID_date,
+                                                           "^[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}-[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") ~ 
+                                                    str_extract(Species_ID_date, "[0-9]{1,2}[/-][0-9]{1,2}[/-][0-9]{2,4}$") %>%
+                                                    mdy() %>% day(), 
+                                                TRUE ~ NA_integer_)) %>%
+              relocate(Species_ID_date_originallyEntered = Species_ID_date,
+                       .after = everything())
+      )
+      
+      
+  } else {
+      processed_file <- in_file
+  }
+  
+  write_tsv(processed_file, out_path, eol = "\n")
   
   message("✅ Wrote ", out_path)
 })
