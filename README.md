@@ -7,8 +7,7 @@
 ---
 
 ## Basic Structure
-
-* every data file is tidy
+* every data file is [tidy](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
 * each entity (table) in the databased is represented by a directory
   * The directory should be populated by one or more tsv files (no excel)
   * These files should be concatenatable using `bind_rows()`, i.e. they should have the same columns
@@ -20,9 +19,18 @@
 
 ## How to use this repo
 1. Clone this repository
-2. Open `database_albatross_recollections.Rproj` in RStudio
+```
+git clone git@github.com:philippinespire/database_albatross_recollections.git
+```
+2. Open `database_albatross_recollections.Rproj` in RStudio and change the working directory to the project folder.
+```
+setwd("/path/to/database_albatross_recollections")
+```
+
 3. If this is the first time cloning the repo run `setup_project()` to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10)
-4. Open and run `scripts/assemble_db.R` or use `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object
+4. Open and run the lines in`scripts/assemble_db.R`. Alternatively, `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object
+
+## How to use the database
 
 ## How to edit the database
 After cloning the repo locally:
