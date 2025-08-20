@@ -18,17 +18,72 @@
   * 
 
 ## How to use this repo
-1. Clone this repository
-```
+This repository uses [renv](https://rstudio.github.io/renv/) to create a reproductible R environment. 
+
+
+1. Clone this repository to your local machine by typing the following on the command line:
+```bash
 git clone git@github.com:philippinespire/database_albatross_recollections.git
 ```
-2. Open `database_albatross_recollections.Rproj` in RStudio and change the working directory to the project folder.
+2. Navigate to the database folder and open `database_albatross_recollections.Rproj` in `RStudio`. Something like the following should be shown in your console:
+```r
+# Bootstrapping renv 1.1.2 ---------------------------------------------------
+- Downloading renv ... OK
+- Installing renv  ... OK
+
+- Project 'C:/Users/jdsel/Downloads/database_albatross_recollections' loaded. [renv 1.1.2]
+- One or more packages recorded in the lockfile are not installed.
+- Use `renv::status()` for more details.
+
+============================================================
+ PROJECT: database_albatross_recollections
+============================================================
+
+⚠️  PACKAGES NEED TO BE INSTALLED
+   Missing 144 packages
+
+============================================================
+ ACTION REQUIRED:
+============================================================
+
+ Run this command to install all required packages:
+
+   renv::restore()
+
+ This will take a few minutes on first setup.
+ After installation, restart R (Session → Restart R)
+============================================================
+
+📌 Commands available:
+   • setup_project()    - Install all packages (run this first!)
+   • check_setup()      - Check project status
+   • open_main_script() - Open main script (after setup)
 ```
-setwd("/path/to/database_albatross_recollections")
+If this message does not appear on your console, try sourcing the .Rprofile manually in the R console:
+```r
+# Ensure you are in the correct directory
+>getwd()
+# This should display the path to the albatross_recollections directory. If not, set the directory manually:
+>setwd("/path/to/database_albatross_recollections")
+# Source the .Rprofile
+>source(".Rprofile")
 ```
 
-3. If this is the first time cloning the repo use the R function `setup_project()` to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10)
-4. Open and run the lines in`scripts/assemble_db.R`. Alternatively, `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object
+
+4. If this is the first time cloning the repo use the R function `setup_project()` to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10)
+
+```r
+>setup_project()
+```
+
+5. Open and run the lines in`scripts/assemble_db.R`. Alternatively, `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object
+
+### Troubleshooting
+
+<details>
+  <summary> MacOS gfortran installation issues </summary>
+  If you are having issues installing packages due to gfortran related issues on Mac, try installing the latest version from https://mac.r-project.org/tools/.
+</details>
 
 ## How to use the database
 
