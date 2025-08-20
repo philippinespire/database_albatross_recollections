@@ -27,7 +27,7 @@ git clone git@github.com:philippinespire/database_albatross_recollections.git
 setwd("/path/to/database_albatross_recollections")
 ```
 
-3. If this is the first time cloning the repo run `setup_project()` to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10)
+3. If this is the first time cloning the repo use the R function `setup_project()` to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10)
 4. Open and run the lines in`scripts/assemble_db.R`. Alternatively, `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object
 
 ## How to use the database
