@@ -1,20 +1,6 @@
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-
 #### Packages ####
-source("functions.R")
-
-install_and_load_packages(
-  cran_packages    = 
-    c(
-      "tidyverse", 
-      "janitor", 
-      "readxl",
-      'dm',
-      "DiagrammeR"
-    )
-)
-
-source('wrangle_db_files.R')
+source('./scripts/wrangle_db_files.R')
+install_and_load_packages(cran_packages = c('dm'))
 
 
 #### Make Primary Keys ####
@@ -54,8 +40,8 @@ full_db <- db_with_pk %>%
   dm_add_fk(table = individuals_sheets, 
             columns = lot_id, 
             ref_table = lots_sheets) %>%
-  dm_add_fk(table = individuals_sheets, 
-            columns = species_valid_name, 
+  dm_add_fk(table = individuals_sheets,
+            columns = species_valid_name,
             ref_table = species_sheets,
             ref_columns = species_valid_name) %>%
   dm_add_fk(table = individuals_sheets, 
@@ -69,8 +55,6 @@ full_db <- db_with_pk %>%
             ref_table = shipments_sheets,
             ref_col = plate_box_id)
 
-initial_database$shi %>% colnames
-
 #%>% colnames()
 #species_id
 
@@ -81,9 +65,7 @@ erd_image <-
 
 erd_image
 
-
-
-  full_db %>%
+full_db %>%
   dm_draw(rankdir = "TB", view_type = "all")
 
 

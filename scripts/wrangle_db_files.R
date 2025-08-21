@@ -1,5 +1,5 @@
 #### Packages ####
-source("functions.R")
+source("./scripts/functions.R")
 
 install_and_load_packages(
   cran_packages    = 
@@ -12,7 +12,7 @@ install_and_load_packages(
 )
 
 #### Find & Read Files ####
-database_inputs <- list.files("../db_files", 
+database_inputs <- list.files("./db_files", 
                                    pattern = 'tsv$',
                                    full.names = TRUE, 
                                    recursive = TRUE) %>%
