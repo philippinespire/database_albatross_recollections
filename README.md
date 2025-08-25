@@ -68,15 +68,22 @@ If this message does not appear on your console, try sourcing the .Rprofile manu
 # Source the .Rprofile
 >source(".Rprofile")
 ```
+Once the R profile is correctly running, you have access to new project specific R functions (see below) that can be used to locally build the database.
 
-
-4. If this is the first time cloning the repo use the R function `setup_project()` to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10)
+4. If this is the first time cloning the repo use the R function `setup_project()` in the R console to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10).
 
 ```r
+# In the R console
 >setup_project()
 ```
 
-5. Open and run the lines in`scripts/assemble_db.R`. Alternatively, `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object
+5. To locally build the database, use the R function `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object. Alternatively, open and run the lines in`scripts/assemble_db.R`.
+
+```r
+# In the R console
+>open_main_script()
+```
+
 
 ### Troubleshooting
 
