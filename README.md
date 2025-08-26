@@ -93,7 +93,7 @@ Once the R profile is correctly running, you have access to new project specific
 ## How to use the database
 Once the database is cloned and built locally, you can actively start using it. Below a few example usages are given. 
 
-Before using the database, make sure the helper scripts and libraries are loaded.
+Before using the database, make sure the helper scripts and libraries are loaded and join the database together by sourcing `scripts/assemble_db.R` .
 
 ```r
 # See also scripts/assemble_db.R
