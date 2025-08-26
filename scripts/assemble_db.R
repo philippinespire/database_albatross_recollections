@@ -59,14 +59,14 @@ full_db <- db_with_pk %>%
 #species_id
 
 #### visualize db ####
-erd_image <-
-  full_db %>%
-  dm_draw(rankdir = "TB", view_type = "keys_only")
-
-erd_image
-
-full_db %>%
-  dm_draw(rankdir = "TB", view_type = "all")
+# erd_image <-
+#   full_db %>%
+#   dm_draw(rankdir = "TB", view_type = "keys_only")
+# 
+# erd_image
+# 
+# full_db %>%
+#   dm_draw(rankdir = "TB", view_type = "all")
 
 
 

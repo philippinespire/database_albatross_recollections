@@ -97,8 +97,7 @@ Before using the database, make sure the helper scripts and libraries are loaded
 
 ```r
 # See also scripts/assemble_db.R
-source('./scripts/wrangle_db_files.R')
-install_and_load_packages(cran_packages = c('dm'))
+source('scripts/assemble_db.R')
 ```
 
 **Example 1: Counting the number of samples from a collection site**
@@ -106,7 +105,7 @@ install_and_load_packages(cran_packages = c('dm'))
 
 ```r
 #Obtain distinct collection sites
-tbl(full_db, "individuals_sheets") %>%
+dm_zoom_to(full_db, "individuals_sheets") %>%
   distinct(collection_site)
 ```
 <details>
@@ -133,7 +132,7 @@ tbl(full_db, "individuals_sheets") %>%
 
 ```r
 #Find species collected at Hamilo Cove
-tbl(full_db, "individuals_sheets") %>%
+dm_zoom_to(full_db, "individuals_sheets") %>%
   filter(collection_site == "Hamilo_Cove") %>%
   distinct(species_valid_name)
 ```
@@ -159,7 +158,7 @@ tbl(full_db, "individuals_sheets") %>%
 
 ```r
 #Count individuals by species at Hamilo Cove
-tbl(full_db, "individuals_sheets") %>%
+dm_zoom_to(full_db, "individuals_sheets") %>%
     filter(collection_site == "Hamilo_Cove") %>%
     count(species_valid_name, name = "n_individuals")
 ```
@@ -183,7 +182,7 @@ tbl(full_db, "individuals_sheets") %>%
 
 ```r
 #Count individuals by species and collection period at Hamilo Cove
-tbl(full_db, "individuals_sheets") %>%
+dm_zoom_to(full_db, "individuals_sheets") %>%
   filter(collection_site == "Hamilo_Cove") %>%
   count(species_valid_name, collection_period, name = "n_individuals")
 ```
