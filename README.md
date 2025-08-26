@@ -105,7 +105,7 @@ source('scripts/assemble_db.R')
 
 ```r
 #Obtain distinct collection sites
-dm_zoom_to(full_db, "individuals_sheets") %>%
+pull_tbl(full_db, "individuals_sheets") %>%
   distinct(collection_site)
 ```
 <details>
@@ -132,7 +132,7 @@ dm_zoom_to(full_db, "individuals_sheets") %>%
 
 ```r
 #Find species collected at Hamilo Cove
-dm_zoom_to(full_db, "individuals_sheets") %>%
+pull_tbl(full_db, "individuals_sheets") %>%
   filter(collection_site == "Hamilo_Cove") %>%
   distinct(species_valid_name)
 ```
@@ -158,7 +158,7 @@ dm_zoom_to(full_db, "individuals_sheets") %>%
 
 ```r
 #Count individuals by species at Hamilo Cove
-dm_zoom_to(full_db, "individuals_sheets") %>%
+pull_tbl(full_db, "individuals_sheets") %>%
     filter(collection_site == "Hamilo_Cove") %>%
     count(species_valid_name, name = "n_individuals")
 ```
@@ -182,7 +182,7 @@ dm_zoom_to(full_db, "individuals_sheets") %>%
 
 ```r
 #Count individuals by species and collection period at Hamilo Cove
-dm_zoom_to(full_db, "individuals_sheets") %>%
+pull_tbl(full_db, "individuals_sheets") %>%
   filter(collection_site == "Hamilo_Cove") %>%
   count(species_valid_name, collection_period, name = "n_individuals")
 ```
