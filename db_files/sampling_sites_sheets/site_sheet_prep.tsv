@@ -1,0 +1,315 @@
+site_species	site_id	species_code	match_id	collection_site.individuals_sheets	latitude	longitude	species_albatross_name	lot_id	species_valid_name.individuals_sheets	coordinates	barangay	local_government_unit	province	region	island_group	Notes
+Gui-NA	Gui	NA	Guij	Guijulugan_Beach	10.1425502	123.281256	NA	136817	Atherinomorus_duodecimalis	10.1425502123.281256	Poblacion	City of Guihulngan	Negros Oriental	Central Visayas	Visayas	
+Bai-NA	Bai	NA	Guij	Bais_Bay_Anchorage	10.1425502	123.281256	NA	136845	Atherinomorus_duodecimalis	10.1425502123.281256	Poblacion	City of Guihulngan	Negros Oriental	Central Visayas	Visayas	
+Gui-NA	Gui	NA	Guij	Guijulugan_Beach	10.1425502	123.281256	NA	Neg-2021-01_01	Atherinomorus_duodecimalis	10.1425502123.281256	Poblacion	City of Guihulngan	Negros Oriental	Central Visayas	Visayas	
+Pnd-Abu	Pnd	Abu	Pand	Pandan_Id	10.1727237	124.078053	Ambassis_buruensis	Boh-2021-02_01	Ambassis_buruensis	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1727237	124.078053	NA	Boh-2021-03_03	Corythoichthys_haematopterus	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-Goy	Pnd	Goy	Pand	Pandanon_Id	10.1727237	124.078053	Gerres_oyena	Boh-2021-02_03	Gerres_oyena	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-Goy	Pnd	Goy	Pand	Pandanon_Id	10.1727237	124.078053	Gerres_oyena	Boh-2021-03_06	Gerres_oyena	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1727237	124.078053	NA	Boh-2021-02_04	Hypoatheri_temminckii	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1727237	124.078053	NA	Boh-2021-03_08	Hypoatheri_temminckii	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1727237	124.078053	NA	Boh-2021-03_09	Lethrinus_variegatus	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandan_Id	10.1727237	124.078053	NA	Boh-2021-04_02	Pomacentrus_pavo	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1727237	124.078053	NA	Boh-2021-01_01	Stethojulis_interrupta	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1727237	124.078053	NA	Boh-2021-01_02	Stethojulis_interrupta	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1727237	124.078053	NA	Boh-2021-02_08	Sphyrae_obtusata	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1727237	124.078053	NA	Boh-2021-03_12	Sphyrae_obtusata	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandan_Id	10.1727237	124.078053	NA	Boh-2021-02_07	Sphaeramia_orbicularis	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandan_Id	10.1727237	124.078053	NA	Boh-2021-02_12	Sphaeramia_orbicularis	10.1727237124.078053	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1796678	124.090001	NA	138826	Corythoichthys_haematopterus	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-Goy	Pnd	Goy	Pand	Pandanon_Id	10.1796678	124.090001	Gerres_oyena	183342	Gerres_oyena	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-Goy	Pnd	Goy	Pand	Pandanon_Id	10.1796678	124.090001	Gerres_oyena	183329	Gerres_oyena	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-Goy	Pnd	Goy	Pand	Pandanon_Id	10.1796678	124.090001	Gerres_oyena	183333	Gerres_oyena	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1796678	124.090001	NA	136727	Hypoatheri_temminckii	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1796678	124.090001	NA	136730	Hypoatheri_temminckii	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandan_Id	10.1796678	124.090001	NA	138157	Lethrinus_variegatus	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1796678	124.090001	NA	97783	Pomacentrus_pavo	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1796678	124.090001	NA	159904	Stethojulis_interrupta	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	10.1796678	124.090001	NA	137224	Sphyrae_obtusata	10.1796678124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	
+Ceb-Abu	Ceb	Abu	Pand	Cebu_Market	10.2950309	123.912569	Ambassis_buruensis	180039	Ambassis_buruensis	10.2950309123.912569	NA	Cebu City	Cebu	Central Visayas	Visayas	Cebu Baseport Area
+Ceb-NA	Ceb	NA	Pand	Cebu_Market	10.2950309	123.912569	NA	171206	Sphaeramia_orbicularis	10.2950309123.912569	NA	Cebu City	Cebu	Central Visayas	Visayas	Cebu Baseport Area
+Val-Sde	Val	Sde	Guij	Vallehermoso	10.3343907	123.328749	Spratelloides_delicatulus	Neg-2021-03_01	Spratelloides_delicatulus	10.3343907123.328749	Pinocawan	Vallehermoso	Negros Oriental	Central Visayas	Visayas	
+Hin-NA	Hin	NA	Hinu	Hinungan	10.399276	125.202656	NA	180088	Ambassis_vaivasensis	10.399276125.202656	Poblacion	Hinunangan	Southern Leyte	Eastern Visayas	Visayas	
+Gui-Sde	Gui	Sde	Guij	Guijulugan_Beach	10.5045085	123.706992	Spratelloides_delicatulus	120907	Spratelloides_delicatulus	10.5045085123.706992	Biasong	Balamban	Cebu	Central Visayas	Visayas	
+Bol-Sde	Bol	Sde	Mala	Bolalo_Bay	10.9230731	119.249382	Spratelloides_delicatulus	120806	Spratelloides_delicatulus	10.9230731119.249382	Liminangcong	Taytay	Palawan	Southern Tagalog	Luzon	Bahía de Bolalo
+Bol-Tzo	Bol	Tzo	Mala	NA	10.9230731	119.249382	Archamia_zosterophora	171321	Taeniamia_zosterophora	10.9230731119.249382	Liminangcong	Taytay	Palawan	Southern Tagalog	Luzon	Bahía de Bolalo
+Dup-Abu	Dup	Abu	Dupo	Port_Dupon	10.931896	124.426504	Ambassis_buruensis	180038	Ambassis_buruensis	10.931896124.426504	Monte Alegre	Isabel	Leyte	Eastern Visayas	Visayas	
+Dup-NA	Dup	NA	Dupo	Dupon_Bay	10.931896	124.426504	NA	138704	Zerchopterus_dispar	10.931896124.426504	Monte Alegre	Isabel	Leyte	Eastern Visayas	Visayas	
+Dup-NA	Dup	NA	Dupo	Dupon_Bay	10.9468872	124.417243	NA	LEY-2022_04_02	Zerchopterus_dispar	10.9468872124.417243	NA	Isabel	Leyte	Eastern Visayas	Visayas	Isabel Bay
+Lin-NA	Lin	NA	Lina	Malcochin_Harbor	11.4906669	119.828165	NA	150605	Atherinomorus_duodecimalis	11.4906669119.828165	NA	Linapacan	Palawan	MIMAROPA Region	Luzon	North Bay
+Lin-Aen	Lin	Aen	Lina	Malcochin_Harbor	11.4906669	119.828165	Atherinomorus_endrachtensis	150605	Atherinomorus_endrachtensis	11.4906669119.828165	NA	Linapacan	Palawan	MIMAROPA Region	Luzon	North Bay
+Lin-NA	Lin	NA	Lina	Malcochin_Harbor	11.4906669	119.828165	NA	139635	Leiogthus_equula	11.4906669119.828165	NA	Linapacan	Palawan	MIMAROPA Region	Luzon	North Bay
+Cat-Gma	Cat	Gma	Catb	NA	11.7734659	124.879118	Gerres_macracanthus	183272	Gerres_macracanthus	11.7734659124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	
+Cat-Gma	Cat	Gma	Catb	NA	11.7734659	124.879118	Gerres_macracanthus	Sam-2022-01_05	Gerres_macracanthus	11.7734659124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	
+Cat-Gma	Cat	Gma	Catb	NA	11.7734659	124.879118	Gerres_macracanthus	Sam-2022-01_06	Gerres_macracanthus	11.7734659124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	
+Cat-Och	Cat	Och	Catb	Catbalogan	11.7734659	124.879118	Ostorhinchus_chrysopomus	175204	Ostorhinchus_chrysopomus	11.7734659124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	
+Cat-Och	Cat	Och	Catb	NA	11.7734659	124.879118	Ostorhinchus_chrysopomus	Sam-2022-01_09	Ostorhinchus_chrysopomus	11.7734659124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	
+Cat-Och	Cat	Och	Catb	NA	11.7734659	124.879118	Ostorhinchus_chrysopomus	Sam-2022-01_10	Ostorhinchus_chrysopomus	11.7734659124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	
+Cat-Och	Cat	Och	Catb	NA	11.7746792	124.878165	Ostorhinchus_chrysopomus	Sam-2022-01_08	Ostorhinchus_chrysopomus	11.7746792124.878165	NA	Catbalogan	Samar	Eastern Visayas	Visayas	
+Bus-NA	Bus	NA	Busu	Port_Caltom	12.1858224	120.10223	NA	136815	Atherinomorus_duodecimalis	12.1858224120.10223	NA	Coron	Palawan	MIMAROPA Region	Luzon	
+Bus-Aen	Bus	Aen	Busu	Port_Caltom	12.1858224	120.10223	Atherinomorus_endrachtensis	136815	Atherinomorus_endrachtensis	12.1858224120.10223	NA	Coron	Palawan	MIMAROPA Region	Luzon	
+Mat-NA	Mat	NA	MatB	Matnog_Bay	12.5827124	124.09195	NA	136819	Atherinomorus_duodecimalis	12.5827124124.09195	Caloocan	Matnog	Sorsogon	Bicol Region 	Luzon	
+Mat-Aen	Mat	Aen	MatB	Matnog_Bay	12.5827124	124.09195	Atherinomorus_endrachtensis	136819	Atherinomorus_endrachtensis	12.5827124124.09195	Caloocan	Matnog	Sorsogon	Bicol Region 	Luzon	
+Mat-NA	Mat	NA	MatB	Matnog_Bay	12.5827124	124.09195	NA	136819	Hypoatheri_sp	12.5827124124.09195	Caloocan	Matnog	Sorsogon	Bicol Region 	Luzon	
+Mat-NA	Mat	NA	MatB	Matnog_Bay	12.5827124	124.09195	NA	Luz-2017-050_001	Atherinomorus_duodecimalis	12.5827124124.09195	Caloocan	Matnog	Sorsogon	Bicol Region 	Luzon	
+Rom-Goy	Rom	Goy	Romb	Romblon_Harbor	12.5837098	122.272078	Gerres_oyena	183345	Gerres_oyena	12.5837098122.272078	Capaclan	Romblon	Romblon	MIMAROPA Region	Luzon	
+Rom-Pbr	Rom	Pbr	Romb	NA	12.5837098	122.272078	Pomacentrus_brachialis	149153	Pomacentrus_brachialis	12.5837098122.272078	Capaclan	Romblon	Romblon	MIMAROPA Region	Luzon	
+Rom-Pli	Rom	Pli	Romb	NA	12.5837098	122.272078	Plotosus_lineatus	139013	Plotosus_lineatus	12.5837098122.272078	Capaclan	Romblon	Romblon	MIMAROPA Region	Luzon	
+Rom-NA	Rom	NA	Romb	Romblon_Harbor	12.5837098	122.272078	NA	171531	Sphaeramia_nematoptera	12.5837098122.272078	Capaclan	Romblon	Romblon	MIMAROPA Region	Luzon	
+Bir-NA	Bir	NA	Bali	Biri_Channel	12.6218848	124.396526	NA	171533	Sphaeramia_nematoptera	12.6218848124.396526	NA	Biri	Northern Samar	Eastern Visayas	Visayas	
+Bir-NA	Bir	NA	Bali	Biri_Channel	12.6218848	124.396526	NA	171528	Sphaeramia_nematoptera	12.6218848124.396526	NA	Biri	Northern Samar	Eastern Visayas	Visayas	
+Bir-NA	Bir	NA	Bali	Biri_Channel	12.6218848	124.396526	NA	171543	Sphaeramia_nematoptera	12.6218848124.396526	NA	Biri	Northern Samar	Eastern Visayas	Visayas	
+Pal-Cvi	Pal	Cvi	Bali	NA	12.6347634	125.00979	Chromis_viridis	96400	Chromis_viridis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Pal-Cvi	Pal	Cvi	Bali	NA	12.6347634	125.00979	Chromis_viridis	96429	Chromis_viridis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Pal-Cvi	Pal	Cvi	Bali	NA	12.6347634	125.00979	Chromis_viridis	96459	Chromis_viridis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Pal-Cvi	Pal	Cvi	Bali	NA	12.6347634	125.00979	Chromis_viridis	96463	Chromis_viridis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Pal-Cvi	Pal	Cvi	Bali	NA	12.6347634	125.00979	Chromis_viridis	364139	Chromis_viridis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Pal-Pbr	Pal	Pbr	Bali	NA	12.6347634	125.00979	Pomacentrus_brachialis	97518	Pomacentrus_brachialis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Pal-Pbr	Pal	Pbr	Bali	NA	12.6347634	125.00979	Pomacentrus_brachialis	97544	Pomacentrus_brachialis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Pal-Pbr	Pal	Pbr	Bali	NA	12.6347634	125.00979	Pomacentrus_brachialis	97675	Pomacentrus_brachialis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Pal-Sgr	Pal	Sgr	Samr	Port_Palapag	12.6347634	125.00979	Spratelloides_gracilis	138936	Spratelloides_gracilis	12.6347634125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+Cab-Pbr	Cab	Pbr	Bali	NA	12.6643633	124.361624	Pomacentrus_brachialis	SAM-2022_02_09	Pomacentrus_brachialis	12.6643633124.361624	NA	Biri	Northern Samar	Eastern Visayas	Visayas	
+Bir-Sgr	Bir	Sgr	Samr	NA	12.6643633	124.361624	Spratelloides_gracilis	SAM-2022_02_14	Spratelloides_gracilis	12.6643633124.361624	NA	Biri	Northern Samar	Eastern Visayas	Visayas	
+Cab-NA	Cab	NA	Bali	Cabacungan,_Allen,_Northern_Samar	12.6643633	124.361624	NA	SAM-2022_02_10	Sphaeramia_nematoptera	12.6643633124.361624	NA	Biri	Northern Samar	Eastern Visayas	Visayas	
+Mat-NA	Mat	NA	MatB	Matnog_Bay	12.6664671	123.87085	NA	136749	Hypoatheri_temminckii	12.6664671123.87085	NA	Bulan	Sorsogon	Bicol Region 	Luzon	Bulan Fish Port
+Tic-NA	Tic	NA	MatB	Ticao_Pass	12.6664671	123.87085	NA	136734	Hypoatheri_temminckii	12.6664671123.87085	NA	Bulan	Sorsogon	Bicol Region 	Luzon	Bulan Fish Port
+Tic-NA	Tic	NA	MatB	Ticao_Pass	12.6664671	123.87085	NA	136734	Hypoatheri_patela	12.6664671123.87085	NA	Bulan	Sorsogon	Bicol Region 	Luzon	Bulan Fish Port
+Mat-Sde	Mat	Sde	MatB	Matnog_Bay	12.6664671	123.87085	Spratelloides_delicatulus	138966	Spratelloides_delicatulus	12.6664671123.87085	NA	Bulan	Sorsogon	Bicol Region 	Luzon	Bulan Fish Port
+Rag-Aur	Rag	Aur	CanB	Ragay_Gulf	12.9520333	123.994789	Ambassis_urotaenia	Luz-2017-047_001	Ambassis_urotaenia	12.9520333123.994789	NA	Sorsogon City	Sorsogon	Bicol Region 	Luzon	Sorsogon Bay
+Atu-Ssp	Atu	Ssp	AtuB	Atulayan_Bay	13.0872039	124.141658	Siganus_spinus	182997	Siganus_spinus	13.0872039124.141658	NA	Prieto Diaz	Sorsogon	Bicol Region 	Luzon	Albay Gulf
+Bur-NA	Bur	NA	CanB	Port_Busin	13.0911153	122.951328	NA	171207	Sphaeramia_orbicularis	13.0911153122.951328	NA	San Pascual	Masbate	Bicol Region 	Luzon	Alimango Bay
+Bur-NA	Bur	NA	CanB	Port_Busin	13.1258247	122.975714	NA	MAS-2022-03_01	Hypoatheri_temminckii	13.1258247122.975714	NA	San Pascual	Masbate	Bicol Region 	Luzon	
+Bur-Och	Bur	Och	CanB	Port_Busin	13.1258247	122.975714	Ostorhinchus_chrysopomus	MAS-2022-01_01	Ostorhinchus_chrysopomus	13.1258247122.975714	NA	San Pascual	Masbate	Bicol Region 	Luzon	
+Mas-Pbr	Mas	Pbr	Buri	NA	13.1258247	122.975714	Pomacentrus_brachialis	MAS-2022-04_05	Pomacentrus_brachialis	13.1258247122.975714	NA	San Pascual	Masbate	Bicol Region 	Luzon	
+Bur-NA	Bur	NA	CanB	Port_Busin	13.1258247	122.975714	NA	MAS-2022-02_07	Sphaeramia_orbicularis	13.1258247122.975714	NA	San Pascual	Masbate	Bicol Region 	Luzon	
+Bur-NA	Bur	NA	CanB	Port_Busin	13.12921	122.97338	NA	136753	Hypoatheri_temminckii	13.12921122.97338	NA	San Pascual	Masbate	Bicol Region 	Luzon	
+Rag-Aur	Rag	Aur	RagR	Ragay_Gulf	13.2195058	123.041741	Ambassis_urotaenia	180061	Ambassis_urotaenia	13.2195058123.041741	NA	San Pascual	Masbate	Bicol Region 	Luzon	Anima Sola Island
+Can-Och	Can	Och	CanB	Canmahala_Bay	13.2195058	123.041741	Ostorhinchus_chrysopomus	175209	Ostorhinchus_chrysopomus	13.2195058123.041741	NA	San Pascual	Masbate	Bicol Region 	Luzon	Anima Sola Island
+Can-NA	Can	NA	CanB	Canmahala_Bay	13.2195058	123.041741	NA	171202	Sphaeramia_orbicularis	13.2195058123.041741	NA	San Pascual	Masbate	Bicol Region 	Luzon	Anima Sola Island
+Can-NA	Can	NA	CanB	Ragay_Gulf	13.2195058	123.041741	NA	171202	Sphaeramia_orbicularis	13.2195058123.041741	NA	San Pascual	Masbate	Bicol Region 	Luzon	Anima Sola Island
+Bat-NA	Bat	NA	PGal	Puerto_Galera	13.4963476	120.958486	NA	136810	Atherinomorus_duodecimalis	13.4963476120.958486	NA	Puerto Galera	Oriental Mindoro	MIMAROPA Region	Luzon	
+Gal-NA	Gal	NA	PGal	Puerto_Galera	13.4963476	120.958486	NA	136836	Atherinomorus_duodecimalis/A. endrac?	13.4963476120.958486	NA	Puerto Galera	Oriental Mindoro	MIMAROPA Region	Luzon	
+Gal-Dba	Gal	Dba	PGal	Puerto_Galera	13.4964937	120.957885	Dipterygonotus_balteatus	131113	Dipterygonotus_balteatus	13.4964937120.957885	NA	Puerto Galera	Oriental Mindoro	MIMAROPA Region	Luzon	
+Pas-Gma	Pas	Gma	RagR	Pasacao	13.4983004	123.056637	Gerres_macracanthus	183271	Gerres_macracanthus	13.4983004123.056637	NA	Pasacao	Camarines Sur	Bicol Region 	Luzon	
+Rag-Par	Rag	Par	RagR	Ragay_River	13.5069074	123.042625	Periophthalmus_argentilineatus	161008	Periophthalmus_argentilineatus	13.5069074123.042625	Santa Rosa del Sur	Pasacao	Camarines Sur	Bicol Region 	Luzon	
+Gal-NA	Gal	NA	PGal	Puerto_Galera	13.5722403	121.085873	NA	136694	Hypoatheri_temminckii	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97445	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97536	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97521	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97617	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97580	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97579	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97491	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97686	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97660	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97661	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Pbr	Gal	Pbr	PGal	Puerto_Galera	13.5722403	121.085873	Pomacentrus_brachialis	97614	Pomacentrus_brachialis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Psq	Gal	Psq	PGal	Puerto_Galera	13.5722403	121.085873	Pseudanthias_squamipinnis	179976	Pseudanthias_squamipinnis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Psq	Gal	Psq	PGal	Puerto_Galera	13.5722403	121.085873	Pseudanthias_squamipinnis	179932	Pseudanthias_squamipinnis	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Gal-Sfu	Gal	Sfu	PGal	Point_Galera	13.5722403	121.085873	Siganus_fuscescens	182973	Siganus_fuscescens	13.5722403121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Mar-Pbr	Mar	Pbr	PGal	Maricaban_Is	13.6791984	120.840502	Pomacentrus_brachialis	97475	Pomacentrus_brachialis	13.6791984120.840502	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Mar-Pbr	Mar	Pbr	PGal	Maricaban_Is	13.6791984	120.840502	Pomacentrus_brachialis	97672	Pomacentrus_brachialis	13.6791984120.840502	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Mar-Pbr	Mar	Pbr	PGal	Maricaban_Is	13.6791984	120.840502	Pomacentrus_brachialis	97497	Pomacentrus_brachialis	13.6791984120.840502	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Mar-Sde	Mar	Sde	PMar	Port_Maricaban	13.6791984	120.840502	Spratelloides_delicatulus	138982	Spratelloides_delicatulus	13.6791984120.840502	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Ros-Tbi	Ros	Tbi	Rosa	Rosa_Id	13.7167102	123.576012	Archamia_biguttata	112159	Taeniamia_biguttata	13.7167102123.576012	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Jos-Tbi	Jos	Tbi	Rosa	San_Jose	13.7167102	123.576012	Archamia_biguttata	Cam-2019-019_032	Taeniamia_biguttata	13.7167102123.576012	San Andres	Batangas	Batangas	CALABARXON	Luzon	
+Rag-Abu	Rag	Abu	RagR	Ragay_River	13.8105766	122.72906	Ambassis_buruensis	180035	Ambassis_buruensis	13.8105766122.72906	NA	Ragay	Camarines Sur	Bicol Region 	Luzon	
+Rag-Gma	Rag	Gma	RagR	NA	13.8105766	122.72906	Gerres_macracanthus	183268	Gerres_macracanthus	13.8105766122.72906	NA	Ragay	Camarines Sur	Bicol Region 	Luzon	
+Rag-Gma	Rag	Gma	RagR	Ragay	13.8105766	122.72906	Gerres_macracanthus	RAG-2022-01_01	Gerres_macracanthus	13.8105766122.72906	NA	Ragay	Camarines Sur	Bicol Region 	Luzon	
+Rag-Gma	Rag	Gma	RagR	NA	13.8105766	122.72906	Gerres_macracanthus	RAG-2022-01_01	Gerres_macracanthus	13.8105766122.72906	NA	Ragay	Camarines Sur	Bicol Region 	Luzon	
+Rag-Goy	Rag	Goy	RagR	Ragay_River	13.8105766	122.72906	Gerres_oyena	183334	Gerres_oyena	13.8105766122.72906	NA	Ragay	Camarines Sur	Bicol Region 	Luzon	
+NA-Goy	NA	Goy	NA	NA	13.8105766	122.72906	Gerres_oyena	RAG-2022-01_03	Gerres_oyena	13.8105766122.72906	NA	Ragay	Camarines Sur	Bicol Region 	Luzon	
+Pag-Aur	Pag	Aur	SanR	Santiago_River	13.8565766	120.658957	Ambassis_urotaenia	180062	Ambassis_urotaenia	13.8565766120.658957	Bucal	Calatagan	Batangas	CALABARXON	Luzon	
+Bas-NA	Bas	NA	SMig	Basud_River	13.9140731	123.258362	NA	139636	Leiogthus_equula	13.9140731123.258362	NA	Siruma	Camarines Sur	Bicol Region 	Luzon	
+Nas-Hqu	Nas	Hqu	Nasu	sugbu	14.0498892	120.62174	Herklotsichthys_quadrimaculatus	120814	Herklotsichthys_quadrimaculatus	14.0498892120.62174	NA	Lian	Batangas	CALABARXON	Luzon	
+Bas-Gmi	Bas	Gmi	Basu	Basud_River	14.1165081	123.014961	Gazza_minuta	191921	Gazza_minuta	14.1165081123.014961	NA	Mercedes	Camarines Norte	Bicol Region 	Luzon	
+Bas-Gmi	Bas	Gmi	Basu	Basud_River	14.1165081	123.014961	Gazza_minuta	191930	Gazza_minuta	14.1165081123.014961	NA	Mercedes	Camarines Norte	Bicol Region 	Luzon	
+Bas-Gmi	Bas	Gmi	Basu	Mercedes_Fish_Landing	14.1165081	123.014961	Gazza_minuta	Cam-2019-002_002	Gazza_minuta	14.1165081123.014961	NA	Mercedes	Camarines Norte	Bicol Region 	Luzon	
+Bas-Sfa	Bas	Sfa	Basu	Manguisoc	14.1165081	123.014961	Salarias_fasciatus	Cam-2019-004_006	Salarias_fasciatus	14.1165081123.014961	NA	Mercedes	Camarines Norte	Bicol Region 	Luzon	
+Bas-Sfa	Bas	Sfa	Basu	Manguisoc	14.1165081	123.014961	Salarias_fasciatus	Cam-2019-005_006	Salarias_fasciatus	14.1165081123.014961	NA	Mercedes	Camarines Norte	Bicol Region 	Luzon	
+Ham-NA	Ham	NA	HamC	Hamilo_Cove	14.1779794	120.599424	NA	136814	Atherinomorus_duodecimalis	14.1779794120.599424	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
+Ham-NA	Ham	NA	HamC	Hamilo_Cove	14.1779794	120.599424	NA	Bat-2019-010_020	Atherinomorus_duodecimalis	14.1779794120.599424	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
+Ham-NA	Ham	NA	HamC	Hamilo_Cove	14.1779794	120.599424	NA	Bat-2019-009_014	Atherinomorus_duodecimalis	14.1779794120.599424	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
+Ham-Aen	Ham	Aen	HamC	Hamilo_Cove	14.1779794	120.599424	Atherinomorus_endrachtensis	143288	Atherinomorus_endrachtensis	14.1779794120.599424	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
+Ham-Gmi	Ham	Gmi	HamC	Hamilo_Cove	14.1779794	120.599424	Gazza_minuta	191914	Gazza_minuta	14.1779794120.599424	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
+Bat-Gmi	Bat	Gmi	HamC	sugbu	14.1779794	120.599424	Gazza_minuta	Bat-2018-005_007	Gazza_minuta	14.1779794120.599424	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
+Bat-Gmi	Bat	Gmi	HamC	sugbu	14.1779794	120.599424	Gazza_minuta	Bat-2018-003_004	Gazza_minuta	14.1779794120.599424	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
+Ham-Lle	Ham	Lle	HamC	Hamilo_Cove	14.1810585	120.604616	Leiognathus_leuciscus	191979	Equulites_leuciscus	14.1810585120.604616	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
+Vin-Gmi	Vin	Gmi	Basu	Vinzons_Public_Market	14.1961168	122.935305	Gazza_minuta	Cam-2019-003_004	Gazza_minuta	14.1961168122.935305	NA	Vinzons	Camarines Norte	Bicol Region 	Luzon	
+Bas-Hmi	Bas	Hmi	Daet	Basud_River	14.2897039	122.815167	Halichoeres_miniatus	153965	Halichoeres_miniatus	14.2897039122.815167	NA	Paracale	Camarines Norte	Bicol Region 	Luzon	
+Mac-Hmi	Mac	Hmi	Daet	Maculabo_Id	14.2897039	122.815167	Halichoeres_miniatus	153966	Halichoeres_miniatus	14.2897039122.815167	NA	Paracale	Camarines Norte	Bicol Region 	Luzon	
+Par-Hmi	Par	Hmi	Daet	Paracale	14.2897039	122.815167	Halichoeres_miniatus	Cam-2019-007_007	Halichoeres_miniatus	14.2897039122.815167	NA	Paracale	Camarines Norte	Bicol Region 	Luzon	
+Bas-Sfa	Bas	Sfa	Basu	Basud_River	14.2897039	122.815167	Salarias_fasciatus	138297	Salarias_fasciatus	14.2897039122.815167	NA	Paracale	Camarines Norte	Bicol Region 	Luzon	
+Bas-Hmi	Bas	Hmi	Daet	Basud_River	14.4009069	122.803862	Halichoeres_miniatus	Cam-2019-004_005	Halichoeres_miniatus	14.4009069122.803862	NA	Maculabo Island	Camarines Norte	Bicol Region 	Luzon	
+Sub-Sde	Sub	Sde	SubB	Grande_Island	14.7376526	120.270131	Spratelloides_delicatulus	120794	Spratelloides_delicatulus	14.7376526120.270131	NA	Morong	Bataan	Central Luzon	Luzon	
+Sub-NA	Sub	NA	SubB	Olongapo	14.8185723	120.294976	NA	136842	Atherinomorus_duodecimalis	14.8185723120.294976	NA	Olongapo	Zambales	Central Luzon	Luzon	Olongapo Port
+Sub-NA	Sub	NA	SubB	Olongapo	14.8185723	120.294976	NA	136848	Atherinomorus_duodecimalis	14.8185723120.294976	NA	Olongapo	Zambales	Central Luzon	Luzon	Olongapo Port
+Sub-NA	Sub	NA	SubB	Subic_City_Municipal_Fish_Port	14.8746242	120.217518	NA	Zam-2019-007_025	Atherinomorus_duodecimalis	14.8746242120.217518	NA	Subic	Zambales	Central Luzon	Luzon	
+Mvi-Hqu	Mvi	Hqu	Masi	Mansiloc_Public_Market	15.489188	119.911051	Herklotsichthys_quadrimaculatus	Zam-2019-004_011	Herklotsichthys_quadrimaculatus	15.489188119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-NA	Mvi	NA	Masi	Mansiloc_Public_Market	15.489188	119.911051	NA	Zam-2019-004_006	Hypoatheri_temminckii	15.489188119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-Sgr	Mvi	Sgr	Masi	Masinloc_Public_Market	15.489188	119.911051	Spratelloides_gracilis	Zam-2019-004_012	Spratelloides_gracilis	15.489188119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-Tzo	Mvi	Tzo	Masi	Masinloc_Public_Market	15.489188	119.911051	Archamia_zosterophora	Zam-2019-006_020	Taeniamia_zosterophora	15.489188119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-Aen	Mvi	Aen	Masi	Port_Matalvi_reef_Masinloc	15.5567299	119.930361	Atherinomorus_endrachtensis	136809	Atherinomorus_endrachtensis	15.5567299119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-Hqu	Mvi	Hqu	Masi	Port_Matalvi	15.5567299	119.930361	Herklotsichthys_quadrimaculatus	190070	Herklotsichthys_quadrimaculatus	15.5567299119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-NA	Mvi	NA	Masi	Port_Matalvi_reef_Masinloc	15.5567299	119.930361	NA	136809	Hypoatheri_temminckii	15.5567299119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-NA	Mvi	NA	Masi	Port_Matalvi_reef	15.5567299	119.930361	NA	136748	Hypoatheri_temminckii	15.5567299119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-Pli	Mvi	Pli	Masi	Port_Matalvi_reef	15.5567299	119.930361	Plotosus_lineatus	139012	Plotosus_lineatus	15.5567299119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-Pli	Mvi	Pli	Masi	Luzon	15.5567299	119.930361	Plotosus_lineatus	139012	Plotosus_lineatus	15.5567299119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-Sgr	Mvi	Sgr	Masi	Port_Matalvi_reef_Masinloc	15.5567299	119.930361	Spratelloides_gracilis	120926	Spratelloides_gracilis	15.5567299119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
+Mvi-Tzo	Mvi	Tzo	Masi	Port_Matalvi_reef_Masinloc	15.5567299	119.930361	Archamia_zosterophora	171322	Taeniamia_zosterophora	15.5567299119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
+Vic-Aur	Vic	Aur	Vice	Port_San_Vicente	18.5154096	122.138975	Ambassis_urotaenia	180048	Ambassis_urotaenia	18.5154096122.138975	NA	Santa Ana	Cagayan	Cagayan Valley	Luzon	
+Tum-Och	Tum	Och	Tumi	Tumindao	4.6778438	119.415194	Ostorhinchus_chrysopomus	175208	Ostorhinchus_chrysopomus	4.6778438119.415194	NA	Sitangkai	Tawi-tawi	BARMM	Mindanao	
+Tum-Och	Tum	Och	Tumi	Tumindao	4.6778438	119.415194	Ostorhinchus_chrysopomus	Sul-2021-02_01	Ostorhinchus_chrysopomus	4.6778438119.415194	NA	Sitangkai	Tawi-tawi	BARMM	Mindanao	
+Tum-Sde	Tum	Sde	Tumi	Tumindao	4.8374273	119.817665	Spratelloides_delicatulus	138965	Spratelloides_delicatulus	4.8374273119.817665	NA	Simunul	Tawi-tawi	BARMM	Mindanao	
+Tum-Sde	Tum	Sde	Tumi	Simunul_Id_Sibutu_Channel	4.8374273	119.817665	Spratelloides_delicatulus	Sul-2021-04_02	Spratelloides_delicatulus	4.8374273119.817665	NA	Simunul	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Bongao_Fish_Market_Tawi-Tawi	5.029866	119.775417	NA	Sul-2019-05_01	Sphaeramia_nematoptera	5.029866119.775417	Tubig-Mampallam	Bongao	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Tawi_Tawi	5.029866	119.775417	NA	Sul-2019-05_01	Sphaeramia_nematoptera	5.029866119.775417	Tubig-Mampallam	Bongao	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Dos_Amigos_Bay	5.0345263	119.744525	NA	136844	Atherinomorus_duodecimalis	5.0345263119.744525	Pahut	Bongao	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Tataan_Pass_Anchorage	5.0345263	119.744525	NA	136830	Atherinomorus_duodecimalis	5.0345263119.744525	Pahut	Bongao	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Simaluc_Id_Tawi_Tawi	5.0345263	119.744525	NA	171534	Sphaeramia_nematoptera	5.0345263119.744525	Pahut	Bongao	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Tawi_Tawi	5.0345263	119.744525	NA	Sul-2021-03_01	Sphaeramia_nematoptera	5.0345263119.744525	Pahut	Bongao	Tawi-tawi	BARMM	Mindanao	
+Tat-Pbr	Tat	Pbr	Tata	NA	5.1114486	119.78744	Pomacentrus_brachialis	97514	Pomacentrus_brachialis	5.1114486119.78744	Mandulan	Bongao	Tawi-tawi	BARMM	Mindanao	
+Tat-Pbr	Tat	Pbr	Tata	Mandulan_Tawi-Tawi	5.1114486	119.78744	Pomacentrus_brachialis	Sul-2021-01_01	Pomacentrus_brachialis	5.1114486119.78744	Mandulan	Bongao	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Tataan_Pass	5.2272706	119.89344	NA	136808	Hypoatheri_temminckii	5.2272706119.89344	Mandulan	Bongao	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Tataan_Pass	5.2272706	119.89344	NA	136697	Hypoatheri_temminckii	5.2272706119.89344	Mandulan	Bongao	Tawi-tawi	BARMM	Mindanao	
+Taw-NA	Taw	NA	Tawi	Tataan_Pass	5.2272706	119.89344	NA	Sul-2021-01_02	Hypoatheri_temminckii	5.2272706119.89344	Mandulan	Bongao	Tawi-tawi	BARMM	Mindanao	
+Jol-NA	Jol	NA	NA	NA	5.8458014	121.020809	NA	137551	Tylosurus_crocodilus	5.8458014121.020809	NA	Maimbung	Sulu	BARMM	Mindanao	
+Jol-Pli	Jol	Pli	Jolo	NA	5.9249685	121.211343	Plotosus_lineatus	138999	Plotosus_lineatus	5.9249685121.211343	NA	Panglima Estino	Sulu	BARMM	Mindanao	
+Jol-Pli	Jol	Pli	Jolo	NA	5.9249685	121.211343	Plotosus_lineatus	Jol-2021-02_01	Plotosus_lineatus	5.9249685121.211343	NA	Panglima Estino	Sulu	BARMM	Mindanao	
+Jol-NA	Jol	NA	Jolo	NA	6.059904	120.990973	NA	97075	Dascyllus_aruanus	6.059904120.990973	NA	Jolo	Sulu	BARMM	Mindanao	
+Jol-NA	Jol	NA	Jolo	Jolo	6.059904	120.990973	NA	136761	Hypoatheri_temminckii	6.059904120.990973	NA	Jolo	Sulu	BARMM	Mindanao	
+NA-Goy	NA	Goy	NA	NA	6.1098091	120.977508	Gerres_oyena	NA	Gerres_oyena	6.1098091120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	
+NA-NA	NA	NA	NA	NA	6.1098091	120.977508	NA	NA	NA	6.1098091120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	
+Bul-Sde	Bul	Sde	Jolo	Bulan_Island	6.1098091	120.977508	Spratelloides_delicatulus	138967	Spratelloides_delicatulus	6.1098091120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	
+Jol-Sde	Jol	Sde	Jolo	Jolo	6.1098091	120.977508	Spratelloides_delicatulus	Sul-2019-10_01	Spratelloides_delicatulus	6.1098091120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	
+Jol-Sgr	Jol	Sgr	Jolo	Tutu_Bay	6.1098091	120.977508	Spratelloides_gracilis	138933	Spratelloides_gracilis	6.1098091120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	
+Jol-Sgr	Jol	Sgr	Jolo	Panglima_Tahil,_Jolo	6.1098091	120.977508	Spratelloides_gracilis	Jol-2021-01_01	Spratelloides_gracilis	6.1098091120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	
+NA-NA	NA	NA	NA	Masinloc	6.1098091	120.977508	NA	NA	Zoramia_perlita	6.1098091120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	
+NA-Zvi	NA	Zvi	NA	Masinloc	6.1098091	120.977508	Zoramia_viridiventer	NA	Zoramia_viridiventer	6.1098091120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	
+Sac-Sde	Sac	Sde	Basi	Sacol_Island, Tawi-Tawi_North	6.6888764	122.16557	Spratelloides_delicatulus	150772	Spratelloides_delicatulus	6.6888764122.16557	NA	Lamitan City	Basilan	BARMM	Mindanao	
+Ban-Sde	Ban	Sde	Basi	Lamitan_Fish_Market_Basilan	6.9455558	122.248907	Spratelloides_delicatulus	Sul-2019-07_01	Spratelloides_delicatulus	6.9455558122.248907	NA	Zamboanga City	Zamboanga del Sur	Zamboanga Peninsula	Mindanao	
+Pnb-Aur	Pnb	Aur	Pana	Pabutan_Bay	7.68	122.02	Ambassis_urotaenia	180049	Ambassis_urotaenia	7.68122.02	NA	Siocon	Zamboanga del Norte	Zamboanga Peninsula	Mindanao	
+Ove-NA	Ove	NA	Over	Camp_Overton	8.2138629	124.203041	NA	180090	Ambassis_vaivasensis	8.2138629124.203041	NA	Iligan City	Lanao del Norte	Northern Mindanao	Mindanao	
+Ina-Sde	Ina	Sde	Dapi	NA	8.6072026	123.726262	Spratelloides_delicatulus	138964	Spratelloides_delicatulus	8.6072026123.726262	Eastern Looc	Plaridel	Misamis Occidental	Northern Mindanao	Mindanao	
+Dap-Sde	Dap	Sde	Dapi	Selinog_Id_Dapitan	8.8421993	123.41175	Spratelloides_delicatulus	DAP-2022_01_01	Spratelloides_delicatulus	8.8421993123.41175	NA	Dapitan City	Zamboanga del Norte	Northern Mindanao	Mindanao	
+Mtg-NA	Mtg	NA	Narr	NA	9.2263186	118.423605	NA	136823	Atherinomorus_duodecimalis	9.2263186118.423605	NA	Narra	Palawan	MIMAROPA Region	Luzon	
+Mnt-NA	Mnt	NA	Mant	Mantaguin_Bay	9.2263186	118.423605	NA	191976	Leiogthus_leuciscus	9.2263186118.423605	NA	Narra	Palawan	MIMAROPA Region	Luzon	
+Mnt-Lle	Mnt	Lle	Mant	Mantaguin_Bay	9.2263186	118.423605	Leiognathus_leuciscus	191976	Equulites_leuciscus	9.2263186118.423605	NA	Narra	Palawan	MIMAROPA Region	Luzon	
+Bai-Sfu	Bai	Sfu	Bais	Bais_Bay	9.5709594	123.139229	Siganus_fuscescens	REU-2019-007_007	Siganus_fuscescens	9.5709594123.139229	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
+Bai-NA	Bai	NA	Bais	Bais_Bay	9.5736677	123.142319	NA	138391	Encrasicholi_pseudoheteroloba	9.5736677123.142319	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
+Bai-NA	Bai	NA	Bais	Bais_Bay	9.5736677	123.142319	NA	Neg-2018-01_01	Encrasicholi_pseudoheteroloba	9.5736677123.142319	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
+Bai-Sfu	Bai	Sfu	Bais	Bais_Bay	9.5736677	123.142319	Siganus_fuscescens	182968	Siganus_fuscescens	9.5736677123.142319	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
+Bai-Sfu	Bai	Sfu	Bais	Bais_Bay	9.5736677	123.142319	Siganus_fuscescens	Neg-2017-011_001	Siganus_fuscescens	9.5736677123.142319	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
+Bai-Sfu	Bai	Sfu	Bais	Bais_Bay	9.5736677	123.142319	Siganus_fuscescens	Neg-2017-031_001	Siganus_fuscescens	9.5736677123.142319	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
+Tag-NA	Tag	NA	Tagb	Tagbilaran_Channel	9.6150092	123.88	NA	136824	Atherinomorus_duodecimalis	9.6150092123.88	NA	Tagbilaran City	Bohol	Central Visayas	Visayas	Tagbilaran Channel
+Tag-NA	Tag	NA	Tagb	Tagbilaran	9.6400092	123.84784	NA	Boh-2021-08_01	Atherinomorus_duodecimalis	9.6400092123.84784	NA	Tagbilaran City	Bohol	Central Visayas	Visayas	Tagbilaran Channel
+Pri-NA	Pri	NA	PPri	Puerto_Princessa	9.7488371	118.724668	NA	180097	Ambassis_vaivasensis	9.7488371118.724668	NA	Puerto Princesa City	Palawan	MIMAROPA Region	Luzon	
+Sur-Sde	Sur	Sde	Suri	Surigao_Fish_Market	9.7903696	125.497978	Spratelloides_delicatulus	SUR-2022_01_02	Spratelloides_delicatulus	9.7903696125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	
+Sur-Sgr	Sur	Sgr	Suri	Surigao_Fish_Market	9.7903696	125.497978	Spratelloides_gracilis	SUR-2022_01_01	Spratelloides_gracilis	9.7903696125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	
+Sur-Sgr	Sur	Sgr	Suri	NA	9.8011514	125.488763	Spratelloides_gracilis	138934	Spratelloides_gracilis	9.8011514125.488763	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	
+Bil-NA	Bil	NA	Bila	Bilan_Bilan_Surigao	9.8011514	125.488763	NA	137234	Sphyrae_obtusata	9.8011514125.488763	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	
+Pnd-Goy	Pnd	Goy	Pand	Mantacao_Id	9.9396692	123.869166	Gerres_oyena	183326	Gerres_oyena	9.9396692123.869166	NA	Calape	Bohol	Central Visayas	Visayas	Mantatao Reef
+Mta-Tzo	Mta	Tzo	Boho	Mantatao_Id	9.9396692	123.869166	Archamia_zosterophora	171348	Taeniamia_zosterophora	9.9396692123.869166	NA	Calape	Bohol	Central Visayas	Visayas	Mantatao Reef
+Mta-Tzo	Mta	Tzo	Boho	Mantatao_Id	9.9407386	123.852747	Archamia_zosterophora	Boh-2021-09_01	Taeniamia_zosterophora	9.9407386123.852747	Mantatao	Calape	Bohol	Central Visayas	Visayas	Mantatao Reef
+Pas-Abu	Pas	Abu	RagR	Pasacao	NA	NA	Ambassis_buruensis	Cam-2019-012_017	Ambassis_buruensis	NANA						
+NA-NA	NA	NA	NA	Puerto_Galera	NA	NA	NA	PGA-2018-001_001	Atherinomorus_duodecimalis	NANA						
+NA-NA	NA	NA	NA	NA	NA	NA	NA	PAL-2022_03_05	Atherinomorus_duodecimalis	NANA						
+NA-NA	NA	NA	NA	NA	NA	NA	NA	PAL-2022_01_08	Atherinomorus_duodecimalis	NANA						
+Sub-NA	Sub	NA	SubB	Subic_City_Municipal_Fish_Port	NA	NA	NA	Zam-2019-003_005	Atherinomorus_duodecimalis	NANA						
+Sub-NA	Sub	NA	SubB	Subic_City_Municipal_Fish_Port	NA	NA	NA	Zam-2019-002_003	Atherinomorus_duodecimalis	NANA						
+Taw-NA	Taw	NA	Tawi	Bongao_Channel	NA	NA	NA	Sul-2021-05_02	Atherinomorus_duodecimalis	NANA						
+NA-Aen	NA	Aen	NA	Batangas_Bay	NA	NA	Atherinomorus_endrachtensis	Bat-2018-004_(006)	Atherinomorus_endrachtensis	NANA						
+Ham-Aur	Ham	Aur	SanR	Hamilo_Cove	NA	NA	Ambassis_urotaenia	Bat-2019-010_016	Ambassis_urotaenia	NANA						
+Pas-Aur	Pas	Aur	RagR	Pasacao	NA	NA	Ambassis_urotaenia	Cam-2019-014_021	Ambassis_urotaenia	NANA						
+Pas-Aur	Pas	Aur	RagR	Pasacao	NA	NA	Ambassis_urotaenia	Cam-2019-016_030	Ambassis_urotaenia	NANA						
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	NA	NA	NA	138831	Corythoichthys_haematopterus	NANA						
+NA-Cvi	NA	Cvi	NA	NA	NA	NA	Chromis_viridis	SAM-2022_02_11	Chromis_viridis	NANA						
+Jol-NA	Jol	NA	Jolo	Jolo	NA	NA	NA	Jol-2021-04_02	Dascyllus_aruanus	NANA						
+Jol-NA	Jol	NA	Jolo	NA	NA	NA	NA	Jol-2021-04_02	Dascyllus_aruanus	NANA						
+Kal-Dba	Kal	Dba	NA	Kalibo_Public_Market	NA	NA	Dipterygonotus_balteatus	Kal-2019-001_001	Dipterygonotus_balteatus	NANA						
+Bai-NA	Bai	NA	NA	Bais_Bay	NA	NA	NA	Neg-2017-21_01	Encrasicholi_punctifer	NANA						
+Bit-Ggi	Bit	Ggi	Bito	Bito_River	NA	NA	Glossogobius_giuris	099660	Glossogobius_giuris	NANA						
+Pas-Gma	Pas	Gma	RagR	Pasacao	NA	NA	Gerres_macracanthus	Cam-2019-013_019	Gerres_macracanthus	NANA						
+Pas-Gma	Pas	Gma	RagR	Pasacao	NA	NA	Gerres_macracanthus	Cam-2019-017_029	Gerres_macracanthus	NANA						
+Lib-Gma	Lib	Gma	RagR	Liboro_Market	NA	NA	Gerres_macracanthus	Cam-2019-009_011	Gerres_macracanthus	NANA						
+Pas-Goy	Pas	Goy	RagR	Pasacao	NA	NA	Gerres_oyena	Cam-2019-013_018	Gerres_oyena	NANA						
+Pas-Goy	Pas	Goy	RagR	Pasacao	NA	NA	Gerres_oyena	Cam-2019-014_022	Gerres_oyena	NANA						
+Pas-Goy	Pas	Goy	RagR	Pasacao	NA	NA	Gerres_oyena	Cam-2019-023_038	Gerres_oyena	NANA						
+Pas-Goy	Pas	Goy	RagR	Pasacao	NA	NA	Gerres_oyena	Cam-2019-011_015	Gerres_oyena	NANA						
+Pas-Goy	Pas	Goy	RagR	Pasacao	NA	NA	Gerres_oyena	Cam-2019-017_028	Gerres_oyena	NANA						
+Rom-Goy	Rom	Goy	Romb	NA	NA	NA	Gerres_oyena	Rom-2022-01_001	Gerres_oyena	NANA						
+NA-Hqu	NA	Hqu	NA	sugbu	NA	NA	Herklotsichthys_quadrimaculatus	Bat-2018-002_(002)	Herklotsichthys_quadrimaculatus	NANA						
+Ham-NA	Ham	NA	NA	Hamilo_Cove	NA	NA	NA	Bat-2019-007_010	Hypoatheri_temminckii	NANA						
+NA-NA	NA	NA	NA	Jolo	NA	NA	NA	JOL-2021-01_02	Hypoatheri_temminckii	NANA						
+Tic-NA	Tic	NA	MatB	Ticao_Pass	NA	NA	NA	Luz-2017-036_001	Hypoatheri_temminckii	NANA						
+Mig-NA	Mig	NA	SMig	San_Miguel_Bay	NA	NA	NA	Luz-2017-044_001	Leiogthus_equula	NANA						
+Nas-Lle	Nas	Lle	HamC	sugbu	NA	NA	Leiognathus_leuciscus	Bat-2018-003_003	Equulites_leuciscus	NANA						
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	NA	NA	NA	Boh-2022-01_02	Lethrinus_variegatus	NANA						
+Pas-Par	Pas	Par	RagR	Pasacao	NA	NA	Periophthalmus_argentilineatus	Cam-2019-015_023	Periophthalmus_argentilineatus	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97449	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	94530	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97583	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97638	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97662	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97665	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97693	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97487	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97503	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97513	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97585	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97607	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97608	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97609	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97610	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97611	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97612	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97690	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	Maricaban_Is	NA	NA	Pomacentrus_brachialis	977714	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	Maricaban_Is	NA	NA	Pomacentrus_brachialis	977715	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97439	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97440	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97537	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97562	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97593	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97594	Pomacentrus_brachialis	NANA						
+NA-Pbr	NA	Pbr	NA	NA	NA	NA	Pomacentrus_brachialis	97670	Pomacentrus_brachialis	NANA						
+Cab-Pbr	Cab	Pbr	Bali	NA	NA	NA	Pomacentrus_brachialis	Sam-2022-02_05	Pomacentrus_brachialis	NANA						
+Cab-Pbr	Cab	Pbr	Bali	NA	NA	NA	Pomacentrus_brachialis	Sam-2022-02_07	Pomacentrus_brachialis	NANA						
+Rom-Pbr	Rom	Pbr	Romb	NA	NA	NA	Pomacentrus_brachialis	Rom-2022-01_004	Pomacentrus_brachialis	NANA						
+Ver-Pbr	Ver	Pbr	PGal	NA	NA	NA	Pomacentrus_brachialis	VER-2022-01_002	Pomacentrus_brachialis	NANA						
+Gal-NA	Gal	NA	PGal	NA	NA	NA	NA	145189	Parupeneus_barberinus	NANA						
+Gal-NA	Gal	NA	PGal	NA	NA	NA	NA	138650	Parupeneus_barberinus	NANA						
+Gal-NA	Gal	NA	PGal	Verde_Island	NA	NA	NA	VER-2022-01_001	Parupeneus_barberinus	NANA						
+Gal-NA	Gal	NA	PGal	NA	NA	NA	NA	VER-2022-01_001	Parupeneus_barberinus	NANA						
+Dgt-Pli	Dgt	Pli	NA	Dumaguete	NA	NA	Plotosus_lineatus	REU-2019-002_002	Plotosus_lineatus	NANA						
+NA-Pli	NA	Pli	NA	Dumaguete	NA	NA	Plotosus_lineatus	REU-2019-010-001	Plotosus_lineatus	NANA						
+NA-Pli	NA	Pli	NA	Masinloc_Public_Market	NA	NA	Plotosus_lineatus	Zam-2019-04_(007)	Plotosus_lineatus	NANA						
+Rom-Pli	Rom	Pli	Romb	NA	NA	NA	Plotosus_lineatus	Rom-2022-01_003	Plotosus_lineatus	NANA						
+Siq-Pli	Siq	Pli	NA	Siquijor	NA	NA	Plotosus_lineatus	REU-2019-006_006	Plotosus_lineatus	NANA						
+Pnd-NA	Pnd	NA	Pand	Pandanon_Id	NA	NA	NA	Boh-2022-01_01	Pomacentrus_pavo	NANA						
+Ver-Psq	Ver	Psq	PGal	Verde_Island	NA	NA	Pseudanthias_squamipinnis	VER-2022-01_003	Pseudanthias_squamipinnis	NANA						
+Ham-Sde	Ham	Sde	PMar	Hamilo_Cove	NA	NA	Spratelloides_delicatulus	Bat-2019-007_009	Spratelloides_delicatulus	NANA						
+Mal-Sde	Mal	Sde	Mala	Malampaya	NA	NA	Spratelloides_delicatulus	PAL-2022-05_05	Spratelloides_delicatulus	NANA						
+Mat-Sde	Mat	Sde	MatB	Bulan	NA	NA	Spratelloides_delicatulus	Luz-2017-045_001	Spratelloides_delicatulus	NANA						
+Sub-Sde	Sub	Sde	SubB	Silanguin	NA	NA	Spratelloides_delicatulus	Zam-2019-001_001	Spratelloides_delicatulus	NANA						
+Tay-Sde	Tay	Sde	TayT	Taytay_Palawan	NA	NA	Spratelloides_delicatulus	PAL-2022_02_02	Spratelloides_delicatulus	NANA						
+Gal-Sfu	Gal	Sfu	PGal	Verde_Island	NA	NA	Siganus_fuscescens	VER-2022-01_007	Siganus_fuscescens	NANA						
+Jos-NA	Jos	NA	NA	NA	NA	NA	NA	Cam-2019-020_034	NA	NANA						
+Atu-NA	Atu	NA	NA	NA	NA	NA	NA	Cam-2019-021_035	NA	NANA						
+Kal-NA	Kal	NA	NA	NA	NA	NA	NA	Kal-2019-002_003	NA	NANA						
+Kal-NA	Kal	NA	NA	NA	NA	NA	NA	Kal-2019-003_004	NA	NANA						
+Mig-Sfu	Mig	Sfu	NA	Mercedes_Fishing_Port	NA	NA	Siganus_fuscescens	Cam-2019-002_003	Siganus_fuscescens	NANA						
+Bas-Sfu	Bas	Sfu	NA	Mercedes_Fishing_Port	NA	NA	Siganus_fuscescens	Cam-2019-006_003	Siganus_fuscescens	NANA						
+Rag-NA	Rag	NA	NA	NA	NA	NA	NA	Cam-2019-008_009	NA	NANA						
+Rag-NA	Rag	NA	RagR	NA	NA	NA	NA	Cam-2019-010_013	NA	NANA						
+Sip-Sfu	Sip	Sfu	NA	Sipalay	NA	NA	Siganus_fuscescens	REU-2019-008_008	Siganus_fuscescens	NANA						
+NA-Sgr	NA	Sgr	NA	Masbate_City_Fish_Market	NA	NA	Spratelloides_gracilis	TIC-2022-02_01	Spratelloides_gracilis	NANA						
+NA-Sgr	NA	Sgr	NA	NA	NA	NA	Spratelloides_gracilis	PAL-2022_02_03	Spratelloides_gracilis	NANA						
+Rom-NA	Rom	NA	Romb	Romblon_Harbor	NA	NA	NA	171546	Sphaeramia_nematoptera	NANA						
+Cab-NA	Cab	NA	Bali	Sto_Nino,_Biri_Island	NA	NA	NA	Sam-2022-02_06	Sphaeramia_nematoptera	NANA						
+Rom-NA	Rom	NA	Romb	Sitio_Agbuyog_Romblon	NA	NA	NA	Rom-2022-01_002	Sphaeramia_nematoptera	NANA						
+Dgt-NA	Dgt	NA	NA	Dumaguete	NA	NA	NA	REU-2019-001_001	Sphyrae_obtusata	NANA						
+Kal-NA	Kal	NA	NA	Kalibo	NA	NA	NA	Kal-2019-002_002	Sphyrae_obtusata	NANA						
+NA-Ssp	NA	Ssp	NA	Gubat_Market	NA	NA	Siganus_spinus	Luz-2017-49_(360,_363,_367)	Siganus_spinus	NANA						
+NA-NA	NA	NA	NA	Jolo	NA	NA	NA	Jol-2021_01_03	Tylosurus_crocodilus	NANA						
+Mal-Tzo	Mal	Tzo	Mala	NA	NA	NA	Archamia_zosterophora	PAL-2022_06_04	Taeniamia_zosterophora	NANA						
