@@ -66,6 +66,9 @@ purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   # Create destination directory if it doesn't exist
   if (!dir.exists(ddir)) dir.create(ddir, recursive = TRUE)
   
+  # Get database corrections file
+  correction_database <- read_excel(file.path('../../db_files', "extractions_mislabelling_sheet.xlsx"))
+  
   # Read the first sheet of the workbook and write as TSV
   in_file <- read_excel(in_path, 
              na = c('', 'NA', 'N/A', '?'),
@@ -116,6 +119,8 @@ purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   } else {
       processed_file <- in_file
   }
+  
+  
   
   write_tsv(processed_file, out_path, eol = "\n")
   

@@ -1,12 +1,16 @@
 #### Packages ####
-source('./scripts/wrangle_db_files.R')
-install_and_load_packages(cran_packages = c('dm'))
+source("./scripts/functions.R")
+
+install_and_load_packages(cran_packages = c("tidyverse", 
+                                            "janitor", 
+                                            "readxl",
+                                            "janitor",
+                                            'dm'))
 
 
 #### Make Primary Keys ####
-db_with_pk <- 
-  do.call(dm, 
-          database_inputs) %>%
+db_with_pk <- compile_db_inputs() %>%
+    do.call(dm, .) %>%
   dm_add_pk(sampling_sites_sheets,
             columns = c(site_sp_primary_key)) %>%
   dm_add_pk(lots_sheets,
@@ -26,10 +30,10 @@ db_with_pk <-
   identity()
 
 
-dm_get_all_pks(db_with_pk)
+# dm_get_all_pks(db_with_pk)
 
 #### Add Foreign Keys ####
-full_db <- db_with_pk %>%
+pire_db <- db_with_pk %>%
   dm_add_fk(table = sampling_sites_sheets,
             columns = species_id,
             ref_table = species_sheets) %>%
@@ -55,18 +59,19 @@ full_db <- db_with_pk %>%
             ref_table = shipments_sheets,
             ref_col = plate_box_id)
 
+rm(db_with_pk)
 #%>% colnames()
 #species_id
 
 #### visualize db ####
-erd_image <-
-  full_db %>%
-  dm_draw(rankdir = "TB", view_type = "keys_only")
-
-erd_image
-
-full_db %>%
-  dm_draw(rankdir = "TB", view_type = "all")
+# erd_image <-
+#   full_db %>%
+#   dm_draw(rankdir = "TB", view_type = "keys_only")
+# 
+# erd_image
+# 
+# full_db %>%
+#   dm_draw(rankdir = "TB", view_type = "all")
 
 
 
