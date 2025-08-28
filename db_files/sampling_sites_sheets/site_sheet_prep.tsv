@@ -1,4 +1,4 @@
-site_species	site_id	species_code	match_id	collection_site.individuals_sheets	latitude	longitude	species_albatross_name	lot_id	species_valid_name.individuals_sheets	coordinates	barangay	local_government_unit	province	region	island_group	Notes
+site_species	site_id	species_code	match_id	collection_site.individuals_sheets	latitude	longitude	species_albatross_name	lot_id	species_valid_name.individuals_sheets	coordinates	barangay	local_government_unit	province	region	island_group	notes
 Gui-NA	Gui	NA	Guij	Guijulugan_Beach	10.1425502	123.281256	NA	136817	Atherinomorus_duodecimalis	10.1425502123.281256	Poblacion	City of Guihulngan	Negros Oriental	Central Visayas	Visayas	
 Bai-NA	Bai	NA	Guij	Bais_Bay_Anchorage	10.1425502	123.281256	NA	136845	Atherinomorus_duodecimalis	10.1425502123.281256	Poblacion	City of Guihulngan	Negros Oriental	Central Visayas	Visayas	
 Gui-NA	Gui	NA	Guij	Guijulugan_Beach	10.1425502	123.281256	NA	Neg-2021-01_01	Atherinomorus_duodecimalis	10.1425502123.281256	Poblacion	City of Guihulngan	Negros Oriental	Central Visayas	Visayas	
