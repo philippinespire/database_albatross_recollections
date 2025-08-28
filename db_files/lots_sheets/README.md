@@ -35,7 +35,7 @@ NUMBEROFSPECIES: Multiple species may have been collected from the site. This re
 | Individuals | TBC |
 | Size-USNM_(mm) | TBC |
 | size_direct_observation_(mm) | TBC |
-| Species_valid_name_majority | TBC |
+| Species_valid_name_majority | Notes on the species name of the majority of individuals in the lot. This isn't definitive and is sometimes a note. Not useful as a database key. Use Individuals sheet instead. |
 | Collection_site | TBC |
 | Site_ID | TBC |
 | Match_ID | TBC |
