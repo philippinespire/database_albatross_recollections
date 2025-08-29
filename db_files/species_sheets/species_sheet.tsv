@@ -22,7 +22,7 @@ Gobiidae	NA	NA	NA	NA	Glossogobius_giuris	Glossogobius_giuris	Ggi	NA	NA	NA	estuar
 NA	NA	NA	NA	NA	Gnatholepis_ophthalmotaenia	Gnatholepis_ophthalmotaenia	Gop	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Labridae	Tropical	NA	NA	NA	Halichoeres_miniatus	Halichoeres_miniatus	Hmi	Circle-cheek_wrasse	L-M (Utilized in aquarium fishing, but localized)	Y	coral reef; algal beds	NA	3	Basud_River,_Maculabo_Id., Batan Id.	153965(48),153966(48),153963(25)	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Clupeidae	Tropical	NA	NA	NA	Herklotsichthys_quadrimaculatus	Herklotsichthys_quadrimaculatus	Hqu	Bluestripe_herring	L-M? (Not common species encountered, but could be dried and eaten!)	N	NA	NA	4	Inamucan_Bay,_Nababuy_Id.,_Nasugbu,_Port_Matalvi_reef	190070(59)	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Atherinidae	Tropical	NA	NA	NA	NA	Hypoatherina_sp	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Atherinidae	Tropical	NA	NA	NA	NA	Hypoatherina_sp	Adu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Atherinidae	Tropical	NA	NA	NA	Hypoatherina_temminckii	Hypoatherina_temminckii	Hte	Samoan_silverside	M? (Enchrasicholina is one ofthe common genera of engraulids encountered and eaten)	N	mangroves?	NA	9	Jolo_Island,_Matnog_Bay,_Port_Busin,_Port_Matalvi_reef,_Puerto_Galera,_Tataan_Pass_Anchorage,_Ticao_Pass,_Varadero_Bay,_Canmahala_Bay	136734(115),_136694(132),_136808(39),_136697(39)	NA	Bongao(61)	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Leiognathidae	Tropical	NA	NA	NA	Leiognathus_equula	Leiognathus_equula	Leq	Common_ponyfish	H (NSAP)	N	soft bottom; estuarine	NA	3	Basud_River,_Jamelo_Cove_(Hamilo),_Malcochin_Harbor_[Malbuching], Linapacan_Island	139635(32),_139636(63)	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Apogonidae	Tropical_and_subtropical	41	353	NA	Ostorhinchus fasciatus	Ostorhinchus fasciatus	Ofa	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
@@ -65,3 +65,4 @@ Labridae	NA	NA	NA	NA	NA	Stethojulis_interrupta	Sin	Cutribbon wrasse	NA	NA	NA	NA	
 Belonidae	NA	NA	NA	NA	NA	Tylosurus_crocodilus	Tcr	Houndfish	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Zenarchopteridae	NA	NA	NA	NA	NA	Zerchopterus_dispar	Zdi	feathered river garfish	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Apogonidae	NA	NA	NA	NA	NA	Zoramia_perlita	Zpr	Pearly cardinalfish	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+NA	NA	NA	NA	NA	NA	Doboatherina_duodecimalis/Atherinomorus_endrachtensis	Adu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
