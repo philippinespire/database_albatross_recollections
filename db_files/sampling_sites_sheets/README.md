@@ -4,30 +4,21 @@ Each line is a samping site.
 
 ## Sampling Sites Column Descriptions
 
-* site_sp_primary_key	site_id: a primary key to join to other tables. consists of site_ID-species_ID (see columns below)
-* site_id: a three letter site ID
-* species_id: a three letter species ID
-* site_name: long species name
-* barangay: name of the barangay (if available)
-* local_government_unit: name of the Local Government Unit
-* province: name of the province
-* region: there are 13 options
-* island_group: Luzon, Visayas, or Mindanao
-* lat: latitude, in decimal degrees north
-* lon: longitude, in decimal degrees east
-* match_id: a four letter match between Albatross and Contemporary sites that can be compared to each other (generally within 80 km of each other)
-* notes: any notes that don't fit in the columns
+| Column Name                  | Description                                                         |
+| ---------------------------- | ------------------------------------------------------------------- |
+| **lot\_id**                  | Identifier for the specimen lot collected at this site (**Primary Key**)             |
+| **site\_id**                 | Abbreviated site identifier                                         |
+| **match\_id**                | a four letter match between Albatross and Contemporary sites that can be compared to each other (generally within 80 km of each other)           |
+| **collection\_site**         | Full name of the collection site                                    |
+| **latitude**                 | Latitude (decimal degrees east) of the collection site                                     |
+| **longitude**                | Longitude (decimal degrees north) of the collection site                                    |
+| **barangay**                 | Barangay (village-level administrative unit) of the collection site |
+| **local\_government\_unit**  | Municipality or city of the collection site                         |
+| **province**                 | Province of the collection site                                     |
+| **region**                   | Administrative region of the collection site (there are 13 options)                       |
+| **island\_group**            | Major island group (e.g., Luzon, Visayas, Mindanao)                 |
+| **notes**                    | Free-text notes                                                     |
 
-| Column Name                  | Description                                              |
-| ---------------------------- | -------------------------------------------------------- |
-| **lot\_id**                  | Identifier for the specimen lot collected at this site (**Primary Key**)  |
-| **site\_id**                 | Abbreviated site identifier                              |
-| **species\_code**            | Abbreviated species code                                 |
-| **match\_id**                | Matching identifier linking site records across datasets |
-| **collection\_site**         | Full name of the collection site                         |
-| **latitude**                 | Latitude of the collection site                          |
-| **longitude**                | Longitude of the collection site                         |
-| **species\_albatross\_name** | Species name as recorded in Albatross expedition records |
 
 
 ## Initial Sheet Creation 
