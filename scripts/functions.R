@@ -342,8 +342,6 @@ apply_corrections <- function(data, file_type, verbose = FALSE) {
 
 # Compile database for use
 compile_db_inputs <- function(verbose = FALSE){
-
-    here::here("db_files", "extractions_mislabelling_sheet.xlsx")
     
         list.files(here::here("db_files"), 
                pattern = 'tsv$',

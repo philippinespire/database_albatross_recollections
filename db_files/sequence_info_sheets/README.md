@@ -29,5 +29,5 @@ Each line a DNA sequencing run.
 | **Sequencing\_Notes**                   | Notes specific to sequencing runs                                                                        |
 | **Bioinformatics\_Notes**               | Notes on bioinformatic challenges and discoveries. See the species-specific git repo for more details.                                                           |
 
-## Initial Sheet Creation 
+## Initial Sheet Conversion 
 Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.
