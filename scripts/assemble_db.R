@@ -34,9 +34,6 @@ db_with_pk <- compile_db_inputs() %>%
 
 #### Add Foreign Keys ####
 pire_db <- db_with_pk %>%
-  # dm_add_fk(table = sampling_sites_sheets,
-  #           columns = species_id,
-  #           ref_table = species_sheets) %>%
   dm_add_fk(table = lots_sheets, 
             columns = lot_id, 
             ref_table = sampling_sites_sheets,
@@ -53,22 +50,23 @@ pire_db <- db_with_pk %>%
             ref_columns = species_valid_name) %>%
   dm_add_fk(table = dna_extractions_sheets, 
             columns = individual_id, 
-            ref_table = individuals_sheets) %>%
-  dm_add_fk(table = dna_extractions_sheets,
-            columns = plateid,
-            ref_table = shipments_sheets,
-            ref_col = plate_box_id)
+            ref_table = individuals_sheets) #%>%
+  # dm_add_fk(table = dna_extractions_sheets,
+  #           columns = plateid,
+  #           ref_table = shipments_sheets,
+  #           ref_col = plate_box_id)
 
 rm(db_with_pk)
 #%>% colnames()
 #species_id
 
 #### visualize db ####
-erd_image <-
-    pire_db %>%
-    dm_draw(rankdir = "TB", view_type = "keys_only")
-
-erd_image
+# erd_image <-
+#     pire_db %>%
+#     dm_draw(rankdir = "TB", 
+#             view_type = "keys_only")
+# 
+# erd_image
 
 # pire_db %>%
 #   dm_draw(rankdir = "TB", view_type = "all")

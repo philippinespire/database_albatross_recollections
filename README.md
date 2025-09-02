@@ -15,6 +15,15 @@
   * entities (tables) should be assembled in R as tibbles (dataframes)
   * `dm` should be used to create the database object
 
+## Database Contents Structure
+- [Extraction Sheets](db_files/dna_extractions_sheets/README.md)
+- [Individual Sheets](db_files/individuals_sheets/README.md)
+- [Lot Sheets](db_files/lots_sheets/README.md)
+- [Sampling Site Sheets](db_files/sampling_site_sheets/README.md) **UNDER CONSTRUCTION**
+- [Sequence Sheets](db_files/sequence_info_sheets/README.md) **Unlinked to main DB**
+- [Shipment Sheets](db_files/shipments_sheets/README.md) **Unlinked to main DB**
+- [Species Sheets](db_files/shipments_sheets/README.md)
+
 ## How to use this repo
 This repository uses [renv](https://rstudio.github.io/renv/) to create a reproductible R environment. 
 
