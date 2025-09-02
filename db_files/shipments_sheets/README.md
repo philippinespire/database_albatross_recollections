@@ -1,4 +1,4 @@
-# Readme for shipment_sheet.tsv
+# Readme for shipment_sheet_*.tsv
 
 Each line a shipment.
 

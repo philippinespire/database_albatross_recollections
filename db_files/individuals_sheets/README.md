@@ -1,4 +1,4 @@
-# Readme for individuals_sheets
+# Readme for individual_sheet_*.tsv
 
 These files are compiled into the individuals sheet of the database. All .tsv files in this directory need to have exactly the same headers and cell formats.
 

@@ -1,4 +1,4 @@
-# Collection Lots
+# Readme for lot_sheet_*.tsv
 
 This table has a row for each lot. A "lot" is a jar of fish all taken from the same location and thought to be the same species. These either came from the Smithsonian museum collection from the USS Albatross expedition, or from our own collections in the Philippines.
 

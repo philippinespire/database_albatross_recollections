@@ -1,4 +1,4 @@
-# Readme for sequence_info_sheets
+# Readme for sequence_info_sheets_*.tsv
 
 Each line a DNA sequencing run.
 

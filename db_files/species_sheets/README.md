@@ -1,4 +1,4 @@
-# Readme for species_sheet.tsv
+# Readme for species_sheet_*.tsv
 
 Each line is a species.
 

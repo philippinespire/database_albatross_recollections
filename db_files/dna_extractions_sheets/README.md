@@ -1,4 +1,4 @@
-# DNA Extraction Logs
+# Readme for extractions_sheet_*.tsv
 
 Details of the DNA extraction lab work
 
