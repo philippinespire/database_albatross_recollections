@@ -37,6 +37,6 @@ site_sheet_initial <- pire_db %>%
 # site_sheet <- full_join(mutate(site_prep, in_prep = TRUE),
 #           mutate(site_sheet_initial, in_sheet = TRUE)) %>%
 #     select(lot_id, starts_with('in'), everything()) %>%
-#     select(-coordinates, -starts_with('in'))
+#     select(-coordinates, -starts_with('in'), -starts_with('species'))
 # 
 # write_tsv(site_sheet, "site_sheet_initial.tsv")
