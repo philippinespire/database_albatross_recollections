@@ -20,6 +20,5 @@ Each line is a samping site.
 | **notes**                    | Free-text notes                                                     |
 
 
-
 ## Initial Sheet Creation 
 Intial Sheet was created on XX-XX-XXXX. Using [`db_files/sampling_sites_sheets/initialize_sampling_sites_sheets.R`](db_files/sampling_sites_sheets/initialize_sampling_sites_sheets.R). Extra information added by manually looking up sites with coordinates using https://wikimapia.org/#lang=en and https://www.philatlas.com/search.html
