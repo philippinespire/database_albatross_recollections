@@ -13,23 +13,23 @@ install_and_load_packages(cran_packages = c("tidyverse",
 #### Make Primary Keys ####
 db_with_pk <- compile_db_inputs() %>% #names()
     do.call(dm, .) %>%
-  dm_add_pk(sampling_sites_sheets,
-            columns = c(lot_id)) %>%
-  dm_add_pk(lots_sheets,
-            columns = c(lot_id)) %>%
-  dm_add_pk(individuals_sheets,
-            columns = c(individual_id)) %>%
-  dm_add_pk(table = species_sheets,
-            columns = species_valid_name) %>%
-  dm_add_pk(dna_extractions_sheets,
-            columns = c(extraction_id)) %>%
-  dm_add_pk(table = dna_extractions_gels,
-            columns = gel_id) %>%
-  dm_add_pk(shipments_sheets,
-            columns = c(shipment_id, plate_box_id)) %>%
-  dm_add_pk(sequence_info_sheets,
-            columns = c(sequencing_batch_id)) %>%
-  identity()
+    dm::dm_add_pk(sampling_sites_sheets,
+                  columns = c(lot_id)) %>%
+    dm::dm_add_pk(lots_sheets,
+                  columns = c(lot_id)) %>%
+    dm::dm_add_pk(individuals_sheets,
+                  columns = c(individual_id)) %>%
+    dm::dm_add_pk(table = species_sheets,
+                  columns = species_valid_name) %>%
+    dm::dm_add_pk(dna_extractions_sheets,
+                  columns = c(extraction_id)) %>%
+    dm::dm_add_pk(table = dna_extractions_gels,
+                  columns = gel_id) %>%
+    dm::dm_add_pk(shipments_sheets,
+                  columns = c(shipment_id, plate_box_id)) %>%
+    dm::dm_add_pk(sequence_info_sheets,
+                  columns = c(sequencing_batch_id)) %>%
+    identity()
 
 
 # dm_get_all_pks(db_with_pk)
