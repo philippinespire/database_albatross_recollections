@@ -12,7 +12,6 @@ excel_files <-
     "Extractions_sheet.xlsx",
     "Library_Contents_sheet.xlsx",
     "Lot_sheet.xlsx",
-    "Sequence_info_sheet.xlsx",
     "Individual_sheet.xlsx",
     "Library_Info_sheet.xlsx",
     "Sequence_info_sheet.xlsx",
@@ -26,7 +25,6 @@ dest_dirs <-
     "../../db_files/dna_extractions_sheets",
     "../../other_sheets",
     "../../db_files/lots_sheets",
-    "../../other_sheets",
     "../../db_files/individuals_sheets",
     "../../other_sheets",
     "../../db_files/sequence_info_sheets",
@@ -61,13 +59,11 @@ strip_newlines <- function(df) {
 purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   # Construct full paths
   in_path  <- file.path(onedrive_path, fname)
-  out_path <- file.path(ddir, str_replace(fname, "\\.xlsx$", ".tsv"))
+  out_path <- file.path(ddir, str_replace(fname, "\\.xlsx$", "_initial.tsv")) %>%
+      str_to_lower()
   
   # Create destination directory if it doesn't exist
   if (!dir.exists(ddir)) dir.create(ddir, recursive = TRUE)
-  
-  # Get database corrections file
-  correction_database <- read_excel(file.path('../../db_files', "extractions_mislabelling_sheet.xlsx"))
   
   # Read the first sheet of the workbook and write as TSV
   in_file <- read_excel(in_path, 
