@@ -1,5 +1,7 @@
 #### Packages ####
-source("./scripts/functions.R")
+here::i_am("scripts/assemble_db.R")
+source(here::here("scripts", "functions.R"))
+# source("./scripts/functions.R")
 
 install_and_load_packages(cran_packages = c("tidyverse", 
                                             "janitor", 

@@ -1,4 +1,5 @@
 #### install_and_load_functions ####
+here::i_am("scripts/functions.R")
 
 #' Install and load a set of CRAN, Bioconductor, and GitHub packages
 #'
@@ -123,7 +124,9 @@ install_and_load_packages <- function(
 #### Function to Apply Corrections ####
 #Apply corrections to input data
 apply_corrections <- function(data, file_type, verbose = FALSE) {
-    corrections <- read_excel("./db_files/extractions_mislabelling_sheet.xlsx") %>%
+    
+    
+    corrections <- read_excel(here::here("db_files", "extractions_mislabelling_sheet.xlsx")) %>%
         clean_names() %>%
         # Remove any completely empty rows
         filter(!if_all(everything(), is.na))
@@ -340,7 +343,9 @@ apply_corrections <- function(data, file_type, verbose = FALSE) {
 # Compile database for use
 compile_db_inputs <- function(verbose = FALSE){
 
-        list.files("./db_files", 
+    here::here("db_files", "extractions_mislabelling_sheet.xlsx")
+    
+        list.files(here::here("db_files"), 
                pattern = 'tsv$',
                full.names = TRUE, 
                recursive = TRUE) %>%
