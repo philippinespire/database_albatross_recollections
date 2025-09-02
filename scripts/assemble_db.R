@@ -11,7 +11,7 @@ install_and_load_packages(cran_packages = c("tidyverse",
 
 
 #### Make Primary Keys ####
-db_with_pk <- compile_db_inputs() %>%
+db_with_pk <- compile_db_inputs() %>% #names()
     do.call(dm, .) %>%
   dm_add_pk(sampling_sites_sheets,
             columns = c(lot_id)) %>%
@@ -27,8 +27,8 @@ db_with_pk <- compile_db_inputs() %>%
             columns = gel_id) %>%
   dm_add_pk(shipments_sheets,
             columns = c(shipment_id, plate_box_id)) %>%
-  # dm_add_pk(sequence_info_sheets,
-  #           columns = c(sequencing_batch_id)) %>%
+  dm_add_pk(sequence_info_sheets,
+            columns = c(sequencing_batch_id)) %>%
   identity()
 
 
@@ -65,10 +65,17 @@ rm(db_with_pk)
 #### visualize db ####
 # erd_image <-
 #     pire_db %>%
-#     dm_draw(rankdir = "TB", 
+#     dm_draw(rankdir = "TB",
 #             view_type = "keys_only")
 # 
 # erd_image
+# 
+# erd_image %>%
+#     DiagrammeRsvg::export_svg() %>%
+#     charToRaw() %>%
+#     rsvg::rsvg_png("database_erd.png",
+#                    width = 7 * 125, height = 7 * 125)
+
 
 # pire_db %>%
 #   dm_draw(rankdir = "TB", view_type = "all")
