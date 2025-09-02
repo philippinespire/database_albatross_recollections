@@ -35,6 +35,9 @@ Details of the DNA extraction lab work
 | **Elution\_Used**                | Indicates which elution was ultimately used                                     |
 | **Notes**                        | Free-text field for additional comments                                         |
 
+## Initial Sheet Creation 
+Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.
+
 ## Issues
 
 * ODU/TAMUCC names in columns

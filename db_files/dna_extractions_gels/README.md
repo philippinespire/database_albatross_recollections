@@ -22,3 +22,5 @@ Each line is a species.
 | **gel\_electrophoresis\_volts**              | Voltage applied during electrophoresis                                      |
 | **gel\_electrophoresis\_duration\_minutes**  | Duration (minutes) of electrophoresis run                                   |
 
+## Initial Sheet Creation 
+Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.
