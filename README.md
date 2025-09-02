@@ -19,7 +19,7 @@
 - [Extraction Sheets](db_files/dna_extractions_sheets/README.md)
 - [Individual Sheets](db_files/individuals_sheets/README.md)
 - [Lot Sheets](db_files/lots_sheets/README.md)
-- [Sampling Sites Sheets](db_files/sampling_sites_sheets/README.md) **UNDER CONSTRUCTION**
+- [Sampling Sites Sheets](db_files/sampling_sites_sheets/README.md)
 - [Sequence Sheets](db_files/sequence_info_sheets/README.md) **Unlinked to main DB**
 - [Shipment Sheets](db_files/shipments_sheets/README.md) **Unlinked to main DB**
 - [Species Sheets](db_files/shipments_sheets/README.md)
