@@ -71,7 +71,7 @@ if (interactive()) {
       cat("   If package installation fails, install Rtools from:\n")
       cat("   https://cran.r-project.org/bin/windows/Rtools/\n")
     } else {
-      cat("   ✓ Rtools detected\n")
+      cat("   ✔ Rtools detected\n")
     }
     
   } else if (sys_name == "Linux") {
@@ -90,12 +90,21 @@ if (interactive()) {
     if (system2("which", args = "gcc", stdout = FALSE, stderr = FALSE) != 0) {
       cat("   ⚠️  GCC compiler not found - install build-essential\n")
     } else {
-      cat("   ✓ Build tools detected\n")
+      cat("   ✔ Build tools detected\n")
     }
     
-    # Check for critical libraries
-    if (!check_system_lib("libglpk")) {
-      cat("   ⚠️  libglpk not found (needed for igraph)\n")
+    # Check for critical libraries needed by YOUR packages
+    libs_to_check <- list(
+      "libcurl" = "needed for curl, httr, httr2",
+      "libssl" = "needed for openssl (dependency of several packages)",
+      "libxml2" = "needed for XML parsing (potential dependency)",
+      "libgit2" = "needed for gert package"
+    )
+    
+    for (lib in names(libs_to_check)) {
+      if (!check_system_lib(lib)) {
+        cat("   ⚠️ ", lib, " not found (", libs_to_check[[lib]], ")\n", sep="")
+      }
     }
     
   } else if (sys_name == "Darwin") {
@@ -105,7 +114,7 @@ if (interactive()) {
       cat("   ⚠️  Xcode Command Line Tools may not be installed\n")
       cat("   Install with: xcode-select --install\n")
     } else {
-      cat("   ✓ Development tools detected\n")
+      cat("   ✔ Development tools detected\n")
     }
   }
   
@@ -121,7 +130,7 @@ if (interactive()) {
   } else if (!lockfile_exists) {
     cat("   ⚠️  renv.lock not found (needed for dependencies)\n")
   } else {
-    cat("   ✓ renv active\n")
+    cat("   ✔ renv active\n")
   }
   
   # Safe dependency check function
@@ -220,7 +229,8 @@ if (interactive()) {
     
     cat("\n🐧 LINUX SYSTEM DEPENDENCIES\n")
     cat("===============================\n")
-    cat("\nRun these commands in your terminal (not in R):\n\n")
+    cat("\nBased on your complete R package list, you need these system libraries.\n")
+    cat("Run these commands in your terminal (not in R):\n\n")
     
     cat("# Update package list\n")
     cat("sudo apt-get update\n\n")
@@ -228,33 +238,66 @@ if (interactive()) {
     cat("# Install essential compilation tools\n")
     cat("sudo apt-get install -y build-essential gfortran\n\n")
     
-    cat("# Install common R package dependencies\n")
+    cat("# Install libraries required by your R packages\n")
     cat("sudo apt-get install -y \\\n")
-    cat("  libcurl4-openssl-dev \\\n")
-    cat("  libssl-dev \\\n")
-    cat("  libxml2-dev \\\n")
-    cat("  libfontconfig1-dev \\\n")
-    cat("  libharfbuzz-dev \\\n")
-    cat("  libfribidi-dev \\\n")
-    cat("  libfreetype6-dev \\\n")
-    cat("  libpng-dev \\\n")
-    cat("  libtiff5-dev \\\n")
-    cat("  libjpeg-dev \\\n")
-    cat("  libglpk-dev \\\n")        # Critical for igraph
-    cat("  libgit2-dev \\\n")
-    cat("  libsqlite3-dev \\\n")
-    cat("  libpq-dev \\\n")
-    cat("  libssh2-1-dev \\\n")
-    cat("  unixodbc-dev \\\n")
-    cat("  libcairo2-dev \\\n")
-    cat("  libxt-dev \\\n")
-    cat("  libgdal-dev \\\n")        # for spatial packages
-    cat("  libudunits2-dev \\\n")    # for units package
-    cat("  libgeos-dev \\\n")        # for spatial packages
-    cat("  libproj-dev\n")           # for spatial packages
+    
+    # Core libraries
+    cat("  libcurl4-openssl-dev \\   # curl, httr, httr2, devtools\n")
+    cat("  libssl-dev \\            # openssl, credentials, gargle, gert\n")
+    cat("  libxml2-dev \\           # xml2, rvest, roxygen2, devtools\n")
+    cat("  libgit2-dev \\           # gert\n")
+    
+    # Graphics and fonts libraries (for ragg, systemfonts, textshaping, ggplot2)
+    cat("  libfontconfig1-dev \\    # systemfonts, ragg, ggplot2\n")
+    cat("  libfreetype6-dev \\      # systemfonts, ragg\n")
+    cat("  libpng-dev \\            # ragg, PNG support\n")
+    cat("  libjpeg-dev \\           # ragg, JPEG support\n")
+    cat("  libtiff5-dev \\          # ragg, TIFF support\n")
+    cat("  libharfbuzz-dev \\       # textshaping (required by ragg)\n")
+    cat("  libfribidi-dev \\        # textshaping (bidirectional text)\n")
+    
+    # Additional required libraries
+    cat("  libglpk-dev \\           # igraph (graph algorithms)\n")
+    cat("  libgmp3-dev \\           # precision math operations\n")
+    cat("  libmpfr-dev \\           # precision math operations\n")
+    cat("  libicu-dev \\            # stringi (text processing)\n")
+    
+    # Graphics and system libraries
+    cat("  libcairo2-dev \\         # graphics device\n")
+    cat("  libxt-dev \\             # X11 toolkit\n")
+    
+    # Development tools
+    cat("  cmake \\                 # build tool for some packages\n")
+    cat("  pandoc \\                # rmarkdown, knitr\n")
+    cat("  pandoc-citeproc         # citations in rmarkdown\n")
+    
+    cat("\n# Database libraries (optional, if you plan to use database connections):\n")
+    cat("# sudo apt-get install -y libpq-dev        # for PostgreSQL\n")
+    cat("# sudo apt-get install -y libmysqlclient-dev  # for MySQL\n")
+    cat("# sudo apt-get install -y libsqlite3-dev   # for SQLite\n")
+    
+    cat("\n# Additional optional libraries:\n")
+    cat("# sudo apt-get install -y libv8-dev        # V8 JavaScript engine\n")
+    cat("# sudo apt-get install -y libssh2-1-dev    # SSH operations\n")
+    cat("# sudo apt-get install -y libsodium-dev    # encryption\n")
     
     cat("\n===============================\n")
     cat("After installing, return to R and run: setup_project()\n\n")
+    
+    cat("PACKAGES COVERED:\n")
+    cat("- Graphics: ggplot2, ragg, systemfonts, textshaping\n")
+    cat("- Development: devtools, roxygen2, testthat, pkgbuild, rcmdcheck\n")
+    cat("- Data processing: dplyr, tidyr, stringi, xml2, jsonlite\n")
+    cat("- Web/API: httr, httr2, curl, rvest\n")
+    cat("- Google: googledrive, googlesheets4, gargle\n")
+    cat("- Git: gert, credentials\n")
+    cat("- Documents: rmarkdown, knitr, tinytex\n")
+    cat("- Algorithms: igraph\n")
+    cat("- Shiny: shiny, htmltools, htmlwidgets, httpuv\n")
+    
+    cat("\nNOTE: This covers all packages in your renv.lock file.\n")
+    cat("If you still get compilation errors, the error message will\n")
+    cat("usually indicate which specific library is missing.\n")
   }
   
   setup_project <- function(binary_only = FALSE) {
@@ -276,7 +319,7 @@ if (interactive()) {
         }
       }
     } else if (sys_name == "Linux") {
-      cat("📝 NOTE: On Linux, some packages need system libraries.\n")
+      cat("📋 NOTE: On Linux, some packages need system libraries.\n")
       cat("   If installation fails, run: install_linux_deps()\n\n")
     }
     
@@ -284,7 +327,7 @@ if (interactive()) {
     if (!requireNamespace("renv", quietly = TRUE)) {
       cat("Step 1: Installing renv package manager...\n")
       install.packages("renv")
-      cat("✓ renv installed\n\n")
+      cat("✔ renv installed\n\n")
     }
     
     # Check for lockfile
@@ -314,7 +357,7 @@ if (interactive()) {
         cat("   Follow the instructions, then run setup_project() again\n\n")
         cat("OPTION 2: Use pre-built binaries (easier but may be older versions)\n")
         cat("   Run: setup_project(binary_only = TRUE)\n\n")
-      } else if (grepl("(libglpk|compilation failed|undefined symbol)", error_msg)) {
+      } else if (grepl("(libcurl|libssl|libgit2|libxml2|compilation failed|undefined symbol)", error_msg)) {
         cat("\n❌ Compilation failed - missing system libraries\n")
         cat("\nRun: install_linux_deps()\n")
         cat("for commands to install required system libraries,\n")
@@ -372,7 +415,7 @@ if (interactive()) {
     if (sys_name == "Windows") {
       cat("\n🪟 Windows build tools:\n")
       if (Sys.which("make") != "") {
-        cat("   ✓ Rtools detected (make available)\n")
+        cat("   ✔ Rtools detected (make available)\n")
       } else {
         cat("   ⚠️  Rtools not detected\n")
         cat("   Run install_windows_tools() for installation info\n")
@@ -380,11 +423,11 @@ if (interactive()) {
     } else if (sys_name == "Linux") {
       cat("\n🐧 Linux build tools:\n")
       if (system2("which", args = "gcc", stdout = FALSE, stderr = FALSE) == 0) {
-        cat("   ✓ GCC compiler found\n")
+        cat("   ✔ GCC compiler found\n")
       } else {
         cat("   ⚠️  GCC not found - install build-essential\n")
       }
-      cat("   Run install_linux_deps() for full system requirements\n")
+      cat("   Run install_linux_deps() for system requirements\n")
     }
     
     # Working directory
@@ -396,10 +439,10 @@ if (interactive()) {
       cat("   ❌ renv not installed\n")
     } else {
       renv_ver <- as.character(packageVersion("renv"))
-      cat("   ✓ renv version:", renv_ver, "\n")
+      cat("   ✔ renv version:", renv_ver, "\n")
       
       if (file.exists("renv.lock")) {
-        cat("   ✓ renv.lock found\n")
+        cat("   ✔ renv.lock found\n")
         .check_dependencies(silent = FALSE)
       } else {
         cat("   ❌ renv.lock not found\n")
@@ -416,7 +459,7 @@ if (interactive()) {
     )
     for (f in files) {
       if (file.exists(f)) {
-        cat("   ✓", f, "\n")
+        cat("   ✔", f, "\n")
       } else {
         cat("   ✗", f, "- NOT FOUND\n")
       }
