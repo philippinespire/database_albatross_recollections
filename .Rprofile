@@ -194,7 +194,13 @@ if (interactive()) {
     
     cat("1. Download and install Rtools for your R version (", R.version.string, "):\n\n")
     
-    if (r_version >= "4.3") {
+    if (r_version >= "4.5") {
+      cat("   Download Rtools45 from:\n")
+      cat("   https://cran.r-project.org/bin/windows/Rtools/rtools45/rtools.html\n")
+    } else if (r_version >= "4.4") {
+      cat("   Download Rtools44 from:\n")
+      cat("   https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html\n")
+    }else if (r_version >= "4.3") {
       cat("   Download Rtools43 from:\n")
       cat("   https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html\n")
     } else if (r_version >= "4.2") {
