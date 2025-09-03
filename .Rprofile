@@ -1,17 +1,19 @@
 # .Rprofile - Project setup with system dependency checking
 
-# Suppress renv activation messages but don't print NULL
+# Suppress renv activation messages more safely
+renv_activated <- FALSE
 if (file.exists("renv/activate.R")) {
-  quietly <- function(expr) {
-    sink(tempfile())
-    on.exit(sink())
-    suppressMessages(suppressWarnings(expr))
-  }
-  
   tryCatch({
-    quietly(source("renv/activate.R"))
+    # Capture output without using sink (more reliable across platforms)
+    invisible(utils::capture.output({
+      suppressMessages(suppressWarnings({
+        source("renv/activate.R")
+        renv_activated <- TRUE
+      }))
+    }))
   }, error = function(e) {
     # Silent - renv will bootstrap if needed
+    renv_activated <- FALSE
   })
 }
 
@@ -484,3 +486,6 @@ if (interactive()) {
   cat("   • check_setup()       - Show detailed status\n")
   cat("\n============================================================\n\n")
 }
+
+# Clean up any temporary variables
+rm(renv_activated)
