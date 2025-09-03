@@ -222,83 +222,104 @@ if (interactive()) {
   
   # Linux-specific function
   install_linux_deps <- function() {
-    if (Sys.info()["sysname"] != "Linux") {
-      cat("This function is only for Linux systems.\n")
-      return(invisible(NULL))
-    }
-    
-    cat("\n🐧 LINUX SYSTEM DEPENDENCIES\n")
-    cat("===============================\n")
-    cat("\nBased on your complete R package list, you need these system libraries.\n")
-    cat("Run these commands in your terminal (not in R):\n\n")
-    
-    cat("# Update package list\n")
-    cat("sudo apt-get update\n\n")
-    
-    cat("# Install essential compilation tools\n")
-    cat("sudo apt-get install -y build-essential gfortran\n\n")
-    
-    cat("# Install libraries required by your R packages\n")
-    cat("sudo apt-get install -y \\\n")
-    
-    # Core libraries
-    cat("  libcurl4-openssl-dev \\   # curl, httr, httr2, devtools\n")
-    cat("  libssl-dev \\            # openssl, credentials, gargle, gert\n")
-    cat("  libxml2-dev \\           # xml2, rvest, roxygen2, devtools\n")
-    cat("  libgit2-dev \\           # gert\n")
-    
-    # Graphics and fonts libraries (for ragg, systemfonts, textshaping, ggplot2)
-    cat("  libfontconfig1-dev \\    # systemfonts, ragg, ggplot2\n")
-    cat("  libfreetype6-dev \\      # systemfonts, ragg\n")
-    cat("  libpng-dev \\            # ragg, PNG support\n")
-    cat("  libjpeg-dev \\           # ragg, JPEG support\n")
-    cat("  libtiff5-dev \\          # ragg, TIFF support\n")
-    cat("  libharfbuzz-dev \\       # textshaping (required by ragg)\n")
-    cat("  libfribidi-dev \\        # textshaping (bidirectional text)\n")
-    
-    # Additional required libraries
-    cat("  libglpk-dev \\           # igraph (graph algorithms)\n")
-    cat("  libgmp3-dev \\           # precision math operations\n")
-    cat("  libmpfr-dev \\           # precision math operations\n")
-    cat("  libicu-dev \\            # stringi (text processing)\n")
-    
-    # Graphics and system libraries
-    cat("  libcairo2-dev \\         # graphics device\n")
-    cat("  libxt-dev \\             # X11 toolkit\n")
-    
-    # Development tools
-    cat("  cmake \\                 # build tool for some packages\n")
-    cat("  pandoc \\                # rmarkdown, knitr\n")
-    cat("  pandoc-citeproc         # citations in rmarkdown\n")
-    
-    cat("\n# Database libraries (optional, if you plan to use database connections):\n")
-    cat("# sudo apt-get install -y libpq-dev        # for PostgreSQL\n")
-    cat("# sudo apt-get install -y libmysqlclient-dev  # for MySQL\n")
-    cat("# sudo apt-get install -y libsqlite3-dev   # for SQLite\n")
-    
-    cat("\n# Additional optional libraries:\n")
-    cat("# sudo apt-get install -y libv8-dev        # V8 JavaScript engine\n")
-    cat("# sudo apt-get install -y libssh2-1-dev    # SSH operations\n")
-    cat("# sudo apt-get install -y libsodium-dev    # encryption\n")
-    
-    cat("\n===============================\n")
-    cat("After installing, return to R and run: setup_project()\n\n")
-    
-    cat("PACKAGES COVERED:\n")
-    cat("- Graphics: ggplot2, ragg, systemfonts, textshaping\n")
-    cat("- Development: devtools, roxygen2, testthat, pkgbuild, rcmdcheck\n")
-    cat("- Data processing: dplyr, tidyr, stringi, xml2, jsonlite\n")
-    cat("- Web/API: httr, httr2, curl, rvest\n")
-    cat("- Google: googledrive, googlesheets4, gargle\n")
-    cat("- Git: gert, credentials\n")
-    cat("- Documents: rmarkdown, knitr, tinytex\n")
-    cat("- Algorithms: igraph\n")
-    cat("- Shiny: shiny, htmltools, htmlwidgets, httpuv\n")
-    
-    cat("\nNOTE: This covers all packages in your renv.lock file.\n")
-    cat("If you still get compilation errors, the error message will\n")
-    cat("usually indicate which specific library is missing.\n")
+  if (Sys.info()["sysname"] != "Linux") {
+    cat("This function is only for Linux systems.\n")
+    return(invisible(NULL))
   }
+  
+  cat("\n🐧 LINUX SYSTEM DEPENDENCIES\n")
+  cat("===============================\n")
+  cat("\nThese system libraries are required by your R packages.\n\n")
+  
+  cat("STEP 1: Update your package list\n")
+  cat("─────────────────────────────────\n")
+  cat("Copy and paste this command:\n\n")
+  cat("sudo apt-get update\n")
+  
+  cat("\n\nSTEP 2: Install compilation tools\n")
+  cat("──────────────────────────────────\n")
+  cat("Copy and paste this command:\n\n")
+  cat("sudo apt-get install -y build-essential gfortran\n")
+  
+  cat("\n\nSTEP 3: Install required libraries\n")
+  cat("───────────────────────────────────\n")
+  cat("Copy and paste this entire block:\n\n")
+  
+  # Print the command without comments
+  cat("sudo apt-get install -y \\
+  libcurl4-openssl-dev \\
+  libssl-dev \\
+  libxml2-dev \\
+  libgit2-dev \\
+  libfontconfig1-dev \\
+  libfreetype6-dev \\
+  libpng-dev \\
+  libjpeg-dev \\
+  libtiff5-dev \\
+  libharfbuzz-dev \\
+  libfribidi-dev \\
+  libglpk-dev \\
+  libgmp3-dev \\
+  libmpfr-dev \\
+  libicu-dev \\
+  libcairo2-dev \\
+  libxt-dev \\
+  cmake \\
+  pandoc \\
+  pandoc-citeproc\n")
+  
+  cat("\n\nWHAT THESE LIBRARIES ARE FOR:\n")
+  cat("─────────────────────────────\n")
+  cat("• libcurl4-openssl-dev : curl, httr, httr2, devtools\n")
+  cat("• libssl-dev          : openssl, credentials, gargle, gert\n")
+  cat("• libxml2-dev         : xml2, rvest, roxygen2, devtools\n")
+  cat("• libgit2-dev         : gert\n")
+  cat("• libfontconfig1-dev  : systemfonts, ragg, ggplot2\n")
+  cat("• libfreetype6-dev    : systemfonts, ragg\n")
+  cat("• libpng-dev          : ragg, PNG support\n")
+  cat("• libjpeg-dev         : ragg, JPEG support\n")
+  cat("• libtiff5-dev        : ragg, TIFF support\n")
+  cat("• libharfbuzz-dev     : textshaping (required by ragg)\n")
+  cat("• libfribidi-dev      : textshaping (bidirectional text)\n")
+  cat("• libglpk-dev         : igraph (graph algorithms)\n")
+  cat("• libgmp3-dev         : precision math operations\n")
+  cat("• libmpfr-dev         : precision math operations\n")
+  cat("• libicu-dev          : stringi (text processing)\n")
+  cat("• libcairo2-dev       : graphics device\n")
+  cat("• libxt-dev           : X11 toolkit\n")
+  cat("• cmake               : build tool for some packages\n")
+  cat("• pandoc              : rmarkdown, knitr\n")
+  cat("• pandoc-citeproc     : citations in rmarkdown\n")
+  
+  cat("\n\nOPTIONAL: Database libraries (if needed)\n")
+  cat("─────────────────────────────────────────\n")
+  cat("Only install these if you plan to use database connections:\n\n")
+  cat("# PostgreSQL support:\n")
+  cat("sudo apt-get install -y libpq-dev\n\n")
+  cat("# MySQL support:\n")
+  cat("sudo apt-get install -y libmysqlclient-dev\n\n")
+  cat("# SQLite support:\n")
+  cat("sudo apt-get install -y libsqlite3-dev\n")
+  
+  cat("\n\nOPTIONAL: Additional libraries\n")
+  cat("───────────────────────────────\n")
+  cat("Only if you get specific errors:\n\n")
+  cat("# V8 JavaScript engine:\n")
+  cat("sudo apt-get install -y libv8-dev\n\n")
+  cat("# SSH operations:\n")
+  cat("sudo apt-get install -y libssh2-1-dev\n\n")
+  cat("# Encryption:\n")
+  cat("sudo apt-get install -y libsodium-dev\n")
+  
+  cat("\n===============================\n")
+  cat("After installing, return to R and run: setup_project()\n\n")
+  
+  cat("TROUBLESHOOTING:\n")
+  cat("───────────────\n")
+  cat("If you still get compilation errors after installing these,\n")
+  cat("the error message will usually indicate which library is missing.\n")
+  cat("Search for: \"R package [package_name] system requirements ubuntu\"\n")
+}
   
   setup_project <- function(binary_only = FALSE) {
     cat("\n🔧 Setting up project environment...\n\n")
