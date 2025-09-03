@@ -36,9 +36,44 @@ if (interactive()) {
     cat("\n📁 Working directory: ", getwd(), "\n")
   })
   
-  # Check if on Linux and check system dependencies
-  if (Sys.info()["sysname"] == "Linux") {
-    cat("\n🐧 Linux system detected - checking system dependencies...\n")
+  # Check system-specific dependencies
+  sys_name <- Sys.info()["sysname"]
+  
+  if (sys_name == "Windows") {
+    cat("\n🪟 Windows system detected\n")
+    
+    # Check for Rtools on Windows
+    check_rtools <- function() {
+      # Check if make is available (indicates Rtools is installed)
+      make_path <- Sys.which("make")
+      if (make_path == "") {
+        # Also check common Rtools locations
+        rtools_paths <- c(
+          "C:\\rtools43\\usr\\bin",
+          "C:\\rtools42\\usr\\bin", 
+          "C:\\rtools40\\usr\\bin",
+          "C:\\Rtools\\bin"
+        )
+        for (path in rtools_paths) {
+          if (dir.exists(path)) {
+            return(TRUE)
+          }
+        }
+        return(FALSE)
+      }
+      return(TRUE)
+    }
+    
+    if (!check_rtools()) {
+      cat("   ⚠️  Rtools not detected (needed for some package installations)\n")
+      cat("   If package installation fails, install Rtools from:\n")
+      cat("   https://cran.r-project.org/bin/windows/Rtools/\n")
+    } else {
+      cat("   ✓ Rtools detected\n")
+    }
+    
+  } else if (sys_name == "Linux") {
+    cat("\n🐧 Linux system detected\n")
     
     # Function to check if a system library is installed
     check_system_lib <- function(lib_name) {
@@ -49,39 +84,26 @@ if (interactive()) {
       any(grepl(lib_name, result))
     }
     
-    # List of common system dependencies for R packages
-    system_deps <- list(
-      "libglpk" = "libglpk-dev",        # for igraph
-      "libcurl" = "libcurl4-openssl-dev", # for curl, httr
-      "libssl" = "libssl-dev",          # for openssl
-      "libxml2" = "libxml2-dev",        # for xml2
-      "libgit2" = "libgit2-dev",        # for gert
-      "libfontconfig" = "libfontconfig1-dev", # for systemfonts
-      "libfreetype" = "libfreetype6-dev",     # for ragg
-      "libharfbuzz" = "libharfbuzz-dev",      # for textshaping
-      "libfribidi" = "libfribidi-dev",        # for textshaping
-      "libtiff" = "libtiff5-dev",       # for tiff images
-      "libjpeg" = "libjpeg-dev",        # for jpeg
-      "libpng" = "libpng-dev",          # for png
-      "libpq" = "libpq-dev",            # for RPostgreSQL
-      "libmysqlclient" = "libmysqlclient-dev", # for RMySQL
-      "libsqlite3" = "libsqlite3-dev"   # for RSQLite
-    )
-    
-    missing_libs <- c()
-    for (lib in names(system_deps)) {
-      if (!check_system_lib(lib)) {
-        missing_libs <- c(missing_libs, system_deps[[lib]])
-      }
+    # Check for essential build tools
+    if (system2("which", args = "gcc", stdout = FALSE, stderr = FALSE) != 0) {
+      cat("   ⚠️  GCC compiler not found - install build-essential\n")
+    } else {
+      cat("   ✓ Build tools detected\n")
     }
     
-    if (length(missing_libs) > 0) {
-      cat("   ⚠️  Some system libraries may be missing\n")
-      cat("\n   If package installation fails, you may need to install:\n")
-      cat("   sudo apt-get update\n")
-      cat("   sudo apt-get install", paste(missing_libs, collapse = " "), "\n")
+    # Check for critical libraries
+    if (!check_system_lib("libglpk")) {
+      cat("   ⚠️  libglpk not found (needed for igraph)\n")
+    }
+    
+  } else if (sys_name == "Darwin") {
+    cat("\n🍎 macOS system detected\n")
+    # Check for Xcode command line tools
+    if (system2("which", args = "clang", stdout = FALSE, stderr = FALSE) != 0) {
+      cat("   ⚠️  Xcode Command Line Tools may not be installed\n")
+      cat("   Install with: xcode-select --install\n")
     } else {
-      cat("   ✓ Common system libraries detected\n")
+      cat("   ✓ Development tools detected\n")
     }
   }
   
@@ -143,6 +165,51 @@ if (interactive()) {
   }
   
   # Define helper functions
+  
+  # Windows-specific function
+  install_windows_tools <- function() {
+    if (Sys.info()["sysname"] != "Windows") {
+      cat("This function is only for Windows systems.\n")
+      return(invisible(NULL))
+    }
+    
+    cat("\n🪟 WINDOWS BUILD TOOLS (Rtools)\n")
+    cat("=====================================\n")
+    cat("\nSome R packages need compilation tools on Windows.\n")
+    cat("\nTo fix 'make not found' and similar errors:\n\n")
+    
+    # Detect R version for correct Rtools version
+    r_version <- paste(R.version$major, strsplit(R.version$minor, "\\.")[[1]][1], sep = ".")
+    
+    cat("1. Download and install Rtools for your R version (", R.version.string, "):\n\n")
+    
+    if (r_version >= "4.3") {
+      cat("   Download Rtools43 from:\n")
+      cat("   https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html\n")
+    } else if (r_version >= "4.2") {
+      cat("   Download Rtools42 from:\n")
+      cat("   https://cran.r-project.org/bin/windows/Rtools/rtools42/rtools.html\n")
+    } else if (r_version >= "4.0") {
+      cat("   Download Rtools40 from:\n")
+      cat("   https://cran.r-project.org/bin/windows/Rtools/\n")
+    }
+    
+    cat("\n2. Run the installer with default settings\n")
+    cat("   (It will install to C:\\rtools43 or similar)\n")
+    
+    cat("\n3. Restart RStudio after installation\n")
+    
+    cat("\n4. Run setup_project() again\n")
+    
+    cat("\n=====================================\n")
+    cat("\nAlternative: Force binary package installation\n")
+    cat("(This avoids compilation but may get slightly older versions)\n\n")
+    cat('options(pkgType = "binary")\n')
+    cat("setup_project()\n")
+    cat("\n=====================================\n")
+  }
+  
+  # Linux-specific function
   install_linux_deps <- function() {
     if (Sys.info()["sysname"] != "Linux") {
       cat("This function is only for Linux systems.\n")
@@ -151,10 +218,8 @@ if (interactive()) {
     
     cat("\n🐧 LINUX SYSTEM DEPENDENCIES\n")
     cat("===============================\n")
-    cat("\nThis project's R packages may require system libraries.\n")
     cat("\nRun these commands in your terminal (not in R):\n\n")
     
-    # Comprehensive list for common R packages
     cat("# Update package list\n")
     cat("sudo apt-get update\n\n")
     
@@ -186,22 +251,31 @@ if (interactive()) {
     cat("  libgeos-dev \\\n")        # for spatial packages
     cat("  libproj-dev\n")           # for spatial packages
     
-    cat("\n# For igraph specifically (your current issue):\n")
-    cat("sudo apt-get install -y libglpk-dev\n")
-    
     cat("\n===============================\n")
-    cat("After installing system libraries, return to R and run:\n")
-    cat("  setup_project()\n\n")
+    cat("After installing, return to R and run: setup_project()\n\n")
   }
   
-  setup_project <- function() {
+  setup_project <- function(binary_only = FALSE) {
     cat("\n🔧 Setting up project environment...\n\n")
     
-    # Check for Linux dependencies first
-    if (Sys.info()["sysname"] == "Linux") {
-      cat("📝 NOTE: On Linux, some R packages need system libraries.\n")
-      cat("   If installation fails, run: install_linux_deps()\n")
-      cat("   for instructions on installing system dependencies.\n\n")
+    # Platform-specific warnings
+    if (sys_name == "Windows") {
+      if (binary_only) {
+        cat("📦 Installing binary packages only (no compilation needed)...\n\n")
+        options(pkgType = "binary")
+      } else {
+        # Check for Rtools
+        make_available <- Sys.which("make") != ""
+        if (!make_available) {
+          cat("⚠️  WARNING: Rtools not detected!\n")
+          cat("   If you see 'make not found' errors, either:\n")
+          cat("   1. Run: install_windows_tools() and install Rtools, OR\n")
+          cat("   2. Run: setup_project(binary_only = TRUE) to use pre-built packages\n\n")
+        }
+      }
+    } else if (sys_name == "Linux") {
+      cat("📝 NOTE: On Linux, some packages need system libraries.\n")
+      cat("   If installation fails, run: install_linux_deps()\n\n")
     }
     
     # Install renv if needed
@@ -215,31 +289,47 @@ if (interactive()) {
     if (!file.exists("renv.lock")) {
       cat("❌ Error: renv.lock not found in project directory\n")
       cat("   Current directory:", getwd(), "\n")
-      cat("   Please ensure you're in the project root directory\n")
       return(invisible(NULL))
     }
     
     # Restore packages
     cat("Step 2: Installing R packages (this may take 5-10 minutes)...\n\n")
     
-    # Try to restore, catching errors for missing system deps
+    # Try to restore, catching common errors
     tryCatch({
       renv::restore(prompt = FALSE)
       cat("\n✅ Setup complete!\n")
       cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
       cat("   Then run: open_main_script()\n")
     }, error = function(e) {
-      if (grepl("(libglpk|compilation failed|undefined symbol)", e$message, ignore.case = TRUE)) {
-        cat("\n❌ Package installation failed - likely missing system libraries\n")
-        cat("\n", e$message, "\n")
+      error_msg <- tolower(e$message)
+      
+      if (grepl("make.*not found", error_msg)) {
+        cat("\n❌ Compilation failed - 'make' not found\n\n")
+        cat("This means Rtools is not installed. You have two options:\n\n")
+        cat("OPTION 1: Install Rtools (recommended)\n")
+        cat("   Run: install_windows_tools()\n")
+        cat("   Follow the instructions, then run setup_project() again\n\n")
+        cat("OPTION 2: Use pre-built binaries (easier but may be older versions)\n")
+        cat("   Run: setup_project(binary_only = TRUE)\n\n")
+      } else if (grepl("(libglpk|compilation failed|undefined symbol)", error_msg)) {
+        cat("\n❌ Compilation failed - missing system libraries\n")
         cat("\nRun: install_linux_deps()\n")
         cat("for commands to install required system libraries,\n")
         cat("then try setup_project() again.\n")
       } else {
         cat("\n❌ Installation error:\n")
         cat(e$message, "\n")
+        if (sys_name == "Windows") {
+          cat("\nTry: setup_project(binary_only = TRUE)\n")
+        }
       }
     })
+    
+    # Reset package type if changed
+    if (binary_only) {
+      options(pkgType = "both")  # Reset to default
+    }
   }
   
   open_main_script <- function() {
@@ -276,14 +366,27 @@ if (interactive()) {
     cat("   OS:", Sys.info()["sysname"], Sys.info()["release"], "\n")
     cat("   R version:", R.version.string, "\n")
     
+    # Platform-specific checks
+    if (sys_name == "Windows") {
+      cat("\n🪟 Windows build tools:\n")
+      if (Sys.which("make") != "") {
+        cat("   ✓ Rtools detected (make available)\n")
+      } else {
+        cat("   ⚠️  Rtools not detected\n")
+        cat("   Run install_windows_tools() for installation info\n")
+      }
+    } else if (sys_name == "Linux") {
+      cat("\n🐧 Linux build tools:\n")
+      if (system2("which", args = "gcc", stdout = FALSE, stderr = FALSE) == 0) {
+        cat("   ✓ GCC compiler found\n")
+      } else {
+        cat("   ⚠️  GCC not found - install build-essential\n")
+      }
+      cat("   Run install_linux_deps() for full system requirements\n")
+    }
+    
     # Working directory
     cat("\n📁 Working directory:\n   ", getwd(), "\n")
-    
-    # Check Linux dependencies if on Linux
-    if (Sys.info()["sysname"] == "Linux") {
-      cat("\n🐧 Linux system libraries:\n")
-      cat("   Run install_linux_deps() for system dependency info\n")
-    }
     
     # renv status
     cat("\n📦 Package management (renv):\n")
@@ -324,7 +427,13 @@ if (interactive()) {
   assign("setup_project", setup_project, envir = .GlobalEnv)
   assign("open_main_script", open_main_script, envir = .GlobalEnv)  
   assign("check_setup", check_setup, envir = .GlobalEnv)
-  assign("install_linux_deps", install_linux_deps, envir = .GlobalEnv)
+  
+  # Platform-specific function assignment
+  if (sys_name == "Windows") {
+    assign("install_windows_tools", install_windows_tools, envir = .GlobalEnv)
+  } else if (sys_name == "Linux") {
+    assign("install_linux_deps", install_linux_deps, envir = .GlobalEnv)
+  }
   
   # Display instructions based on status
   cat("\n------------------------------------------------------------\n")
@@ -333,17 +442,27 @@ if (interactive()) {
     cat(" 🔧 INITIAL SETUP REQUIRED\n")
     cat("------------------------------------------------------------\n\n")
     cat(" Run: setup_project()\n\n")
-    if (Sys.info()["sysname"] == "Linux") {
-      cat(" Linux users: You may also need system libraries.\n")
-      cat(" Run: install_linux_deps() for instructions\n\n")
+    
+    if (sys_name == "Windows") {
+      cat(" Windows: If you see 'make not found' errors:\n")
+      cat("   • Run: install_windows_tools() for Rtools info, OR\n")
+      cat("   • Run: setup_project(binary_only = TRUE) for pre-built packages\n\n")
+    } else if (sys_name == "Linux") {
+      cat(" Linux: You may need system libraries.\n")
+      cat("   • Run: install_linux_deps() for requirements\n\n")
     }
   } else if (!deps_ok && lockfile_exists) {
     cat(" 📦 PACKAGE INSTALLATION NEEDED\n")
     cat("------------------------------------------------------------\n\n")
     cat(" Run: setup_project()\n\n")
-    if (Sys.info()["sysname"] == "Linux") {
-      cat(" If installation fails with compilation errors:\n")
-      cat(" Run: install_linux_deps() for system requirements\n\n")
+    
+    if (sys_name == "Windows" && Sys.which("make") == "") {
+      cat(" ⚠️  Rtools not detected. Options:\n")
+      cat("   1. setup_project(binary_only = TRUE)  # Use pre-built packages\n")
+      cat("   2. install_windows_tools()  # Get Rtools installation guide\n\n")
+    } else if (sys_name == "Linux") {
+      cat(" If compilation fails:\n")
+      cat("   • Run: install_linux_deps() for system requirements\n\n")
     }
   } else if (deps_ok) {
     cat(" ✅ PROJECT READY\n")
@@ -353,10 +472,15 @@ if (interactive()) {
   
   cat(" Available commands:\n")
   cat("   • setup_project()     - Install/update R packages\n")
+  
+  if (sys_name == "Windows") {
+    cat("   • setup_project(binary_only = TRUE) - Use pre-built packages\n")
+    cat("   • install_windows_tools() - Rtools installation guide\n")
+  } else if (sys_name == "Linux") {
+    cat("   • install_linux_deps() - System library requirements\n")
+  }
+  
   cat("   • open_main_script()  - Open main script\n")
   cat("   • check_setup()       - Show detailed status\n")
-  if (Sys.info()["sysname"] == "Linux") {
-    cat("   • install_linux_deps() - Show Linux system requirements\n")
-  }
   cat("\n============================================================\n\n")
 }
