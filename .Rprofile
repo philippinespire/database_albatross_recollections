@@ -414,7 +414,7 @@ if (interactive()) {
       }
     }
     
-    script_path <- "scripts/assemble_db.R"
+    script_path <- "scripts/db.R"
     if (file.exists(script_path)) {
       cat("Opening:", script_path, "\n")
       if (requireNamespace("rstudioapi", quietly = TRUE) && 
@@ -479,7 +479,7 @@ if (interactive()) {
     # Project files
     cat("\n📄 Project files:\n")
     files <- c(
-      "scripts/assemble_db.R",
+      "scripts/db.R",
       "renv.lock",
       ".Rprofile",
       "database_albatross_recollections.Rproj"

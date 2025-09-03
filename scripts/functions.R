@@ -375,7 +375,48 @@ compile_db_inputs <- function(verbose = FALSE){
         pull(sheet)
 }
 
-
+#### Assemble Database ####
+database_assembly <- function(){
+    
+    db_with_pk <- compile_db_inputs() %>% #names()
+        do.call(dm, .) %>%
+        dm::dm_add_pk(sampling_sites_sheets,
+                      columns = c(lot_id)) %>%
+        dm::dm_add_pk(lots_sheets,
+                      columns = c(lot_id)) %>%
+        dm::dm_add_pk(individuals_sheets,
+                      columns = c(individual_id)) %>%
+        dm::dm_add_pk(table = species_sheets,
+                      columns = species_valid_name) %>%
+        dm::dm_add_pk(dna_extractions_sheets,
+                      columns = c(extraction_id)) %>%
+        dm::dm_add_pk(table = dna_extractions_gels,
+                      columns = gel_id) %>%
+        dm::dm_add_pk(shipments_sheets,
+                      columns = c(shipment_id, plate_box_id)) %>%
+        dm::dm_add_pk(sequence_info_sheets,
+                      columns = c(sequencing_batch_id)) %>%
+        identity()
+    
+    db_with_pk %>%
+        dm_add_fk(table = lots_sheets, 
+                  columns = lot_id, 
+                  ref_table = sampling_sites_sheets,
+                  ref_columns = lot_id) %>%
+        dm_add_fk(table = individuals_sheets, 
+                  columns = lot_id, 
+                  ref_table = lots_sheets) %>%
+        dm_add_fk(table = individuals_sheets, 
+                  columns = lot_id, 
+                  ref_table = sampling_sites_sheets) %>%
+        dm_add_fk(table = individuals_sheets,
+                  columns = species_valid_name,
+                  ref_table = species_sheets,
+                  ref_columns = species_valid_name) %>%
+        dm_add_fk(table = dna_extractions_sheets, 
+                  columns = individual_id, 
+                  ref_table = individuals_sheets)
+}
 
 #### Identify Rows in Tables missing the primary key ####
 find_missing_pks <- function(db, sheet, pk_col){
