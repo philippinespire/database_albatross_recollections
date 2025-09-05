@@ -1,25 +1,16 @@
 #### Packages ####
-source("functions.R")
-
-install_and_load_packages(
-  cran_packages    = 
-    c(
-      "tidyverse", 
-      "janitor", 
-      "readxl"
-    )
-)
-
-source('wrangle_db_files.R')
-
+source("assemble_db.R")
 
 #### Identify Primary and Foreign Keys ####
 dir.create('../troubleshooting_files')
 # Samples with either duplicated of missing Extraction IDs
-initial_database$dna_extractions_sheets %>%
-  filter(n() > 1 | is.na(extraction_id),
-         .by = extraction_id) %>%
-  distinct(individual_id, extraction_id) %>%
+pire_db$dna_extractions_sheets %>%
+    mutate(extraction_id2 = str_replace_all(extraction_id, '-', '_')) %>%
+    filter(n() > 1,
+           .by = extraction_id2) %>%
+    filter(!is.na(extraction_id)) %>% View
+    distinct(individual_id, extraction_id, extraction_id2) 
+    
   write_csv('../troubleshooting_files/Extractions_sheet_xlsx_issues.csv')
 
 

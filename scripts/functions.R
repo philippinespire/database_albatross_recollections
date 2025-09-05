@@ -127,7 +127,7 @@ apply_corrections <- function(data, file_type, verbose = FALSE) {
     
     
     corrections <- read_excel(here::here("db_files", "extractions_mislabelling_sheet.xlsx")) %>%
-        clean_names() %>%
+        clean_names() %>% 
         # Remove any completely empty rows
         filter(!if_all(everything(), is.na))
     
