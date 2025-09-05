@@ -51,22 +51,11 @@ git clone git@github.com:philippinespire/database_albatross_recollections.git
 
 ------------------------------------------------------------
  ✅ PROJECT READY
-------------------------------------------------------------
-
- Using the database? Run: get_database()
- Updating the database? Run: update_database()
-
- Available commands:
-   • setup_project()     - Install/update R packages
-   •  Windows specific functions
-      - setup_project(binary_only = TRUE) - Use pre-built packages
-      - install_windows_tools() - Rtools installation guide
-   • check_setup()       - Show detailed status
-
-   • get_database()  - Open script to use the database
-   • update_database()  - Open script to add files to the database
-
-============================================================
+ ┌─────────────────────────────────────────────────────┐
+ 💡 QUICK START:
+    • Using the database?       Run: get_database()
+    • Updating the database?    Run: update_database()
+ └─────────────────────────────────────────────────────┘
 ```
 If this message does not appear on your console, try sourcing the .Rprofile manually in the R console:
 ```r
@@ -77,14 +66,12 @@ If this message does not appear on your console, try sourcing the .Rprofile manu
 # Source the .Rprofile
 >source(".Rprofile")
 ```
-Once the R profile is correctly running, you have access to new project specific R functions (see below) that can be used to locally build the database.
+Once the R profile is correctly running, you have access to new project specific R functions (see below) that can be used to locally build the database. Generally you should be able to follow the instructions in the terminal to set-up your computer if needed and use/update the database.
 
-4. If this is the first time cloning the repo use the R function `setup_project()` in the R console to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10).
-
-```r
-# In the R console
->setup_project()
-```
+4. If this is the first time cloning the repo the R function `setup_project()` will be available. Use `setup_project()` in the R console to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10).
+	- If you are using a Windows computer:
+	- If you are using a Linux computer: 
+	- If you are using a Mac computer: 
 
 5. To locally build the database, use the R function `get_database()` to create the database as a `dm` object. 
 

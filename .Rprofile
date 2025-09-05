@@ -590,6 +590,8 @@ if (interactive()) {
     cat(sprintf("    • %-25s Run: %s\n", "Updating the database?", "update_database()"))
     cat(" └─────────────────────────────────────────────────────┘\n")
     cat("\n")
+    rm('install_linux_deps', 'install_windows_tools', 'check_rtools', 'check_setup', 'setup_project')
+    rm('sys_name', 'renv_available', 'lockfile_exists', 'deps_ok')
   }
   
   #cat(" Available commands:\n")
