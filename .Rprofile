@@ -562,20 +562,24 @@ if (interactive()) {
       cat(" Linux: You may need system libraries.\n")
       cat("   • Run: install_linux_deps() for requirements\n\n")
     }
+    rm('get_database', 'update_database')
   } else if (!deps_ok && lockfile_exists) {
     cat(" 📦 PACKAGE INSTALLATION NEEDED\n")
     cat("------------------------------------------------------------\n\n")
     cat(" Run: setup_project()\n\n")
-    rm('install_windows_tools', 'install_linux_deps', 'get_database', 'update_database')
+    rm('get_database', 'update_database')
     
     if (sys_name == "Windows" && Sys.which("make") == "") {
       cat(" ⚠️  Rtools not detected. Options:\n")
       cat("   1. setup_project(binary_only = TRUE)  # Use pre-built packages\n")
       cat("   2. install_windows_tools()  # Get Rtools installation guide\n\n")
+      rm('install_linux_deps')
     } else if (sys_name == "Linux") {
       cat(" If compilation fails:\n")
       cat("   • Run: install_linux_deps() for system requirements\n\n")
+      rm('install_windows_tools')
     }
+    rm('install_linux_deps', 'install_windows_tools')
   } else if (deps_ok) {
     cat(" ✅ PROJECT READY\n")
     #cat("------------------------------------------------------------\n\n")
