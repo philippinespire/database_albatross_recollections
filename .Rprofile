@@ -327,84 +327,84 @@ if (interactive()) {
   cat("Search for: \"R package [package_name] system requirements ubuntu\"\n")
 }
   
-  setup_project <- function(binary_only = FALSE) {
-    cat("\n🔧 Setting up project environment...\n\n")
-    
-    # Platform-specific warnings
-    if (sys_name == "Windows") {
-      if (binary_only) {
-        cat("📦 Installing binary packages only (no compilation needed)...\n\n")
-        options(pkgType = "binary")
-      } else {
-        # Check for Rtools
-        make_available <- Sys.which("make") != ""
-        if (!make_available) {
-          cat("⚠️  WARNING: Rtools not detected!\n")
-          cat("   If you see 'make not found' errors, either:\n")
-          cat("   1. Run: install_windows_tools() and install Rtools, OR\n")
-          cat("   2. Run: setup_project(binary_only = TRUE) to use pre-built packages\n\n")
-        }
-      }
-    } else if (sys_name == "Linux") {
-      cat("📋 NOTE: On Linux, some packages need system libraries.\n")
-      cat("   If installation fails, run: install_linux_deps()\n\n")
-    }
-    
-    # Install renv if needed
-    if (!requireNamespace("renv", quietly = TRUE)) {
-      cat("Step 1: Installing renv package manager...\n")
-      install.packages("renv")
-      cat("✔ renv installed\n\n")
-    }
-    
-    # Check for lockfile
-    if (!file.exists("renv.lock")) {
-      cat("❌ Error: renv.lock not found in project directory\n")
-      cat("   Current directory:", getwd(), "\n")
-      return(invisible(NULL))
-    }
-    
-    # Restore packages
-    cat("Step 2: Installing R packages (this may take 5-10 minutes)...\n\n")
-    
-    # Try to restore, catching common errors
-    tryCatch({
-      renv::restore(prompt = FALSE)
-      cat("\n✅ Setup complete!\n")
-      cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
-      cat("   Then run: use_database() or update_database()\n")
-    }, error = function(e) {
-      error_msg <- tolower(e$message)
-      
-      if (grepl("make.*not found", error_msg)) {
-        cat("\n❌ Compilation failed - 'make' not found\n\n")
-        cat("This means Rtools is not installed. You have two options:\n\n")
-        cat("OPTION 1: Install Rtools (recommended)\n")
-        cat("   Run: install_windows_tools()\n")
-        cat("   Follow the instructions, then run setup_project() again\n\n")
-        cat("OPTION 2: Use pre-built binaries (easier but may be older versions)\n")
-        cat("   Run: setup_project(binary_only = TRUE)\n\n")
-      } else if (grepl("(libcurl|libssl|libgit2|libxml2|compilation failed|undefined symbol)", error_msg)) {
-        cat("\n❌ Compilation failed - missing system libraries\n")
-        cat("\nRun: install_linux_deps()\n")
-        cat("for commands to install required system libraries,\n")
-        cat("then try setup_project() again.\n")
-      } else {
-        cat("\n❌ Installation error:\n")
-        cat(e$message, "\n")
-        if (sys_name == "Windows") {
-          cat("\nTry: setup_project(binary_only = TRUE)\n")
-        }
-      }
-    })
-    
-    # Reset package type if changed
+setup_project <- function(binary_only = FALSE) {
+  cat("\n🔧 Setting up project environment...\n\n")
+  
+  # Platform-specific warnings
+  if (sys_name == "Windows") {
     if (binary_only) {
-      options(pkgType = "both")  # Reset to default
+      cat("📦 Installing binary packages only (no compilation needed)...\n\n")
+      options(pkgType = "binary")
+    } else {
+      # Check for Rtools
+      make_available <- Sys.which("make") != ""
+      if (!make_available) {
+        cat("⚠️  WARNING: Rtools not detected!\n")
+        cat("   If you see 'make not found' errors, either:\n")
+        cat("   1. Run: install_windows_tools() and install Rtools, OR\n")
+        cat("   2. Run: setup_project(binary_only = TRUE) to use pre-built packages\n\n")
+      }
     }
+  } else if (sys_name == "Linux") {
+    cat("📋 NOTE: On Linux, some packages need system libraries.\n")
+    cat("   If installation fails, run: install_linux_deps()\n\n")
   }
   
-  use_database <- function() {
+  # Install renv if needed
+  if (!requireNamespace("renv", quietly = TRUE)) {
+    cat("Step 1: Installing renv package manager...\n")
+    install.packages("renv")
+    cat("✔ renv installed\n\n")
+  }
+  
+  # Check for lockfile
+  if (!file.exists("renv.lock")) {
+    cat("❌ Error: renv.lock not found in project directory\n")
+    cat("   Current directory:", getwd(), "\n")
+    return(invisible(NULL))
+  }
+  
+  # Restore packages
+  cat("Step 2: Installing R packages (this may take 5-10 minutes)...\n\n")
+  
+  # Try to restore, catching common errors
+  tryCatch({
+    renv::restore(prompt = FALSE)
+    cat("\n✅ Setup complete!\n")
+    cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
+    cat("   Then run: use_database() or update_database()\n")
+  }, error = function(e) {
+    error_msg <- tolower(e$message)
+    
+    if (grepl("make.*not found", error_msg)) {
+      cat("\n❌ Compilation failed - 'make' not found\n\n")
+      cat("This means Rtools is not installed. You have two options:\n\n")
+      cat("OPTION 1: Install Rtools (recommended)\n")
+      cat("   Run: install_windows_tools()\n")
+      cat("   Follow the instructions, then run setup_project() again\n\n")
+      cat("OPTION 2: Use pre-built binaries (easier but may be older versions)\n")
+      cat("   Run: setup_project(binary_only = TRUE)\n\n")
+    } else if (grepl("(libcurl|libssl|libgit2|libxml2|compilation failed|undefined symbol)", error_msg)) {
+      cat("\n❌ Compilation failed - missing system libraries\n")
+      cat("\nRun: install_linux_deps()\n")
+      cat("for commands to install required system libraries,\n")
+      cat("then try setup_project() again.\n")
+    } else {
+      cat("\n❌ Installation error:\n")
+      cat(e$message, "\n")
+      if (sys_name == "Windows") {
+        cat("\nTry: setup_project(binary_only = TRUE)\n")
+      }
+    }
+  })
+  
+  # Reset package type if changed
+  if (binary_only) {
+    options(pkgType = "both")  # Reset to default
+  }
+}
+  
+  get_database <- function() {
     # Quick dependency check if renv is available
     if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
       if (!.check_dependencies(silent = TRUE)) {
@@ -414,19 +414,24 @@ if (interactive()) {
       }
     }
     
-    script_path <- "scripts/use_db.R"
-    if (file.exists(script_path)) {
-      cat("Opening:", script_path, "\n")
-      if (requireNamespace("rstudioapi", quietly = TRUE) && 
-          rstudioapi::isAvailable()) {
-        invisible(rstudioapi::navigateToFile(script_path))
-      } else {
-        file.edit(script_path)
-      }
-    } else {
-      cat("❌ File not found:", script_path, "\n")
-      cat("   Current directory:", getwd(), "\n")
-    }
+    #script_path <- "scripts/use_db.R"
+    #if (file.exists(script_path)) {
+    #  cat("Opening:", script_path, "\n")
+    #  if (requireNamespace("rstudioapi", quietly = TRUE) && 
+    #      rstudioapi::isAvailable()) {
+    #    invisible(rstudioapi::navigateToFile(script_path))
+    #  } else {
+    #    file.edit(script_path)
+    #  }
+    #} else {
+    #  cat("❌ File not found:", script_path, "\n")
+    #  cat("   Current directory:", getwd(), "\n")
+    #}
+
+    #The first time this is called it sources in the functions and runs itself. After it is replaced with the main function
+    #
+    source("scripts/functions.R")
+    get_database()
   }
 
   update_database <- function() {
@@ -439,19 +444,24 @@ if (interactive()) {
       }
     }
     
-    script_path <- "scripts/update_db.R"
-    if (file.exists(script_path)) {
-      cat("Opening:", script_path, "\n")
-      if (requireNamespace("rstudioapi", quietly = TRUE) && 
-          rstudioapi::isAvailable()) {
-        invisible(rstudioapi::navigateToFile(script_path))
-      } else {
-        file.edit(script_path)
-      }
-    } else {
-      cat("❌ File not found:", script_path, "\n")
-      cat("   Current directory:", getwd(), "\n")
-    }
+    #script_path <- "scripts/update_db.R"
+    #if (file.exists(script_path)) {
+    #  cat("Opening:", script_path, "\n")
+    #  if (requireNamespace("rstudioapi", quietly = TRUE) && 
+    #      rstudioapi::isAvailable()) {
+    #    invisible(rstudioapi::navigateToFile(script_path))
+    #  } else {
+    #    file.edit(script_path)
+    #  }
+    #} else {
+    #  cat("❌ File not found:", script_path, "\n")
+    #  cat("   Current directory:", getwd(), "\n")
+    #}
+
+    #The first time this is called it sources in the functions and runs itself. After it is replaced with the main function
+    #
+    source("scripts/functions.R")
+    update_database()
   }
   
   check_setup <- function() {
@@ -504,8 +514,7 @@ if (interactive()) {
     # Project files
     cat("\n📄 Project files:\n")
     files <- c(
-      "scripts/use_db.R",
-      "scripts/add_db.R",
+      "scripts/functions.R",
       "renv.lock",
       ".Rprofile",
       "database_albatross_recollections.Rproj"
@@ -523,7 +532,7 @@ if (interactive()) {
   
   # Make functions globally available
   assign("setup_project", setup_project, envir = .GlobalEnv)
-  assign("use_database", use_database, envir = .GlobalEnv)  
+  assign("get_database", get_database, envir = .GlobalEnv)  
   assign("update_database", update_database, envir = .GlobalEnv) 
   assign("check_setup", check_setup, envir = .GlobalEnv)
   
@@ -565,23 +574,30 @@ if (interactive()) {
     }
   } else if (deps_ok) {
     cat(" ✅ PROJECT READY\n")
-    cat("------------------------------------------------------------\n\n")
-    cat(" Run: use_database() to use the database\n or update_database() to add files to the database\n\n")
+    #cat("------------------------------------------------------------\n\n")
+    #cat(" Run: get_database() to use the database\n or update_database() to add files to the database\n\n")
+    cat(" ┌─────────────────────────────────────────────────────┐\n")
+    cat(" 💡 QUICK START:\n")
+    cat(sprintf("    • %-25s Run: %s\n", "Using the database?", "get_database()"))
+    cat(sprintf("    • %-25s Run: %s\n", "Updating the database?", "update_database()"))
+    cat(" └─────────────────────────────────────────────────────┘\n")
+    cat("\n")
   }
   
   cat(" Available commands:\n")
   cat("   • setup_project()     - Install/update R packages\n")
+  cat("   • ", sys_name, "specific functions\n")
   
   if (sys_name == "Windows") {
-    cat("   • setup_project(binary_only = TRUE) - Use pre-built packages\n")
-    cat("   • install_windows_tools() - Rtools installation guide\n")
+    cat("      - setup_project(binary_only = TRUE) - Use pre-built packages\n")
+    cat("      - install_windows_tools() - Rtools installation guide\n")
   } else if (sys_name == "Linux") {
-    cat("   • install_linux_deps() - System library requirements\n")
+    cat("      - install_linux_deps() - System library requirements\n")
   }
+    cat("   • check_setup()       - Show detailed status\n\n")
   
-  cat("   • use_database()  - Open script to use the database\n")
+  cat("   • get_database()  - Open script to use the database\n")
   cat("   • update_database()  - Open script to add files to the database\n")
-  cat("   • check_setup()       - Show detailed status\n")
   cat("\n============================================================\n\n")
 }
 

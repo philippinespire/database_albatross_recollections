@@ -35,37 +35,38 @@ git clone git@github.com:philippinespire/database_albatross_recollections.git
 ```
 2. Navigate to the database folder and open `database_albatross_recollections.Rproj` in `RStudio`. Something like the following should be shown in your console:
 ```r
-# Bootstrapping renv 1.1.2 ---------------------------------------------------
-- Downloading renv ... OK
-- Installing renv  ... OK
-
-- Project 'C:/Users/jdsel/Downloads/database_albatross_recollections' loaded. [renv 1.1.2]
-- One or more packages recorded in the lockfile are not installed.
-- Use `renv::status()` for more details.
-
 ============================================================
  PROJECT: database_albatross_recollections
 ============================================================
 
-⚠️  PACKAGES NEED TO BE INSTALLED
-   Missing 144 packages
+📁 Working directory confirmed
+    C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections 
+
+🪟 Windows system detected
+   ✔ Rtools detected
+
+📦 Checking R environment...
+   ✔ renv active
+   ✅ All 154 R packages installed
+
+------------------------------------------------------------
+ ✅ PROJECT READY
+------------------------------------------------------------
+
+ Using the database? Run: get_database()
+ Updating the database? Run: update_database()
+
+ Available commands:
+   • setup_project()     - Install/update R packages
+   •  Windows specific functions
+      - setup_project(binary_only = TRUE) - Use pre-built packages
+      - install_windows_tools() - Rtools installation guide
+   • check_setup()       - Show detailed status
+
+   • get_database()  - Open script to use the database
+   • update_database()  - Open script to add files to the database
 
 ============================================================
- ACTION REQUIRED:
-============================================================
-
- Run this command to install all required packages:
-
-   renv::restore()
-
- This will take a few minutes on first setup.
- After installation, restart R (Session → Restart R)
-============================================================
-
-📌 Commands available:
-   • setup_project()    - Install all packages (run this first!)
-   • check_setup()      - Check project status
-   • open_main_script() - Open main script (after setup)
 ```
 If this message does not appear on your console, try sourcing the .Rprofile manually in the R console:
 ```r
@@ -85,13 +86,9 @@ Once the R profile is correctly running, you have access to new project specific
 >setup_project()
 ```
 
-5. To locally build the database, use the R function `open_main_script()` to open [`scripts/assemble_db.R`](scripts/assemble_db.R) to interactively create the database as a `dm` object. Alternatively, open and run the lines in`scripts/assemble_db.R`.
+5. To locally build the database, use the R function `get_database()` to create the database as a `dm` object. 
 
-```r
-# In the R console
->open_main_script()
-```
-
+### Adding Data to the Database
 
 ### Troubleshooting
 
