@@ -69,8 +69,8 @@ If this message does not appear on your console, try sourcing the .Rprofile manu
 Once the R profile is correctly running, you have access to new project specific R functions (see below) that can be used to locally build the database. Generally you should be able to follow the instructions in the terminal to set-up your computer if needed and use/update the database.
 
 4. If this is the first time cloning the repo the R function `setup_project()` will be available. Use `setup_project()` in the R console to install needed packages and restart R (Session → Restart R or Ctrl+Shift+F10).
-	- If you are using a Windows computer:
-	- If you are using a Linux computer: 
+	- If you are using a Windows computer: If [RTools](https://cran.r-project.org/bin/windows/Rtools/) is not detected installed on your computer you will be prompted to use `install_windows_tools()` which will provide guidance on how to install Rtools prior to using `setup_project()`
+	- If you are using a Linux computer: First use `setup_project()` to install packages. However if there are errors you can use `install_linux_dependencies()` to get a prompt for how to download linux system dependencies that may not come with your distro by default.
 	- If you are using a Mac computer: 
 
 5. To locally build the database, use the R function `get_database()` to create the database as a `dm` object. 

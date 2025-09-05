@@ -135,7 +135,7 @@ if (interactive()) {
   
   # Safe dependency check function
   .check_dependencies <- function(silent = FALSE) {
-    if (!renv_available || !lockfile_exists) {
+    if (!requireNamespace("renv", quietly = TRUE) || !file.exists("renv.lock")) {
       if (!silent) cat("   Dependencies cannot be checked\n")
       return(FALSE)
     }
@@ -576,6 +576,7 @@ if (interactive()) {
       rm('install_linux_deps', 'deps_ok', 'lockfile_exists', 'renv_available')
       rm('sys_name', 'check_rtools', 'check_setup', 'setup_project')
     } else if (sys_name == "Linux") {
+      cat(" Run: setup_project()\n\n")
       cat(" If compilation fails:\n")
       cat("   • Run: install_linux_deps() for system requirements\n\n")
       rm('install_windows_tools')
