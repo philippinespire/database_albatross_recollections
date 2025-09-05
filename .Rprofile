@@ -566,6 +566,7 @@ if (interactive()) {
     cat(" 📦 PACKAGE INSTALLATION NEEDED\n")
     cat("------------------------------------------------------------\n\n")
     cat(" Run: setup_project()\n\n")
+    rm(c('install_windows_tools', 'install_linux_deps', 'get_database', 'update_database'))
     
     if (sys_name == "Windows" && Sys.which("make") == "") {
       cat(" ⚠️  Rtools not detected. Options:\n")
