@@ -419,7 +419,7 @@ if (interactive()) {
       cat("Opening:", script_path, "\n")
       if (requireNamespace("rstudioapi", quietly = TRUE) && 
           rstudioapi::isAvailable()) {
-        rstudioapi::navigateToFile(script_path)
+        invisible(rstudioapi::navigateToFile(script_path))
       } else {
         file.edit(script_path)
       }

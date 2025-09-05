@@ -8,31 +8,29 @@ pire_db$dna_extractions_sheets %>%
     mutate(extraction_id2 = str_replace_all(extraction_id, '-', '_')) %>%
     filter(n() > 1,
            .by = extraction_id2) %>%
-    filter(!is.na(extraction_id)) %>% View
+    filter(!is.na(extraction_id)) %>% 
     distinct(individual_id, extraction_id, extraction_id2) 
-    
-  write_csv('../troubleshooting_files/Extractions_sheet_xlsx_issues.csv')
 
 
-initial_database$dna_extractions_gels %>%
+pire_db$dna_extractions_gels %>%
   filter(n() > 1 | is.na(gel_id),
          .by = gel_id)
 
 
-initial_database$species_sheets %>%
-  filter(n() > 1 | is.na(species_code),
-         .by = species_code)
+pire_db$species_sheets %>%
+  filter(n() > 1 | is.na(species_valid_name),
+         .by = species_valid_name)
 
 
-initial_database$individuals_sheets %>%
+pire_db$individuals_sheets %>%
   filter(is.na(individual_id))
 
-initial_database$individuals_sheets %>%
-  filter(n() > 1 | is.na(individual_id),
-         .by = individual_id) %>%
-  distinct(individual_id) %>%
-  filter(!is.na(individual_id)) %>%
-  write_csv('../troubleshooting_files/Individual_sheet_xlsx_issues.csv')
+pire_db$individuals_sheets %>%
+    mutate(individual_id2 = str_replace_all(individual_id, '-', '_')) %>%
+  filter(n() > 1,
+         .by = individual_id2) %>%
+  distinct(individual_id, individual_id2) %>%
+  filter(!is.na(individual_id)) %>% View
   
   
 initial_database$lots_sheets %>%
