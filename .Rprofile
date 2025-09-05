@@ -569,10 +569,12 @@ if (interactive()) {
     rm('get_database', 'update_database')
     
     if (sys_name == "Windows" && Sys.which("make") == "") {
-      cat(" ⚠️  Rtools not detected. Options:\n")
+      cat(" ⚠️  Rtools not detected.\n")
       #cat("   1. setup_project(binary_only = TRUE)  # Use pre-built packages\n")
       cat("   • Run: install_windows_tools()  # Get Rtools installation guide\n\n")
-      rm('install_linux_deps')
+      cat("   After installing Rtools restart R and run setup_project() to install R packages")
+      rm('install_linux_deps', 'deps_ok', 'lockfile_exists', 'renv_available')
+      rm('sys_name', 'check_rtools', 'check_setup', 'setup_project')
     } else if (sys_name == "Linux") {
       cat(" If compilation fails:\n")
       cat("   • Run: install_linux_deps() for system requirements\n\n")
