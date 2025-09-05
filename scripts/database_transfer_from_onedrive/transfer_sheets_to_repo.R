@@ -38,7 +38,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #### PACKAGES ####
 source("../functions.R")
 
-install_and_load_packages(
+.install_and_load_packages(
   cran_packages    = 
     c(
       "tidyverse", 
@@ -116,6 +116,12 @@ purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
       processed_file <- in_file
   }
   
+  processed_file <- processed_file %>%
+      distinct() %>%
+      rename_with(~str_to_lower(.x)) %>%
+      mutate(across(matches("filter_out_this_row"), ~replace_na(., FALSE))) %>%
+      filter(if_any(matches("filter_out_this_row"), ~!.)) %>%
+      select(-matches('filter_out_this_row'))
   
   
   write_tsv(processed_file, out_path, eol = "\n")

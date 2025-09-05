@@ -1,4 +1,4 @@
-Family	Family_Ecology	Genera_in_Fam	Spp_in_Fam	Spp_in_genus	Species_Albatross_name	Species_valid_name	Species_Code	Common_name	General_Fishing_Pressure	Different_fishing_pressure_depending_on_locality	Habitat_1	Authority	No_of_Alb_sites	Alb_sites	USNM_lot_No_(number_of_indiv)	No_of_C_sites	C_sites	Fising_pressure?	Trophic_group	Diet	Habitat_2	Depth_(m)	Behavior	Global_Distribution 	Regional_Distribution	Max_Length_(cm)	Notes	Red_list_status	References
+family	family_ecology	genera_in_fam	spp_in_fam	spp_in_genus	species_albatross_name	species_valid_name	species_code	common_name	general_fishing_pressure	different_fishing_pressure_depending_on_locality	habitat_1	authority	no_of_alb_sites	alb_sites	usnm_lot_no_(number_of_indiv)	no_of_c_sites	c_sites	fising_pressure?	trophic_group	diet	habitat_2	depth_(m)	behavior	global_distribution 	regional_distribution	max_length_(cm)	notes	red_list_status	references
 Ambassidae	Tropical	8	51	69	Ambassis_buruensis	Ambassis_buruensis	Abu	Buru_glass_perchlet	unfished	N	estuarine	NA	5	Ragay_River	180035(37)	1	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassidae	Tropical	8	51	69	Ambassis_gymnocephalus	Ambassis_gymnocephalus	Agy	Bald_glassy	minor commercial; bait occasionally	N	estuarine	NA	2	Manila_Bay,_Manila_Bay	180076(43),_180064(46)	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassidae	Tropical	8	51	69	Ambassis_interrupta	Ambassis_interrupta	Ain	Long-spined glass perchlet	minor commercial	N	estuarine	NA	3	Port_Caltom,_Endeavor_Strait,_Pancol	180123(97),_180120(31),_180127(25)	0	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
@@ -57,7 +57,6 @@ Apogonidae	Tropical_and_subtropical._up_to_300m,_coral_and_rocky_reef	41	353	6	Z
 Atherinidae	NA	NA	NA	NA	NA	Hypoatherina_panatela	Hpa	Panatela silverside	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Pomacentridae	NA	NA	NA	NA	NA	Dascyllus_aruanus	Dar	Whitetail dascyllus	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Syngnathidae	NA	NA	NA	NA	NA	Corythoichthys_haematopterus	Cha	Messmate pipefish	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Leiognathidae	NA	NA	NA	NA	NA	Equulites_leuciscus	Lle	Whipfin ponyfish	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Lethrinidae	NA	NA	NA	NA	NA	Lethrinus_variegatus	Lva	slender emperor	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Mullidae	NA	NA	NA	NA	NA	Parupeneus_barberinus	Pba	Dash-and-dot goatfish	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Pomacentridae	NA	NA	NA	NA	NA	Pomacentrus_pavo	Ppa	Sapphire damsel	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA

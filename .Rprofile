@@ -372,7 +372,7 @@ if (interactive()) {
       renv::restore(prompt = FALSE)
       cat("\n✅ Setup complete!\n")
       cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
-      cat("   Then run: open_main_script()\n")
+      cat("   Then run: use_database() or update_database()\n")
     }, error = function(e) {
       error_msg <- tolower(e$message)
       
@@ -404,7 +404,7 @@ if (interactive()) {
     }
   }
   
-  open_main_script <- function() {
+  use_database <- function() {
     # Quick dependency check if renv is available
     if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
       if (!.check_dependencies(silent = TRUE)) {
@@ -414,7 +414,32 @@ if (interactive()) {
       }
     }
     
-    script_path <- "scripts/db.R"
+    script_path <- "scripts/use_db.R"
+    if (file.exists(script_path)) {
+      cat("Opening:", script_path, "\n")
+      if (requireNamespace("rstudioapi", quietly = TRUE) && 
+          rstudioapi::isAvailable()) {
+        invisible(rstudioapi::navigateToFile(script_path))
+      } else {
+        file.edit(script_path)
+      }
+    } else {
+      cat("❌ File not found:", script_path, "\n")
+      cat("   Current directory:", getwd(), "\n")
+    }
+  }
+
+  update_database <- function() {
+    # Quick dependency check if renv is available
+    if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
+      if (!.check_dependencies(silent = TRUE)) {
+        cat("\n⚠️  Some packages are missing!\n")
+        cat("   Run setup_project() first, then restart R.\n")
+        return(invisible(NULL))
+      }
+    }
+    
+    script_path <- "scripts/update_db.R"
     if (file.exists(script_path)) {
       cat("Opening:", script_path, "\n")
       if (requireNamespace("rstudioapi", quietly = TRUE) && 
@@ -479,7 +504,8 @@ if (interactive()) {
     # Project files
     cat("\n📄 Project files:\n")
     files <- c(
-      "scripts/db.R",
+      "scripts/use_db.R",
+      "scripts/add_db.R",
       "renv.lock",
       ".Rprofile",
       "database_albatross_recollections.Rproj"
@@ -497,7 +523,8 @@ if (interactive()) {
   
   # Make functions globally available
   assign("setup_project", setup_project, envir = .GlobalEnv)
-  assign("open_main_script", open_main_script, envir = .GlobalEnv)  
+  assign("use_database", use_database, envir = .GlobalEnv)  
+  assign("update_database", update_database, envir = .GlobalEnv) 
   assign("check_setup", check_setup, envir = .GlobalEnv)
   
   # Platform-specific function assignment
@@ -539,7 +566,7 @@ if (interactive()) {
   } else if (deps_ok) {
     cat(" ✅ PROJECT READY\n")
     cat("------------------------------------------------------------\n\n")
-    cat(" Run: open_main_script()\n\n")
+    cat(" Run: use_database() to use the database\n or update_database() to add files to the database\n\n")
   }
   
   cat(" Available commands:\n")
@@ -552,7 +579,8 @@ if (interactive()) {
     cat("   • install_linux_deps() - System library requirements\n")
   }
   
-  cat("   • open_main_script()  - Open main script\n")
+  cat("   • use_database()  - Open script to use the database\n")
+  cat("   • update_database()  - Open script to add files to the database\n")
   cat("   • check_setup()       - Show detailed status\n")
   cat("\n============================================================\n\n")
 }
