@@ -25,6 +25,10 @@
 - [Species Sheets](db_files/shipments_sheets/README.md)
 - [DNA Extraction Gels](db_files/dna_extractions_gels/README.md) **Unlinked to main DB**
 
+## Quick Start 
+Double click on `database_albatross_recollections.Rproj`
+Run `get_database()` in R to access the database
+
 ## How to use this repo
 This repository uses [renv](https://rstudio.github.io/renv/) to create a reproductible R environment. 
 
@@ -75,30 +79,11 @@ Once the R profile is correctly running, you have access to new project specific
 
 5. To locally build the database, use the R function `get_database()` to create the database as a `dm` object. 
 
-### Adding Data to the Database
-
-### Troubleshooting
-
-<details>
-  <summary> MacOS gfortran installation issues </summary>
-  If you are having issues installing packages due to gfortran related issues on Mac, try installing the latest version from https://mac.r-project.org/tools/.
-</details>
-
-## How to use the database
-Once the database is cloned and built locally, you can actively start using it. Below a few example usages are given. 
-
-Before using the database, make sure the helper scripts and libraries are loaded and join the database together by sourcing `scripts/assemble_db.R` .
-
-```r
-# See also scripts/assemble_db.R
-source('scripts/assemble_db.R')
-```
-
+## Using the database
 **Example 1: Counting the number of samples from a collection site**
-
-
 ```r
 #Obtain distinct collection sites
+pire_db <- get_database()
 pull_tbl(pire_db, "individuals_sheets") %>%
   distinct(collection_site)
 ```
@@ -126,6 +111,7 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 
 ```r
 #Find species collected at Hamilo Cove
+pire_db <- get_database()
 pull_tbl(pire_db, "individuals_sheets") %>%
   filter(collection_site == "Hamilo_Cove") %>%
   distinct(species_valid_name)
@@ -152,6 +138,7 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 
 ```r
 #Count individuals by species at Hamilo Cove
+pire_db <- get_database()
 pull_tbl(pire_db, "individuals_sheets") %>%
     filter(collection_site == "Hamilo_Cove") %>%
     count(species_valid_name, name = "n_individuals")
@@ -176,6 +163,7 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 
 ```r
 #Count individuals by species and collection period at Hamilo Cove
+pire_db <- get_database()
 pull_tbl(pire_db, "individuals_sheets") %>%
   filter(collection_site == "Hamilo_Cove") %>%
   count(species_valid_name, collection_period, name = "n_individuals")
@@ -199,10 +187,18 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 ```
 </details>
 
-## How to edit the database
+
+## Adding Data to the Database
 After cloning the repo locally:
-* Add a new table to the relevant subdirectory in `db_files`. Be sure to use the exact same column names and cell formatting as the existing table in that directory. 
+* Add a new table to the relevant subdirectory in [`staging`](staging). Each folder contains an "EXAMPLE" file with the proper file header to use and a readme describing what the columns should contain. Be sure to use the exact same column names and cell formatting as the existing table in that directory. 
 * Use an informative name of the format INITIALS-YEAR-MONTH-DAY-DESC.tsv, where you're using your initials, the 4-digit year, the 2-digit month, and a short description without any punctuation or spaces.
-* The database creation script reads in and row-binds all files in a given directory to create the relevant database tables.
-* Check the [`scripts/assemble_db.R`](scripts/assemble_db.R) runs correctly with your new file
+* Use the `update_database()` function (available after opening `database_albatross_recollections.Rproj`) which will validate the data being input and copy the files into the database
+	- If there are problems with the data fix them as instructed by the error messages
 * Push back to GitHub
+
+### Troubleshooting
+
+<details>
+  <summary> MacOS gfortran installation issues </summary>
+  If you are having issues installing packages due to gfortran related issues on Mac, try installing the latest version from https://mac.r-project.org/tools/.
+</details>
