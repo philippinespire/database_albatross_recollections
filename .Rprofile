@@ -596,6 +596,8 @@ if (interactive()) {
     cat("\n")
     if(sys_name == "Windows"){
       rm('check_rtools')
+    } else if(sys_name == "Linux"){
+      rm('libs_to_check', 'libs', 'renv_activated', 'check_system_lib')
     }
     rm('install_linux_deps', 'install_windows_tools', 'check_setup', 'setup_project')
     rm('sys_name', 'renv_available', 'lockfile_exists', 'deps_ok')
