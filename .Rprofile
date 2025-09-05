@@ -578,8 +578,9 @@ if (interactive()) {
       cat(" If compilation fails:\n")
       cat("   • Run: install_linux_deps() for system requirements\n\n")
       rm('install_windows_tools')
+    } else {
+      rm('install_linux_deps', 'install_windows_tools')
     }
-    rm('install_linux_deps', 'install_windows_tools')
   } else if (deps_ok) {
     cat(" ✅ PROJECT READY\n")
     #cat("------------------------------------------------------------\n\n")
