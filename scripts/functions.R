@@ -1139,7 +1139,7 @@ get_database <- function() {
                                 recursive = TRUE,
                                 full.names = TRUE) %>%
         str_subset("/processed/", negate = TRUE) %>%
-        str_subset("^EXAMPLE", negate = TRUE)
+        str_subset("EXAMPLE", negate = TRUE)
     
     if (length(staging_files) == 0) {
         cli_alert_info("No TSV files found in staging folders")
