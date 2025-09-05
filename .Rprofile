@@ -228,181 +228,181 @@ if (interactive()) {
   
   # Linux-specific function
   install_linux_deps <- function() {
-  if (Sys.info()["sysname"] != "Linux") {
-    cat("This function is only for Linux systems.\n")
-    return(invisible(NULL))
-  }
-  
-  cat("\n🐧 LINUX SYSTEM DEPENDENCIES\n")
-  cat("===============================\n")
-  cat("\nThese system libraries are required by your R packages.\n\n")
-  
-  cat("STEP 1: Update your package list\n")
-  cat("─────────────────────────────────\n")
-  cat("Copy and paste this command:\n\n")
-  cat("sudo apt-get update\n")
-  
-  cat("\n\nSTEP 2: Install compilation tools\n")
-  cat("──────────────────────────────────\n")
-  cat("Copy and paste this command:\n\n")
-  cat("sudo apt-get install -y build-essential gfortran\n")
-  
-  cat("\n\nSTEP 3: Install required libraries\n")
-  cat("───────────────────────────────────\n")
-  cat("Copy and paste this entire block:\n\n")
-  
-  # Print the command without comments
-  cat("sudo apt-get install -y \\
-  libcurl4-openssl-dev \\
-  libssl-dev \\
-  libxml2-dev \\
-  libgit2-dev \\
-  libfontconfig1-dev \\
-  libfreetype6-dev \\
-  libpng-dev \\
-  libjpeg-dev \\
-  libtiff5-dev \\
-  libharfbuzz-dev \\
-  libfribidi-dev \\
-  libglpk-dev \\
-  libgmp3-dev \\
-  libmpfr-dev \\
-  libicu-dev \\
-  libcairo2-dev \\
-  libxt-dev \\
-  cmake \\
-  pandoc \\
-  pandoc-citeproc\n")
-  
-  cat("\n\nWHAT THESE LIBRARIES ARE FOR:\n")
-  cat("─────────────────────────────\n")
-  cat("• libcurl4-openssl-dev : curl, httr, httr2, devtools\n")
-  cat("• libssl-dev          : openssl, credentials, gargle, gert\n")
-  cat("• libxml2-dev         : xml2, rvest, roxygen2, devtools\n")
-  cat("• libgit2-dev         : gert\n")
-  cat("• libfontconfig1-dev  : systemfonts, ragg, ggplot2\n")
-  cat("• libfreetype6-dev    : systemfonts, ragg\n")
-  cat("• libpng-dev          : ragg, PNG support\n")
-  cat("• libjpeg-dev         : ragg, JPEG support\n")
-  cat("• libtiff5-dev        : ragg, TIFF support\n")
-  cat("• libharfbuzz-dev     : textshaping (required by ragg)\n")
-  cat("• libfribidi-dev      : textshaping (bidirectional text)\n")
-  cat("• libglpk-dev         : igraph (graph algorithms)\n")
-  cat("• libgmp3-dev         : precision math operations\n")
-  cat("• libmpfr-dev         : precision math operations\n")
-  cat("• libicu-dev          : stringi (text processing)\n")
-  cat("• libcairo2-dev       : graphics device\n")
-  cat("• libxt-dev           : X11 toolkit\n")
-  cat("• cmake               : build tool for some packages\n")
-  cat("• pandoc              : rmarkdown, knitr\n")
-  cat("• pandoc-citeproc     : citations in rmarkdown\n")
-  
-  cat("\n\nOPTIONAL: Database libraries (if needed)\n")
-  cat("─────────────────────────────────────────\n")
-  cat("Only install these if you plan to use database connections:\n\n")
-  cat("# PostgreSQL support:\n")
-  cat("sudo apt-get install -y libpq-dev\n\n")
-  cat("# MySQL support:\n")
-  cat("sudo apt-get install -y libmysqlclient-dev\n\n")
-  cat("# SQLite support:\n")
-  cat("sudo apt-get install -y libsqlite3-dev\n")
-  
-  cat("\n\nOPTIONAL: Additional libraries\n")
-  cat("───────────────────────────────\n")
-  cat("Only if you get specific errors:\n\n")
-  cat("# V8 JavaScript engine:\n")
-  cat("sudo apt-get install -y libv8-dev\n\n")
-  cat("# SSH operations:\n")
-  cat("sudo apt-get install -y libssh2-1-dev\n\n")
-  cat("# Encryption:\n")
-  cat("sudo apt-get install -y libsodium-dev\n")
-  
-  cat("\n===============================\n")
-  cat("After installing, return to R and run: setup_project()\n\n")
-  
-  cat("TROUBLESHOOTING:\n")
-  cat("───────────────\n")
-  cat("If you still get compilation errors after installing these,\n")
-  cat("the error message will usually indicate which library is missing.\n")
-  cat("Search for: \"R package [package_name] system requirements ubuntu\"\n")
-}
-  
-setup_project <- function(binary_only = FALSE) {
-  cat("\n🔧 Setting up project environment...\n\n")
-  
-  # Platform-specific warnings
-  if (sys_name == "Windows") {
-    if (binary_only) {
-      cat("📦 Installing binary packages only (no compilation needed)...\n\n")
-      options(pkgType = "binary")
-    } else {
-      # Check for Rtools
-      make_available <- Sys.which("make") != ""
-      if (!make_available) {
-        cat("⚠️  WARNING: Rtools not detected!\n")
-        cat("   If you see 'make not found' errors, either:\n")
-        cat("   1. Run: install_windows_tools() and install Rtools, OR\n")
-        cat("   2. Run: setup_project(binary_only = TRUE) to use pre-built packages\n\n")
-      }
+    if (Sys.info()["sysname"] != "Linux") {
+      cat("This function is only for Linux systems.\n")
+      return(invisible(NULL))
     }
-  } else if (sys_name == "Linux") {
-    cat("📋 NOTE: On Linux, some packages need system libraries.\n")
-    cat("   If installation fails, run: install_linux_deps()\n\n")
-  }
-  
-  # Install renv if needed
-  if (!requireNamespace("renv", quietly = TRUE)) {
-    cat("Step 1: Installing renv package manager...\n")
-    install.packages("renv")
-    cat("✔ renv installed\n\n")
-  }
-  
-  # Check for lockfile
-  if (!file.exists("renv.lock")) {
-    cat("❌ Error: renv.lock not found in project directory\n")
-    cat("   Current directory:", getwd(), "\n")
-    return(invisible(NULL))
-  }
-  
-  # Restore packages
-  cat("Step 2: Installing R packages (this may take 5-10 minutes)...\n\n")
-  
-  # Try to restore, catching common errors
-  tryCatch({
-    renv::restore(prompt = FALSE)
-    cat("\n✅ Setup complete!\n")
-    cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
-    cat("   Then run: use_database() or update_database()\n")
-  }, error = function(e) {
-    error_msg <- tolower(e$message)
     
-    if (grepl("make.*not found", error_msg)) {
-      cat("\n❌ Compilation failed - 'make' not found\n\n")
-      cat("This means Rtools is not installed. You have two options:\n\n")
-      cat("OPTION 1: Install Rtools (recommended)\n")
-      cat("   Run: install_windows_tools()\n")
-      cat("   Follow the instructions, then run setup_project() again\n\n")
-      cat("OPTION 2: Use pre-built binaries (easier but may be older versions)\n")
-      cat("   Run: setup_project(binary_only = TRUE)\n\n")
-    } else if (grepl("(libcurl|libssl|libgit2|libxml2|compilation failed|undefined symbol)", error_msg)) {
-      cat("\n❌ Compilation failed - missing system libraries\n")
-      cat("\nRun: install_linux_deps()\n")
-      cat("for commands to install required system libraries,\n")
-      cat("then try setup_project() again.\n")
-    } else {
-      cat("\n❌ Installation error:\n")
-      cat(e$message, "\n")
-      if (sys_name == "Windows") {
-        cat("\nTry: setup_project(binary_only = TRUE)\n")
-      }
-    }
-  })
-  
-  # Reset package type if changed
-  if (binary_only) {
-    options(pkgType = "both")  # Reset to default
+    cat("\n🐧 LINUX SYSTEM DEPENDENCIES\n")
+    cat("===============================\n")
+    cat("\nThese system libraries are required by your R packages.\n\n")
+    
+    cat("STEP 1: Update your package list\n")
+    cat("─────────────────────────────────\n")
+    cat("Copy and paste this command:\n\n")
+    cat("sudo apt-get update\n")
+    
+    cat("\n\nSTEP 2: Install compilation tools\n")
+    cat("──────────────────────────────────\n")
+    cat("Copy and paste this command:\n\n")
+    cat("sudo apt-get install -y build-essential gfortran\n")
+    
+    cat("\n\nSTEP 3: Install required libraries\n")
+    cat("───────────────────────────────────\n")
+    cat("Copy and paste this entire block:\n\n")
+    
+    # Print the command without comments
+    cat("sudo apt-get install -y \\
+    libcurl4-openssl-dev \\
+    libssl-dev \\
+    libxml2-dev \\
+    libgit2-dev \\
+    libfontconfig1-dev \\
+    libfreetype6-dev \\
+    libpng-dev \\
+    libjpeg-dev \\
+    libtiff5-dev \\
+    libharfbuzz-dev \\
+    libfribidi-dev \\
+    libglpk-dev \\
+    libgmp3-dev \\
+    libmpfr-dev \\
+    libicu-dev \\
+    libcairo2-dev \\
+    libxt-dev \\
+    cmake \\
+    pandoc \\
+    pandoc-citeproc\n")
+    
+    cat("\n\nWHAT THESE LIBRARIES ARE FOR:\n")
+    cat("─────────────────────────────\n")
+    cat("• libcurl4-openssl-dev : curl, httr, httr2, devtools\n")
+    cat("• libssl-dev          : openssl, credentials, gargle, gert\n")
+    cat("• libxml2-dev         : xml2, rvest, roxygen2, devtools\n")
+    cat("• libgit2-dev         : gert\n")
+    cat("• libfontconfig1-dev  : systemfonts, ragg, ggplot2\n")
+    cat("• libfreetype6-dev    : systemfonts, ragg\n")
+    cat("• libpng-dev          : ragg, PNG support\n")
+    cat("• libjpeg-dev         : ragg, JPEG support\n")
+    cat("• libtiff5-dev        : ragg, TIFF support\n")
+    cat("• libharfbuzz-dev     : textshaping (required by ragg)\n")
+    cat("• libfribidi-dev      : textshaping (bidirectional text)\n")
+    cat("• libglpk-dev         : igraph (graph algorithms)\n")
+    cat("• libgmp3-dev         : precision math operations\n")
+    cat("• libmpfr-dev         : precision math operations\n")
+    cat("• libicu-dev          : stringi (text processing)\n")
+    cat("• libcairo2-dev       : graphics device\n")
+    cat("• libxt-dev           : X11 toolkit\n")
+    cat("• cmake               : build tool for some packages\n")
+    cat("• pandoc              : rmarkdown, knitr\n")
+    cat("• pandoc-citeproc     : citations in rmarkdown\n")
+    
+    cat("\n\nOPTIONAL: Database libraries (if needed)\n")
+    cat("─────────────────────────────────────────\n")
+    cat("Only install these if you plan to use database connections:\n\n")
+    cat("# PostgreSQL support:\n")
+    cat("sudo apt-get install -y libpq-dev\n\n")
+    cat("# MySQL support:\n")
+    cat("sudo apt-get install -y libmysqlclient-dev\n\n")
+    cat("# SQLite support:\n")
+    cat("sudo apt-get install -y libsqlite3-dev\n")
+    
+    cat("\n\nOPTIONAL: Additional libraries\n")
+    cat("───────────────────────────────\n")
+    cat("Only if you get specific errors:\n\n")
+    cat("# V8 JavaScript engine:\n")
+    cat("sudo apt-get install -y libv8-dev\n\n")
+    cat("# SSH operations:\n")
+    cat("sudo apt-get install -y libssh2-1-dev\n\n")
+    cat("# Encryption:\n")
+    cat("sudo apt-get install -y libsodium-dev\n")
+    
+    cat("\n===============================\n")
+    cat("After installing, return to R and run: setup_project()\n\n")
+    
+    cat("TROUBLESHOOTING:\n")
+    cat("───────────────\n")
+    cat("If you still get compilation errors after installing these,\n")
+    cat("the error message will usually indicate which library is missing.\n")
+    cat("Search for: \"R package [package_name] system requirements ubuntu\"\n")
   }
-}
+  
+  setup_project <- function(binary_only = FALSE) {
+    cat("\n🔧 Setting up project environment...\n\n")
+    
+    # Platform-specific warnings
+    if (sys_name == "Windows") {
+      if (binary_only) {
+        cat("📦 Installing binary packages only (no compilation needed)...\n\n")
+        options(pkgType = "binary")
+      } else {
+        # Check for Rtools
+        make_available <- Sys.which("make") != ""
+        if (!make_available) {
+          cat("⚠️  WARNING: Rtools not detected!\n")
+          cat("   If you see 'make not found' errors, either:\n")
+          cat("   1. Run: install_windows_tools() and install Rtools, OR\n")
+          cat("   2. Run: setup_project(binary_only = TRUE) to use pre-built packages\n\n")
+        }
+      }
+    } else if (sys_name == "Linux") {
+      cat("📋 NOTE: On Linux, some packages need system libraries.\n")
+      cat("   If installation fails, run: install_linux_deps()\n\n")
+    }
+    
+    # Install renv if needed
+    if (!requireNamespace("renv", quietly = TRUE)) {
+      cat("Step 1: Installing renv package manager...\n")
+      install.packages("renv")
+      cat("✔ renv installed\n\n")
+    }
+    
+    # Check for lockfile
+    if (!file.exists("renv.lock")) {
+      cat("❌ Error: renv.lock not found in project directory\n")
+      cat("   Current directory:", getwd(), "\n")
+      return(invisible(NULL))
+    }
+    
+    # Restore packages
+    cat("Step 2: Installing R packages (this may take 5-10 minutes)...\n\n")
+    
+    # Try to restore, catching common errors
+    tryCatch({
+      renv::restore(prompt = FALSE)
+      cat("\n✅ Setup complete!\n")
+      cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
+      cat("   Then run: use_database() or update_database()\n")
+    }, error = function(e) {
+      error_msg <- tolower(e$message)
+      
+      if (grepl("make.*not found", error_msg)) {
+        cat("\n❌ Compilation failed - 'make' not found\n\n")
+        cat("This means Rtools is not installed. You have two options:\n\n")
+        cat("OPTION 1: Install Rtools (recommended)\n")
+        cat("   Run: install_windows_tools()\n")
+        cat("   Follow the instructions, then run setup_project() again\n\n")
+        cat("OPTION 2: Use pre-built binaries (easier but may be older versions)\n")
+        cat("   Run: setup_project(binary_only = TRUE)\n\n")
+      } else if (grepl("(libcurl|libssl|libgit2|libxml2|compilation failed|undefined symbol)", error_msg)) {
+        cat("\n❌ Compilation failed - missing system libraries\n")
+        cat("\nRun: install_linux_deps()\n")
+        cat("for commands to install required system libraries,\n")
+        cat("then try setup_project() again.\n")
+      } else {
+        cat("\n❌ Installation error:\n")
+        cat(e$message, "\n")
+        if (sys_name == "Windows") {
+          cat("\nTry: setup_project(binary_only = TRUE)\n")
+        }
+      }
+    })
+    
+    # Reset package type if changed
+    if (binary_only) {
+      options(pkgType = "both")  # Reset to default
+    }
+  }
   
   get_database <- function() {
     # Quick dependency check if renv is available
@@ -532,9 +532,12 @@ setup_project <- function(binary_only = FALSE) {
   
   # Make functions globally available
   assign("setup_project", setup_project, envir = .GlobalEnv)
-  assign("get_database", get_database, envir = .GlobalEnv)  
-  assign("update_database", update_database, envir = .GlobalEnv) 
   assign("check_setup", check_setup, envir = .GlobalEnv)
+  if(deps_ok){
+    assign("get_database", get_database, envir = .GlobalEnv)  
+    assign("update_database", update_database, envir = .GlobalEnv) 
+  }
+
   
   # Platform-specific function assignment
   if (sys_name == "Windows") {
@@ -584,21 +587,21 @@ setup_project <- function(binary_only = FALSE) {
     cat("\n")
   }
   
-  cat(" Available commands:\n")
-  cat("   • setup_project()     - Install/update R packages\n")
-  cat("   • ", sys_name, "specific functions\n")
+  #cat(" Available commands:\n")
+  #cat("   • setup_project()     - Install/update R packages\n")
+  #cat("   • ", sys_name, "specific functions\n")
   
-  if (sys_name == "Windows") {
-    cat("      - setup_project(binary_only = TRUE) - Use pre-built packages\n")
-    cat("      - install_windows_tools() - Rtools installation guide\n")
-  } else if (sys_name == "Linux") {
-    cat("      - install_linux_deps() - System library requirements\n")
-  }
-    cat("   • check_setup()       - Show detailed status\n\n")
+  #if (sys_name == "Windows") {
+  #  cat("      - setup_project(binary_only = TRUE) - Use pre-built packages\n")
+  #  cat("      - install_windows_tools() - Rtools installation guide\n")
+  #} else if (sys_name == "Linux") {
+  #  cat("      - install_linux_deps() - System library requirements\n")
+  #}
+  #  cat("   • check_setup()       - Show detailed status\n\n")
   
-  cat("   • get_database()  - Open script to use the database\n")
-  cat("   • update_database()  - Open script to add files to the database\n")
-  cat("\n============================================================\n\n")
+  #cat("   • get_database()  - Open script to use the database\n")
+  #cat("   • update_database()  - Open script to add files to the database\n")
+  #cat("\n============================================================\n\n")
 }
 
 # Clean up any temporary variables
