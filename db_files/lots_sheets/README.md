@@ -29,7 +29,7 @@ This table has a row for each lot. A "lot" is a jar of fish all taken from the s
 | **Individuals**                      | Number of individuals in the lot                                                  |
 | **Size-USNM\_(mm)**                  | Size of specimens in millimeters (from USNM records)                              |
 | **size\_direct\_observation\_(mm)**  | Size of specimens in millimeters (measured directly)                              |
-| **Species\_valid\_name\_majority**   | Notes on the species name of the majority of individuals in the lot. This isn't definitive and is sometimes a note. Not useful as a database key. Use Individuals sheet instead.                           |
+| **taxonomic\_notes**   | Notes on the species name of the majority of individuals in the lot. This isn't definitive and is sometimes a note. Not useful as a database key. Use Individuals sheet instead.                           |
 | **Collection\_site**                 | Name of the collection site. This field is not standardized. See Site_ID.                                |
 | **Site\_ID**                         | A three letter site abbreviation. This same abbreviation may have been used for different locations in a different species, and it is applied to multiple nearby locations in the same species (<80 km apart or so)                                                |
 | **Match\_ID**                        | A four letter code to link Albatross sites to Contemporary sites across time.                                        |
