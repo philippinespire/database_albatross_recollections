@@ -37,6 +37,8 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 #### PACKAGES ####
 source("../functions.R")
+library(readxl)
+library(lubridate)
 
 #### convert files from xlsx to tsv and save to repo ####
 ###### Helper: strip ALL embedded CR/LF characters inside text cells ######
