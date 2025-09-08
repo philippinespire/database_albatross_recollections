@@ -27,7 +27,7 @@
 
 ## Quick Start 
 Double click on `database_albatross_recollections.Rproj`
-Run `get_database()` in R to access the database
+Run `pire_database()` in R to access the database
 
 ## How to use this repo
 This repository uses [renv](https://rstudio.github.io/renv/) to create a reproductible R environment. 
@@ -57,7 +57,7 @@ git clone git@github.com:philippinespire/database_albatross_recollections.git
  ✅ PROJECT READY
  ┌─────────────────────────────────────────────────────┐
  💡 QUICK START:
-    • Using the database?       Run: get_database()
+    • Using the database?       Run: pire_database()
     • Updating the database?    Run: update_database()
  └─────────────────────────────────────────────────────┘
 ```
@@ -77,13 +77,13 @@ Once the R profile is correctly running, you have access to new project specific
 	- If you are using a Linux computer: First use `setup_project()` to install packages. However if there are errors you can use `install_linux_dependencies()` to get a prompt for how to download linux system dependencies that may not come with your distro by default.
 	- If you are using a Mac computer: 
 
-5. To locally build the database, use the R function `get_database()` to create the database as a `dm` object. 
+5. To locally build the database, use the R function `pire_database()` to create the database as a `dm` object. 
 
 ## Using the database
 **Example 1: Counting the number of samples from a collection site**
 ```r
 #Obtain distinct collection sites
-pire_db <- get_database()
+pire_db <- pire_database()
 pull_tbl(pire_db, "individuals_sheets") %>%
   distinct(collection_site)
 ```
@@ -111,7 +111,7 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 
 ```r
 #Find species collected at Hamilo Cove
-pire_db <- get_database()
+pire_db <- pire_database()
 pull_tbl(pire_db, "individuals_sheets") %>%
   filter(collection_site == "Hamilo_Cove") %>%
   distinct(species_valid_name)
@@ -138,7 +138,7 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 
 ```r
 #Count individuals by species at Hamilo Cove
-pire_db <- get_database()
+pire_db <- pire_database()
 pull_tbl(pire_db, "individuals_sheets") %>%
     filter(collection_site == "Hamilo_Cove") %>%
     count(species_valid_name, name = "n_individuals")
@@ -163,7 +163,7 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 
 ```r
 #Count individuals by species and collection period at Hamilo Cove
-pire_db <- get_database()
+pire_db <- pire_database()
 pull_tbl(pire_db, "individuals_sheets") %>%
   filter(collection_site == "Hamilo_Cove") %>%
   count(species_valid_name, collection_period, name = "n_individuals")

@@ -372,7 +372,7 @@ if (interactive()) {
       renv::restore(prompt = FALSE)
       cat("\n✅ Setup complete!\n")
       cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
-      cat("   Then run: get_database() or update_database()\n")
+      cat("   Then run: pire_database() or update_database()\n")
     }, error = function(e) {
       error_msg <- tolower(e$message)
       
@@ -404,7 +404,7 @@ if (interactive()) {
     }
   }
   
-  get_database <- function() {
+  pire_database <- function() {
     # Quick dependency check if renv is available
     if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
       if (!.check_dependencies(silent = TRUE)) {
@@ -431,7 +431,7 @@ if (interactive()) {
     #The first time this is called it sources in the functions and runs itself. After it is replaced with the main function
     #
     source("scripts/functions.R")
-    get_database()
+    pire_database()
   }
 
   update_database <- function() {
@@ -534,7 +534,7 @@ if (interactive()) {
   assign("setup_project", setup_project, envir = .GlobalEnv)
   assign("check_setup", check_setup, envir = .GlobalEnv)
   if(deps_ok){
-    assign("get_database", get_database, envir = .GlobalEnv)  
+    assign("pire_database", pire_database, envir = .GlobalEnv)  
     assign("update_database", update_database, envir = .GlobalEnv) 
   }
 
@@ -562,11 +562,11 @@ if (interactive()) {
       cat(" Linux: You may need system libraries.\n")
       cat("   • Run: install_linux_deps() for requirements\n\n")
     }
-    rm('get_database', 'update_database')
+    rm('pire_database', 'update_database')
   } else if (!deps_ok && lockfile_exists) {
     cat(" 📦 PACKAGE INSTALLATION NEEDED\n")
     cat("------------------------------------------------------------\n\n")
-    rm('get_database', 'update_database')
+    rm('pire_database', 'update_database')
     
     if (sys_name == "Windows" && Sys.which("make") == "") {
       cat(" ⚠️  Rtools not detected.\n")
@@ -587,10 +587,10 @@ if (interactive()) {
   } else if (deps_ok) {
     cat(" ✅ PROJECT READY\n")
     #cat("------------------------------------------------------------\n\n")
-    #cat(" Run: get_database() to use the database\n or update_database() to add files to the database\n\n")
+    #cat(" Run: pire_database() to use the database\n or update_database() to add files to the database\n\n")
     cat(" ┌─────────────────────────────────────────────────────┐\n")
     cat(" 💡 QUICK START:\n")
-    cat(sprintf("    • %-25s Run: %s\n", "Using the database?", "get_database()"))
+    cat(sprintf("    • %-25s Run: %s\n", "Using the database?", "pire_database()"))
     cat(sprintf("    • %-25s Run: %s\n", "Updating the database?", "update_database()"))
     cat(" └─────────────────────────────────────────────────────┘\n")
     cat("\n")
@@ -615,7 +615,7 @@ if (interactive()) {
   #}
   #  cat("   • check_setup()       - Show detailed status\n\n")
   
-  #cat("   • get_database()  - Open script to use the database\n")
+  #cat("   • pire_database()  - Open script to use the database\n")
   #cat("   • update_database()  - Open script to add files to the database\n")
   #cat("\n============================================================\n\n")
 }
