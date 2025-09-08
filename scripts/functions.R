@@ -11,7 +11,6 @@ suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(tibble))
 suppressPackageStartupMessages(library(cli))
 suppressPackageStartupMessages(library(here))
-suppressPackageStartupMessages(library(readxl))
 suppressPackageStartupMessages(library(janitor))
 
 #### Compile Database Files ####
@@ -20,7 +19,8 @@ suppressPackageStartupMessages(library(janitor))
 .apply_corrections <- function(data, file_type, verbose = FALSE) {
     
     
-    corrections <- read_excel(here::here("db_files", "extractions_mislabelling_sheet.xlsx")) %>%
+    corrections <- read_csv(here::here("db_files", "extractions_mislabelling_sheet.csv"),
+                            show_col_types = FALSE) %>%
         clean_names() %>% 
         # Remove any completely empty rows
         filter(!if_all(everything(), is.na))

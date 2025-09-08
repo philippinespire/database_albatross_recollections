@@ -1,4 +1,4 @@
-# Readme for extractions_mislabelling_sheet.xlsx
+# Readme for extractions_mislabelling_sheet.csv
 
 Details of the Mislabelled data sheet. This sheet is used to correct complex systemic errors made in the database which require corrections across multiple sheets. Columns marked "Original" give enough details to identify the specific row which needs to be corrected with the columns marked "Corrected". Values which are used for identification of the row and are originally correct should be the same in the equivilant corrected column with only the error being altered.
 
