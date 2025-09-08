@@ -372,7 +372,7 @@ if (interactive()) {
       renv::restore(prompt = FALSE)
       cat("\n✅ Setup complete!\n")
       cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
-      cat("   Then run: use_database() or update_database()\n")
+      cat("   Then run: get_database() or update_database()\n")
     }, error = function(e) {
       error_msg <- tolower(e$message)
       
