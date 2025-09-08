@@ -38,15 +38,6 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #### PACKAGES ####
 source("../functions.R")
 
-.install_and_load_packages(
-  cran_packages    = 
-    c(
-      "tidyverse", 
-      "janitor", 
-      "readxl"
-    )
-)
-
 #### convert files from xlsx to tsv and save to repo ####
 ###### Helper: strip ALL embedded CR/LF characters inside text cells ######
 strip_newlines <- function(df) {
