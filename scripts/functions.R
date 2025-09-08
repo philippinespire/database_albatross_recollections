@@ -437,7 +437,7 @@ suppressPackageStartupMessages(library(janitor))
 #' Loads the current database using existing functions
 #' @return dm object with current database
 #' @export
-get_database <- function() {
+pire_database <- function() {
     db <- .database_assembly()
     return(db)
 }
@@ -1029,7 +1029,7 @@ get_database <- function() {
     
     # Get current database
     cli_progress_step("Loading current database...")
-    db <- get_database()
+    db <- pire_database()
     
     # Find all TSV files in staging
     staging_files <- list.files(staging_path,
