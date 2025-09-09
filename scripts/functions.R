@@ -342,6 +342,86 @@ suppressPackageStartupMessages(library(janitor))
         pull(sheet)
 }
 
+.format_id_string <- function(x) {
+    # Define the correct pattern with optional -Ex[0-9]+ suffix (one or more digits)
+    correct_pattern <- "^[A-Z][a-z]{2}-[A-Z]{2}[a-z]{2}_[0-9]{3}(-Ex[0-9]+)?$"
+    
+    # Helper function to process a single string
+    process_single <- function(s) {
+        # Return NA if input is NA
+        if (is.na(s)) return(NA_character_)
+        
+        # Convert to character if not already
+        s <- as.character(s)
+        
+        # Check if already in correct format
+        if (str_detect(s, correct_pattern)) {
+            return(s)
+        }
+        
+        # Clean the string - remove spaces
+        s_clean <- str_remove_all(s, "\\s")
+        
+        # Initialize variables
+        ex_suffix <- ""
+        
+        # Check if there's an Ex pattern and extract it
+        if (str_detect(s_clean, "(?i)ex[0-9]+")) {
+            # Find all matches of Ex followed by digits
+            ex_matches <- str_extract_all(s_clean, "(?i)ex[0-9]+")[[1]]
+            if (length(ex_matches) > 0) {
+                # Take the last Ex pattern found
+                last_ex <- ex_matches[length(ex_matches)]
+                # Extract all the digits
+                all_digits <- str_remove(last_ex, "(?i)ex")
+                ex_suffix <- str_c("-Ex", all_digits)
+                
+                # Remove the Ex part from the string for processing the main part
+                s_clean <- str_remove(s_clean, str_c("[-_]?", last_ex, "$"))
+            }
+        }
+        
+        # Now extract the main components (without Ex part)
+        extracted <- str_match(s_clean, "([A-Za-z]{3})[-_]?([A-Za-z]{4})[-_]?([0-9]{1,3})")
+        
+        if (!is.na(extracted[1])) {
+            part1 <- extracted[2]  # First 3 letters
+            part2 <- extracted[3]  # Next 4 letters  
+            part3 <- extracted[4]  # Numbers
+            
+            # Format part1: Upper + 2 lower
+            part1_formatted <- str_c(
+                str_to_upper(str_sub(part1, 1, 1)),
+                str_to_lower(str_sub(part1, 2, 3))
+            )
+            
+            # Format part2: 2 Upper + 2 lower
+            part2_formatted <- str_c(
+                str_to_upper(str_sub(part2, 1, 2)),
+                str_to_lower(str_sub(part2, 3, 4))
+            )
+            
+            # Format part3: Pad with zeros to make 3 digits
+            part3_formatted <- str_pad(part3, width = 3, pad = "0")
+            
+            # Combine with correct separators
+            result <- str_c(part1_formatted, "-", part2_formatted, "_", part3_formatted, ex_suffix)
+            
+            # Validate the result
+            if (str_detect(result, correct_pattern)) {
+                return(result)
+            }
+        }
+        
+        # If we couldn't fix it, return NA with a warning
+        warning(str_glue("Could not format string: {s}"))
+        return(NA_character_)
+    }
+    
+    # Use map_chr from purrr to vectorize
+    map_chr(x, process_single)
+}
+
 #### Assemble Database ####
 .database_assembly <- function(){
     
