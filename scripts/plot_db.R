@@ -1,9 +1,8 @@
-here::i_am("scripts/plot_db.R")
-source(here::here("scripts", "assemble_db.R"))
+source(here::here("scripts", "functions.R"))
 
 #### visualize db ####
 erd_image <-
-    pire_db %>%
+    pire_database() %>%
     dm_draw(rankdir = "TB",
             view_type = "keys_only")
 
@@ -12,7 +11,7 @@ erd_image
 erd_image %>%
     DiagrammeRsvg::export_svg() %>%
     charToRaw() %>%
-    rsvg::rsvg_png("database_erd.png",
+    rsvg::rsvg_png("../../database_erd.png",
                    width = 7 * 125, height = 7 * 125)
 
 

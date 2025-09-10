@@ -47,6 +47,8 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 97686	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
 97690	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 97693	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+97714	NA	NA	Maricaban_Is	NA	NA	NA	NA	NA	NA	NA	NA
+97715	NA	NA	Maricaban_Is	NA	NA	NA	NA	NA	NA	NA	NA
 97783	Pnd	Pand	Pandanon_Id	10.1796678	124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	NA
 99660	Bit	Bito	Bito_River	NA	NA	NA	NA	NA	NA	NA	NA
 112159	Ros	Rosa	Rosa_Id	13.7167102	123.576012	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
@@ -65,6 +67,7 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 136749	Mat	MatB	Matnog_Bay	12.6664671	123.87085	NA	Bulan	Sorsogon	Bicol Region	Luzon	Bulan Fish Port
 136753	Bur	CanB	Port_Busin	13.12921	122.97338	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
 136761	Jol	Jolo	Jolo	6.059904	120.990973	NA	Jolo	Sulu	BARMM	Mindanao	NA
+136804	Bur	CanB	Port_Busin	13.12921	122.97338	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
 136808	Taw	Tawi	Tataan_Pass	5.2272706	119.89344	Mandulan	Bongao	Tawi-tawi	BARMM	Mindanao	NA
 136809	Mvi	Masi	Port_Matalvi_reef_Masinloc	15.5567299	119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
 136810	Bat	PGal	Puerto_Galera	13.4963476	120.958486	NA	Puerto Galera	Oriental Mindoro	MIMAROPA Region	Luzon	NA
@@ -100,7 +103,6 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 138982	Mar	PMar	Port_Maricaban	13.6791984	120.840502	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
 138999	Jol	Jolo	NA	5.9249685	121.211343	NA	Panglima Estino	Sulu	BARMM	Mindanao	NA
 139012	Mvi	Masi	Port_Matalvi_reef	15.5567299	119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
-139012	Mvi	Masi	Luzon	15.5567299	119.930361	NA	Masinloc	Zambales	Central Luzon	Luzon	Oyon Bay
 139013	Rom	Romb	NA	12.5837098	122.272078	Capaclan	Romblon	Romblon	MIMAROPA Region	Luzon	NA
 139635	Lin	Lina	Malcochin_Harbor	11.4906669	119.828165	NA	Linapacan	Palawan	MIMAROPA Region	Luzon	North Bay
 139636	Bas	SMig	Basud_River	13.9140731	123.258362	NA	Siruma	Camarines Sur	Bicol Region	Luzon	NA
@@ -114,7 +116,6 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 159904	Pnd	Pand	Pandanon_Id	10.1796678	124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	NA
 161008	Rag	RagR	Ragay_River	13.5069074	123.042625	Santa Rosa del Sur	Pasacao	Camarines Sur	Bicol Region	Luzon	NA
 171202	Can	CanB	Canmahala_Bay	13.2195058	123.041741	NA	San Pascual	Masbate	Bicol Region	Luzon	Anima Sola Island
-171202	Can	CanB	Ragay_Gulf	13.2195058	123.041741	NA	San Pascual	Masbate	Bicol Region	Luzon	Anima Sola Island
 171206	Ceb	Pand	Cebu_Market	10.2950309	123.912569	NA	Cebu City	Cebu	Central Visayas	Visayas	Cebu Baseport Area
 171207	Bur	CanB	Port_Busin	13.0911153	122.951328	NA	San Pascual	Masbate	Bicol Region	Luzon	Alimango Bay
 171321	Bol	Mala	NA	10.9230731	119.249382	Liminangcong	Taytay	Palawan	Southern Tagalog	Luzon	Bahía de Bolalo
@@ -136,6 +137,7 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 180039	Ceb	Pand	Cebu_Market	10.2950309	123.912569	NA	Cebu City	Cebu	Central Visayas	Visayas	Cebu Baseport Area
 180048	Vic	Vice	Port_San_Vicente	18.5154096	122.138975	NA	Santa Ana	Cagayan	Cagayan Valley	Luzon	NA
 180049	Pnb	Pana	Pabutan_Bay	7.68	122.02	NA	Siocon	Zamboanga del Norte	Zamboanga Peninsula	Mindanao	NA
+180050	Mah		Mahinog								
 180061	Rag	RagR	Ragay_Gulf	13.2195058	123.041741	NA	San Pascual	Masbate	Bicol Region	Luzon	Anima Sola Island
 180062	Pag	SanR	Santiago_River	13.8565766	120.658957	Bucal	Calatagan	Batangas	CALABARXON	Luzon	NA
 180088	Hin	Hinu	Hinungan	10.399276	125.202656	Poblacion	Hinunangan	Southern Leyte	Eastern Visayas	Visayas	NA
@@ -160,8 +162,6 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 191976	Mnt	Mant	Mantaguin_Bay	9.2263186	118.423605	NA	Narra	Palawan	MIMAROPA Region	Luzon	NA
 191979	Ham	HamC	Hamilo_Cove	14.1810585	120.604616	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
 364139	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
-97714	NA	NA	Maricaban_Is	NA	NA	NA	NA	NA	NA	NA	NA
-97715	NA	NA	Maricaban_Is	NA	NA	NA	NA	NA	NA	NA	NA
 Bat-2018-002_002	NA	NA	sugbu	NA	NA	NA	NA	NA	NA	NA	NA
 Bat-2018-003_003	Nas	HamC	sugbu	NA	NA	NA	NA	NA	NA	NA	NA
 Bat-2018-003_004	Bat	HamC	sugbu	14.1779794	120.599424	NA	Nasugbu	Batangas	CALABARXON	Luzon	Hamilo Cove
@@ -216,12 +216,11 @@ Cam-2019-020_034	Jos	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-021_035	Atu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-023_038	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 DAP-2022_01_01	Dap	Dapi	Selinog_Id_Dapitan	8.8421993	123.41175	NA	Dapitan City	Zamboanga del Norte	Northern Mindanao	Mindanao	NA
-Jol-2021-01_03	NA	NA	Jolo	NA	NA	NA	NA	NA	NA	NA	NA
 Jol-2021-01_01	Jol	Jolo	"Panglima_Tahil,_Jolo"	6.1098091	120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	NA
 Jol-2021-01_02	NA	NA	Jolo	NA	NA	NA	NA	NA	NA	NA	NA
+Jol-2021-01_03	NA	NA	Jolo	NA	NA	NA	NA	NA	NA	NA	NA
 Jol-2021-02_01	Jol	Jolo	NA	5.9249685	121.211343	NA	Panglima Estino	Sulu	BARMM	Mindanao	NA
 Jol-2021-04_02	Jol	Jolo	Jolo	NA	NA	NA	NA	NA	NA	NA	NA
-Jol-2021-04_02	Jol	Jolo	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Kal-2019-001_001	Kal	NA	Kalibo_Public_Market	NA	NA	NA	NA	NA	NA	NA	NA
 Kal-2019-002_002	Kal	NA	Kalibo	NA	NA	NA	NA	NA	NA	NA	NA
 Kal-2019-002_003	Kal	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
@@ -231,29 +230,26 @@ Luz-2017-036_001	Tic	MatB	Ticao_Pass	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-044_001	Mig	SMig	San_Miguel_Bay	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-045_001	Mat	MatB	Bulan	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-047_001	Rag	CanB	Ragay_Gulf	12.9520333	123.994789	NA	Sorsogon City	Sorsogon	Bicol Region	Luzon	Sorsogon Bay
-Luz-2017-050_001	Mat	MatB	Matnog_Bay	12.5827124	124.09195	Caloocan	Matnog	Sorsogon	Bicol Region	Luzon	NA
 Luz-2017-049_001	NA	NA	Gubat_Market	NA	NA	NA	NA	NA	NA	NA	NA
+Luz-2017-050_001	Mat	MatB	Matnog_Bay	12.5827124	124.09195	Caloocan	Matnog	Sorsogon	Bicol Region	Luzon	NA
 MAS-2022-01_01	Bur	CanB	Port_Busin	13.1258247	122.975714	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
 MAS-2022-02_07	Bur	CanB	Port_Busin	13.1258247	122.975714	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
 MAS-2022-03_01	Bur	CanB	Port_Busin	13.1258247	122.975714	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
 MAS-2022-04_05	Mas	Buri	NA	13.1258247	122.975714	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
-NA	NA	NA	NA	6.1098091	120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	NA
-NA	NA	NA	Masinloc	6.1098091	120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	NA
 Neg-2017-011_001	Bai	Bais	Bais_Bay	9.5736677	123.142319	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
 Neg-2017-031_001	Bai	Bais	Bais_Bay	9.5736677	123.142319	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
 Neg-2017-21_01	Bai	NA	Bais_Bay	NA	NA	NA	NA	NA	NA	NA	NA
 Neg-2018-01_01	Bai	Bais	Bais_Bay	9.5736677	123.142319	NA	Bais	Negros Oriental	Negros Island Region	Visayas	South Bais Bay
 Neg-2021-01_01	Gui	Guij	Guijulugan_Beach	10.1425502	123.281256	Poblacion	City of Guihulngan	Negros Oriental	Central Visayas	Visayas	NA
 Neg-2021-03_01	Val	Guij	Vallehermoso	10.3343907	123.328749	Pinocawan	Vallehermoso	Negros Oriental	Central Visayas	Visayas	NA
-Pal-2022-01_08	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 PAL-2022_02_02	Tay	TayT	Taytay_Palawan	NA	NA	NA	NA	NA	NA	NA	NA
+PAL-2022_06_04	Mal	Mala	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Pal-2022-01_08	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 PAL-2022-02_03	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Pal-2022-03_05	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-PAL-2022_06_04	Mal	Mala	NA	NA	NA	NA	NA	NA	NA	NA	NA
 PAL-2022-05_05	Mal	Mala	Malampaya	NA	NA	NA	NA	NA	NA	NA	NA
 Pga-2018-001_001	NA	NA	Puerto_Galera	NA	NA	NA	NA	NA	NA	NA	NA
 RAG-2022-01_01	Rag	RagR	Ragay	13.8105766	122.72906	NA	Ragay	Camarines Sur	Bicol Region	Luzon	NA
-RAG-2022-01_01	Rag	RagR	NA	13.8105766	122.72906	NA	Ragay	Camarines Sur	Bicol Region	Luzon	NA
 RAG-2022-01_03	NA	NA	NA	13.8105766	122.72906	NA	Ragay	Camarines Sur	Bicol Region	Luzon	NA
 REU-2019-001_001	Dgt	NA	Dumaguete	NA	NA	NA	NA	NA	NA	NA	NA
 REU-2019-002_002	Dgt	NA	Dumaguete	NA	NA	NA	NA	NA	NA	NA	NA
@@ -267,7 +263,6 @@ Rom-2022-01_003	Rom	Romb	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Rom-2022-01_004	Rom	Romb	NA	NA	NA	NA	NA	NA	NA	NA	NA
 SAM-2022_02_09	Cab	Bali	NA	12.6643633	124.361624	NA	Biri	Northern Samar	Eastern Visayas	Visayas	NA
 SAM-2022_02_10	Cab	Bali	"Cabacungan,_Allen,_Northern_Samar"	12.6643633	124.361624	NA	Biri	Northern Samar	Eastern Visayas	Visayas	NA
-Sam-2022-02_11	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 SAM-2022_02_14	Bir	Samr	NA	12.6643633	124.361624	NA	Biri	Northern Samar	Eastern Visayas	Visayas	NA
 Sam-2022-01_05	Cat	Catb	NA	11.7734659	124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	NA
 Sam-2022-01_06	Cat	Catb	NA	11.7734659	124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	NA
@@ -277,8 +272,8 @@ Sam-2022-01_10	Cat	Catb	NA	11.7734659	124.879118	NA	Catbalogan	Samar	Eastern Vis
 Sam-2022-02_05	Cab	Bali	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Sam-2022-02_06	Cab	Bali	"Sto_Nino,_Biri_Island"	NA	NA	NA	NA	NA	NA	NA	NA
 Sam-2022-02_07	Cab	Bali	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sam-2022-02_11	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Sul-2019-05_01	Taw	Tawi	Bongao_Fish_Market_Tawi-Tawi	5.029866	119.775417	Tubig-Mampallam	Bongao	Tawi-tawi	BARMM	Mindanao	NA
-Sul-2019-05_01	Taw	Tawi	Tawi_Tawi	5.029866	119.775417	Tubig-Mampallam	Bongao	Tawi-tawi	BARMM	Mindanao	NA
 Sul-2019-07_01	Ban	Basi	Lamitan_Fish_Market_Basilan	6.9455558	122.248907	NA	Zamboanga City	Zamboanga del Sur	Zamboanga Peninsula	Mindanao	NA
 Sul-2019-10_01	Jol	Jolo	Jolo	6.1098091	120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	NA
 Sul-2021-01_01	Tat	Tata	Mandulan_Tawi-Tawi	5.1114486	119.78744	Mandulan	Bongao	Tawi-tawi	BARMM	Mindanao	NA
@@ -291,7 +286,6 @@ SUR-2022_01_01	Sur	Suri	Surigao_Fish_Market	9.7903696	125.497978	NA	Surigao City
 SUR-2022_01_02	Sur	Suri	Surigao_Fish_Market	9.7903696	125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
 TIC-2022-01_03	NA	NA	Masbate_City_Fish_Market	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_001	Gal	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
-VER-2022-01_001	Gal	PGal	NA	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_002	Ver	PGal	NA	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_003	Ver	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_007	Gal	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
@@ -299,10 +293,8 @@ Zam-2019-001_001	Sub	SubB	Silanguin	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-002_003	Sub	SubB	Subic_City_Municipal_Fish_Port	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-003_005	Sub	SubB	Subic_City_Municipal_Fish_Port	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-004_006	Mvi	Masi	Mansiloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
+Zam-2019-004_007	NA	NA	Masinloc_Public_Market	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-004_011	Mvi	Masi	Mansiloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
 Zam-2019-004_012	Mvi	Masi	Masinloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
 Zam-2019-006_020	Mvi	Masi	Masinloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
 Zam-2019-007_025	Sub	SubB	Subic_City_Municipal_Fish_Port	14.8746242	120.217518	NA	Subic	Zambales	Central Luzon	Luzon	NA
-Zam-2019-004_007	NA	NA	Masinloc_Public_Market	NA	NA	NA	NA	NA	NA	NA	NA
-136804	Bur	CanB	Port_Busin	13.12921	122.97338	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
-180050	Mah		Mahinog								

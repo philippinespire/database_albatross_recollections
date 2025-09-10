@@ -484,10 +484,14 @@ suppressPackageStartupMessages(library(janitor))
         identity()
     
     db_with_pk %>%
-        # dm_add_fk(table = lots_sheets, 
-        #           columns = lot_id, 
-        #           ref_table = sampling_sites_sheets,
-        #           ref_columns = lot_id) %>%
+        dm_add_fk(table = lots_sheets,
+                  columns = lot_id,
+                  ref_table = sampling_sites_sheets,
+                  ref_columns = lot_id) %>%
+        dm_add_fk(table = sampling_sites_sheets,
+                  columns = lot_id,
+                  ref_table = lots_sheets,
+                  ref_columns = lot_id) %>%
         dm_add_fk(table = individuals_sheets, 
                   columns = lot_id, 
                   ref_table = lots_sheets) %>%
