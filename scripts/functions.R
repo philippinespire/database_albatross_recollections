@@ -52,20 +52,58 @@ suppressPackageStartupMessages(library(janitor))
         for (i in seq_len(nrow(corrections))) {
             correction <- corrections[i, ]
             
-            # Find matching rows
-            matching_rows <- rep(FALSE, nrow(data))
+            # # Find matching rows
+            # matching_rows <- rep(FALSE, nrow(data))
+            # 
+            # if (!is.na(correction$original_extraction_id) && 
+            #     !is.na(correction$original_individual_id) &&
+            #     !is.na(correction$original_extraction_plate_id) &&
+            #     !is.na(correction$original_extraction_plate_well_address)) {
+            #     
+            #     matching_rows <- (data$extraction_id == correction$original_extraction_id) & 
+            #         (data$individual_id == correction$original_individual_id) &
+            #         (data$plateid == correction$original_extraction_plate_id) &
+            #         (str_c(data$elution1_plate_column, data$elution1_plate_row) == correction$original_extraction_plate_well_address)
+            #     matching_rows[is.na(matching_rows)] <- FALSE
+            #     
+            # } else if (!is.na(correction$original_extraction_id)) {
+            #     matching_rows <- data$extraction_id == correction$original_extraction_id
+            #     matching_rows[is.na(matching_rows)] <- FALSE
+            # } else if (!is.na(correction$original_individual_id)) {
+            #     matching_rows <- data$individual_id == correction$original_individual_id
+            #     matching_rows[is.na(matching_rows)] <- FALSE
+            # }
             
-            if (!is.na(correction$original_extraction_id) && !is.na(correction$original_individual_id)) {
-                matching_rows <- (data$extraction_id == correction$original_extraction_id) & 
-                    (data$individual_id == correction$original_individual_id)
-                matching_rows[is.na(matching_rows)] <- FALSE
-            } else if (!is.na(correction$original_extraction_id)) {
-                matching_rows <- data$extraction_id == correction$original_extraction_id
-                matching_rows[is.na(matching_rows)] <- FALSE
-            } else if (!is.na(correction$original_individual_id)) {
-                matching_rows <- data$individual_id == correction$original_individual_id
-                matching_rows[is.na(matching_rows)] <- FALSE
+            # Build list of conditions
+            conditions <- list()
+            
+            if (!is.na(correction$original_extraction_id)) {
+                conditions$extraction <- data$extraction_id == correction$original_extraction_id
             }
+            
+            if (!is.na(correction$original_individual_id)) {
+                conditions$individual <- data$individual_id == correction$original_individual_id
+            }
+            
+            if (!is.na(correction$original_extraction_plate_id)) {
+                conditions$plate <- data$plateid == correction$original_extraction_plate_id
+            }
+            
+            if (!is.na(correction$original_extraction_plate_well_address)) {
+                conditions$well <- str_c(data$elution1_plate_column, data$elution1_plate_row) == 
+                    correction$original_extraction_plate_well_address
+            }
+            
+            # Combine all conditions with AND logic
+            if (length(conditions) > 0) {
+                matching_rows <- reduce(conditions, `&`)
+                matching_rows[is.na(matching_rows)] <- FALSE
+            } else {
+                # No conditions specified
+                matching_rows <- rep(FALSE, nrow(data))
+            }
+            
+            
             
             if (any(matching_rows)) {
                 changes <- c()

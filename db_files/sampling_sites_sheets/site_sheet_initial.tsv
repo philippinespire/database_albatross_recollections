@@ -48,7 +48,7 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 97690	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 97693	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 97783	Pnd	Pand	Pandanon_Id	10.1796678	124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	NA
-099660	Bit	Bito	Bito_River	NA	NA	NA	NA	NA	NA	NA	NA
+99660	Bit	Bito	Bito_River	NA	NA	NA	NA	NA	NA	NA	NA
 112159	Ros	Rosa	Rosa_Id	13.7167102	123.576012	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
 120794	Sub	SubB	Grande_Island	14.7376526	120.270131	NA	Morong	Bataan	Central Luzon	Luzon	NA
 120806	Bol	Mala	Bolalo_Bay	10.9230731	119.249382	Liminangcong	Taytay	Palawan	Southern Tagalog	Luzon	Bahía de Bolalo
@@ -232,7 +232,7 @@ Luz-2017-044_001	Mig	SMig	San_Miguel_Bay	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-045_001	Mat	MatB	Bulan	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-047_001	Rag	CanB	Ragay_Gulf	12.9520333	123.994789	NA	Sorsogon City	Sorsogon	Bicol Region	Luzon	Sorsogon Bay
 Luz-2017-050_001	Mat	MatB	Matnog_Bay	12.5827124	124.09195	Caloocan	Matnog	Sorsogon	Bicol Region	Luzon	NA
-"Luz-2017-49_(360,_363,_367)"	NA	NA	Gubat_Market	NA	NA	NA	NA	NA	NA	NA	NA
+Luz-2017-049_001	NA	NA	Gubat_Market	NA	NA	NA	NA	NA	NA	NA	NA
 MAS-2022-01_01	Bur	CanB	Port_Busin	13.1258247	122.975714	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
 MAS-2022-02_07	Bur	CanB	Port_Busin	13.1258247	122.975714	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
 MAS-2022-03_01	Bur	CanB	Port_Busin	13.1258247	122.975714	NA	San Pascual	Masbate	Bicol Region	Luzon	NA
@@ -289,7 +289,7 @@ Sul-2021-04_02	Tum	Tumi	Simunul_Id_Sibutu_Channel	4.8374273	119.817665	NA	Simunu
 Sul-2021-05_02	Taw	Tawi	Bongao_Channel	NA	NA	NA	NA	NA	NA	NA	NA
 SUR-2022_01_01	Sur	Suri	Surigao_Fish_Market	9.7903696	125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
 SUR-2022_01_02	Sur	Suri	Surigao_Fish_Market	9.7903696	125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
-TIC-2022-02_01	NA	NA	Masbate_City_Fish_Market	NA	NA	NA	NA	NA	NA	NA	NA
+TIC-2022-01_03	NA	NA	Masbate_City_Fish_Market	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_001	Gal	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_001	Gal	PGal	NA	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_002	Ver	PGal	NA	NA	NA	NA	NA	NA	NA	NA	NA
