@@ -560,6 +560,7 @@ Doboatherina_duodecimalis	136814	Hamilo_Cove	Hamilo_Cove	Albatross	Adu-AHam_094	
 Doboatherina_duodecimalis	136814	Hamilo_Cove	Hamilo_Cove	Albatross	Adu-AHam_095	453250	AJ2OM84	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	136814	Hamilo_Cove	Hamilo_Cove	Albatross	Adu-AHam_096	453251	AJ2OM85	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	150605	Malcochin_Harbor	Malcochin_Harbor	Albatross	Adu-ALin_001	444941	AJ2OE42	NA	NA	Only 5 specimens from this lot was examined by KEC. It appears to be a mix of A. duodecimalis & A. endrachtensis. There is a need to examine each specimen to confirm ID.	NA	NA	NA	NA	NA
+Atherinomorus_endrachtensis	150605	Malcochin_Harbor	Malcochin_Harbor	Albatross	Adu-ALin_002	444942	AJ2OE43	NA	NA	NA	misidentified_origilly_sent_as_Adu; Accidentally not entered in database until 9.10.25	NA	NA	NA	NA
 Atherinomorus_endrachtensis	150605	Malcochin_Harbor	Malcochin_Harbor	Albatross	Adu-ALin_003	444943	AJ2OE44	NA	NA	NA	misidentified_origilly_sent_as_Adu	NA	NA	NA	NA
 Atherinomorus_endrachtensis	150605	Malcochin_Harbor	Malcochin_Harbor	Albatross	Adu-ALin_004	444944	AJ2OE45	NA	NA	NA	misidentified_origilly_sent_as_Adu	NA	NA	NA	NA
 Doboatherina_duodecimalis	150605	Malcochin_Harbor	Malcochin_Harbor	Albatross	Adu-ALin_005	444945	AJ2OE46	Morphology	Kent_Carpenter	This individual was examined & confirmed by KEC as A. duodecimalis. The rest of the lot is a mix of A. duodecimalis & A. endrachtensis. Each individual should be checked prior to subsampling.	NA	2022	3	25	2022-03-25
@@ -3851,14 +3852,6 @@ Gerres_oyena	183326	Mantacao_Id	NA	Albatross	Goy-APnd_064	455069	AP2WD92	NA	NA	N
 Gerres_oyena	183326	Mantacao_Id	NA	Albatross	Goy-APnd_065	455070	AP2WD93	NA	NA	NA	NA	NA	NA	NA	NA
 Gerres_oyena	183326	Mantacao_Id	NA	Albatross	Goy-APnd_066	455071	AP2WD94	NA	NA	NA	NA	NA	NA	NA	NA
 Gerres_oyena	183326	Mantacao_Id	NA	Albatross	Goy-APnd_067	455072	AP2WD95	NA	NA	NA	NA	NA	NA	NA	NA
-Gerres_oyena	183326	Mantacao_Id	NA	Albatross	Goy-APnd_068	455073	AP2WD96	NA	NA	NA	NA	NA	NA	NA	NA
-Gerres_oyena	NA	NA	NA	Albatross	Goy-APnd_069	455074	AP2WD97	NA	NA	NA	NA	NA	NA	NA	NA
-Gerres_oyena	NA	NA	NA	Albatross	Goy-APnd_070	455075	AP2WD98	NA	NA	NA	NA	NA	NA	NA	NA
-Gerres_oyena	NA	NA	NA	Albatross	Goy-APnd_071	455076	AP2WD99	NA	NA	NA	NA	NA	NA	NA	NA
-Gerres_oyena	NA	NA	NA	Albatross	Goy-APnd_072	455077	AP2WE00	NA	NA	NA	NA	NA	NA	NA	NA
-Gerres_oyena	NA	NA	NA	Albatross	Goy-APnd_073	455078	AP2WE01	NA	NA	NA	NA	NA	NA	NA	NA
-Gerres_oyena	NA	NA	NA	Albatross	Goy-APnd_074	455079	AP2WE02	NA	NA	NA	NA	NA	NA	NA	NA
-Gerres_oyena	NA	NA	NA	Albatross	Goy-APnd_075	455080	AP2WE03	NA	NA	NA	NA	NA	NA	NA	NA
 Gerres_oyena	183334	Ragay_River	Ragay_River	Albatross	Goy-ARag_001	453354	AJ2ON88	NA	NA	NA	NA	NA	NA	NA	NA
 Gerres_oyena	183334	Ragay_River	Ragay_River	Albatross	Goy-ARag_002	453355	AJ2ON89	NA	NA	NA	NA	NA	NA	NA	NA
 Gerres_oyena	183334	Ragay_River	Ragay_River	Albatross	Goy-ARag_003	453356	AJ2ON90	NA	NA	NA	NA	NA	NA	NA	NA
@@ -7398,50 +7391,50 @@ Parupeneus_barberinus	138650	NA	NA	Albatross	Pbb-AGal_034	1419129	AQ1FF29	Morpho
 Parupeneus_barberinus	138650	NA	NA	Albatross	Pbb-AGal_035	1419130	AQ1FF30	Morphology	Kent_Carpenter | Jem_Baldisimo	Checked a few individuals from this lot	NA	2022	3	21	2022-03-21
 Parupeneus_barberinus	138650	NA	NA	Albatross	Pbb-AGal_036	1419131	AQ1FF31	Morphology	Kent_Carpenter | Jem_Baldisimo	Checked a few individuals from this lot	NA	2022	3	21	2022-03-21
 Parupeneus_barberinus	138650	NA	NA	Albatross	Pbb-AGal_037	1419132	AQ1FF32	Morphology	Kent_Carpenter | Jem_Baldisimo	Checked a few individuals from this lot	NA	2022	3	21	2022-03-21
-Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_001	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_002	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_003	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_004	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_005	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_006	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_007	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_008	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_009	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_010	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_011	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_012	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_013	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_014	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_015	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_016	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_017	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_018	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_019	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_020	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_021	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_022	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_023	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_024	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_025	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_026	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_027	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_028	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_029	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_030	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_031	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_032	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_033	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_034	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_035	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_036	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_037	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_038	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_039	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_040	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_041	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_042	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_043	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_044	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_001	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_002	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_003	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_004	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_005	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_006	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_007	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	Verde_Island	NA	Contemporary	Pbb-CVer_008	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_009	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_010	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_011	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_012	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_013	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_014	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_015	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_016	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_017	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_018	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_019	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_020	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_021	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_022	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_023	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_024	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_025	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_026	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_027	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_028	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_029	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_030	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_031	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_032	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_033	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_034	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_035	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_036	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_037	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_038	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_039	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_040	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_041	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_042	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_043	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
+Parupeneus_barberinus	VER-2022-01_001	NA	NA	Contemporary	Pbb-CVer_044	NA	NA	NA	NA	NA	Formerly used the site code CGal	NA	NA	NA	NA
 Plotosus_lineatus	139013	NA	NA	Albatross	Pli-ARom_001	1419207	AQ1FG07	NA	NA	NA	NA	NA	NA	NA	NA
 Plotosus_lineatus	139013	NA	NA	Albatross	Pli-ARom_002	1419208	AQ1FG08	NA	NA	NA	NA	NA	NA	NA	NA
 Plotosus_lineatus	139013	NA	NA	Albatross	Pli-ARom_003	1419209	AQ1FG09	NA	NA	NA	NA	NA	NA	NA	NA
@@ -13338,3 +13331,7 @@ Zoramia_viridiventer	NA	Masinloc	NA	Contemporary	Zvi-CMvi_005	NA	NA	NA	NA	NA	Che
 Zoramia_viridiventer	NA	Masinloc	NA	Contemporary	Zvi-CMvi_006	NA	NA	NA	NA	NA	Check_barcode_results	NA	NA	NA	NA
 Zoramia_viridiventer	NA	Masinloc	NA	Contemporary	Zvi-CMvi_007	NA	NA	NA	NA	NA	Check_barcode_results	NA	NA	NA	NA
 Zoramia_viridiventer	NA	Masinloc	NA	Contemporary	Zvi-CMvi_008	NA	NA	NA	NA	NA	Check_barcode_results	NA	NA	NA	NA
+Ambassis_urotaenia	180050	Mahinog	Mahinog	Albatross	Aur-AMah_001	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Ambassis_urotaenia	180050	Mahinog	Mahinog	Albatross	Aur-AMah_002	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Atherinomorus_endrachtensis	136804	Port_Busin	Port_Busin	Albatross	Aen-ABur_001	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Atherinomorus_endrachtensis	136804	Port_Busin	Port_Busin	Albatross	Aen-ABur_002	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
