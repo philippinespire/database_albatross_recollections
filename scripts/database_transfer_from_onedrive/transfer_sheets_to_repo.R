@@ -175,7 +175,7 @@ remove_empty_enhanced <- function(dat,
 purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   # Construct full paths
   in_path  <- file.path(onedrive_path, fname)
-  out_path <- file.path(ddir, str_replace(fname, "\\.xlsx$", "_initial.tsv")) %>%
+  out_path <- file.path(ddir, str_replace(fname, "\\.xlsx$", "_onedrive.tsv")) %>%
       str_to_lower()
   
   # Create destination directory if it doesn't exist
