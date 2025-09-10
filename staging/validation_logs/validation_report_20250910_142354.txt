@@ -1,0 +1,35 @@
+PIRE Database Validation Report
+Generated: 2025-09-10 14:23:54.492452
+============================================================
+
+
+File: dna_extractions_sheets/jds-2025-09-10-summer2025Sde_extractions.tsv
+Table Type: dna_extractions_sheets
+Status: PASSED ✓
+
+WARNINGS:
+  - 
+Extra columns found (will be removed):
+  - elution1_gel_score_odu
+  - elution2_gel_score_odu
+  - elution3_gel_score_odu
+  - elution4_gel_score_odu
+----------------------------------------
+
+File: individuals_sheets/jds-2025-09-10-summer2025Sde_individuals.tsv
+Table Type: individuals_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: lots_sheets/jds-2025-09-10-summer2025Sde_lots.tsv
+Table Type: lots_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: sampling_sites_sheets/jds-2025-09-10-summer2025Sde_sites.tsv
+Table Type: sampling_sites_sheets
+Status: PASSED ✓
+
+----------------------------------------

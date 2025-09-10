@@ -434,7 +434,7 @@ if (interactive()) {
     pire_database()
   }
 
-  update_database <- function() {
+  update_database <- function(integrate_files = TRUE) {
     # Quick dependency check if renv is available
     if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
       if (!.check_dependencies(silent = TRUE)) {
@@ -461,7 +461,7 @@ if (interactive()) {
     #The first time this is called it sources in the functions and runs itself. After it is replaced with the main function
     #
     source("scripts/functions.R")
-    update_database()
+    update_database(integrate_files)
   }
   
   check_setup <- function() {

@@ -1033,7 +1033,7 @@ pire_database <- function() {
 #' @param validation_results List of all validation results
 #' @param apply_corrections Whether to apply corrections from extractions_mislabelling_sheet
 #' @return Success status
-.integrate_validated_files <- function(validation_results, apply_corrections = TRUE) {
+.integrate_validated_files <- function(validation_results, apply_corrections = TRUE){
     # Check if all files passed
     all_passed <- all(sapply(validation_results, function(x) x$passed))
     
@@ -1053,10 +1053,84 @@ pire_database <- function() {
         
         # Apply corrections if needed
         if (apply_corrections) {
-            source(here::here("scripts", "functions.R"))
             processed_data <- .apply_corrections(result$data, table_type, verbose = FALSE)
         } else {
             processed_data <- result$data
+        }
+        
+        #JDS HERE - Apply warning corrections for the database version
+        # Create a separate copy for database integration with warning corrections applied
+        db_data <- processed_data
+        
+        # Apply column structure warnings (remove extra columns)
+        if (!is.null(result$warnings$columns)) {
+            if (!is.null(result$warnings$columns$issues$extra)) {
+                extra_cols <- result$warnings$columns$issues$extra
+                cli_progress_step(paste("Removing extra columns:", paste(extra_cols, collapse = ", ")))
+                db_data <- db_data %>%
+                    select(-all_of(extra_cols))
+            }
+        }
+        
+        # Apply data quality warnings (trim whitespace, etc.)
+        if (!is.null(result$warnings$quality)) {
+            # Handle whitespace issues
+            for (issue_name in names(result$warnings$quality$issues)) {
+                if (str_detect(issue_name, "_whitespace$")) {
+                    col_name <- str_remove(issue_name, "_whitespace$")
+                    if (col_name %in% names(db_data)) {
+                        cli_progress_step(paste("Trimming whitespace in column:", col_name))
+                        db_data[[col_name]] <- str_trim(db_data[[col_name]])
+                    }
+                }
+            }
+            
+            # Remove completely empty rows if they exist
+            if (!is.null(result$warnings$quality$issues$empty_rows)) {
+                empty_row_indices <- result$warnings$quality$issues$empty_rows
+                cli_progress_step(paste("Removing", length(empty_row_indices), "empty rows"))
+                # Create row numbers to match the original data
+                db_data <- db_data %>%
+                    mutate(.row_num = row_number()) %>%
+                    filter(!.row_num %in% empty_row_indices) %>%
+                    select(-.row_num)
+            }
+        }
+        
+        # Get existing table structure to ensure column order matches
+        db <- pire_database()
+        if (table_type %in% names(dm_get_tables(db))) {
+            existing_table <- db %>% 
+                dm_get_tables() %>%
+                pluck(table_type)
+            
+            # Get expected columns (excluding the file path and correction tracking columns)
+            expected_cols <- names(existing_table)
+            correction_cols <- c("correction_applied", "correction_id", 
+                                 "correction_details", "correction_date")
+            filepath_cols <- paste0(table_type, 'file_path')
+            expected_cols <- setdiff(expected_cols, c(correction_cols, filepath_cols))
+            
+            # Ensure db_data has exactly the expected columns in the right order
+            # Add any missing columns as NA
+            missing_cols <- setdiff(expected_cols, names(db_data))
+            for (col in missing_cols) {
+                db_data[[col]] <- NA
+            }
+            
+            # Select only the expected columns in the correct order
+            cols_to_keep <- intersect(expected_cols, names(db_data))
+            db_data <- db_data %>%
+                select(all_of(cols_to_keep))
+            
+            # Add correction tracking columns back if they exist in processed_data
+            if (apply_corrections) {
+                for (col in correction_cols) {
+                    if (col %in% names(processed_data)) {
+                        db_data[[col]] <- processed_data[[col]]
+                    }
+                }
+            }
         }
         
         # Determine destination path
@@ -1068,19 +1142,26 @@ pire_database <- function() {
         new_filename <- paste0(original_name, "_", timestamp, ".tsv")
         dest_path <- file.path(dest_folder, new_filename)
         
-        # Write to destination
-        write_tsv(processed_data, dest_path, na = "")
+        # Write the cleaned data to database destination
+        write_tsv(db_data, dest_path, na = "")
         
-        # Archive the staging file
+        # Archive the staging file with original processed_data (no warning corrections)
         archive_folder <- file.path(dirname(file_path), "processed")
         if (!dir.exists(archive_folder)) {
             dir.create(archive_folder)
         }
         
         archive_path <- file.path(archive_folder, paste0(original_name, "_processed_", timestamp, ".tsv"))
-        file.rename(file_path, archive_path)
+        # Write the original processed data to archive (with corrections but no warning fixes)
+        write_tsv(processed_data, archive_path, na = "")
+        
+        # Remove the original staging file
+        file.remove(file_path)
         
         cli_alert_success(paste("Integrated:", table_type, "-", basename(new_filename)))
+        if (length(result$warnings) > 0) {
+            cli_alert_info(paste("Applied", length(result$warnings), "warning correction(s) to database version"))
+        }
     }
     
     cli_alert_success("All files integrated successfully")
@@ -1218,7 +1299,7 @@ pire_database <- function() {
     }
     
     # Print summary
-    .print_validation_summary_report(all_results)
+    .print_validation_summary_report(all_results, auto_integrate)
     
     # Integrate if all passed and auto_integrate is TRUE
     if (auto_integrate) {
@@ -1265,7 +1346,7 @@ pire_database <- function() {
 #' Print summary of all validation results
 #'
 #' @param results List of validation results
-.print_validation_summary_report <- function(results) {
+.print_validation_summary_report <- function(results, auto_integrate) {
     if (length(results) == 0) return(invisible(NULL))
     
     cli_h2("Validation Summary")
@@ -1290,7 +1371,7 @@ pire_database <- function() {
         }
     }
     
-    if (passed > 0 && failed == 0) {
+    if (passed > 0 && failed == 0 && !auto_integrate) {
         cli_alert_info("\nAll files passed! To integrate them, run:")
         cli_code('validate_staging_files(auto_integrate = TRUE)')
     }
@@ -1355,6 +1436,6 @@ pire_database <- function() {
 }
 
 
-update_database <- function(){
-    .validate_staging_files(auto_integrate = TRUE)
+update_database <- function(integrate_files = TRUE){
+    .validate_staging_files(auto_integrate = integrate_files)
 }

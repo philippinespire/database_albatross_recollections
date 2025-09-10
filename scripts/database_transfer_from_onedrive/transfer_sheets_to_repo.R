@@ -48,6 +48,129 @@ strip_newlines <- function(df) {
                   ~ str_replace_all(.x, "[\r\n]+", " ") |> str_squish()))
 }
 
+remove_empty_enhanced <- function(dat, 
+                                  which = c("rows", "cols"), 
+                                  quiet = FALSE,
+                                  exclude_cols = NULL) {
+    
+    # Validate inputs
+    if (!is.data.frame(dat)) {
+        stop("Input must be a data frame")
+    }
+    
+    which <- match.arg(which, c("rows", "cols"), several.ok = TRUE)
+    
+    original_rows <- nrow(dat)
+    original_cols <- ncol(dat)
+    result <- dat
+    
+    # Helper function to check if a value is empty
+    # Handles different data types appropriately
+    is_empty_value <- function(x) {
+        if (is.null(x)) return(TRUE)
+        if (length(x) == 0) return(TRUE)
+        if (all(is.na(x))) return(TRUE)
+        
+        # For character/factor types, also check for empty strings
+        if (is.character(x) || is.factor(x)) {
+            x_char <- as.character(x)
+            return(all(is.na(x_char) | x_char == ""))
+        }
+        
+        # For other types (numeric, Date, POSIXct, etc.), only NA counts as empty
+        return(FALSE)
+    }
+    
+    # Remove empty rows
+    if ("rows" %in% which) {
+        # Identify rows that are completely empty
+        empty_rows <- apply(result, 1, function(row) {
+            all(sapply(row, function(val) {
+                if (is.na(val)) return(TRUE)
+                if (is.character(val) && val == "") return(TRUE)
+                if (is.factor(val) && as.character(val) == "") return(TRUE)
+                return(FALSE)
+            }))
+        })
+        
+        rows_to_remove <- sum(empty_rows)
+        
+        if (rows_to_remove > 0) {
+            result <- result[!empty_rows, , drop = FALSE]
+            
+            if (!quiet) {
+                message(sprintf("Removed %d empty row%s.", 
+                                rows_to_remove,
+                                ifelse(rows_to_remove == 1, "", "s")))
+            }
+        }
+    }
+    
+    # Remove empty columns
+    if ("cols" %in% which) {
+        # Identify columns that are completely empty
+        empty_cols <- logical(ncol(result))
+        names(empty_cols) <- names(result)
+        
+        for (i in seq_along(result)) {
+            col_name <- names(result)[i]
+            empty_cols[i] <- is_empty_value(result[[i]])
+        }
+        
+        # Exclude specified columns from removal
+        if (!is.null(exclude_cols) && length(exclude_cols) > 0) {
+            # Only consider columns that actually exist in the data
+            cols_to_exclude <- intersect(exclude_cols, names(result))
+            
+            if (length(cols_to_exclude) > 0) {
+                # Track which excluded columns were actually empty
+                excluded_empty <- character(0)
+                
+                for (col in cols_to_exclude) {
+                    if (empty_cols[col]) {
+                        excluded_empty <- c(excluded_empty, col)
+                        # Mark this column as not empty so it won't be removed
+                        empty_cols[col] <- FALSE
+                    }
+                }
+                
+                if (!quiet && length(excluded_empty) > 0) {
+                    message(sprintf("Kept %d empty column%s due to exclusion: %s",
+                                    length(excluded_empty),
+                                    ifelse(length(excluded_empty) == 1, "", "s"),
+                                    paste(excluded_empty, collapse = ", ")))
+                }
+            }
+        }
+        
+        cols_to_remove <- sum(empty_cols)
+        
+        if (cols_to_remove > 0) {
+            # Get names of columns to be removed for reporting
+            removed_col_names <- names(empty_cols)[empty_cols]
+            
+            cols_to_keep <- !empty_cols
+            result <- result[, cols_to_keep, drop = FALSE]
+            
+            if (!quiet) {
+                message(sprintf("Removed %d empty column%s: %s", 
+                                cols_to_remove,
+                                ifelse(cols_to_remove == 1, "", "s"),
+                                paste(removed_col_names, collapse = ", ")))
+            }
+        }
+    }
+    
+    # Reset row names if rows were removed
+    if ("rows" %in% which && nrow(result) < original_rows) {
+        rownames(result) <- NULL
+    }
+    
+    return(result)
+}
+
+
+
 
 purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   # Construct full paths
@@ -60,10 +183,13 @@ purrr::walk2(excel_files, dest_dirs, function(fname, ddir) {
   
   # Read the first sheet of the workbook and write as TSV
   in_file <- read_excel(in_path, 
-             na = c('', 'NA', 'N/A', '?'),
-             guess_max = 1e6) %>%
-    janitor::remove_empty(which = c('rows', 'cols')) %>%
-    strip_newlines() 
+                        na = c('', 'NA', 'N/A', '?'),
+                        guess_max = 1e6) %>%
+      remove_empty_enhanced(exclude_cols = 'Field_ID', 
+                            which = c('rows', 'cols'), 
+                            quiet = FALSE) %>%
+      strip_newlines() 
+  
   
   if(fname == "Individual_sheet.xlsx"){
       

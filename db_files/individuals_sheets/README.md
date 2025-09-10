@@ -11,6 +11,7 @@ These files are compiled into the individuals sheet of the database. All .tsv fi
 | **Equivalent\_Albatross\_Site**          | Equivalent site name based on Albatross records                   |
 | **Collection\_Period**                   | Collection campaign or period (e.g., Albatross or Contemporary)                   |
 | **Individual\_ID**                       | Unique identifier for the individual specimen (**Primary Key**)                               |
+| **Field\_ID**                       | Identification number assigned during field collection (not all individuals will have)                               |
 | **New\_USNM**                            | New U.S. National Museum (Smithsonian) catalog number                        |
 | **USNM\_Biorepository**                  | Biorepository code or accession at USNM                                      |
 | **Species\_ID\_method**                  | Method used to determine species identification (e.g., morphology, genetics) |

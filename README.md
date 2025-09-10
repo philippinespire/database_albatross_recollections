@@ -192,8 +192,83 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 After cloning the repo locally:
 * Add a new table to the relevant subdirectory in [`staging`](staging). Each folder contains an "EXAMPLE" file with the proper file header to use and a readme describing what the columns should contain. Be sure to use the exact same column names and cell formatting as the existing table in that directory. 
 * Use an informative name of the format INITIALS-YEAR-MONTH-DAY-DESC.tsv, where you're using your initials, the 4-digit year, the 2-digit month, and a short description without any punctuation or spaces.
-* Use the `update_database()` function (available after opening `database_albatross_recollections.Rproj`) which will validate the data being input and copy the files into the database
+* Use the `update_database()` function (available after opening `database_albatross_recollections.Rproj`) which will validate the data being input and copy the files into the database. The terminal output should look similar to below.
 	- If there are problems with the data fix them as instructed by the error messages
+	```
+	> update_database()
+                              
+	── PIRE Database Staging Validation ─────────────────────────────────────────────────────────────────────────────────
+	ℹ Found 4 file(s) to validate                                                                                        
+																														 
+	── Validating: dna_extractions_sheets/jds-2025-09-10-summer2025Sde_extractions.tsv ──
+								  
+	✔ Checking column structure... [11ms]
+	✔ Checking for missing primary keys... [32ms]
+	✔ Checking for duplicate primary keys... [51ms]
+	✔ Checking foreign key constraints... [38ms]
+	✔ Checking data quality... [47ms]
+	✔ Running table-specific validations... [32ms]
+	✔ jds-2025-09-10-summer2025Sde_extractions.tsv - PASSED all validations
+	! Extra columns found (will be removed):
+	  - elution1_gel_score_odu
+	  - elution2_gel_score_odu
+	  - elution3_gel_score_odu
+	  - elution4_gel_score_odu
+	ℹ Loading current database...
+								  
+	── Validating: individuals_sheets/jds-2025-09-10-summer2025Sde_individuals.tsv ──
+								  
+	✔ Checking column structure... [12ms]
+	✔ Checking for missing primary keys... [32ms]
+	✔ Checking for duplicate primary keys... [52ms]
+	✔ Checking foreign key constraints... [50ms]
+	✔ Checking data quality... [43ms]
+	✔ Running table-specific validations... [28ms]
+	✔ jds-2025-09-10-summer2025Sde_individuals.tsv - PASSED all validations
+	ℹ Loading current database...
+								  
+	── Validating: lots_sheets/jds-2025-09-10-summer2025Sde_lots.tsv ──
+								  
+	✔ Checking column structure... [12ms]
+	✔ Checking for missing primary keys... [34ms]
+	✔ Checking for duplicate primary keys... [49ms]
+	✔ Checking data quality... [44ms]
+	✔ Running table-specific validations... [29ms]
+	✔ jds-2025-09-10-summer2025Sde_lots.tsv - PASSED all validations
+	ℹ Loading current database...
+								  
+	── Validating: sampling_sites_sheets/jds-2025-09-10-summer2025Sde_sites.tsv ──
+								  
+	✔ Checking column structure... [12ms]
+	✔ Checking for missing primary keys... [34ms]
+	✔ Checking for duplicate primary keys... [51ms]
+	✔ Checking data quality... [34ms]
+	✔ Running table-specific validations... [29ms]
+	✔ jds-2025-09-10-summer2025Sde_sites.tsv - PASSED all validations
+	ℹ Loading current database...
+	✔ Report saved to: validation_report_20250910_142034.txt
+								  
+	── Validation Summary ──      
+								  
+	ℹ Total files processed: 4    
+	✔ Passed validation: 4        
+								  
+	── Integrating validated files 
+	✔ Processing: jds-2025-09-10-summer2025Sde_extractions.tsv [51ms]                                                    
+	✔ Integrated: dna_extractions_sheets - jds-2025-09-10-summer2025Sde_extractions_20250910_142035.tsv                   
+	ℹ Applied 1 warning correction(s) to database version                                                                 
+	✔ Removing extra columns: elution1_gel_score_odu, elution2_gel_score_odu, elution3_gel_score_odu, elution4_gel_score…
+	✔ Integrated: individuals_sheets - jds-2025-09-10-summer2025Sde_individuals_20250910_142038.tsv                      
+	✔ Processing: jds-2025-09-10-summer2025Sde_individuals.tsv [1.8s]
+	✔ Integrated: lots_sheets - jds-2025-09-10-summer2025Sde_lots_20250910_142040.tsv                                    
+	✔ Processing: jds-2025-09-10-summer2025Sde_lots.tsv [1.7s]
+	✔ Integrated: sampling_sites_sheets - jds-2025-09-10-summer2025Sde_sites_20250910_142041.tsv                         
+	✔ All files integrated successfully                  
+	✔ Processing: jds-2025-09-10-summer2025Sde_sites.tsv [1.6s]
+	✔ Loading current database... [10s]
+	ℹ Loading current database...
+	```
+	
 * Push back to GitHub
 
 ### Troubleshooting
