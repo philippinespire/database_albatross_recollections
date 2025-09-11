@@ -922,7 +922,7 @@ if (interactive()) {
       rm('install_linux_deps', 'install_windows_tools')
     } else {
       cat(" Run: setup_project()\n\n")
-      rm('install_linux_deps', 'install_windows_tools')
+      rm('install_linux_deps', 'install_windows_tools', 'install_macos_deps')
     }
   } else if (deps_ok) {
     cat(" ✅ PROJECT READY\n")
