@@ -463,7 +463,30 @@ suppressPackageStartupMessages(library(janitor))
 #### Assemble Database ####
 .database_assembly <- function(){
     
-    db_with_pk <- .compile_db_inputs() %>% #names()
+    db_list <- .compile_db_inputs()
+    
+    ## Build Junction box to join in gel images
+    db_list$dna_extractions_gels <- db_list$dna_extractions_gels %>%
+        mutate(elution_plate_id = str_remove(gel_id, 
+                                     '_20[0-9]{2}-[0-9]{2}-[0-9]{2}$') %>%
+                   str_replace('elution-0', 'e'))
+    
+    
+    db_list$elution_junction <- db_list$dna_extractions_sheets %>% 
+        select(extraction_id, 
+               elution1_plateid, 
+               elution2_plateid, 
+               elution3_plateid, 
+               elution4_plateid) %>%
+        pivot_longer(cols = ends_with("_plateid"),
+                     names_to = "elution",
+                     values_to = "elution_plate_id",
+                     values_drop_na = TRUE) %>%
+        mutate(elution = str_remove(elution, '_plateid')) %>%
+        filter(elution_plate_id %in% unique(db_list$dna_extractions_gels$elution_plate_id))
+    
+    ## Construct database
+    db_with_pk <- db_list %>% #names()
         do.call(dm, .) %>%
         dm::dm_add_pk(sampling_sites_sheets,
                       columns = c(lot_id)) %>%
@@ -504,7 +527,15 @@ suppressPackageStartupMessages(library(janitor))
                   ref_columns = species_valid_name) %>%
         dm_add_fk(table = dna_extractions_sheets, 
                   columns = individual_id, 
-                  ref_table = individuals_sheets)
+                  ref_table = individuals_sheets) %>%
+        dm_add_fk(elution_junction,
+                  elution_plate_id,
+                  dna_extractions_gels, 
+                  elution_plate_id) %>% 
+        dm_add_fk(elution_junction, 
+                  extraction_id, 
+                  dna_extractions_sheets) %>%
+        identity()
 }
 
 #### Database Validation ####

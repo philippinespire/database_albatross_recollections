@@ -12,7 +12,6 @@ pull_tbl(the_db, "sampling_sites_sheets") %>%
 pull_tbl(the_db, "sampling_sites_sheets") %>%
     count(lot_id) %>%
     filter(n > 1)
-    filter(n() > 1)
 
 pull_tbl(the_db, "dna_extractions_sheets") %>%
     filter(is.na(extraction_id))
@@ -52,7 +51,16 @@ anti_join(pull_tbl(the_db, "lots_sheets"),
            local_government_unit = NA_character_,
            province = NA_character_,
            region = NA_character_,
-           island_group = NA_character_) %>%
-    write_tsv('../../staging/sampling_sites_sheets/jds_2025-09-10_updateSitesFromOnedriveLotSheet.tsv')
+           island_group = NA_character_)
 
-update_database(integrate_files = TRUE)
+
+
+
+pull_tbl(the_db, "shipments_sheets") %>%
+    filter(n() > 1,
+           .by = c(shipment_id, plate_box_id)) %>%
+    count(shipment_id, plate_box_id)
+
+anti_join(pull_tbl(the_db, "lots_sheets"),
+          pull_tbl(the_db, "sampling_sites_sheets"),
+          by = 'lot_id') 

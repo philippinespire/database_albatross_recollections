@@ -1,0 +1,10 @@
+PIRE Database Validation Report
+Generated: 2025-09-11 14:20:11.301628
+============================================================
+
+
+File: sampling_sites_sheets/jds_2025-09-10_updateSitesFromOnedriveLotSheet.tsv
+Table Type: sampling_sites_sheets
+Status: PASSED ✓
+
+----------------------------------------

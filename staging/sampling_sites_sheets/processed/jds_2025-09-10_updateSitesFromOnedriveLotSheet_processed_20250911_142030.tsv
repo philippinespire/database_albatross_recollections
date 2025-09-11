@@ -1,0 +1,573 @@
+lot_id	site_id	match_id	collection_site	latitude	longitude	notes	barangay	local_government_unit	province	region	island_group	correction_applied	correction_id	correction_details	correction_date
+105345	Bur	CanB	Port_Busin	13.0911153	122.951328	(171202_171207_105345_to_combined_into_one)._To_confirm_ID_Combined_lot,_previously_requested,_SI_staff_could_not_find_lot						FALSE			
+112099	Can	CanB	Canmahala_Bay	13.2195058	123.041741	USNM_returned						FALSE			
+112111	Cot	Cota	Mouth_of_Midanao_River	7.2733769	124.198208							FALSE			
+112160	Bln	Boli	Bolinao_Bay	16.3897316	119.90839	need_to_collect_contemporary						FALSE			
+112931	Ceb		Cebu_Market	10.2950309	123.912569							FALSE			
+120302	Nau	Nauj	Naujan_River	13.335007	121.313332	New_lot._To_determine_priority.						FALSE			
+120303	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+120804	Ham	PMar	Jamelo_Cove	14.1810585	120.604616							FALSE			
+120834	Sub		Grande_Island (near Matalvi, already have)	14.7376526	120.270131	Indiviiduals column used to say """"""""41_or_45""""""""						FALSE			
+120836	Gal	PGal	Varadero_Bay	13.4964937	120.957885							FALSE			
+120855	Gal	PGal	Varadero_Bay	13.4964937	120.957885							FALSE			
+120887	Bag		Baganga_Bay	7.5785869	126.565963							FALSE			
+120928			Maribojoc_Bay	9.7338178	123.835071	Confirmed_ID.						FALSE			
+122742			Capitancillo_Id._Lt.,_N.,_11.75_miles__[Chart_corrected]	10.78	124.108305	CAS_distribution:_Australia_to_Japan						FALSE			
+131117	Gal	PGal	Varadero_Bay									FALSE			
+135291	Mar	PMar	Port_Maricaban	13.6791984	120.840502							FALSE			
+135745	Nak	Nako	Nakoda_Bay	9.291119	117.958053							FALSE			
+135896	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+136688	Vic	Vice	Port_San_Vicente	18.5154096	122.138975							FALSE			
+136726	Bus		Port_Uson	11.9991625	120.137332							FALSE			
+136728	Bln		Bolinao_Bay	16.3897316	119.90839							FALSE			
+136729	Mar		Port_Maricaban	13.6791984	120.840502	Mix lot, need to check every ind.						FALSE			
+136732	Loo		Looc_Bay			7_correct_ID,_1_H._panatela						FALSE			
+136733	Mas	MatB	Masbate	12.3682031	123.612137	Mix lot. 12-18 H. temminckii but only 4 are probably Atherinomorous doudecimalis. Individuals column used to say """"""""12 to 18 (out of 24)""""""""						FALSE			
+136741	Can	CanB	Canmahala_Bay	13.2195058	123.041741	DO_NOT_USE-_use_136753_instead._mix_lot_caution_						FALSE			
+136742	Gui	Guij	Guijulugan_Beach	10.1433793	123.284663	(eric june2022 checked 6=all Hte)						FALSE			
+136747	Ham	HamC	Jamelo_Cove			only_3_individuals						FALSE			
+136752	Tic	MatB	Port_San_Miguel	12.6496345	123.603529	Mix lot. Was originally H. temminckii but only 3 indiv. are H.temminckii, the rest were corrected to H. panatela (25)						FALSE			
+136758	Bul	Bula	Bulan_Island	6.1610355	121.843915							FALSE			
+136762	Gal	PGal	Port_Galera	13.5147982	120.954058	WRONG_ID._Originally_identified_as_Hte_but_re-identified_by_Kent_as_Hypoatherina_panatela // note from Lot_ID column: """"""""need to check every individual ID""""""""						FALSE			
+136807	Vic	Vice	Port_San_Vicente	18.5154096	122.138975	New_lot._To_determine_priority.						FALSE			
+136813	Prn	Para	Parang	7.371307	124.254574	need to check every individual before subsampling. subsampled_4						FALSE			
+136816	Pnb	Pana	Island_off_Panabutan_Point	7.5821861	122.131871							FALSE			
+136818	Lin	Lina	Malcochin_Harbor	11.4906669	119.828165	two_lots_from_same_locations._This_is_a_mixed_lot!_KEC_found_A._duodecimalis_(15),_H._temminckii_(1),_and_A._endrachtensis_(24)_inside_the_jar. Individuals column used to say """"""""15 (out of 40)""""""""						FALSE			
+136821	Map	Mapu	Cagayan_de_Jolo	6.9623337	118.479164	WRONG_ID._KEC_identified_as_Atherinomorus_regina_instead_of_A._duo._Cagayan_De_Jolo_(South);_Jolo_Sea,_previously_requested,_SI_staff_could_not_find_lot						FALSE			
+136822	Bus	Busu	Port_Uson	11.9943675	120.210059	two_lots_from_same_locations._Confirmed_ID.						FALSE			
+136827	Pnd	Pand	Pandanon_Id			Eric=ID ok but 3 smalles cannot ID						FALSE			
+136831	Bur	Buri	Port_Busin	13.12921	122.97338	40 Adu, 3 Hypoatherina sp						FALSE			
+136840	Rag	RagR	Ragay_River	13.6958188	122.848279	need to check every individual. Individuals column used to say """"""""28 (+28 small)""""""""						FALSE			
+136843	Cai	Masb	Cataingan	11.9986583	124.003562	New_plot						FALSE			
+136846	Atu	AtuB	Atulayan_Bay	13.3772616	123.745537	Mixed lot = 44 A. lacunosus, 3 Adu. Individuals column used to say """"""""44 (+3 Adu)""""""""						FALSE			
+136849	Bus	Busu	Port_Caltom	12.1858224	120.10223	Matches w/ COR-2022-01_003 which was IDd as A. regina. ID this lot first before using this plus match.						FALSE			
+136851	Bln		Bolinao_Bay	16.3897316	119.90839	check every individual only 5 checked						FALSE			
+136867	Gal	PGal	Varadero_Bay			TOO_SMALL						FALSE			
+136869	Dup		Dupon_Bay			WRONG_ID._KEC_identified_as_Atherinomorus_lacunosus_instead_of_A._duo.						FALSE			
+136883	Nas	Nasu	Nasugbu	14.0498892	120.62174							FALSE			
+136994	Mah	Mahi	Mahinog	9.1527224	124.79724							FALSE			
+137020	Pnd		Pandanon_Id	10.1796678	124.090001	Don't_use""""_Kent._Allen&Erdmann_distribution:_Australia_to_Japan						FALSE			
+137112	Tag	Tagbi	Tagbilaran_Channel_[Chart_corrected]	9.6150092	123.88							FALSE			
+137135			Port_Jamelo									FALSE			
+137169			Philippine_Is.:_Balikias_B.,_Lubang_Id.									FALSE			
+137219	Ham	HamC	Jamelo_Cove	14.1810585	120.604616							FALSE			
+137233	Gal	PGal	Varadero_Bay	13.5722403	121.085873	ID_checked_for_6_out_of_26.						FALSE			
+137277	Dup		Dupon_Bay	10.931896	124.426504							FALSE			
+137322	Cat	Catb	Catbalogan	11.8209235	124.834584							FALSE			
+137375	Man		Mansalay_Bay	12.5161008	121.440651							FALSE			
+137704			San_Fernando_Point_Light…West_coast_of_Luzon,_Manila_Bay_to_Lingayen_Gulf,_San_Fernando_Point_Light,_N._39_degrees_E.,_8.4_miles.	16.5100091	120.185006							FALSE			
+137769	Mac		Maculabo_Id	14.4009069	122.803862							FALSE			
+137776	Gub	Guba	Port_Gubat	12.9233508	124.129582	There_are_1-2_very_small_individuals_but_the_rest_are_large_enough_to_obtain_50mg_from_1_side.						FALSE			
+137777	Ban	Bata	Batan_Id	13.2313797	123.982833	At_ODU._New_lot._To_determine_priority_and_confirm_ID.						FALSE			
+137782	Ban	Bata	Batan_Id	13.2313797	123.982833	New_lot._To_determine_priority_and_confirm_ID.						FALSE			
+138161	Cag	Caga	Cagayan_de_Jolo			At_ODU						FALSE			
+138162	Cag	Caga	Cagayan_de_Jolo			At_ODU						FALSE			
+138250	Ceb		Cebu_Market	10.2950309	123.912569							FALSE			
+138251	Ceb		Cebu_Market	10.2950309	123.912569							FALSE			
+138253	Ceb		Cebu_Market									FALSE			
+138426	Mur		Murcielagos_Bay	8.6682538	123.520978							FALSE			
+138453	Dup		Dupon_Bay	10.931896	124.426504	DO_NOT_USE_-_WRONG_ID._KEC_&_JGB_confirmed_ID_and_found_that_frontoparietal_striae_is_few_and_supramaxilla_shape_is_assymetrical._Potentially_Herklotsichthys_genus,_and_not_Sardinella_as_labeled.						FALSE			
+138701	Cav		Cavite	14.4850479	120.911622							FALSE			
+138705	Pag	SanR	Santiago_River	13.8565766	120.658957							FALSE			
+138735	Gal	PGal	Varadero_Bay	13.4964937	120.957885	Too_small_and_thin._Do_not_use._Return_to_USNM.						FALSE			
+138736	Gal	PGal	Varadero_Bay									FALSE			
+138742	Mar	PMar	Port_Maricaban									FALSE			
+138749	Rom		Romblon_Harbor	12.5789662	122.267667							FALSE			
+138777	Nas	Nasu	Nasugbu (Hamelo cove)	14.0498892	120.62174	note_on_map:TooSmall!._Check_the_size_of_individuals._not_in_Eric's_plans. Nasugbu_Bay_(Anchorage);_Balayan_Bay_and_Verde_Island_Passage						FALSE			
+138785	Mac		Maculabo_Id	14.4009069	122.803862	interesting site from the East						FALSE			
+138789	Jol	Jolo	Jolo_Island	6.059904	120.990973	TOO_SMALL						FALSE			
+138827	Gal	PGal	Varadero_Bay									FALSE			
+138843			Port_Dupon	10.931896	124.426504							FALSE			
+138930	Loo		Looc_Bay (palawan near Hamelo)	13.726443	120.285047	Confirmed_ID.						FALSE			
+138932	Cru		Santa_Cruz_Id (N Visayas)	13.4959546	122.056351	_EG:_small_but_doable_but_already_have_138930_from_this_site						FALSE			
+138968	Gal		Port_Galera	13.5147982	120.954058	sent_to_TAMUCC_(but_no_records?)						FALSE			
+138969	Man		Mansalay_Bay (S Mindoro)	12.5161008	121.440651	Confirmed_ID.						FALSE			
+138978	Map	Mapu	Cagayan_de_Jolo	6.9623337	118.479164	Confirmed_ID._Mapun_is_Cagayan_de_Sulu.						FALSE			
+138979	Ham	PMar	Jamelo_Cove	14.1810585	120.604616	Confirmed_ID.						FALSE			
+139000	Cad	Cand	Caxisigan_Id	8.0833075	117.087048	New_lot._To_determine_priority_and_confirm_ID						FALSE			
+139088	Dup		Dupon_Bay	10.931896	124.426504							FALSE			
+139142	Til		Tilig_Bay	13.8187561	120.202882							FALSE			
+139260	Bus		Port_Caltom	12.1858224	120.10223							FALSE			
+139261	Nau		Naujan_River	13.335007	121.313332							FALSE			
+139301	Bus	Busu	Port_Caltom	12.1858224	120.10223							FALSE			
+139338	Pln	PlnR	Paluan_River	13.4149729	120.45667							FALSE			
+139452	Ceb		Cebu_Market	10.2950309	123.912569							FALSE			
+139574	Cat	Catb	Catbalogan	11.8209235	124.834584							FALSE			
+139610	Pag	SanR	Santiago_River	13.8565766	120.658957							FALSE			
+139655	Bal		Balayan_Bay	13.8757786	120.909585	On_loan_to_John_Sparks_at_AMNH						FALSE			
+139664	Ceb		Cebu_Market	10.2950309	123.912569							FALSE			
+142824			Cabugan_Grande_Island_(N.),_N._86_degrees_W.,_3.8_miles.	10.4583	125.2861							FALSE			
+145212	Cav		Cavite	14.4850479	120.911622							FALSE			
+145266	Til		Tilig_Bay	13.8187561	120.202882							FALSE			
+145561	Taw		Tawi-Tawi									FALSE			
+145691			Jolo/Tawi_Tawi			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+145699			Jolo			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+146335			Singaan_Island			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+146535			Jolo			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+146631	Taw		Tawi-Tawi									FALSE			
+146652	Bat	BatM	Batangas	13.7498063	121.044217	Confirmed_ID._3-4_very_large_sized_ones(~76mm)._The_rest_are_small(~42mm)_but_good_for_subsampling						FALSE			
+146653	Ceb	Cebu	Cebu_Market	10.2950309	123.912569	Confirmed_ID. Potentially extirpated from the Cebu Strait. Vendors said they haven't seen it.						FALSE			
+146654	Jol	Jolo	Jolo_Island	5.9050018	121.220006	Confirmed_ID.						FALSE			
+147752	Pln	PlnR	Paluan_River	13.4149729	120.45667							FALSE			
+149407	Mnt	Narr	Mantaguin_Bay	9.2263186	118.423605	Contemporary match ID (PAL-2022_01_17) cannot be confirmed. Therefore, before using this Albatross-Contemporary lot, barcode.						FALSE			
+149414	Pal		Port_Palapag	12.6347634	125.00979	Too_small?_Northern_Samar						FALSE			
+149417	Bln		Bolinao_Bay	16.3897316	119.90839							FALSE			
+149419	Pal		Port_Palapag	12.6347634	125.00979	Are_these_too_small?_Northern_Samar						FALSE			
+149423	End	Mala	Endeavor_Strait	10.9551086	119.305553							FALSE			
+149424	End	Mala	Endeavor_Strait	10.9551086	119.305553							FALSE			
+149426	End	Mala	Endeavor_Strait	10.9551086	119.305553							FALSE			
+149427	End	Mala	Endeavor_Strait	10.9551086	119.305553							FALSE			
+149430	End	Mala	Endeavor_Strait	10.9551086	119.305553							FALSE			
+149764	Bas		Basud_River	14.1068289	123.012296							FALSE			
+150433	Ceb		Cebu_Market	10.2950309	123.912569							FALSE			
+150596			Panpan_Point_Tara_Id			ID could not be confirmed by KEC						FALSE			
+150663	Can	CanB	Canmahala_Bay	13.2195058	123.041741	KEC_confirmed_IDs_on_10/26/2022						FALSE			
+150708	Gal		Port_Galera	13.5147982	120.954058							FALSE			
+150779	Mat		Matnog_Bay	12.5783974	124.093065	TOO_SMALL__seen_1/14/2022						FALSE			
+150924	Mtt	Pand	Mantatao_Id			KEC all individuals had tubercle						FALSE			
+151368	Ham	PMar	Jamelo_Cove	14.1810585	120.604616							FALSE			
+151374	Sac	Basi	Sacol_Island			TOO_SMALL__seen_3/21/2022_not_counted_in_duplicate_column						FALSE			
+151375	Sac	Zmbo	Sacol	6.9455558	122.248907	TOO_SMALL_…_longshot_to_get_20mg_but_I_think__is_doable_for_majority						FALSE			
+151378	Ros		Rosa_Id	13.7167319	123.66866	interesting site from the East						FALSE			
+152109	Ban	Lago	Batan_Id	13.2313797	123.982833	Confirmed_ID._Rapurapu_Island;_East_Coast_of_Luzon,_San_Bernardino_Strait_to_San_Miguel_Bay						FALSE			
+152723			Tara_Id	12.2786673	120.356666							FALSE			
+153212	Jol	Jolo	Tutu_Bay	5.9249685	121.211343	Confirmed_ID.						FALSE			
+153343	Ceb		Mactan_Id	10.2950309	123.912569							FALSE			
+153894			Tawa_Tawai			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+153904			Jolo			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+153910			Mindanao			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+153963	Ban	Bata	Batan_Id	13.2313797	123.982833	At_ODU._25_individuals_only.						FALSE			
+153969	Ceb		Cebu_Market	10.2950309	123.912569	New_Plot.Allen&Erdmann_distribution:_Philippines						FALSE			
+160785	Ceb		Mactan_Id	10.2950309	123.912569	New_Plot.Allen&Erdmann_distribution:_Australia_to_Japan						FALSE			
+160804	Ceb		Mactan_Id	10.2950309	123.912569							FALSE			
+160805	Ban	Bata	Batan_Id	13.2313797	123.982833							FALSE			
+160879	Ceb		Cebu_Market	10.2950309	123.912569							FALSE			
+160892			Naso_Point	10.4159765	121.950373							FALSE			
+161003	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+161069	Gal		Port_Galera	13.5147982	120.954058	Giuris_margaritaceus						FALSE			
+161076	Nau		Naujan_River	13.335007	121.313332	Giuris_margaritaceus						FALSE			
+161218	Ceb		Cebu_Market	10.2950309	123.912569	Allen&Erdmann_distribution:_Australia_to_Japan						FALSE			
+169300			Singaan_Is.			ID could not be confirmed by KEC						FALSE			
+169599	Lin	Lina	Malcochin_Harbor	11.9943675	120.210059	Lot_is_still_at_USNM._Collection_already_made_see_COR-2022-01_001_Fibramia_lateralis_lot._However,_differences_in_description_is_evident_in_Allen_and_Erdmann_2012_and_Kuiter_&_Kozawa_2019._Therefore,_if_this_Albatross_&_Contemporary_lot_will_be_used,_barcoding_would_be_required.						FALSE			
+169600	Bus	Buri	Port_Busin	13.12921	122.97338	NOTE_FOR_FIELD_COLLECTION:_Could_be_Fibramia_ceramensis_instead_of_F._thermalis._Obvious_black_spot_behind_eye_on_specimens._Ensure_that_specimens_have_spot_behind_eye.						FALSE			
+171156	Rag	RagR	Ragay_River	13.7915294	122.73659							FALSE			
+171181	Cat	Catb	Catbalogan	11.7746792	124.878165							FALSE			
+171228	Pri	PPri	Puerta_Princesa	9.7488371	118.724668							FALSE			
+171243	Tat	Tawi	Tataan_Pass_Anchorage	5.0345263	119.744525	KEC_confirms_F._thermalis_ID._Specimens_very_fragile,_small_&_semi-transparent._Should_first_see_if_you_can_get_DNA_from_tissue._Correct_marking_so_try_to_see_if_viable_for_DNA_extraction.						FALSE			
+171245	Ton	Tonq	Gumila_Reef	6.0630193	121.873999							FALSE			
+171257	Taw	Tawi	Tataan_Pass_Anchorage	5.2163297	119.922968	Confirmed_ID.						FALSE			
+171262	Cat	Catb	Catbalogan	11.7746792	124.878165	Confirmed_ID						FALSE			
+171308	Ban	Bata	Batan_Id	13.2313797	123.982833	Confirmed_ID._To_determine_priority._Combined_lot						FALSE			
+171319	Tab	AtuB	Tabaco_Bay	13.3614354	123.739524	Confirmed_ID._To_determine_priority._Combined_lot						FALSE			
+171320	End	Mala	Endeavor_Strait	10.9551086	119.305553	Confirmed_ID._To_determine_priority._Combined_lot						FALSE			
+171323	Ban	Bata	Batan_Id	13.2313797	123.982833	Confirmed_ID._To_determine_priority._Combined_lot						FALSE			
+171324	Bus	Busu	Port_Uson	11.9991625	120.137332	Confirmed_ID._To_determine_priority._Combined_lot						FALSE			
+171325	Ulu	Ulug	Ulugan_Bay	10.0661139	118.783817	Confirmed_ID._Palawan						FALSE			
+171356	Ceb		Cebu_Market	10.2950309	123.912569	Confirmed_ID.						FALSE			
+171434			Nasipit	8.9933215	125.340299							FALSE			
+171792			Opol	8.5221672	124.578571							FALSE			
+175207	Cai	Masb	Cataingan	11.9986583	124.003562	can_be_collected_from_the_south_of_Ticao_ls.						FALSE			
+179690	Lag	Lago	Palag_Bay	13.7236314	123.938555	For_barcoding._Do_not_use_until_ID_is_confirmed. 100+ individuals						FALSE			
+179929	Mar	PMar	Port_Maricaban	13.6791984	120.840502	New_lot._To_determine_priority_and_confirm_ID						FALSE			
+179941			Panpan_Point_Tara_Id			1 confirmed P. squamipinnis, 4 ID could not be confirmed by KEC						FALSE			
+179946			Teomabal_Island			ID could not be confirmed by KEC						FALSE			
+179947			Sulade_Island			ID could not be confirmed by KEC						FALSE			
+179953			Sulade_Island			ID could not be confirmed by KEC						FALSE			
+179955			Teomabal_Island			ID could not be confirmed by KEC						FALSE			
+179959	Gal	PGal	Port_Galera									FALSE			
+179962			Jolo			ID could not be confirmed by KEC						FALSE			
+179963			Paupan_Tapa_Id			1 probably P. huchtii, 1 ID could not be confirmed by KEC						FALSE			
+179966			Singaan_Id			ID could not be confirmed by KEC, probably P. huchtii						FALSE			
+179973			Paupan_Tapa_Id			ID probably P. huchtii						FALSE			
+179979			Jolo			ID could not be confirmed by KEC						FALSE			
+179982			Teomabal_Island			ID could not be confirmed by KEC						FALSE			
+179985			Jolo_Isl_Pangasinan_Id			ID could not be confirmed by KEC						FALSE			
+179987	Mar	PMar	Port_Maricaban	13.6791984	120.840502	New_lot._To_determine_priority_and_confirm_ID						FALSE			
+179988			Teomabal_Island			ID could not be confirmed by KEC						FALSE			
+179998			Singaan_Id			ID could not be confirmed by KEC						FALSE			
+180002			Teomabal_Island			ID could not be confirmed by KEC						FALSE			
+180003	Mar	PMar	Port_Maricaban	13.6791984	120.840502	New_lot._To_determine_priority_and_confirm_ID						FALSE			
+180005	Gal	PGal	Varadero_Bay	13.4964937	120.957885	Dorsal_fin_rays_are_16-17._Dark_ends_of_DF_similar_to_contemporary_specimen.						FALSE			
+180029	Cat	Catb	Catbalogan	11.7746792	124.878165	Too_small._Return_to_USNM.						FALSE			
+180036	Ove	Over	Camp_Overton	8.2138629	124.203041	Not_recommended_for_subsampling_because_USNM_note_says_it_was_found_dry_&_the_tissue_looks_dark_compared_to_other_Albatross_samples._If_important,_KEC_suggests_trying_to_see_if_DNA_can_be_extracted_from_1_or_2_individuals.						FALSE			
+180037	Nak	Nako	Nakoda_Bay	9.291119	117.958053	Probably_A._gymnocephalus._3_supraorbital_spines._2_rows_of_scales_on_cheeks._LL_interrupted._Hind_margin_of_preopercle_smooth._9_soft_rays_in_the_Dorsal_fin._Dark_pigmentation_only_at_distal_tip_of_longest_spines_in_dorsal_fin_(NOT_consistent_with_A._bururensis)						FALSE			
+180051	Pnb	Pana	Island_off_Panabutan_Point	7.68	122.02	At_ODU						FALSE			
+180063	Mal	Mala	Pancol	10.9551086	119.305553	KEC_confirmed_ID,_but_lateral_line_is_semi-interrupted_&_dorsal_fin_has_VI,_I,_9._See_detailed_notes_on_species_IDs.						FALSE			
+180064	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+180076	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+180089	Yau	Yaua	Yaua_River	13.160409	123.757586	Confirmed_ID_as_Ambassis_miops._See_detailed_notes_on_Species_ID_transcript.						FALSE			
+180094	Pln	PlnR	Paluan_River	13.4149729	120.45667	New_lot._To_determine_priority._Lot_has_mixed_sizes._There_are_2_individuals_that_are_90mm_and_the_rest_are_26-35mm._Can_still_be_subsampled_though_some_may_not_yield_50mg.						FALSE			
+180095	Nak		Nakoda_Bay	9.291119	117.958053	KEC_identified_as_Ambassis_miops						FALSE			
+180096	Tay	Taya	Tayabas_River	13.8993676	121.620739							FALSE			
+180100	Tay	Taya	Tayabas_River	13.8993676	121.620739							FALSE			
+180101	Nak		Nakoda_Bay	9.291119	117.958053							FALSE			
+180118	Tay		Tayabas_River	13.8993676	121.620739							FALSE			
+180120	End	Mala	Endeavor_Strait	10.9551086	119.305553	Confirmed_ID.						FALSE			
+180121	Rag		Ragay_River	13.7915294	122.73659							FALSE			
+180122	Tay		Tayabas_River	13.8993676	121.620739							FALSE			
+180123	Bus	Busu	Port_Caltom	11.9943675	120.210059	Confirmed_ID.						FALSE			
+180126	Bur	Buri	Alimango_Bay	13.0911153	122.951328							FALSE			
+180127	Mal	Mala	Pancol	10.869482	119.415202	USNM_to_ship_to_us						FALSE			
+180128	Rag		Ragay_River	13.7915294	122.73659							FALSE			
+180371	Cat	Catb	Catbalogan	11.7746792	124.878165	Confirmed_ID.						FALSE			
+180602	Gal	PGal	Port_Galera									FALSE			
+182098	Cat	Catb	Catbalogan	11.8209235	124.834584	Confirmed_IDs.						FALSE			
+182403	Mar	PMar	Port_Maricaban	13.6791984	120.840502	New_lot._To_determine_priority_and_confirm_ID						FALSE			
+182407			Sulade_Island									FALSE			
+182408			Sulade_Island			ID could not be confirmed by KEC						FALSE			
+182411			Teomabal_Island			ID could not be confirmed by KEC						FALSE			
+182726	Pnd	Cebu	Pandanon_Id	10.2950309	123.912569	Dots_visible_in_most,_not_all._Appears_to_be_S._fuscescens._Likely,_but_not_100%_sure._Barcoding_recommended.						FALSE			
+182768	Gal	PGal	Varadero_Bay	13.4964937	120.957885							FALSE			
+182842			Capitancillo_Island_Light,_S._46_degrees_W.,_15.7_miles _[Chart_corrected]	11.1666768	124.2875	Deep_water_trawl,_Kent_listed_as_Do_Not_Collect						FALSE			
+182934	Ceb	Cebu	Cebu_Market	10.2950309	123.912569	Previously_requested,_SI_staff_could_not_find_lot						FALSE			
+182937	Cot	Cota	Mouth_of_Midanao_River	7.2733769	124.198208	At_ODU						FALSE			
+182938	Ceb	Cebu	Mactan_Id	10.2950309	123.912569	Confirmed_as_S._fuscescens						FALSE			
+182959	Ceb	Cebu	Mactan_Id	10.2950309	123.912569	Confirmed_as_S._fuscescens						FALSE			
+182963	Ceb	Cebu	Cebu_Market	10.2950309	123.912569	Confirmed_as_S._fuscescens						FALSE			
+182965	Gui	Guij	Guijulugan_Beach	10.1425502	123.281256	Confirmed_as_S._fuscescens						FALSE			
+182970	Cot	Cota	Mouth_of_Midanao_River	7.2733769	124.198208	At_ODU						FALSE			
+182979	Bil	Bila	Surigao	9.8011514	125.488763	Only_1_individual_is_large,_the_rest_are_around_25mm_in_size.						FALSE			
+182980	Ceb	Cebu	Mactan_Id	10.2950309	123.912569	Confirmed_as_S._fuscescens._Very_small!						FALSE			
+182982	Pnd	Cebu	Pandanon_Id	10.2950309	123.912569	No_dots_visible._Barcoding_recommended.						FALSE			
+182984	Gui	Guij	Guijulugan_Beach	10.1425502	123.281256	Very_small_specimens,_would_need_to_be_destructively_subsampled._Barcoding_needed_to_confirm_if_this_is_S._fuscescens._There_are_no_spots_visible_above_the_lateral_line.						FALSE			
+183003	Sub	SubB	Olongapo	14.8185723	120.294976	KEC_unable_to_ID._Need_to_be_barcoded._small_individuals._might_not_have_contemporary_collections?						FALSE			
+183071	Pnd		Pandanon_Id	10.1796678	124.090001							FALSE			
+183264	Mnt	Mant	Mantaguin_Bay	9.2263186	118.423605	Confirmed_IDs._Checked_10_of_106.						FALSE			
+183266	Bas	Basu	Basud_River	14.1068289	123.012296	Confirmed_IDs.						FALSE			
+183270	Hin	Hinu	Hinunangan_Bay	10.399276	125.202656	Confirmed_IDs.						FALSE			
+183327	Dav	Dava	Davao	7.0791955	125.633671	Confirmed_IDs.						FALSE			
+183330	Lin	Lina	Malcochin_Harbor	11.4906669	119.828165	Confirmed_IDs.						FALSE			
+183331	Vic	Vice	Port_San_Vicente	18.5154096	122.138975	Confirmed_IDs.						FALSE			
+183735	Mvi	Masi	Port_Matalvi_reef	15.5567299	119.930361	Confirmed_ID._For_barcoding?						FALSE			
+183736	Rag	RagR	Ragay_River	13.7915294	122.73659							FALSE			
+183737	Lag	Lago	Palag_Bay	13.7236314	123.938555							FALSE			
+183738	Ham	HamC	Jamelo_Cove	14.1779794	120.599424	For_barcoding._Do_not_use_until_ID_is_confirmed._Jar_is_labeled_as_Z._viridiventer.						FALSE			
+183739	Bol	Mala	Bolalo_Bay	10.9230731	119.249382	Confirmed_ID. 150+ individuals						FALSE			
+183741	Bus	Busu	Port_Uson	11.9991625	120.137332	Confirmed_ID.						FALSE			
+183742	Ton	Tonq	Gumila_Reef	6.0630193	121.873999	Confirmed_ID. 100+ individuals						FALSE			
+183744	Tab	Lago	Tabaco_Bay	13.3614354	123.739524	Confirmed_ID._Tabaco_Bay,_(West_of_South_Miguel_Point);_San_Miguel_Island;_East_Coast_of_Luzon,_San_Bernardino_Strait_To_San_Miguel_Bay						FALSE			
+183781	Lag	Lago	Palag_Bay	13.7236314	123.938555	KEC_keyed_as_Z._viridiventer,_not_Z._leptacantha._Has_black_spot_on_cp._No_other_markings._Lagonoy_Gulf,_Near_Palag_Bay_(East);_East_Coast_of_Luzon,_San_Bernardino_Strait_To_San_Miguel_Bay						FALSE			
+184186	Ove		Camp_Overton	8.2138629	124.203041							FALSE			
+184189	Mah		Mahinog	9.1527224	124.79724							FALSE			
+184674	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+184710			Mindanao			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+184750	Ove		Camp_Overton	8.2138629	124.203041							FALSE			
+190054	Mur		Murcielagos_Bay	8.6682538	123.520978	Confirmed_IDs.						FALSE			
+190064			Nababuoy_Id	11.4236683	124.970778	DO_NOT_USE._Originally_labeled_as_H._quadrimaculatus_but__an_expert_determined_as_Sardinella_albella_or_fimbriata._Since_the_expert_couldn’t_distinguish_best_to_exclude_this_lot_for_duplicated_sampling_for_PIRE_Project						FALSE			
+190069	Mat	MatB	Matnog_Bay	12.5783974	124.093065	Confirmed_IDs.						FALSE			
+190072	Ina		Inamucan_Bay	8.6072026	123.726262							FALSE			
+191924	End	Mala	Endeavor_Strait	10.9551086	119.305553							FALSE			
+191926	Dag		Dagupan	16.074022	120.327416							FALSE			
+191951	Ham	HamC	Jamelo_Cove	14.1810585	120.604616							FALSE			
+191982	Bit	Bito	Abuyog	10.7494705	125.015128	ID could not be confirmed by Kent						FALSE			
+191983	Cav		Cavite	14.4850479	120.911622							FALSE			
+191984	Nak		Nakoda_Bay	9.291119	117.958053							FALSE			
+191988	Pln	PlnR	Paluan_River	13.4149729	120.45667	Label says L. leuciscus but it keys out to E. laterofenestra						FALSE			
+191994	Til		Tilig_Bay	13.8187561	120.202882	label L. leuciscus but keys to E. laterofenestra by Kent						FALSE			
+195476	Ceb	Cebu	Cebu_Market	10.2950309	123.912569							FALSE			
+195492	Gui	Guij	Guijulugan_Beach	10.1425502	123.281256	Confirmed_as_S._fuscescens						FALSE			
+313198	Bul		Bulan_Island	6.1610355	121.843915	Can't use=These are larval samples. South_of_Zamboanga._Bulan_Id.,_North_.						FALSE			
+350078	Sab		Sablayan	12.8296446	120.772437	Confirmed_by_G._Allen.						FALSE			
+397902	Taw		Tawi-Tawi									FALSE			
+397903	Taw		Tawi-Tawi									FALSE			
+427521			Tawi_Tawi			were for Ting and Kevin but did not have enough specimens for a populations						FALSE			
+444969	Rag	RagR	Ragay_River	13.7915294	122.73659	Already_IDd_by_KEC_as_A._urotaenia_but_w/_note_that_lateral_line_is_interrupted.						FALSE			
+93415	Mur		Murcielagos_Bay	8.6682538	123.520978	Freshwater_fish.						FALSE			
+94995	End	Mala	Endeavor_Strait	10.9551086	119.305553	Kent was not 100% sure of ID but probably correct species						FALSE			
+96044	Ban	Bata	Batan_Id									FALSE			
+96073			East_Coast_of_Luzon,_San_Bernardino_Strait_to_San_Miguel_Bay;_Quinalasag_Island,_Masamat_Bay_(east)									FALSE			
+96770	Prn		Paron	13.1321851	123.919656							FALSE			
+96774	Mta		Mantatao_Id	9.9396692	123.869166							FALSE			
+96971	Gal	PGal	Port_Galera	13.5147982	120.954058							FALSE			
+97072	Tat	Tawi	Tataan_Pass_Anchorage	5.2495245	119.972797	Confirmed_ID.						FALSE			
+97211	Cat	Catb	Catbalogan	11.7746792	124.878165	Labeled_as_at_USNM						FALSE			
+97458	Sab		Sablayan	12.8296446	120.772437	Confirmed_IDs.						FALSE			
+97467	Ban	Bata	Batan_Id	13.2313797	123.982833	Caution:_Potential_mixed_lot._Check_ID_notes._Don't_subsample_without_consulting_JGB.						FALSE			
+97474	Ban	Bata	Batan_Id	13.2313797	123.982833	Caution:_Potential_mixed_lot._Check_ID_notes._Don't_subsample_without_consulting_JGB.						FALSE			
+97525	Sab		Sablayan	12.8296446	120.772437	Confirmed_IDs.						FALSE			
+97574	Ban	Bata	Batan_Id	13.2313797	123.982833	Caution:_Potential_mixed_lot._Check_ID_notes._Don't_subsample_without_consulting_JGB.						FALSE			
+97584	Sab		Sablayan	12.8296446	120.772437	Confirmed_IDs.						FALSE			
+98673	Ham	HamC	Jamelo_Cove	13.6791984	120.840502							FALSE			
+98723	Bir	Bali	Biri_Channel	12.6218848	124.396526							FALSE			
+99024	Ceb		Cebu_Market	10.2950309	123.912569	Previously_requested,_SI_staff_could_not_find_lot						FALSE			
+99043			Nasipit	8.9933215	125.340299							FALSE			
+99390	Gub	Guba	Port_Gubat	12.9233508	124.129582							FALSE			
+99659	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+99739	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+99740	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+99845	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+99902	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+99947	Mnl		Manila_Bay	14.5784224	120.965873							FALSE			
+?a			Bais, Negros Or.	6.1098091	120.977508							FALSE			
+?b			Bais, Negros Or.	6.1098091	120.977508							FALSE			
+?c			Bais, Negros Or.	6.1098091	120.977508							FALSE			
+BAI-2023-01_01			Bais, Negros Or.									FALSE			
+BAI-2023-01_02			Bais, Negros Or.									FALSE			
+BAI-2023-01_03			Bais, Negros Or.									FALSE			
+BAI-2023-01_04			Bais, Negros Or.									FALSE			
+BAI-2023-01_05			Bais, Negros Or.									FALSE			
+BAI-2023-01_06			Bais, Negros Or.									FALSE			
+Bat-2018-001_001	Bat	HamC	Jamelo_Cove	14.1779794	120.599424	dont_sample._Where_are_the_USNM_lots?_Here_at_ODU?_already_enough_individuals_from_other_lots						FALSE			
+Bat-2018-006_008	Bat	HamC	Hamilo_Cove	14.1779794	120.599424	Same_site_as_Bat-2018-004_(006) Need_to_know_which_indivividuals_came_from_which_lot						FALSE			
+Bat-2019-008_011	Cal		Calatagan									FALSE			
+Bat-2019-009_012	Ham	HamC	Jamelo_Cove	14.1779794	120.599424	For_barcoding._Do_not_use_until_ID_is_confirmed.						FALSE			
+Bat-2019-009_013	Ham		Jamilo_Cove									FALSE			
+Bat-2019-009_015	Ham	Nasu	Hamilo_Cove			Careful._We_already_sent_55_individuals_from_Nasu._Lot_above._might_not_need_this_lot						FALSE			
+Bat-2019-010_017	Ham	SanR	Jamilo_Cove									FALSE			
+Bat-2019-010_018	Ham		Jamilo_Cove									FALSE			
+Bat-2019-010_019	Ham	HamC	Jamelo_Cove	14.1779794	120.599424	For_barcoding._Do_not_use_until_ID_is_confirmed.						FALSE			
+Boh-2021-02_02	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-02_05	Pnd	Pand	Pandanon_Id	10.1727237	124.078053	we could not tell appart Boh-2021-02_04 from Boh-2021-02_05 (no lot ID on bottles). So we assign Boh-2021-02_04 to the one with whole specimens and Boh-2021-02_05 to the one with mostly tails						FALSE			
+Boh-2021-02_06	Pnd	Cebu	Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-02_09	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-02_10	Pnd	Pand	Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-02_11	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-03_01	Pnd	Pand	Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-03_02	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-03_04	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-03_05	Pnd		Pandanon_Id	10.1727237	124.078053	ID_needs_to_be_confirmed						FALSE			
+Boh-2021-03_07	Pnd	Pand	Pandanon_Id	10.1727237	124.078053	do not process. already have this site						FALSE			
+Boh-2021-03_10	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-03_11	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-04_01	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-04_03	Pnd	Pand	Pandanon_Id	10.1727237	124.078053	ID_needs_to_be_confirmed						FALSE			
+Boh-2021-04_04	Pnd		Pandanon_Id	10.1727237	124.078053							FALSE			
+Boh-2021-05_01	Pnd	Pand	Pandanon_Id	10.1727237	124.078053	ID_needs_to_be_confirmed						FALSE			
+Boh-2021-06_01	Mta		Mantatao_Id	9.9407386	123.852747							FALSE			
+Boh-2021-07_01	Tag	Tagb	Tagbilaran (Bohol)	9.6400092	123.84784							FALSE			
+Boh-2021-08_02	Tag	Tagb	Tagbilaran	9.6400092	123.84784							FALSE			
+Bol-2022-01_01	Dag	Dagu	Dagugan_Public_Market	16.074022	120.327416	replicates 191926						FALSE			
+Bol-2022-02_01	Bol	Bln	Bolinao_Landing	16.4238962	119.940735	replicates 136851						FALSE			
+Bol-2022-02_02	Bol	Bln	Bolinao_Landing	16.4238962	119.940735	replicates 136851						FALSE			
+Bol-2022-02_03	Bol	Bln	Bolinao_Landing	16.4238962	119.940735	replicates 112160						FALSE			
+Bol-2022-02_04	Bol	Boli	Bolinao_Landing	16.4238962	119.940735	replicates 112160. Difficult to ID. Didn’t proceed with ID since there are 2 other existing lots that could be used as a match for this site. Only use lot if you can barcode and if we need more individuals.						FALSE			
+Bol-2022-02_05	Bol	Mala	Bolinao_Landing	16.4238962	119.940735	connectivity						FALSE			
+Bol-2022-02_06	Bol	Bln	Bolinao_Landing	16.4238962	119.940735	replicates 112160						FALSE			
+Bol-2022-02_07	Bol	Bln	Bolinao_Landing	16.4238962	119.940735	connectivity						FALSE			
+Bol-2022-03_01	And	Boli	Anda_Island_Landing	16.3237019	120.012148	replicates 149417						FALSE			
+COR-2022-02_005	Cor		Coron_Public_Market			2_whole_specimens,_90_tails.						FALSE			
+Cam-2019-001_001	Bas	SMig	Basud_River			Daet_Public_Market._Not_longer_needed_bc_we_already_have_a_C-lot_for_SMig						FALSE			
+Cam-2019-007_008	Par	Basu	Paracale_Pulangdaga_Beach	14.2897039	122.815167							FALSE			
+Cam-2019-008_010	Rag	RagR	Ragay_River									FALSE			
+Cam-2019-009_012	Rag	RagR	Liboro_Market			low_numbers.don't_subsample_						FALSE			
+Cam-2019-010_014	Rag	RagR	Sipocot_Public_Market			Can't_find_bottle/bag						FALSE			
+Cam-2019-012_016	Pas	RagR	Pasacao									FALSE			
+Cam-2019-014_020	Pas	RagR	Pasacao									FALSE			
+Cam-2019-015_025	Pas	RagR	Pasacao									FALSE			
+Cam-2019-016_026	Pas	RagR	Pasacao									FALSE			
+Cam-2019-016_027	Pas	RagR	Pasacao									FALSE			
+Cam-2019-018_031	Pas		Pasacao			Collected_in_Pasacao_Public_Market._For_connectivity						FALSE			
+Cam-2019-019_033	Jos		San_Jose			Barangay_Dolo_Sitio_Talisay						FALSE			
+Cam-2019-020_035	Jos		San_Jose			Barangay_Dolo_Sitio_Talisay						FALSE			
+Cam-2019-022_036	Jos	AtuB	San_Jose	13.5539719	123.550143	Barangay_Dolo_Sitio_Talisay;Not_enough_to_warrant_returning_to_ODU						FALSE			
+Cam-2019-022_037	Jos		San_Jose			Barangay_Dolo_Sitio_Talisay						FALSE			
+Cam-2019-15_024	Pas	RagR	Pasacao			low_numbers.don't_subsample_						FALSE			
+Cor-2022-01_001	Cor	Lina	Barangay_Tagumpay			ID_cannot_be_confirmed_because_there_are_differing_notes_from_Allen_&_Erdmann_2012_and_Kuiter_&_Kozawa_2019._If_this_match_will_be_used,_make_sure_to_check_169599_and_barcode.						FALSE			
+Cor-2022-01_002	Cor		Barangay_Tagumpay			Only_8_individuals._Need_to_confirm_ID.						FALSE			
+Cor-2022-01_003	Bus	Busu	Barangay_Tagumpay			JGB identified as A. duodecimalis due to DT during fieldwork, but proposed checking AF rays to determine whether lot is A. crenolepis (8-9 AF rays), A. duodecimalis (12-13 AF rays), or A. regina (10-12 AF rays). KEC confirmed presence of DT, but when AF rays were counted, specimens keyed out to A. regina. Matches with 136849 which has not been IDd.						FALSE			
+Cor-2022-01_004	Cor		Barangay_Tagumpay									FALSE			
+Cor-2023-01_01			Coron Fish Market									FALSE			
+Cor-2023-01_02			Coron Fish Market			ID needs to be checked; can be used for connectivitity						FALSE			
+Cor-2023-02_01			Coron Fish Market			fishers claimed from Culion						FALSE			
+Cor-2023-02_02			Coron Fish Market									FALSE			
+Cor-2023-02_03			Coron Fish Market			KEC interested to check pop gen of this species						FALSE			
+Cor-2023-03_01			Tagumpay, Coron									FALSE			
+Cor-2023-03_02			Coron Fish Market			already collected in 2022 (backup only)						FALSE			
+Cor-2023-04_01			Tagumpay, Coron									FALSE			
+Cor-2023-05_01a			Tagumpay, Coron									FALSE			
+Cor-2023-05_01b			Lakdayan Beach, Busuanga Is.									FALSE			
+Cor-2023-05_01c			Lakdayan Beach, Busuanga Is.									FALSE			
+Cor-2023-05_02			Tagumpay, Coron			Probably A. duodecimalis(to check ID)						FALSE			
+Cor-2023-06_01			Lakdayan Beach, Busuanga Is.									FALSE			
+Cor-2023-06_02			Lakdayan Beach, Busuanga Is.									FALSE			
+Cor-2023-07_01												FALSE			
+DAV-2023_01_01	Dav	Dava	Panabo Fish Market, Davao del Norte	7.3063538	125.683389							FALSE			
+DUM-2023-01_01												FALSE			
+DUM-2023-01_02												FALSE			
+DUM-2023-02_01												FALSE			
+DUM-2023-03_01												FALSE			
+DUM-2023_03_01	Dgt		Tinago, Dumaguete			otoliths of 3 individuals were extracted by John W						FALSE			
+Jol-2021-01_04	Jol	Jolo	Jolo									FALSE			
+Jol-2021-03_01	Jol	Jolo	Jolo_Island									FALSE			
+Jol-2021-03_02	Jol		Jolo_Island									FALSE			
+Jol-2021-03_03	Jol		Jolo									FALSE			
+Jol-2021-04_01	Jolo	Jolo	Jolo									FALSE			
+Jol-2021-05_01	Jol		Jolo									FALSE			
+Kal-2019-004_005	Kal		Kalibo_Public_Market			Vendor_confirmed_that_these_were_landed_in_Iloilo,_potentially_collected_from_Guimaras_Straight						FALSE			
+LEY-2022_01_01	Hin		Hinunangan, Leyte	10.2653278	125.267729							FALSE			
+LEY-2022_02_01			Abuyog, Leyte	10.7544776	125.015892							FALSE			
+LEY-2022_03_01			Tanauan, Leyte	11.1195178	125.027304							FALSE			
+LEY-2022_04_01			Dupon Bay, Isabel, Leyte	10.9468872	124.417243							FALSE			
+Ley-2022-04_03			Dupon Bay, Isabel, Leyte									FALSE			
+Ley-2022-04_04			Dupon Bay, Isabel, Leyte			Duplicate bottle label, changed from LEY_2022_04_03 to LEY-2022_04_04						FALSE			
+Luz-2017-027_001	Tab		Tabaco_Bay			Originally_identified_as_A._duodecimalis._Matnog_Bay_samples_probably_best.						FALSE			
+Luz-2017-044_002	Mig		San_Miguel_Bay			Not_comparable_to_Albatross						FALSE			
+MAS-2022-01_02	Bur		Port_Busin	13.1258247	122.975714	whole specimens.						FALSE			
+MAS-2022-01_03a	Bur		Port_Busin	13.1258247	122.975714							FALSE			
+MAS-2022-02_01	Bur	CanB	Port_Busin	13.1258247	122.975714							FALSE			
+MAS-2022-02_04	Bur		Port_Busin	13.1258247	122.975714	See_note_on_albatross_duplicate						FALSE			
+MAS-2022-04_02	Bur		Port_Busin	13.1258247	122.975714							FALSE			
+MAS-2022-04_04	Bur		Port_Busin	13.1258247	122.975714	speared by fishers off Barangay Busing						FALSE			
+MAS-2022-05_01	Bur	Buri	Animasola_Is (Burias)	13.215328	123.046225	caught by light trap and dip net						FALSE			
+MTI-2023_01_01	Mti	Mati	Mati Fish Market	6.9571395	126.206693							FALSE			
+MTI-2023_02_01	Mti	Mati	Mati Fish Market	6.9571395	126.206693							FALSE			
+MTI-2023_02_02	Mti	Mati	Mati Fish Market	6.9571395	126.206693							FALSE			
+MTI-2023_03_01	Tam	Mati	Tamisan, Pujada Bay	6.8342457	126.290507							FALSE			
+MTI-2023_03_02	Tam	Mati	Tamisan, Pujada Bay	6.8342457	126.290507							FALSE			
+MTI-2023_03_03	Tam	Mati	Tamisan, Pujada Bay	6.8342457	126.290507							FALSE			
+MTI-2023_03_04	Tam	Mati	Tamisan, Pujada Bay	6.8342457	126.290507							FALSE			
+MTI-2023_03_05	Tam	Mati	Tamisan, Pujada Bay	6.8342457	126.290507							FALSE			
+MTI-2023_03_07	Tam	Mati	Tamisan, Pujada Bay	6.8342457	126.290507							FALSE			
+MTI-2023_04_01	Mti	Mati	Mati Fish Market	6.9571395	126.206693							FALSE			
+MUR-2022_01_01	Dap	Dapi	Murcielagos Bay, Dapitan	8.664925	123.506771	collected from """"""""basnig"""""""" or liftnet (with light)						FALSE			
+Mas-2022-01_03b	Bur		Port_Busin	13.1258247	122.975714							FALSE			
+Mas-2022-02_02	Bur		Port_Busin	13.1258247	122.975714							FALSE			
+Mas-2022-02_03			San Pascual, Burias Is., Masbate									FALSE			
+Mas-2022-02_05	Bur		Port_Busin	13.1258247	122.975714	See_note_on_albatross_duplicate						FALSE			
+Mas-2022-02_06	Bur		Port_Busin	13.1258247	122.975714	See_note_on_albatross_duplicate						FALSE			
+Mas-2022-03_02	Bur		Port_Busin	13.1258247	122.975714							FALSE			
+Mas-2022-03_03	Bur		Port_Busin	13.1258247	122.975714							FALSE			
+Mas-2022-04_01	Bur		Port_Busin	13.1258247	122.975714							FALSE			
+Mas-2022-04_03	Bur		Port_Busin	13.1258247	122.975714							FALSE			
+Mti-2023-03_06	Tam	Mati	Tamisan, Pujada Bay									FALSE			
+Neg-2021-02_01	Gui	Guij	Guijulugan_Beach	10.1425502	123.281256	Abner_collected_on_August_21,_2021_from_Barangay_Malusay						FALSE			
+Neg-2021-02_02	Gui	Guij	Guijulugan_Beach	10.1425502	123.281256	Abner_collected_on_August_21,_2021_from_Sitio_Kinayan,_Barangay_Calamba						FALSE			
+Neg-2022-01_01			Olympia,_Bais_Bay									FALSE			
+Neg-2022-01_02	Bai		Olympia,_Bais_Bay			For_connectivity						FALSE			
+PAL-2022-01_09	Nar	Narr	Narra, Palawan									FALSE			
+PAL-2022-01_11	Nar	Narr	Narra, Palawan									FALSE			
+PAL-2022-03_01	Mal	Mala	Malampaya, Palawan			29 collected at fish landing in New Guinlo, 11 collected by fishermen of Pancol						FALSE			
+PAL-2022-04_08	Mal	Mala	Malampaya, Palawan			Check ID when Albatross lot is taken from USNM to ODU. collected by fishermen of Pancol						FALSE			
+PAL-2022-05_01	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+PAL-2022-05_02	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+PAL-2022-05_03	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+PAL-2022-05_06	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+PAL-2022_01_01	Nar	Narr	Narra, Palawan			fin clips and tails						FALSE			
+PAL-2022_01_02	Nar	Narr	Narra, Palawan									FALSE			
+PAL-2022_01_04	Nar	Narr	Narra, Palawan			Abner and Eric were unsure of ID. It did had 2 gill rakers but were not sure about the posterior edge operculum. There was a gradient of pointy (S.pinguis) and rounded (S.obtusata) and some indibiduals were in-between. Previous sites, including Albatross, probably need to be checked again. KEC & JGB cannot ID tails. If this lot will be used, make sure to barcode first.						FALSE			
+PAL-2022_01_10	Nar	Narr	Narra, Palawan									FALSE			
+PAL-2022_01_15	Nar	Narr	Narra, Palawan			check ID						FALSE			
+PAL-2022_01_17	Nar	Narr	Narra, Palawan			Cannot confirm ID. Barcode if needed.						FALSE			
+PAL-2022_02_01	Tay		Taytay, Palawan			Vendor claim came from TayTay Bay, East Palawan. Not a duplicate						FALSE			
+PAL-2022_03_03	Mal	Mala	Malampaya, Palawan			Check Photopectoralis bindus. Body depth was shallower compared to tipical L.equula (like the ones from Pancol). Jeff and Kent took a pictiure of specimens they described as L.equula but USNM later changed the same specimens to P.bindus. Check L.equula slack channel. Met fishermen at New Guinlo fish landing but collected at Alancalian paraguay. Check ID through barcoding before use for connectivity.						FALSE			
+PAL-2022_04_02	Mal	Mala	Malampaya, Palawan			collected by fishermen of Pancol						FALSE			
+PAL-2022_04_03	Mal	Mala	Malampaya, Palawan			collected by fishermen of Pancol						FALSE			
+PAL-2022_06_01	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+PAL-2022_06_02	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+Pal-2022-01_03	Nar	Narr	Narra, Palawan									FALSE			
+Pal-2022-01_06	Nar	Narr	Narra, Palawan									FALSE			
+Pal-2022-01_07	Nar	Narr	Narra, Palawan									FALSE			
+Pal-2022-01_12	Nar	Narr	Narra, Palawan									FALSE			
+Pal-2022-01_13	Nar	Narr	Narra, Palawan									FALSE			
+Pal-2022-01_14	Nar	Narr	Narra, Palawan			check ID						FALSE			
+Pal-2022-01_16	Nar	Narr	Narra, Palawan			ID checked by KEC & JGB. ID okay						FALSE			
+Pal-2022-03_02	Mal	Mala	Malampaya, Palawan			from New Guinlo fish landing but collected at Alancalian paraguay. Mixed lot, cannot ID since it's only tails.						FALSE			
+Pal-2022-03_04	Mal	Mala	Malampaya, Palawan			from New Guinlo fish landing but collected at Alancalian paraguay						FALSE			
+Pal-2022-03_06	Mal	Mala	Malampaya, Palawan			from New Guinlo fish landing but collected at Alancalian paraguay						FALSE			
+Pal-2022-04_01	Mal	Mala	Malampaya, Palawan			collected by fishermen of Pancol						FALSE			
+Pal-2022-04_04	Mal	Mala	Malampaya, Palawan			collected by fishermen of Pancol						FALSE			
+Pal-2022-04_05	Mal	Mala	Malampaya, Palawan			collected by fishermen of Pancol						FALSE			
+Pal-2022-05_04	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+Pal-2022-05_07	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+Pal-2022-06_03	Mal	Mala	Malampaya, Palawan			collected by fishermen of Liminangcong						FALSE			
+RAG-2022-01_02	Rag	RagR	Ragay	13.8105766	122.72906	caught by fish corral near Ragay River						FALSE			
+RAG-2022-02_03	Rag		Ragay	13.8105766	122.72906	caught using gillnet off Barangay San Rafael						FALSE			
+RAG-2022-02_04	Rag		Ragay	13.8105766	122.72906	caught using gillnet off Barangay San Rafael						FALSE			
+REU-2019-003_003	Dgt		Silliman_Beach									FALSE			
+REU-2019-004_004	Bai		Bais_Bay									FALSE			
+REU-2019-005_005	Bai		Bais_Bay									FALSE			
+REU-2019-009_009	Bai		Bais_Bay									FALSE			
+Rag-2022-02_01			San Rafael, Ragay	13.8105766	122.72906	caught by local fishers near Ragay River. bottle has RAG-2022-02_02, but same LOT ID on Ambassis interrupta already, changed LOT IT to RAG-2022-02_01						FALSE			
+Rag-2022-02_02			Ragay	13.8105766	122.72906	caught by local fishers near Ragay River						FALSE			
+SAM-2022_02_08	Bir		Biri, Northern Samar	12.6643633	124.361624	Albatross duplicate for Matnog Bay; collected in between Poblacion and Sto. Nino, Biri Island.						FALSE			
+SAM-2022_02_12	Bir		Biri, Northern Samar	12.6643633	124.361624	Albatross duplicate for Port Gubat; collected in Barangay Progress (Rock Formation touristm site), Biri Island.						FALSE			
+SAM-2022_02_13	Bir		Biri, Northern Samar	12.6643633	124.361624	collected from Sto. Nino, Biri Island; Need to ID using microscope; count gill rakers						FALSE			
+SAM-2022_02_15	Bir		Biri, Northern Samar	12.6643633	124.361624	Contemporary samples are all juveniles BUT could be other species (eg P. simsiang); ID of the Albatross to be checked if some (if not all) matched with contemporary samples.						FALSE			
+SEM-2023-01_02												FALSE			
+SEM-2023-02_01												FALSE			
+SEM-2023-03_01												FALSE			
+SEM-2023-03_02												FALSE			
+SEM-2023-03_03												FALSE			
+SEM-2023-04_02												FALSE			
+SEM-2023-04_03												FALSE			
+SEM-2023-04_04												FALSE			
+SEM-2023-05_02												FALSE			
+SIP-2023-01_01												FALSE			
+SIP-2023-01_02												FALSE			
+SIP-2023-01_03												FALSE			
+SIP-2023-02_01												FALSE			
+SIP-2023-02_02												FALSE			
+SIP-2023-04_01												FALSE			
+SIP-2023-05_01												FALSE			
+SIP-2023-06_01												FALSE			
+SIP-2023-07_01												FALSE			
+SIP-2023-07_02												FALSE			
+SIP-2023-07_03												FALSE			
+SIQ-2023-01_01												FALSE			
+Sam-2022-01_01	Cat	Catb	Catbalogan	11.8209235	124.834584	Buri_Island_vicinity,_lat:11.820987,_long:124.834563						FALSE			
+Sam-2022-01_02	Cat	Catb	Catbalogan	11.7734659	124.879118	Pier_1_Fish_Market,_lat:11.773044,_long:124.879242						FALSE			
+Sam-2022-01_03	Cat	Catb	Catbalogan	11.7746792	124.878165	Buri_Island_vicinity,_lat:11.820987,_long:124.834563						FALSE			
+Sam-2022-01_04	Cat	Catb	Catbalogan	11.7746792	124.878165	Buri_Island_vicinity,_lat:11.820987,_long:124.834563						FALSE			
+Sam-2022-01_07	Cat		Catbalogan	11.7734659	124.879118	Pier_1_Fish_Market,_lat:11.773044,_long:124.879242						FALSE			
+Sam-2022-01_11	Cat	Catb	Catbalogan			Buri_Island_vicinity,_lat:11.820987,_long:124.834563						FALSE			
+Sam-2022-01_12	Cat	Catb	Catbalogan	11.7746792	124.878165	Buri_Island_vicinity,_lat:11.820987,_long:124.834563						FALSE			
+Sam-2022-02_01	Cab		Cabacungan,_Allen,_Northern_Samar									FALSE			
+Sam-2022-02_02	Cab		Cabacungan,_Allen,_Northern_Samar									FALSE			
+Sam-2022-02_03	Cab		Cabacungan,_Allen,_Northern_Samar									FALSE			
+Sam-2022-02_04	Cab		Cabacungan,_Allen,_Northern_Samar									FALSE			
+Sam-2022-03_01	Cat	Catb	Catbalogan	11.8209235	124.834584	Buri_Island_vicinity						FALSE			
+Sam-2022-03_02	Cat	Catb	Catbalogan			Buri_Island_vicinity;_please_double-check_my_labels_in_each_bottle_(1=2/4/22_with_7_samples;_2=2/9/22_with_22_samples)						FALSE			
+Sam-2022-03_03	Cat	Catb	Catbalogan	11.7746792	124.878165	Buri_Island_vicinity						FALSE			
+Sam-2022-03_04	Cat	Catb	Catbalogan	11.8209235	124.834584	Buri_Island_vicinity_(offshore_fish_aggregating_devices/FADs)						FALSE			
+Sam-2022-03_05A	Cat	Catb	Catbalogan	11.8209235	124.834584	Buri_Island_vicinity;_PLEASE_Check_ID_(maybe_mixed_with_another_species)						FALSE			
+Sam-2022-03_05B	Cat	Catb	Catbalogan	11.8209235	124.834584	Buri_Island_vicinity;_PLEASE_Check_ID_(maybe_mixed_with_another_species)						FALSE			
+Sam-2022-03_06	Cat	Catb	Catbalogan									FALSE			
+Sem-2023-01_01												FALSE			
+Sem-2023-04_01			Atherinomorous_duodecimalis									FALSE			
+Sem-2023-05_01												FALSE			
+Sip-2023-03_01												FALSE			
+Sul-2019-01_01	Taw	Tawi	Bongao_Fish_Market,_Tawi-Tawi	5.029866	119.775417							FALSE			
+Sul-2019-01_02	Taw	Tumi	Bongao_Fish_Market,_Tawi-Tawi	5.029866	119.775417							FALSE			
+Sul-2019-01_03	Taw		Bongao_Fish_Market,_Tawi-Tawi	5.029866	119.775417							FALSE			
+Sul-2019-02_01	Taw		Bongao_Fish_Market,_Tawi-Tawi	5.029866	119.775417							FALSE			
+Sul-2019-03_01	Taw	Tawi	Bongao_Fish_Market,_Tawi-Tawi			Hypoatherina_temminckii						FALSE			
+Sul-2019-04_01	Taw		Bongao_Fish_Market,_Tawi-Tawi	5.029866	119.775417							FALSE			
+Sul-2019-06_01	Ban		Lamitan_Fish_Market,_Basilan			(originally_identified_Aduo,_Kent:_wrong_ID._Reassigned).						FALSE			
+Sul-2019-08_01	Lam	Zmbo	Lamitan_Fish_Market,_Basilan									FALSE			
+Sul-2019-09_01	Jol		Panglima_Tahil,_Jolo			no_albatross						FALSE			
+Sul-2021-04_01	Tat	Tawi	Bongao_Channel	5.0345263	119.744525	Stored_in_DESS,_Lot_ID_139964_found_under_Lot_ID,_the_erroneus_Lot_ID_was_deleted_and_replaced_with_correct_Contemporary_Lot_ID						FALSE			
+Sul-2021-05_01			Bongao_Channel	5.0345263	119.744525	Stored_in_DESS						FALSE			
+Sul-2021-05_03			Bongao_Channel	5.0345263	119.744525	Stored_in_DESS						FALSE			
+TIC-2022-01_02	Tic		Monreal, N. Ticao	12.6416263	123.612489	caught using seine and gillnet. Field ID is H.panatela but reID by Kent-EG in the lab as H.temminckii						FALSE			
+Tic-2022-01_01			Ticao	12.6416263	123.612489	caught using seine and gillnet						FALSE			
+VER-2022-01_005	Gal	PGal	Verde_Island			Mixed lot. Only use if you can barcode.						FALSE			
+VER-2022-01_006	Gal	PGal	Verde_Island			Collect more						FALSE			
+VER-2022-01_008	Gal	PGal	Verde_Island			Collect more						FALSE			
+Ver-2022-01_004	Gal	PGal	Verde_Island			Mixed lot. JGB saw DT for some, but not all. KEC checked full individuals brought to ODU, but these had no DT. This maybe a mixed lot. If this lot will be used, make sure to barcode.						FALSE			
+ZAM-2023-01_01												FALSE			
+ZAM-2023-01_02												FALSE			
+ZAM-2023-02_01												FALSE			
+ZAM-2023-02_02												FALSE			
+ZAM-2023-02_03												FALSE			
+ZAM-2023-03-01												FALSE			
+ZAM-2023-04_01												FALSE			
+Zam-2019-002_002	Sub		Subic_City_Municipal_Fish_Port									FALSE			
+Zam-2019-003_004	Sub		Subic_City_Municipal_Fish_Port									FALSE			
+Zam-2019-004_008	Mvi	Masi	Masinloc_Public_Market	15.489188	119.911051	barcoded_4._For_barcoding._Do_not_use_until_ID_is_confirmed._Check_ZAM_008b_which_is_a_temporary_bottle_for_Z._perlita						FALSE			
+Zam-2019-004_008_b	Mvi	Masi	Masinloc_Public_Market			barcoded_4._For_barcoding._Do_not_use_until_ID_is_confirmed._This_bottle_is_what_was_left_after_Ivan_and_Eric_sorted_the_fish_and_tried_to_key_out_whether_it_was_Z._perlita_or_Z._viridiventer._Lot_came_from_ZAM_008._Need_to_change_lot_ID_when_species_is_confirmed.						FALSE			
+Zam-2019-004_009	Mvi	Masi	Masinloc_Public_Market	15.489188	119.911051	do_not_subsample						FALSE			
+Zam-2019-004_010	Mig		Masinloc_Public_Market									FALSE			
+Zam-2019-004_013	Mvi		Masinloc_Public_Market			otoliths of 3 individuals were extracted by John W						FALSE			
+Zam-2019-004_014	Mvi		Masinloc_Public_Market									FALSE			
+Zam-2019-004_015	Mvi		Masinloc_Public_Market									FALSE			
+Zam-2019-004_016	Mvi		Masinloc_Public_Market									FALSE			
+Zam-2019-004_017	Mvi		Masinloc_Public_Market									FALSE			
+Zam-2019-005_018	Mvi	Masi	Masinloc_Bay_San_Salvador_Id	15.489188	119.911051	For_barcoding._Do_not_use_until_ID_is_confirmed._Collected_as_Z._viridiventer_but_Ivan_sorted_through_it_and_thinks_it_might_all_be_Z._perlita.						FALSE			
+Zam-2019-005_019	Mvi		Masinloc_Bay_San_Salvador_Id			For_barcoding._Do_not_use_until_ID_is_confirmed._Collected_in_error._Do_not_use.						FALSE			
+Zam-2019-006_021	Mvi		Masinloc_Bay_South_Poblacion									FALSE			
+Zam-2019-006_022	Mvi	Masi	Masinloc_Bay_South_Poblacion	15.489188	119.911051	barcoded_4._For_barcoding._Do_not_use_until_ID_is_confirmed._This_bottle_is_what_was_left_after_Ivan_sorted_the_fish_and_tried_to_key_out_whether_it_was_Z._perlita_or_Z._viridiventer._Upon_initial_sorting_by_Ivan,_45_individuals_appear_to_be_Z._perlita_(now_with_ZAM-022b)._Upon_checking_on_Oct_29,_2019_by_Jem_there_are_only_8_individuals_left_in_the_bottle._The_species_ID_needs_to_be_confirmed_and_then_lot_ID_needs_to_be_changed_accordingly.						FALSE			
+Zam-2019-006_022_b	Mvi	Masi	Masinloc_Bay_South_Poblacion			barcoded_4._For_barcoding._Do_not_use_until_ID_is_confirmed._This_bottle_is_what_was_left_after_Ivan_and_Eric_sorted_the_fish_and_tried_to_key_out_whether_it_was_Z._perlita_or_Z._viridiventer._This_needs_to_be_confirmed_and_lot_ID_changed_accordingly.						FALSE			
+Zam-2019-006_023	Mvi		Masinloc_Bay_South_Poblacion			Collected_in_error._Do_not_use.						FALSE			
+Zam-2019-007_024	Sub		Subic_City_Municipal_Fish_Port									FALSE			
+Zam-2021-01_01			Zamboanga_Fish_Market									FALSE			
+Zam-2023-02_04												FALSE			

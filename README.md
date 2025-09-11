@@ -23,7 +23,7 @@
 - [Sequence Sheets](db_files/sequence_info_sheets/README.md) **Unlinked to main DB**
 - [Shipment Sheets](db_files/shipments_sheets/README.md) **Unlinked to main DB**
 - [Species Sheets](db_files/shipments_sheets/README.md)
-- [DNA Extraction Gels](db_files/dna_extractions_gels/README.md) **Unlinked to main DB**
+- [DNA Extraction Gels](db_files/dna_extractions_gels/README.md)
 
 ## Quick Start 
 Double click on `database_albatross_recollections.Rproj`
