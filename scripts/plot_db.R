@@ -11,7 +11,7 @@ erd_image
 erd_image %>%
     DiagrammeRsvg::export_svg() %>%
     charToRaw() %>%
-    rsvg::rsvg_png("../../database_erd.png",
+    rsvg::rsvg_png(here::here("database_erd.png"),
                    width = 7 * 125, height = 7 * 125)
 
 
