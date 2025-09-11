@@ -909,16 +909,17 @@ if (interactive()) {
       cat("   • Run: install_windows_tools()  # Get Rtools installation guide\n\n")
       cat("   After installing Rtools restart R and run setup_project() to install R packages")
       rm('install_linux_deps', 'deps_ok', 'lockfile_exists', 'renv_available')
-      rm('sys_name', 'check_rtools', 'check_setup', 'setup_project')
+      rm('sys_name', 'check_rtools', 'check_setup', 'setup_project', 'install_macos_deps')
     } else if (sys_name == "Linux") {
       cat(" Run: setup_project()\n\n")
       cat(" If compilation fails:\n")
       cat("   • Run: install_linux_deps() for system requirements\n\n")
-      rm('install_windows_tools')
+      rm('install_windows_tools', 'install_macos_deps')
     } else if (sys_name == "Darwin") {
       cat(" Run: setup_project()\n\n")
       cat(" If compilation fails:\n")
       cat("   • Run: install_macos_deps() for requirements\n\n")
+      rm('install_linux_deps', 'install_windows_tools')
     } else {
       cat(" Run: setup_project()\n\n")
       rm('install_linux_deps', 'install_windows_tools')
@@ -941,7 +942,7 @@ if (interactive()) {
       rm('arch_info', 'is_arm', 'version_check', 'gcc_check', 'brew_installed')
     }
     rm('install_linux_deps', 'install_windows_tools', 'check_setup', 'setup_project')
-    rm('sys_name', 'renv_available', 'lockfile_exists', 'deps_ok')
+    rm('sys_name', 'renv_available', 'lockfile_exists', 'deps_ok', 'install_macos_deps')
   }
   
   #cat(" Available commands:\n")
