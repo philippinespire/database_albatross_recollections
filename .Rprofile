@@ -116,6 +116,45 @@ if (interactive()) {
     } else {
       cat("   ✔ Development tools detected\n")
     }
+
+        # Critical: Check for gfortran and its source
+    .check_gfortran_mac <- function() {
+      gfortran_path <- Sys.which("gfortran")
+      
+      if (gfortran_path == "") {
+        return(list(installed = FALSE, source = "none", path = ""))
+      }
+      
+      # Check if it's from Homebrew (problematic) or CRAN (good)
+      is_homebrew <- grepl("/opt/homebrew|/usr/local/Cellar|/usr/local/bin/gfortran", gfortran_path)
+      
+      # Try to check version
+      version_output <- suppressWarnings(system2("gfortran", "--version", stdout = TRUE, stderr = FALSE))
+      
+      return(list(
+        installed = TRUE,
+        source = if(is_homebrew) "homebrew" else "cran",
+        path = gfortran_path,
+        version = version_output[1]
+      ))
+    }
+    
+    gfortran_info <- .check_gfortran_mac()
+
+    if (!gfortran_info$installed) {
+      cat("   ⚠️  gfortran NOT found (REQUIRED for many R packages)\n")
+      cat("      Download from: https://cran.r-project.org/bin/macosx/tools/\n")
+      cat("      Choose the gfortran version for your macOS\n")
+    } else if (gfortran_info$source == "homebrew") {
+      cat("   ⚠️  gfortran detected from Homebrew at:", gfortran_info$path, "\n")
+      cat("      This often causes R package compilation failures!\n")
+      cat("      You need the CRAN version instead:\n")
+      cat("      1. Remove Homebrew gfortran: brew uninstall gcc\n")
+      cat("      2. Download from: https://cran.r-project.org/bin/macosx/tools/\n")
+      cat("      3. Install the .pkg file and restart R\n")
+    } else {
+      cat("   ✓ gfortran detected (CRAN version)\n")
+    }
   }
   
   # Check package management status
@@ -326,6 +365,135 @@ if (interactive()) {
     cat("the error message will usually indicate which library is missing.\n")
     cat("Search for: \"R package [package_name] system requirements ubuntu\"\n")
   }
+
+  install_macos_deps <- function() {
+    if (Sys.info()["sysname"] != "Darwin") {
+      cat("This function is only for macOS systems.\n")
+      return(invisible(NULL))
+    }
+    
+    cat("\n🍎 MACOS SYSTEM DEPENDENCIES\n")
+    cat("===============================\n")
+    
+    # Check architecture
+    arch_info <- system2("uname", "-m", stdout = TRUE)
+    is_arm <- grepl("arm64", arch_info)
+    
+    cat("\n📱 System Architecture:", if(is_arm) "Apple Silicon (M1/M2/M3)" else "Intel", "\n")
+    
+    # First and most important: Check gfortran
+    cat("\n🔴 CRITICAL: gfortran Check\n")
+    cat("────────────────────────────\n")
+    
+    gfortran_path <- Sys.which("gfortran")
+    
+    if (gfortran_path == "") {
+      cat("❌ gfortran NOT FOUND - This is required!\n\n")
+      cat("INSTALL gfortran (REQUIRED):\n")
+      cat("1. Go to: https://cran.r-project.org/bin/macosx/tools/\n")
+      cat("2. Download the appropriate gfortran installer:\n")
+      if (is_arm) {
+        cat("   • For Apple Silicon: gfortran-12.2-universal.pkg\n")
+      } else {
+        cat("   • For Intel Macs: gfortran-12.2-universal.pkg\n")
+      }
+      cat("3. Run the .pkg installer\n")
+      cat("4. Restart R/RStudio completely\n")
+      cat("\n⚠️  DO NOT install gfortran via Homebrew (brew install gcc)\n")
+      cat("   Homebrew's gfortran causes R package compilation failures!\n")
+    } else if (grepl("/opt/homebrew|/usr/local/Cellar", gfortran_path)) {
+      cat("⚠️  WARNING: gfortran from Homebrew detected at:", gfortran_path, "\n")
+      cat("\nThis version often causes R package failures!\n")
+      cat("TO FIX:\n")
+      cat("1. Remove Homebrew's gcc/gfortran:\n")
+      cat("   brew uninstall gcc\n")
+      cat("2. Install CRAN's gfortran:\n")
+      cat("   • Go to: https://cran.r-project.org/bin/macosx/tools/\n")
+      cat("   • Download gfortran-12.2-universal.pkg\n")
+      cat("   • Run the installer\n")
+      cat("3. Restart R/RStudio\n")
+    } else {
+      cat("✅ gfortran found at:", gfortran_path, "\n")
+      cat("   Appears to be CRAN version (good!)\n")
+    }
+    
+    cat("\n\n📦 Other Development Tools\n")
+    cat("──────────────────────────\n")
+    
+    # Check Xcode Command Line Tools
+    if (system2("which", args = "clang", stdout = FALSE, stderr = FALSE) != 0) {
+      cat("❌ Xcode Command Line Tools not found\n")
+      cat("   Install with: xcode-select --install\n\n")
+    } else {
+      cat("✅ Xcode Command Line Tools installed\n")
+    }
+    
+    # Check Homebrew
+    brew_installed <- system2("which", args = "brew", stdout = FALSE, stderr = FALSE) == 0
+    if (!brew_installed) {
+      cat("⚠️  Homebrew not found (optional but recommended)\n")
+      cat("   Install from: https://brew.sh\n")
+      cat("   /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n")
+    } else {
+      cat("✅ Homebrew installed\n")
+    }
+    
+    if (brew_installed) {
+      cat("\n\n📚 Additional Libraries (via Homebrew)\n")
+      cat("──────────────────────────────────────\n")
+      cat("These are optional but help with specific R packages:\n\n")
+      
+      cat("brew install \\\n")
+      cat("  pkg-config \\\n")
+      cat("  openssl \\\n")
+      cat("  libxml2 \\\n")
+      cat("  libgit2 \\\n")
+      cat("  freetype \\\n")
+      cat("  fontconfig \\\n")
+      cat("  cairo \\\n")
+      cat("  harfbuzz \\\n")
+      cat("  fribidi \\\n")
+      cat("  glpk \\\n")
+      cat("  gmp \\\n")
+      cat("  mpfr \\\n")
+      cat("  icu4c \\\n")
+      cat("  pandoc\n")
+      
+      cat("\n⚠️  IMPORTANT: Do NOT install gcc or gfortran via Homebrew!\n")
+    }
+    
+    cat("\n\n🔧 Environment Variables\n")
+    cat("────────────────────────\n")
+    cat("If R can't find libraries, create/edit ~/.Renviron:\n\n")
+    
+    if (is_arm) {
+      cat("# For Apple Silicon Macs\n")
+      cat("PKG_CONFIG_PATH=\"/opt/homebrew/lib/pkgconfig:/opt/R/arm64/lib/pkgconfig\"\n")
+      cat("LDFLAGS=\"-L/opt/homebrew/lib -L/opt/R/arm64/lib\"\n")
+      cat("CPPFLAGS=\"-I/opt/homebrew/include -I/opt/R/arm64/include\"\n")
+    } else {
+      cat("# For Intel Macs\n")
+      cat("PKG_CONFIG_PATH=\"/usr/local/lib/pkgconfig:/opt/R/x86_64/lib/pkgconfig\"\n")
+      cat("LDFLAGS=\"-L/usr/local/lib -L/opt/R/x86_64/lib\"\n")
+      cat("CPPFLAGS=\"-I/usr/local/include -I/opt/R/x86_64/include\"\n")
+    }
+    
+    cat("\n\n📋 INSTALLATION ORDER\n")
+    cat("────────────────────\n")
+    cat("1. Install gfortran from CRAN (if not done)\n")
+    cat("2. Install Xcode Command Line Tools (if not done)\n")
+    cat("3. Restart R/RStudio\n")
+    cat("4. Run: setup_project()\n")
+    cat("5. If specific packages fail, install Homebrew libraries\n")
+    
+    cat("\n\n🆘 TROUBLESHOOTING\n")
+    cat("─────────────────\n")
+    cat("• Matrix package fails: Usually means wrong gfortran\n")
+    cat("• stringi package fails: May need to reinstall with:\n")
+    cat("  install.packages('stringi', type='source')\n")
+    cat("• Can't find gfortran after install: Restart R/RStudio\n")
+    cat("• Still having issues: Check https://cran.r-project.org/bin/macosx/\n")
+  }
   
   setup_project <- function(binary_only = FALSE) {
     cat("\n🔧 Setting up project environment...\n\n")
@@ -348,7 +516,29 @@ if (interactive()) {
     } else if (sys_name == "Linux") {
       cat("📋 NOTE: On Linux, some packages need system libraries.\n")
       cat("   If installation fails, run: install_linux_deps()\n\n")
+    } else if (sys_name == "Darwin") {
+    # Critical check for gfortran on macOS
+    gfortran_path <- Sys.which("gfortran")
+    if (gfortran_path == "") {
+      cat("🔴 CRITICAL: gfortran not found!\n")
+      cat("   Many R packages (including Matrix) require gfortran.\n")
+      cat("   Run: install_macos_deps() for installation instructions\n")
+      cat("   Then restart R and try again.\n\n")
+      
+      response <- readline("Continue anyway? (y/n): ")
+      if (tolower(response) != "y") {
+        cat("Setup cancelled. Please install gfortran first.\n")
+        return(invisible(NULL))
+      }
+    } else if (grepl("/opt/homebrew|/usr/local/Cellar", gfortran_path)) {
+      cat("⚠️  WARNING: Homebrew's gfortran detected!\n")
+      cat("   This often causes compilation failures.\n")
+      cat("   Run: install_macos_deps() to fix this\n\n")
     }
+    
+    cat("📋 NOTE: On macOS, some packages need system libraries.\n")
+    cat("   If installation fails, run: install_macos_deps()\n\n")
+  }
     
     # Install renv if needed
     if (!requireNamespace("renv", quietly = TRUE)) {
@@ -368,35 +558,49 @@ if (interactive()) {
     cat("Step 2: Installing R packages (this may take 5-10 minutes)...\n\n")
     
     # Try to restore, catching common errors
-    tryCatch({
-      renv::restore(prompt = FALSE)
-      cat("\n✅ Setup complete!\n")
-      cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
-      cat("   Then run: pire_database() or update_database()\n")
-    }, error = function(e) {
-      error_msg <- tolower(e$message)
-      
-      if (grepl("make.*not found", error_msg)) {
-        cat("\n❌ Compilation failed - 'make' not found\n\n")
-        cat("This means Rtools is not installed. You have two options:\n\n")
-        cat("OPTION 1: Install Rtools (recommended)\n")
-        cat("   Run: install_windows_tools()\n")
-        cat("   Follow the instructions, then run setup_project() again\n\n")
-        cat("OPTION 2: Use pre-built binaries (easier but may be older versions)\n")
-        cat("   Run: setup_project(binary_only = TRUE)\n\n")
-      } else if (grepl("(libcurl|libssl|libgit2|libxml2|compilation failed|undefined symbol)", error_msg)) {
-        cat("\n❌ Compilation failed - missing system libraries\n")
+     tryCatch({
+    renv::restore(prompt = FALSE)
+    cat("\n✅ Setup complete!\n")
+    cat("   Please restart R (Session → Restart R or Ctrl+Shift+F10)\n")
+    cat("   Then run: pire_database() or update_database()\n")
+  }, error = function(e) {
+    error_msg <- tolower(e$message)
+    
+    if (grepl("make.*not found", error_msg) && sys_name == "Windows") {
+      cat("\n❌ Compilation failed - 'make' not found\n\n")
+      cat("This means Rtools is not installed. You have two options:\n\n")
+      cat("OPTION 1: Install Rtools (recommended)\n")
+      cat("   Run: install_windows_tools()\n")
+      cat("   Follow the instructions, then run setup_project() again\n\n")
+      cat("OPTION 2: Use pre-built binaries (easier but may be older versions)\n")
+      cat("   Run: setup_project(binary_only = TRUE)\n\n")
+    } else if (grepl("gfortran|fortran", error_msg) && sys_name == "Darwin") {
+      cat("\n❌ Compilation failed - gfortran issue\n")
+      cat("\nThis is a common macOS problem. To fix:\n")
+      cat("1. Run: install_macos_deps()\n")
+      cat("2. Follow the gfortran installation instructions\n")
+      cat("3. Restart R/RStudio completely\n")
+      cat("4. Run: setup_project() again\n")
+    } else if (grepl("(libcurl|libssl|libgit2|libxml2|compilation failed|undefined symbol)", error_msg)) {
+      cat("\n❌ Compilation failed - missing system libraries\n")
+      if (sys_name == "Linux") {
         cat("\nRun: install_linux_deps()\n")
-        cat("for commands to install required system libraries,\n")
-        cat("then try setup_project() again.\n")
-      } else {
-        cat("\n❌ Installation error:\n")
-        cat(e$message, "\n")
-        if (sys_name == "Windows") {
-          cat("\nTry: setup_project(binary_only = TRUE)\n")
-        }
+      } else if (sys_name == "Darwin") {
+        cat("\nRun: install_macos_deps()\n")
       }
-    })
+      cat("for commands to install required system libraries,\n")
+      cat("then try setup_project() again.\n")
+    } else {
+      cat("\n❌ Installation error:\n")
+      cat(e$message, "\n")
+      if (sys_name == "Windows") {
+        cat("\nTry: setup_project(binary_only = TRUE)\n")
+      } else if (sys_name == "Darwin") {
+        cat("\nTry: install_macos_deps() for system dependencies\n")
+        cat("Pay special attention to the gfortran section!\n")
+      }
+    }
+  })
     
     # Reset package type if changed
     if (binary_only) {
@@ -477,19 +681,88 @@ if (interactive()) {
     if (sys_name == "Windows") {
       cat("\n🪟 Windows build tools:\n")
       if (Sys.which("make") != "") {
-        cat("   ✔ Rtools detected (make available)\n")
+        cat("   ✓ Rtools detected (make available)\n")
       } else {
         cat("   ⚠️  Rtools not detected\n")
         cat("   Run install_windows_tools() for installation info\n")
       }
+      
     } else if (sys_name == "Linux") {
       cat("\n🐧 Linux build tools:\n")
       if (system2("which", args = "gcc", stdout = FALSE, stderr = FALSE) == 0) {
-        cat("   ✔ GCC compiler found\n")
+        cat("   ✓ GCC compiler found\n")
       } else {
         cat("   ⚠️  GCC not found - install build-essential\n")
       }
+      
+      # Check for gfortran on Linux
+      if (Sys.which("gfortran") != "") {
+        cat("   ✓ gfortran found\n")
+      } else {
+        cat("   ⚠️  gfortran not found - install gfortran\n")
+      }
       cat("   Run install_linux_deps() for system requirements\n")
+      
+    } else if (sys_name == "Darwin") {
+      cat("\n🍎 macOS build tools:\n")
+      
+      # Check architecture
+      arch_info <- system2("uname", "-m", stdout = TRUE, stderr = FALSE)
+      is_arm <- grepl("arm64", arch_info)
+      cat("   Architecture:", if(is_arm) "Apple Silicon (M1/M2/M3)" else "Intel", "\n")
+      
+      # Check Xcode Command Line Tools
+      if (system2("which", args = "clang", stdout = FALSE, stderr = FALSE) == 0) {
+        cat("   ✓ Xcode Command Line Tools found\n")
+      } else {
+        cat("   ⚠️  Xcode Command Line Tools not found\n")
+        cat("      Install with: xcode-select --install\n")
+      }
+      
+      # Critical: Check gfortran
+      gfortran_path <- Sys.which("gfortran")
+      if (gfortran_path == "") {
+        cat("   ❌ gfortran NOT FOUND (CRITICAL!)\n")
+        cat("      Download from: https://cran.r-project.org/bin/macosx/tools/\n")
+        cat("      DO NOT use Homebrew's gfortran!\n")
+      } else {
+        # Check if it's from Homebrew (problematic)
+        if (grepl("/opt/homebrew|/usr/local/Cellar|/usr/local/bin/gfortran", gfortran_path)) {
+          cat("   ⚠️  gfortran found (Homebrew version - MAY CAUSE ISSUES!)\n")
+          cat("      Path:", gfortran_path, "\n")
+          cat("      Consider installing CRAN version instead\n")
+        } else {
+          cat("   ✓ gfortran found (appears to be CRAN version)\n")
+          cat("      Path:", gfortran_path, "\n")
+        }
+        
+        # Try to get version
+        version_check <- suppressWarnings(
+          system2("gfortran", "--version", stdout = TRUE, stderr = FALSE)[1]
+        )
+        if (!is.na(version_check) && length(version_check) > 0) {
+          cat("      Version:", version_check, "\n")
+        }
+      }
+      
+      # Check Homebrew
+      if (system2("which", args = "brew", stdout = FALSE, stderr = FALSE) == 0) {
+        cat("   ✓ Homebrew found\n")
+        
+        # Check if problematic gcc is installed via Homebrew
+        gcc_check <- suppressWarnings(
+          system2("brew", args = c("list", "--versions", "gcc"), 
+                  stdout = TRUE, stderr = FALSE)
+        )
+        if (length(gcc_check) > 0 && !grepl("Error", gcc_check[1])) {
+          cat("   ⚠️  Homebrew gcc detected - may conflict with R's gfortran!\n")
+        }
+      } else {
+        cat("   ⚠️  Homebrew not found (optional for additional libraries)\n")
+        cat("      Install from: https://brew.sh\n")
+      }
+      
+      cat("   Run install_macos_deps() for detailed requirements\n")
     }
     
     # Working directory
@@ -501,11 +774,29 @@ if (interactive()) {
       cat("   ❌ renv not installed\n")
     } else {
       renv_ver <- as.character(packageVersion("renv"))
-      cat("   ✔ renv version:", renv_ver, "\n")
+      cat("   ✓ renv version:", renv_ver, "\n")
       
       if (file.exists("renv.lock")) {
-        cat("   ✔ renv.lock found\n")
+        cat("   ✓ renv.lock found\n")
+        
+        # Show dependency status
         .check_dependencies(silent = FALSE)
+        
+        # Additional check for commonly problematic packages on macOS
+        if (sys_name == "Darwin") {
+          problematic_pkgs <- c("Matrix", "igraph", "stringi")
+          installed_pkgs <- rownames(installed.packages())
+          
+          cat("\n   macOS-sensitive packages:\n")
+          for (pkg in problematic_pkgs) {
+            if (pkg %in% installed_pkgs) {
+              cat("     ✓", pkg, "installed\n")
+            } else {
+              cat("     ✗", pkg, "not installed", 
+                  if(pkg == "Matrix") "(often fails with wrong gfortran)" else "", "\n")
+            }
+          }
+        }
       } else {
         cat("   ❌ renv.lock not found\n")
       }
@@ -521,14 +812,53 @@ if (interactive()) {
     )
     for (f in files) {
       if (file.exists(f)) {
-        cat("   ✔", f, "\n")
+        cat("   ✓", f, "\n")
       } else {
         cat("   ✗", f, "- NOT FOUND\n")
       }
     }
     
+    # Environment variables check for macOS
+    if (sys_name == "Darwin") {
+      cat("\n🔧 Environment variables:\n")
+      
+      pkg_config <- Sys.getenv("PKG_CONFIG_PATH")
+      if (pkg_config != "") {
+        cat("   ✓ PKG_CONFIG_PATH set\n")
+      } else {
+        cat("   ⚠️  PKG_CONFIG_PATH not set (usually OK)\n")
+      }
+      
+      # Check if common R configuration exists
+      if (file.exists("~/.Renviron")) {
+        cat("   ✓ ~/.Renviron exists\n")
+      } else {
+        cat("   ℹ️  ~/.Renviron not found (OK unless you have path issues)\n")
+      }
+    }
+    
+    cat("\n========================\n")
+    
+    # Final recommendations
+    cat("\n🎯 NEXT STEPS:\n")
+    
+    if (sys_name == "Darwin" && Sys.which("gfortran") == "") {
+      cat("   1. CRITICAL: Install gfortran from CRAN first!\n")
+      cat("      Run: install_macos_deps() for instructions\n")
+    }
+    
+    if (!requireNamespace("renv", quietly = TRUE) || 
+        (file.exists("renv.lock") && !.check_dependencies(silent = TRUE))) {
+      cat("   • Run: setup_project() to install packages\n")
+    } else {
+      cat("   • All packages installed - ready to use!\n")
+      cat("   • Run: pire_database() or update_database()\n")
+    }
+    
     cat("\n========================\n")
   }
+
+  
   
   # Make functions globally available
   assign("setup_project", setup_project, envir = .GlobalEnv)
@@ -544,6 +874,8 @@ if (interactive()) {
     assign("install_windows_tools", install_windows_tools, envir = .GlobalEnv)
   } else if (sys_name == "Linux") {
     assign("install_linux_deps", install_linux_deps, envir = .GlobalEnv)
+  } else if (sys_name == "Darwin") {
+    assign("install_macos_deps", install_macos_deps, envir = .GlobalEnv)
   }
   
   # Display instructions based on status
@@ -561,6 +893,9 @@ if (interactive()) {
     } else if (sys_name == "Linux") {
       cat(" Linux: You may need system libraries.\n")
       cat("   • Run: install_linux_deps() for requirements\n\n")
+    } else if (sys_name == "Darwin") {
+      cat(" macOS: You may need system libraries.\n")
+      cat("   • Run: install_macos_deps() for requirements\n\n")
     }
     rm('pire_database', 'update_database')
   } else if (!deps_ok && lockfile_exists) {
@@ -580,6 +915,10 @@ if (interactive()) {
       cat(" If compilation fails:\n")
       cat("   • Run: install_linux_deps() for system requirements\n\n")
       rm('install_windows_tools')
+    } else if (sys_name == "Darwin") {
+      cat(" Run: setup_project()\n\n")
+      cat(" If compilation fails:\n")
+      cat("   • Run: install_macos_deps() for requirements\n\n")
     } else {
       cat(" Run: setup_project()\n\n")
       rm('install_linux_deps', 'install_windows_tools')
@@ -598,6 +937,8 @@ if (interactive()) {
       rm('check_rtools')
     } else if(sys_name == "Linux"){
       rm('libs_to_check', 'lib', 'renv_activated', 'check_system_lib')
+    } else if(sys_name == "Darwin"){
+      rm('arch_info', 'is_arm', 'version_check', 'gcc_check', 'brew_installed')
     }
     rm('install_linux_deps', 'install_windows_tools', 'check_setup', 'setup_project')
     rm('sys_name', 'renv_available', 'lockfile_exists', 'deps_ok')
