@@ -6,7 +6,7 @@ Each line is a species.
 | Column Name                                  | Description                                                                 |
 | -------------------------------------------- | --------------------------------------------------------------------------- |
 | **gel\_id**                                  | Unique identifier for the gel run (includes sample, elution, and date info) (**Primary Key**) |
-| **gel\_file\_name**                          | File name of the gel image/PDF record (in [gel_images](./gel_images))                                      |
+| **gel\_file\_name**                          | File name of the gel image/PDF record (in [gel_images](~/gel_images))                                      |
 | **gel\_laboratory**                          | Laboratory where the gel was run (e.g., TAMUCC)                             |
 | **gel\_person**                              | Person who prepared and ran the gel                                         |
 | **gel\_loading\_volume\_ul**                 | Volume of DNA loaded into each gel well (µl)                                |
