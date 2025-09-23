@@ -1,4 +1,4 @@
-update_database(integrate_files = FALSE)
+# update_database(integrate_files = FALSE)
 the_db <- pire_database()
 
 dm_examine_constraints(the_db)

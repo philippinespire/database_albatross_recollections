@@ -187,6 +187,66 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 ```
 </details>
 
+<br>
+
+```r
+#Filter the database to only include certain individuals and identify the lots associated with those samples:
+pire_db <- pire_database()
+dm_filter(pire_db,
+          species_sheets = (species_code == 'Sgr'),
+          individuals_sheets = (str_detect(individual_id, '[AC](Jol|Mvi)|(APal)|(CBir)'))) %>%
+    pull_tbl('lots_sheets') %>%
+	    select(lot_id, collection_year_start, collection_year_end, 
+           collection_era, site_id)
+
+#OR
+
+dm_filter(pire_db,
+          species_sheets = (species_code == 'Sgr'),
+          lots_sheets = (site_id %in% c('Jol', 'Mvi', 'Pal', 'Bir'))) %>%
+    pull_tbl('lots_sheets') %>%
+    select(lot_id, collection_year_start, collection_year_end, 
+           collection_era, site_id)
+```
+
+```r
+#Get Site/Lot info for a set of extractions
+extraction_ids <- c("Sgr-CBir_004-Ex1", "Sgr-AMvi_035-Ex1", "Sgr-AMvi_046-Ex1", "Sgr-CMvi_052-Ex1", "Sgr-AJol_091-Ex1")
+pire_db <- pire_database()
+pire_db %>%
+    dm_filter(species_sheets = (species_code == 'Sgr'),
+              dna_extractions_sheets = (extraction_id %in% extraction_ids)) %>%
+    # optional: keep only the columns you care about from each table
+    dm_select(lots_sheets, lot_id, 
+              collection_year_start, collection_year_end,
+              collection_era) %>%
+    dm_select(sampling_sites_sheets, lot_id, 
+              collection_site, local_government_unit:island_group) %>%
+    dm_flatten_to_tbl(start = lots_sheets,
+                      sampling_sites_sheets,
+                      .join = dplyr::full_join)
+```
+
+<details>
+  <summary>Output</summary>
+
+```r
+# A tibble: 6 × 9
+  lot_id           collection_site            local_government_unit province       region          island_group collection_year_start collection_year_end collection_era
+  <chr>            <chr>                      <chr>                 <chr>          <chr>           <chr>                        <dbl>               <dbl> <chr>         
+1 120926           Port_Matalvi_reef_Masinloc Masinloc              Zambales       Central Luzon   Luzon                         1908                1908 Albatross     
+2 138933           Tutu_Bay                   Hadji Panglima Tahil  Sulu           BARMM           Mindanao                      1909                1909 Albatross     
+3 138936           Port_Palapag               Salvacion             Northern Samar Eastern Visayas Visayas                       1909                1909 Albatross     
+4 Jol-2021-01_01   Panglima_Tahil,_Jolo       Hadji Panglima Tahil  Sulu           BARMM           Mindanao                      2021                2021 Contemporary  
+5 SAM-2022_02_14   NA                         Biri                  Northern Samar Eastern Visayas Visayas                       2022                2022 Contemporary  
+6 Zam-2019-004_012 Masinloc_Public_Market     Palaulg               Zambales       Central Luzon   Luzon                         2019                2019 Contemporary  
+```
+</details>
+
+Make metadata sheets for GEOME upload. This will output csv files of the sites/sampling times for the specified list of extraction IDs into the specified path for upload to GEOME. The user need to update some columns (indicated in the messages output to the console) to match GEOME requirements.
+```
+output_geome_metadata(extraction_ids, path/for/output)
+```
 
 ## Adding Data to the Database
 After cloning the repo locally:

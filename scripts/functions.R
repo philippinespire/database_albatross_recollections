@@ -507,19 +507,19 @@ suppressPackageStartupMessages(library(janitor))
         identity()
     
     db_with_pk %>%
-        dm_add_fk(table = lots_sheets,
-                  columns = lot_id,
-                  ref_table = sampling_sites_sheets,
-                  ref_columns = lot_id) %>%
-        dm_add_fk(table = sampling_sites_sheets,
-                  columns = lot_id,
-                  ref_table = lots_sheets,
-                  ref_columns = lot_id) %>%
+        # dm_add_fk(table = lots_sheets,
+        #           columns = lot_id,
+        #           ref_table = sampling_sites_sheets,
+        #           ref_columns = lot_id) %>%
+        # dm_add_fk(table = sampling_sites_sheets,
+        #           columns = lot_id,
+        #           ref_table = lots_sheets,
+        #           ref_columns = lot_id) %>%
         dm_add_fk(table = individuals_sheets, 
                   columns = lot_id, 
                   ref_table = lots_sheets) %>%
-        dm_add_fk(table = individuals_sheets, 
-                  columns = lot_id, 
+        dm_add_fk(table = individuals_sheets,
+                  columns = lot_id,
                   ref_table = sampling_sites_sheets) %>%
         dm_add_fk(table = individuals_sheets,
                   columns = species_valid_name,
@@ -1511,4 +1511,142 @@ pire_database <- function() {
 
 update_database <- function(integrate_files = TRUE){
     .validate_staging_files(auto_integrate = integrate_files)
+}
+
+#### GEOME Utilities ####
+make_geome_metadata <- function(extraction_ids){
+    out <- pire_database() %>%
+        dm_filter(dna_extractions_sheets = (extraction_id %in% extraction_ids)) %>%
+        
+        dm_select(lots_sheets, lot_id,
+                  yearCollected = collection_year_start,
+                  monthCollected = collection_month_start,
+                  dayCollected = collection_day_start, 
+                  identifiedBy = species_verified, 
+                  preservative = storage_solution,
+                  collection_era) %>%
+        
+        dm_select(sampling_sites_sheets, 
+                  lot_id,
+                  locality = local_government_unit, 
+                  province,
+                  decimalLatitude = latitude, 
+                  decimalLongitude = longitude) %>%
+        
+        dm_select(species_sheets, 
+                  species_valid_name, 
+                  species_code) %>%
+        
+        dm_select(individuals_sheets, 
+                  species_valid_name, 
+                  individual_id, 
+                  voucherCatalogNumber = new_usnm, 
+                  lot_id,
+                  yearIdentified = species_id_year,
+                  identificationRemarks = species_id_notes) %>%
+        
+        dm_select(dna_extractions_sheets, 
+                  individual_id, 
+                  date_subsampling,
+                  tissueRecordedBy = subsampler,
+                  tissueRemarks = notes) %>%
+        
+        dm_flatten_to_tbl(start = individuals_sheets,
+                          dna_extractions_sheets,
+                          lots_sheets,
+                          sampling_sites_sheets,
+                          species_sheets,
+                          .recursive = TRUE) %>% #count(collection_era) #colnames()
+        separate(species_valid_name, 
+                 into = c('genus', 'specificEpithet'),
+                 sep = '_', remove = FALSE) %>% #select(individual_id)
+        
+        mutate(materialSampleID = NA_character_,
+               principalInvestigator = 'Kent_Carpenter',
+               across(c(locality, province),
+                      ~str_replace_all(., ' ', '')), 
+               locality = str_c(locality, province, sep = '_'),
+               country = 'Philippines',
+               lifeStage = 'adult',
+               georeferenceProtocol = 'GoogleMaps',
+               permitInformation = case_when(str_detect(province, 'Palawan') & collection_era == 'Contemporary' ~ 
+                                                 "Palawan Council for Sustainable Development GP# 2022-4(R1)",
+                                             TRUE ~ NA_character_),
+               tissueType = 'muscle',
+               preservative = case_when(preservative == 'EtOH' ~ "75% ethanol",
+                                        TRUE ~ preservative),
+               previousIdentifications = NA_character_,
+               tissueInstitution = 'USNM',
+               tissueSamplingYear = year(date_subsampling),
+               occurrenceRemarks = NA_character_, 
+               voucherCatalogNumber = case_when(collection_era == 'Contemporary' ~ as.character(lot_id),
+                                                collection_era == 'Albatross' ~ as.character(voucherCatalogNumber)),
+               yearIdentified = case_when(!is.na(yearIdentified) ~ yearIdentified,
+                                          TRUE ~ year(date_subsampling)),
+               samplingProtocol = case_when(collection_era == 'Contemporary' ~ 'marketcollection',
+                                            collection_era == 'Albatross' ~ NA_character_),
+               fieldNotes = NA_character_,
+               tissuePreservative = '95% ethanol',
+               tissueID = materialSampleID) %>% 
+        select(species_code,
+               materialSampleID,
+               principalInvestigator,
+               yearCollected,
+               decimalLatitude,
+               decimalLongitude,
+               locality, country,
+               genus, specificEpithet,
+               lifeStage, 
+               monthCollected, dayCollected,
+               georeferenceProtocol, 
+               permitInformation,
+               tissueType,
+               preservative,
+               catalogNumber = individual_id,
+               occurrenceRemarks, #user needs to fill this from the field collection notes
+               voucherCatalogNumber,
+               identificationRemarks,
+               identifiedBy, #user needs to modify this to fit with GEOME format
+               previousIdentifications,
+               scientificName = species_valid_name,
+               yearIdentified,
+               samplingProtocol, #user needs to fill in from https://www.google.com/maps/d/edit?mid=1leLurkYXC3FezrY59AhoU0QTjvi4fsIl&usp=sharing
+               fieldNotes, #user needs to fill in from https://www.google.com/maps/d/edit?mid=1leLurkYXC3FezrY59AhoU0QTjvi4fsIl&usp=sharing & Field_Collections
+               tissueID,
+               tissueInstitution,
+               tissueSamplingYear,
+               tissueRecordedBy,
+               tissuePreservative,
+               tissueRemarks)
+    
+    message('User needs to fill "occurrenceRemarks" from the field collection notes (file path: ODUOneDrive/Field Collections)\n')
+    message('User needs to modify "identifiedBy" to fit GEOME format: ')
+    message("    List names with an underscore between the first and last name. If there is more than one name, use a space and the pipe operator '|' between each name (the pipe operator is specified to be used in the GEOME FAQs). Example: Kent_Carpenter | Maddy_Kenton.\n")
+    message('User needs to fill "samplingProtocol" for albatross samples from https://www.google.com/maps/d/edit?mid=1leLurkYXC3FezrY59AhoU0QTjvi4fsIl&usp=sharing')
+    message('    It should contain the notes with the sampling methods. Examples include “dynamite” and “beachseine”.\n')
+    message('User needs to fill "fieldNotes')
+    message('    For Albatross, copy from the site notes here https://www.google.com/maps/d/edit?mid=1leLurkYXC3FezrY59AhoU0QTjvi4fsIl&usp=sharing')
+    message('    For Contemporary, copy or summarize from the field notes (file path: ODUOneDrive/Field Collections)\n')
+    message('User needs to modify "tissueRecordedBy" to fit GEOME format: ')
+    message("   List names with an underscore between the first and last name. If there is more than one name, use a space and the pipe operator '|' between each name (the pipe operator is specified to be used in the GEOME FAQs). Example: Kent_Carpenter | Maddy_Kenton.\n")
+    
+    
+    out
+}
+
+output_geome_metadata <- function(extraction_ids, output_path){
+    output <- make_geome_metadata(extraction_ids)
+    
+    expeditions <- distinct(output, species_code, yearCollected, locality) %>%
+        mutate(expedition_name = str_c(species_code, yearCollected, locality, sep = '_')) %>%
+        right_join(output,
+                   ., 
+                   by = c('species_code', 'yearCollected', 'locality')) %>%
+        select(-species_code) %>%
+        nest(data = -c(expedition_name))
+    
+    with(expeditions,
+         walk2(expedition_name,
+               data,
+               ~write_csv(.y, file = str_c(output_path, '/', expedition_name, '.csv'))))
 }
