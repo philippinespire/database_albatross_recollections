@@ -1035,11 +1035,11 @@ if (interactive()) {
       cat(" 💡 QUICK START:\n")
       cat(sprintf("    • %-25s Run: %s\n", "Using the database?", "pire_database()"))
       cat(sprintf("    • %-25s Run: %s\n", "Updating the database?", "update_database()"))
+      cat(" └────────────────────────────────────────────────────┘\n")
       if (.changed_dir) {
         #cat(sprintf("    • %-25s Run: %s\n", "Return to original dir?", "return_to_original()"))
         return_to_original()
       }
-      cat(" └────────────────────────────────────────────────────┘\n")
       cat("\n")
       if(sys_name == "Windows"){
         rm('check_rtools')
