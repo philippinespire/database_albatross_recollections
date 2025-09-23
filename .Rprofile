@@ -1036,7 +1036,8 @@ if (interactive()) {
       cat(sprintf("    • %-25s Run: %s\n", "Using the database?", "pire_database()"))
       cat(sprintf("    • %-25s Run: %s\n", "Updating the database?", "update_database()"))
       if (.changed_dir) {
-        cat(sprintf("    • %-25s Run: %s\n", "Return to original dir?", "return_to_original()"))
+        #cat(sprintf("    • %-25s Run: %s\n", "Return to original dir?", "return_to_original()"))
+        return_to_original()
       }
       cat(" └────────────────────────────────────────────────────┘\n")
       cat("\n")
@@ -1049,6 +1050,7 @@ if (interactive()) {
       }
       rm('install_linux_deps', 'install_windows_tools', 'check_setup', 'setup_project')
       rm('sys_name', 'renv_available', 'lockfile_exists', 'deps_ok', 'install_macos_deps')
+      rm('return_to_original')
     }
   } else {
     cat("\n⚠️  Could not locate the project directory\n")

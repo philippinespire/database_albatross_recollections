@@ -1522,8 +1522,8 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
     #and then the number from the individual id
     
     if (!is.null(geome_ids)) {
-        if (!is.character(geome_ids) || length(geome_ids) != nrow(out)) {
-            stop("`geome_ids` must be a character vector with length = nrow(out).")
+        if (!is.character(geome_ids) || length(geome_ids) != length(extraction_ids)) {
+            stop("`geome_ids` must be a character vector with length = length(extraction_ids).")
         }
     }
     
@@ -1573,8 +1573,13 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
                  into = c('genus', 'specificEpithet'),
                  sep = '_', remove = FALSE) %>% #select(individual_id)
         
-        mutate(materialSampleID = if (is.null(geome_ids)) str_sub(species_code, 1, 2) else geome_ids,
-               principalInvestigator = 'Kent_Carpenter',
+            {if (is.null(geome_ids)) {
+                mutate(., materialSampleID = str_sub(species_code, 1, 2))
+            } else {
+                mutate(., materialSampleID = geome_ids)
+            }} %>%
+        
+        mutate(principalInvestigator = 'Kent_Carpenter',
                across(c(locality, province),
                       ~str_replace_all(., ' ', '')), 
                locality = str_c(locality, province, sep = '_'),
