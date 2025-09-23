@@ -1514,7 +1514,19 @@ update_database <- function(integrate_files = TRUE){
 }
 
 #### GEOME Utilities ####
-make_geome_metadata <- function(extraction_ids){
+make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
+    #extraction is required and is a character vector of the extraction IDs used.
+    #geome_ids is optional. If included it is the values to be assigned to 
+    #the materialSampleID (same order as extraction_ids). If not included
+    #then these ids are generated as the first 2 letters of the spcies code, first letter of the era
+    #and then the number from the individual id
+    
+    if (!is.null(geome_ids)) {
+        if (!is.character(geome_ids) || length(geome_ids) != nrow(out)) {
+            stop("`geome_ids` must be a character vector with length = nrow(out).")
+        }
+    }
+    
     out <- pire_database() %>%
         dm_filter(dna_extractions_sheets = (extraction_id %in% extraction_ids)) %>%
         
@@ -1561,7 +1573,7 @@ make_geome_metadata <- function(extraction_ids){
                  into = c('genus', 'specificEpithet'),
                  sep = '_', remove = FALSE) %>% #select(individual_id)
         
-        mutate(materialSampleID = NA_character_,
+        mutate(materialSampleID = if (is.null(geome_ids)) str_sub(species_code, 1, 2) else geome_ids,
                principalInvestigator = 'Kent_Carpenter',
                across(c(locality, province),
                       ~str_replace_all(., ' ', '')), 
@@ -1577,12 +1589,12 @@ make_geome_metadata <- function(extraction_ids){
                                         TRUE ~ preservative),
                previousIdentifications = NA_character_,
                tissueInstitution = 'USNM',
-               tissueSamplingYear = year(date_subsampling),
+               tissueSamplingYear = lubridate::year(date_subsampling),
                occurrenceRemarks = NA_character_, 
                voucherCatalogNumber = case_when(collection_era == 'Contemporary' ~ as.character(lot_id),
                                                 collection_era == 'Albatross' ~ as.character(voucherCatalogNumber)),
                yearIdentified = case_when(!is.na(yearIdentified) ~ yearIdentified,
-                                          TRUE ~ year(date_subsampling)),
+                                          TRUE ~ lubridate::year(date_subsampling)),
                samplingProtocol = case_when(collection_era == 'Contemporary' ~ 'marketcollection',
                                             collection_era == 'Albatross' ~ NA_character_),
                fieldNotes = NA_character_,
