@@ -1598,16 +1598,17 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
                samplingProtocol = case_when(collection_era == 'Contemporary' ~ 'marketcollection',
                                             collection_era == 'Albatross' ~ NA_character_),
                fieldNotes = NA_character_,
-               tissuePreservative = '95% ethanol',
-               tissueID = materialSampleID) %>% 
+               tissuePreservative = '95% ethanol') %>% 
         
         {if (is.null(geome_ids)) {
             mutate(., materialSampleID = str_c(str_sub(species_code, 1, 2),
                                                str_sub(collection_era, 1, 1),
                                                yearCollected, locality,
-                                               str_extract(individual_id, '[0-9]+$')))
+                                               str_extract(individual_id, '[0-9]+$')),
+                   tissueID = materialSampleID)
         } else {
-            mutate(., materialSampleID = geome_ids)
+            mutate(., materialSampleID = geome_ids,
+                   tissueID = materialSampleID)
         }} %>%
         
         select(species_code,
