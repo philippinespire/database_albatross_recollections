@@ -1050,7 +1050,7 @@ if (interactive()) {
       }
       rm('install_linux_deps', 'install_windows_tools', 'check_setup', 'setup_project')
       rm('sys_name', 'renv_available', 'lockfile_exists', 'deps_ok', 'install_macos_deps')
-      #rm('return_to_original')
+      rm('return_to_original')
     }
   } else {
     cat("\n⚠️  Could not locate the project directory\n")
