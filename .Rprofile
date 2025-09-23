@@ -1038,7 +1038,7 @@ if (interactive()) {
       cat(" └────────────────────────────────────────────────────┘\n")
       if (.changed_dir) {
         #cat(sprintf("    • %-25s Run: %s\n", "Return to original dir?", "return_to_original()"))
-        return_to_original()
+        #return_to_original()
       }
       cat("\n")
       if(sys_name == "Windows"){
