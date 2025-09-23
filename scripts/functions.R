@@ -1573,13 +1573,14 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
                  into = c('genus', 'specificEpithet'),
                  sep = '_', remove = FALSE) %>% #select(individual_id)
         
-            {if (is.null(geome_ids)) {
-                mutate(., materialSampleID = str_sub(species_code, 1, 2))
-            } else {
-                mutate(., materialSampleID = geome_ids)
-            }} %>%
+            # {if (is.null(geome_ids)) {
+            #     mutate(., materialSampleID = str_sub(species_code, 1, 2))
+            # } else {
+            #     mutate(., materialSampleID = geome_ids)
+            # }} %>%
         
-        mutate(principalInvestigator = 'Kent_Carpenter',
+        mutate(materialSampleID = if (is.null(.env$geome_ids)) str_sub(species_code, 1, 2) else .env$geome_ids,
+               principalInvestigator = 'Kent_Carpenter',
                across(c(locality, province),
                       ~str_replace_all(., ' ', '')), 
                locality = str_c(locality, province, sep = '_'),
