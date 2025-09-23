@@ -62,19 +62,68 @@ if (!is.null(.project_dir) && .project_dir != getwd()) {
 
 # Suppress renv activation messages more safely
 renv_activated <- FALSE
-if (file.exists("renv/activate.R")) {
-  tryCatch({
-    # Capture output without using sink (more reliable across platforms)
-    invisible(utils::capture.output({
-      suppressMessages(suppressWarnings({
-        source("renv/activate.R")
-        renv_activated <- TRUE
+# Use renv::load() if we're not in the project directory, source activate.R if we are
+if (!is.null(.project_dir)) {
+  # We found the project directory
+  if (.changed_dir) {
+    # We're NOT in the project directory, use renv::load with the path
+    if (requireNamespace("renv", quietly = TRUE)) {
+      tryCatch({
+        invisible(utils::capture.output({
+          suppressMessages(suppressWarnings({
+            renv::load(.project_dir)
+            renv_activated <- TRUE
+          }))
+        }))
+      }, error = function(e) {
+        # If renv::load fails, try changing directory and sourcing
+        if (file.exists(file.path(.project_dir, "renv/activate.R"))) {
+          old_wd <- getwd()
+          setwd(.project_dir)
+          tryCatch({
+            invisible(utils::capture.output({
+              suppressMessages(suppressWarnings({
+                source("renv/activate.R")
+                renv_activated <- TRUE
+              }))
+            }))
+          }, error = function(e2) {
+            renv_activated <- FALSE
+          }, finally = {
+            setwd(old_wd)
+          })
+        }
+      })
+    }
+  } else {
+    # We're already in the project directory, use the normal activation
+    if (file.exists("renv/activate.R")) {
+      tryCatch({
+        invisible(utils::capture.output({
+          suppressMessages(suppressWarnings({
+            source("renv/activate.R")
+            renv_activated <- TRUE
+          }))
+        }))
+      }, error = function(e) {
+        renv_activated <- FALSE
+      })
+    }
+  }
+} else {
+  # Project directory not found, try activate.R if it exists in current directory
+  if (file.exists("renv/activate.R")) {
+    tryCatch({
+      invisible(utils::capture.output({
+        suppressMessages(suppressWarnings({
+          source("renv/activate.R")
+          renv_activated <- TRUE
+        }))
       }))
-    }))
-  }, error = function(e) {
-    # Silent - renv will bootstrap if needed
-    renv_activated <- FALSE
-  })
+    }, error = function(e) {
+      renv_activated <- FALSE
+    })
+  }
 }
 
 # Always run our setup regardless of renv status
