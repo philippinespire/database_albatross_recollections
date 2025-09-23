@@ -1518,8 +1518,8 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
     #extraction is required and is a character vector of the extraction IDs used.
     #geome_ids is optional. If included it is the values to be assigned to 
     #the materialSampleID (same order as extraction_ids). If not included
-    #then these ids are generated as the first 2 letters of the spcies code, first letter of the era
-    #and then the number from the individual id
+    #then these ids are generated as the first 2 letters of the species code, first letter of the era
+    #the collectionYear, the locality, then the number from the individual id
     
     if (!is.null(geome_ids)) {
         if (!is.character(geome_ids) || length(geome_ids) != length(extraction_ids)) {
@@ -1573,14 +1573,6 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
                  into = c('genus', 'specificEpithet'),
                  sep = '_', remove = FALSE) %>% #select(individual_id)
         
-            {if (is.null(geome_ids)) {
-                mutate(., materialSampleID = str_c(str_sub(species_code, 1, 2),
-                                                   str_sub(collection_era, 1, 1),
-                                                   str_extract(individual_id, '[0-9]+$')))
-            } else {
-                mutate(., materialSampleID = geome_ids)
-            }} %>%
-        
         mutate(#materialSampleID = if (is.null(.env$geome_ids)) str_sub(species_code, 1, 2) else .env$geome_ids,
                principalInvestigator = 'Kent_Carpenter',
                across(c(locality, province),
@@ -1608,6 +1600,16 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
                fieldNotes = NA_character_,
                tissuePreservative = '95% ethanol',
                tissueID = materialSampleID) %>% 
+        
+        {if (is.null(geome_ids)) {
+            mutate(., materialSampleID = str_c(str_sub(species_code, 1, 2),
+                                               str_sub(collection_era, 1, 1),
+                                               yearCollected, locality,
+                                               str_extract(individual_id, '[0-9]+$')))
+        } else {
+            mutate(., materialSampleID = geome_ids)
+        }} %>%
+        
         select(species_code,
                materialSampleID,
                principalInvestigator,
