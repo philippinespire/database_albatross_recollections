@@ -954,7 +954,7 @@ if (interactive()) {
       if (.changed_dir && !is.null(.original_wd)) {
         setwd(.original_wd)
         cat("Returned to original directory:", .original_wd, "\n")
-        rm(.original_wd, .project_dir, .changed_dir, envir = .GlobalEnv)
+        rm(.original_wd, .changed_dir, envir = .GlobalEnv)
       } else {
         cat("Already in original directory\n")
       }
