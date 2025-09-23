@@ -1656,8 +1656,10 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
     out
 }
 
-output_geome_metadata <- function(extraction_ids, output_path){
-    output <- make_geome_metadata(extraction_ids)
+output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL){
+    dir.create(output_path, showWarnings = FALSE)
+    
+    output <- make_geome_metadata(extraction_ids, geome_ids)
     
     expeditions <- distinct(output, species_code, yearCollected, locality) %>%
         mutate(expedition_name = str_c(species_code, yearCollected, locality, sep = '_')) %>%
@@ -1670,5 +1672,5 @@ output_geome_metadata <- function(extraction_ids, output_path){
     with(expeditions,
          walk2(expedition_name,
                data,
-               ~write_csv(.y, file = str_c(output_path, '/', expedition_name, '.csv'))))
+               ~write_csv(.y, file = str_c(output_path, '/', .x, '.csv'))))
 }
