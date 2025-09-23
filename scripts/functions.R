@@ -1672,5 +1672,12 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL)
     with(expeditions,
          walk2(expedition_name,
                data,
-               ~write_csv(.y, file = str_c(output_path, '/', .x, '.csv'))))
+               ~{
+                   file <- file.path(output_path, paste0(.x, ".csv"))
+                   readr::write_csv(.y, file)
+                   message("Saved file: ", file)
+               }))
+    message()
+    
+    expeditions
 }
