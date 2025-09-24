@@ -245,7 +245,7 @@ pire_db %>%
 
 Make metadata sheets for GEOME upload. This will output csv files of the sites/sampling times for the specified list of extraction IDs into the specified path for upload to GEOME. The user need to update some columns (indicated in the messages output to the console) to match GEOME requirements.
 ```
-output_geome_metadata(extraction_ids, path/for/output)
+output_geome_metadata(extraction_ids, path/for/output, sequence_ids = original_sequence_id)
 ```
 
 ## Adding Data to the Database

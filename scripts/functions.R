@@ -1665,10 +1665,13 @@ update_database <- function(integrate_files = TRUE){
     select(out, -collection_site, -collection_era)
 }
 
-output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL, sequence_ids = NULL){
-    dir.create(output_path, showWarnings = FALSE)
-    #dir.create(str_c(output_path, 'sample_files', sep = '/'), showWarnings = FALSE)
-    #dir.create(str_c(output_path, 'fastq_data', sep = '/'), showWarnings = FALSE)
+output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL, sequence_ids = NULL,
+                                  write_files = TRUE){
+    if(write_files){
+        dir.create(output_path, showWarnings = FALSE)
+        #dir.create(str_c(output_path, 'sample_files', sep = '/'), showWarnings = FALSE)
+        #dir.create(str_c(output_path, 'fastq_data', sep = '/'), showWarnings = FALSE)
+    }
     
     output <- .make_geome_metadata(extraction_ids, geome_ids)
     
@@ -1682,16 +1685,19 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
     
     
     #Output metadata
-    message('\nSaving GEOME Metadata files to: ', output_path)
-    message('  Saving Samples CSV files to: ', str_c(output_path, sep = '/'))
-    with(expeditions,
-         walk2(expedition_name,
-               data,
-               ~{
-                   file <- file.path(output_path, paste0(.x, ".csv"))
-                   readr::write_csv(.y, file)
-                   message("    Saved file: ", file)
-               }))
+    if(write_files){
+        message('\nSaving GEOME Metadata files to: ', output_path)
+        message('  Saving Samples CSV files to: ', str_c(output_path, sep = '/'))
+        with(expeditions,
+             walk2(expedition_name,
+                   data,
+                   ~{
+                       file <- file.path(output_path, paste0(.x, ".csv"))
+                       readr::write_csv(.y, file)
+                       message("    Saved file: ", file)
+                   }))
+    }
+
     
     #Output fasta renaming script
     if(!is.null(sequence_ids)){
@@ -1723,71 +1729,79 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
                                              catalogNumber, 
                                              materialSampleID))
         
-        message('\n  Saving FASTQ renaming script to: ', 
-                str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'))
-        message('    Copy this script to the "./fq_raw" directory and run to create ')
-        message('    softlinks with the proper names in "./fq_raw/ncbi_upload"')
-        sequence_rename <- select(fastq_info,
-                                  expedition_name,
-                                  original_sequence_id, sequence_id) %>%
-            expand_grid(direction = c('1', '2')) %>%
-            mutate(original_sequence_id = str_c(original_sequence_id, direction, 'fq.gz', sep = '.'),
-                   sequence_id = str_c(sequence_id, direction, 'fq.gz', sep = '.') %>%
-                       str_c('./ncbi_upload/', expedition_name, '/', .),
-                   .keep = 'unused') 
         
         
-        dirs <- unique(dirname(sequence_rename$sequence_id))
+        if(write_files){
+            message('\n  Saving FASTQ renaming script to: ', 
+                    str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'))
+            message('    Copy this script to the "./fq_raw" directory and run to create ')
+            message('    softlinks with the proper names in "./fq_raw/ncbi_upload"')
+            sequence_rename <- select(fastq_info,
+                                      expedition_name,
+                                      original_sequence_id, sequence_id) %>%
+                expand_grid(direction = c('1', '2')) %>%
+                mutate(original_sequence_id = str_c(original_sequence_id, direction, 'fq.gz', sep = '.'),
+                       sequence_id = str_c(sequence_id, direction, 'fq.gz', sep = '.') %>%
+                           str_c('./ncbi_upload/', expedition_name, '/', .),
+                       .keep = 'unused') 
+            
+            
+            dirs <- unique(dirname(sequence_rename$sequence_id))
+            
+            
+            # make a list of rsync commands
+            cmds <- apply(sequence_rename, 1, function(r) {
+                src <- r[["original_sequence_id"]]
+                dst <- r[["sequence_id"]]
+                sprintf('rsync -a --partial --inplace --info=progress2 "%s" "%s"', src, dst)
+            })
+            
+            # assemble the script
+            script <- c(
+                "#!/usr/bin/env bash",
+                "#SBATCH --job-name=copyForNCBI",
+                "#SBATCH -o copyForNCBI-%j.out",
+                "#SBATCH -p main",
+                "#SBATCH --cpus-per-task=20", 
+                "set -euo pipefail",
+                "",
+                "",
+                "raw_file_dir=${1}",
+                "#raw_file_dir=./1st_sequencing_run/fq_raw",
+                "cd ${raw_file_dir}",
+                "",
+                "# 1) make all destination folders first",
+                sprintf("mkdir -p %s", shQuote(dirs)),
+                "",
+                "# 2) run rsync in parallel (adjust -j for # of jobs)",
+                "parallel -j ${SLURM_CPUS_ON_NODE} ::: \\",
+                paste(sprintf("  '%s'", cmds), collapse=" \\\n")
+            )
+            
+            write_lines(script, str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'))
+            Sys.chmod(str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'), mode = "0755")
+        }
     
         
-        # make a list of rsync commands
-        cmds <- apply(sequence_rename, 1, function(r) {
-            src <- r[["original_sequence_id"]]
-            dst <- r[["sequence_id"]]
-            sprintf('rsync -a --partial --inplace --info=progress2 "%s" "%s"', src, dst)
-        })
-        
-        # assemble the script
-        script <- c(
-            "#!/usr/bin/env bash",
-            "#SBATCH --job-name=copyForNCBI",
-            "#SBATCH -o copyForNCBI-%j.out",
-            "#SBATCH -p main",
-            "#SBATCH --cpus-per-task=20", 
-            "set -euo pipefail",
-            "",
-            "",
-            "raw_file_dir=${1}",
-            "#raw_file_dir=./1st_sequencing_run/fq_raw",
-            "cd ${raw_file_dir}",
-            "",
-            "# 1) make all destination folders first",
-            sprintf("mkdir -p %s", shQuote(dirs)),
-            "",
-            "# 2) run rsync in parallel (adjust -j for # of jobs)",
-            "parallel -j ${SLURM_CPUS_ON_NODE} ::: \\",
-            paste(sprintf("  '%s'", cmds), collapse=" \\\n")
-        )
-        
-        write_lines(script, str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'))
-        Sys.chmod(str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'), mode = "0755")
-        
-        message('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, sep = '/'))
-        fastq_csv_files <- fastq_info %>%
-            select(expedition_name, sequence_id) %>%
-            expand_grid(direction = c('1', '2')) %>%
-            mutate(sequence_id = str_c(sequence_id, direction, 'fq.gz', sep = '.'),
-                   .keep = 'unused') %>%
-            nest(data = -c(expedition_name))
-        
-        with(fastq_csv_files,
-             walk2(expedition_name,
-                   data,
-                   ~{
-                       file <- file.path(output_path, paste0(.x, ".txt"))
-                       readr::write_tsv(.y, file, col_names = FALSE)
-                       message("    Saved file: ", file)
-                   }))
+        if(write_files){
+            message('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, sep = '/'))
+            fastq_csv_files <- fastq_info %>%
+                select(expedition_name, sequence_id) %>%
+                expand_grid(direction = c('1', '2')) %>%
+                mutate(sequence_id = str_c(sequence_id, direction, 'fq.gz', sep = '.'),
+                       .keep = 'unused') %>%
+                nest(data = -c(expedition_name))
+            
+            with(fastq_csv_files,
+                 walk2(expedition_name,
+                       data,
+                       ~{
+                           file <- file.path(output_path, paste0(.x, ".txt"))
+                           readr::write_tsv(.y, file, col_names = FALSE)
+                           message("    Saved file: ", file)
+                       }))
+        }
+ 
         
         
     }
