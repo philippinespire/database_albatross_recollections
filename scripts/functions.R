@@ -1728,18 +1728,21 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
         message('    Copy this script to the "./fq_raw" directory and run to create ')
         message('    softlinks with the proper names in "./fq_raw/ncbi_upload"')
         sequence_rename <- select(fastq_info,
-               original_sequence_id, sequence_id) %>%
+                                  expedition_name,
+                                  original_sequence_id, sequence_id) %>%
             expand_grid(direction = c('1', '2')) %>%
             mutate(original_sequence_id = str_c(original_sequence_id, direction, 'fq.gz', sep = '.'),
                    sequence_id = str_c(sequence_id, direction, 'fq.gz', sep = '.') %>%
-                       str_c('./ncbi_upload/', .),
+                       str_c('./ncbi_upload/', expedition_name, '/', .),
                    .keep = 'unused') 
         
+        
+        dirs <- unique(dirname(sequence_rename$sequence_id))
         
         script <- c(
             "#!/usr/bin/env bash",
             "set -euo pipefail",
-            sprintf("mkdir -p %s", shQuote("./ncbi_upload/")),
+            sprintf("mkdir -p %s", shQuote(dirs)),
             sprintf("ln -sf %s %s",
                     shQuote(sequence_rename$original_sequence_id),
                     shQuote(sequence_rename$sequence_id))
