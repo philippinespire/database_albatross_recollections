@@ -11,7 +11,6 @@ suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(tibble))
 suppressPackageStartupMessages(library(cli))
 suppressPackageStartupMessages(library(here))
-suppressPackageStartupMessages(library(janitor))
 
 #### Compile Database Files ####
 #### Function to Apply Corrections ####
@@ -1733,7 +1732,7 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
         
         if(write_files){
             message('\n  Saving FASTQ renaming script to: ', 
-                    str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'))
+                    str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'))
             message('    Copy this script to the "./fq_raw" directory and run to create ')
             message('    softlinks with the proper names in "./fq_raw/ncbi_upload"')
             sequence_rename <- select(fastq_info,
@@ -1779,7 +1778,7 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
             )
             
             write_lines(script, str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'))
-            Sys.chmod(str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'), mode = "0755")
+            Sys.chmod(str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'), mode = "0755")
         }
     
         
