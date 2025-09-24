@@ -1738,17 +1738,38 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
         
         
         dirs <- unique(dirname(sequence_rename$sequence_id))
+    
         
+        # make a list of rsync commands
+        cmds <- apply(sequence_rename, 1, function(r) {
+            src <- r[["original_sequence_id"]]
+            dst <- r[["sequence_id"]]
+            sprintf('rsync -a --partial --inplace --info=progress2 "%s" "%s"', src, dst)
+        })
+        
+        # assemble the script
         script <- c(
             "#!/usr/bin/env bash",
+            "#SBATCH --job-name=copyForNCBI",
+            "#SBATCH -o copyForNCBI-%j.out",
+            "#SBATCH -p main",
+            "#SBATCH --cpus-per-task=20", 
             "set -euo pipefail",
+            "",
+            "",
+            "raw_file_dir=${1}",
+            "#raw_file_dir=./1st_sequencing_run/fq_raw",
+            "cd ${raw_file_dir}",
+            "",
+            "# 1) make all destination folders first",
             sprintf("mkdir -p %s", shQuote(dirs)),
-            sprintf("ln -sf %s %s",
-                    shQuote(sequence_rename$original_sequence_id),
-                    shQuote(sequence_rename$sequence_id))
+            "",
+            "# 2) run rsync in parallel (adjust -j for # of jobs)",
+            "parallel -j ${SLURM_CPUS_ON_NODE} ::: \\",
+            paste(sprintf("  '%s'", cmds), collapse=" \\\n")
         )
         
-        write_lines(script, str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'))
+        write_lines(script, str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'))
         Sys.chmod(str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'), mode = "0755")
         
         message('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, sep = '/'))
