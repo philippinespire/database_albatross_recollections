@@ -129,6 +129,19 @@ if (!is.null(.project_dir)) {
 # Always run our setup regardless of renv status
 if (interactive()) {
   
+  # Ensure clean namespace before loading
+  tryCatch({
+    if ("stringr" %in% loadedNamespaces()) {
+      unloadNamespace("stringr")
+    }
+    if ("janitor" %in% loadedNamespaces()) {
+      unloadNamespace("janitor")
+    }
+  }, error = function(e) {
+    # If unloading fails, we'll handle it
+    NULL
+  })
+
   # Clear line and start our output
   cat("\n============================================================\n")
   cat(" PROJECT: database_albatross_recollections\n")
