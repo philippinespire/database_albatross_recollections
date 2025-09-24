@@ -1514,7 +1514,7 @@ update_database <- function(integrate_files = TRUE){
 }
 
 #### GEOME Utilities ####
-make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
+.make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
     #extraction is required and is a character vector of the extraction IDs used.
     #geome_ids is optional. If included it is the values to be assigned to 
     #the materialSampleID (same order as extraction_ids). If not included
@@ -1535,7 +1535,8 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
                   dayCollected = collection_day_start, 
                   identifiedBy = species_verified, 
                   preservative = storage_solution,
-                  collection_era) %>%
+                  collection_era,
+                  collection_site) %>%
         
         dm_select(sampling_sites_sheets, 
                   lot_id,
@@ -1609,6 +1610,9 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
         }} %>%
         
         select(species_code,
+               collection_site,
+               collection_era,
+               
                materialSampleID,
                principalInvestigator,
                yearCollected,
@@ -1639,6 +1643,12 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
                tissuePreservative,
                tissueRemarks)
     
+    
+    field_notes_locations <- distinct(out,
+                                      collection_era,
+                                      field_note_location = collection_site,
+                                      locality)
+    
     message('User needs to fill "occurrenceRemarks" from the field collection notes (file path: ODUOneDrive/Field Collections)\n')
     message('User needs to modify "identifiedBy" to fit GEOME format: ')
     message("    List names with an underscore between the first and last name. If there is more than one name, use a space and the pipe operator '|' between each name (the pipe operator is specified to be used in the GEOME FAQs). Example: Kent_Carpenter | Maddy_Kenton.\n")
@@ -1647,19 +1657,20 @@ make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
     message('User needs to fill "fieldNotes')
     message('    For Albatross, copy from the site notes here https://www.google.com/maps/d/edit?mid=1leLurkYXC3FezrY59AhoU0QTjvi4fsIl&usp=sharing')
     message('    For Contemporary, copy or summarize from the field notes (file path: ODUOneDrive/Field Collections)\n')
-    message('User needs to modify "tissueRecordedBy" to fit GEOME format: ')
+    print(field_notes_locations)
+    message('\nUser needs to modify "tissueRecordedBy" to fit GEOME format: ')
     message("   List names with an underscore between the first and last name. If there is more than one name, use a space and the pipe operator '|' between each name (the pipe operator is specified to be used in the GEOME FAQs). Example: Kent_Carpenter | Maddy_Kenton.\n")
     
     
-    out
+    select(out, -collection_site, -collection_era)
 }
 
 output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL, sequence_ids = NULL){
     dir.create(output_path, showWarnings = FALSE)
-    dir.create(str_c(output_path, 'sample_files', sep = '/'), showWarnings = FALSE)
-    dir.create(str_c(output_path, 'fastq_data', sep = '/'), showWarnings = FALSE)
+    #dir.create(str_c(output_path, 'sample_files', sep = '/'), showWarnings = FALSE)
+    #dir.create(str_c(output_path, 'fastq_data', sep = '/'), showWarnings = FALSE)
     
-    output <- make_geome_metadata(extraction_ids, geome_ids)
+    output <- .make_geome_metadata(extraction_ids, geome_ids)
     
     expeditions <- distinct(output, species_code, yearCollected, locality) %>%
         mutate(expedition_name = str_c(species_code, yearCollected, locality, sep = '_')) %>%
@@ -1672,12 +1683,12 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
     
     #Output metadata
     message('\nSaving GEOME Metadata files to: ', output_path)
-    message('  Saving Samples CSV files to: ', str_c(output_path, 'sample_files', sep = '/'))
+    message('  Saving Samples CSV files to: ', str_c(output_path, sep = '/'))
     with(expeditions,
          walk2(expedition_name,
                data,
                ~{
-                   file <- file.path(output_path, 'sample_files', paste0(.x, ".csv"))
+                   file <- file.path(output_path, paste0(.x, ".csv"))
                    readr::write_csv(.y, file)
                    message("    Saved file: ", file)
                }))
@@ -1713,7 +1724,7 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
                                              materialSampleID))
         
         message('\n  Saving FASTQ renaming script to: ', 
-                str_c(output_path, 'fastq_data', 'rename_seqs_for_ncbi.sh', sep = '/'))
+                str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'))
         message('    Copy this script to the "./fq_raw" directory and run to create ')
         message('    softlinks with the proper names in "./fq_raw/ncbi_upload"')
         sequence_rename <- select(fastq_info,
@@ -1734,10 +1745,10 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
                     shQuote(sequence_rename$sequence_id))
         )
         
-        write_lines(script, str_c(output_path, 'fastq_data', 'rename_seqs_for_ncbi.sh', sep = '/'))
-        Sys.chmod(str_c(output_path, 'fastq_data', 'rename_seqs_for_ncbi.sh', sep = '/'), mode = "0755")
+        write_lines(script, str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'))
+        Sys.chmod(str_c(output_path, 'rename_seqs_for_ncbi.sh', sep = '/'), mode = "0755")
         
-        message('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, 'fastq_data', sep = '/'))
+        message('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, sep = '/'))
         fastq_csv_files <- fastq_info %>%
             select(expedition_name, sequence_id) %>%
             expand_grid(direction = c('1', '2')) %>%
@@ -1749,8 +1760,8 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
              walk2(expedition_name,
                    data,
                    ~{
-                       file <- file.path(output_path, 'fastq_data', paste0(.x, ".txt"))
-                       readr::write_tsv(.y, file)
+                       file <- file.path(output_path, paste0(.x, ".txt"))
+                       readr::write_tsv(.y, file, col_names = FALSE)
                        message("    Saved file: ", file)
                    }))
         
@@ -1759,5 +1770,5 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
     
     
     message('-----------------------------------------------\n')
-    expeditions
+    arrange(expeditions, expedition_name)
 }
