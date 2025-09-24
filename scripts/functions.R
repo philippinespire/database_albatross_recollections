@@ -14,13 +14,83 @@ suppressPackageStartupMessages(library(here))
 
 #### Compile Database Files ####
 #### Function to Apply Corrections ####
+#clone from janitor to not require package
+.clean_names <- function(dat, case = "snake", ascii = TRUE, use_make_names = TRUE) {
+    # Get the names to clean
+    old_names <- names(dat)
+    
+    # Start with the original names
+    new_names <- old_names
+    
+    # Remove non-ASCII if requested
+    if (ascii) {
+        new_names <- iconv(new_names, from = "", to = "ASCII//TRANSLIT", sub = "")
+    }
+    
+    # Replace non-alphanumeric characters with underscores
+    # But preserve existing underscores
+    new_names <- gsub("[^a-zA-Z0-9_]+", "_", new_names)
+    
+    # For snake_case conversion
+    if (case == "snake") {
+        # Handle camelCase and PascalCase
+        # Insert underscore before capital letters that follow lowercase letters
+        new_names <- gsub("([a-z0-9])([A-Z])", "\\1_\\2", new_names, perl = TRUE)
+        
+        # Convert to lowercase
+        new_names <- tolower(new_names)
+    }
+    
+    # Clean up underscores
+    # Replace multiple consecutive underscores with a single one
+    new_names <- gsub("_{2,}", "_", new_names)
+    
+    # Remove leading underscores
+    new_names <- gsub("^_+", "", new_names)
+    
+    # Remove trailing underscores
+    new_names <- gsub("_+$", "", new_names)
+    
+    # Handle empty names
+    empty_names <- which(new_names == "" | is.na(new_names))
+    if (length(empty_names) > 0) {
+        new_names[empty_names] <- paste0("x", empty_names)
+    }
+    
+    # Ensure names don't start with numbers
+    starts_with_number <- grepl("^[0-9]", new_names)
+    new_names[starts_with_number] <- paste0("x", new_names[starts_with_number])
+    
+    # Make names unique if requested
+    if (use_make_names) {
+        # Make syntactically valid names
+        new_names <- make.names(new_names, unique = FALSE)
+        
+        # Replace dots with underscores (make.names uses dots)
+        new_names <- gsub("\\.", "_", new_names)
+        
+        # Clean up multiple underscores again
+        new_names <- gsub("_{2,}", "_", new_names)
+        new_names <- gsub("_+$", "", new_names)
+        
+        # Handle duplicates
+        if (any(duplicated(new_names))) {
+            new_names <- make.unique(new_names, sep = "_")
+        }
+    }
+    
+    # Apply the new names
+    names(dat) <- new_names
+    return(dat)
+}
+
 #Apply corrections to input data
 .apply_corrections <- function(data, file_type, verbose = FALSE) {
     
     
     corrections <- read_csv(here::here("db_files", "extractions_mislabelling_sheet.csv"),
                             show_col_types = FALSE) %>%
-        clean_names() %>% 
+        .clean_names() %>% 
         # Remove any completely empty rows
         filter(!if_all(everything(), is.na))
     
