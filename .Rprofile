@@ -865,9 +865,8 @@ if (interactive()) {
       })
     }
     
-    output_geome_metadata <- function(extraction_ids, output_path, 
-                                      geome_ids = NULL, sequence_ids = NULL, 
-                                      write_files = TRUE) {
+    output_geome_metadata <- function(extraction_ids, output_path = NULL, 
+                                      geome_ids = NULL, sequence_ids = NULL) {
 
       original_dir <- getwd()
 
