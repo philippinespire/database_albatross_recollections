@@ -898,16 +898,16 @@ if (interactive()) {
         # The first time this is called it sources in the functions and runs itself. 
         # After it is replaced with the main function
         source("scripts/functions.R")
-        
+
+        # Return to the original directory
+        setwd(original_dir)
+        cat("\n📁 Returned to original directory:", original_dir, "\n")
+
         # Call the actual update_database function from the sourced file
         result <- output_geome_metadata(extraction_ids, output_path, 
                                       geome_ids, sequence_ids, 
                                       write_files)
-        
-        # Return to the original directory
-        setwd(original_dir)
-        cat("\n📁 Returned to original directory:", original_dir, "\n")
-        
+                
         # Return whatever the update_database function returned
         return(result)
         
