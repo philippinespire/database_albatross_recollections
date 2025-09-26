@@ -1734,18 +1734,30 @@ update_database <- function(integrate_files = TRUE){
     select(out, -collection_site, -collection_era)
 }
 
-output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL, sequence_ids = NULL,
-                                  write_files = TRUE){
-    if(write_files){
+output_geome_metadata <- function(extraction_ids, output_path = NULL, 
+                                  geome_ids = NULL, sequence_ids = NULL){
+    if(!is.null(output_path)){
         dir.create(output_path, showWarnings = FALSE)
         #dir.create(str_c(output_path, 'sample_files', sep = '/'), showWarnings = FALSE)
         #dir.create(str_c(output_path, 'fastq_data', sep = '/'), showWarnings = FALSE)
     }
     
-    output <- .make_geome_metadata(extraction_ids, geome_ids)
+    seq_type <- case_when(all(str_detect(sequence_ids, 'CSSL')) ~ 'cssl',
+                          all(str_detect(sequence_ids, 'wgs')) ~ 'lcwgs',
+                          all(str_detect(sequence_ids, 'SSL')) ~ 'SSL')
+    
+    # Get data and prep names
+    output <- .make_geome_metadata(extraction_ids, geome_ids) %>%
+        inner_join(tibble(catalogNumber = extraction_ids,
+                          original_sequence_id = sequence_ids),
+                  .,
+                  by = 'catalogNumber') %>%
+            relocate(catalogNumber, .after = 'preservative') %>%
+        mutate(materialSampleID = str_c(materialSampleID, '_lib', 1:n()),
+               .by = materialSampleID)
     
     expeditions <- distinct(output, species_code, yearCollected, locality) %>%
-        mutate(expedition_name = str_c(species_code, yearCollected, locality, sep = '_')) %>%
+        mutate(expedition_name = str_c(species_code, yearCollected, locality, seq_type, sep = '_')) %>%
         right_join(output,
                    ., 
                    by = c('species_code', 'yearCollected', 'locality')) %>%
@@ -1754,7 +1766,7 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
     
     
     #Output metadata
-    if(write_files){
+    if(!is.null(output_path)){
         message('\nSaving GEOME Metadata files to: ', output_path)
         message('  Saving Samples CSV files to: ', str_c(output_path, sep = '/'))
         with(expeditions,
@@ -1762,7 +1774,7 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
                    data,
                    ~{
                        file <- file.path(output_path, paste0(.x, ".csv"))
-                       readr::write_csv(.y, file)
+                       readr::write_csv(select(.y, -original_sequence_id), file)
                        message("    Saved file: ", file)
                    }))
     }
@@ -1791,16 +1803,13 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
         message('    Protocol Citation or Website: KAPA HyperPlus Kit')
         
         fastq_info <- unnest(expeditions, data) %>%
-            arrange(match(catalogNumber, extraction_ids)) %>%
-            select(expedition_name, materialSampleID, catalogNumber) %>%
-            mutate(original_sequence_id = sequence_ids,
-                   sequence_id = str_replace(original_sequence_id,
+            select(expedition_name, materialSampleID, catalogNumber,
+                   original_sequence_id) %>%
+            mutate(sequence_id = str_replace(original_sequence_id,
                                              catalogNumber, 
                                              materialSampleID))
         
-        
-        
-        if(write_files){
+        if(!is.null(output_path)){
             message('\n  Saving FASTQ renaming script to: ', 
                     str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'))
             message('    Copy this script to the "./fq_raw" directory and run to create ')
@@ -1852,7 +1861,7 @@ output_geome_metadata <- function(extraction_ids, output_path, geome_ids = NULL,
         }
     
         
-        if(write_files){
+        if(!is.null(output_path)){
             message('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, sep = '/'))
             fastq_csv_files <- fastq_info %>%
                 select(expedition_name, sequence_id) %>%
