@@ -766,6 +766,9 @@ if (interactive()) {
     }
     
     pire_database <- function() {
+
+      original_dir <- getwd()
+
       # Ensure we're in the project directory
       if (!file.exists("scripts/functions.R")) {
         if (!is.null(.project_dir)) {
@@ -788,11 +791,34 @@ if (interactive()) {
       
       #The first time this is called it sources in the functions and runs itself. 
       #After it is replaced with the main function
-      source("scripts/functions.R")
-      pire_database()
+        # Use tryCatch to ensure we return to original directory even if there's an error
+      tryCatch({
+        # The first time this is called it sources in the functions and runs itself. 
+        # After it is replaced with the main function
+        source("scripts/functions.R")
+        
+        # Call the actual pire_database function from the sourced file
+        result <- pire_database()
+        
+        # Return to the original directory
+        setwd(original_dir)
+        cat("\n📁 Returned to original directory:", original_dir, "\n")
+        
+        # Return whatever the pire_database function returned
+        return(result)
+        
+      }, error = function(e) {
+        # If there's an error, still return to the original directory
+        setwd(original_dir)
+        cat("\n📁 Returned to original directory after error:", original_dir, "\n")
+        stop(e)
+      })
     }
     
     update_database <- function(integrate_files = TRUE) {
+
+      original_dir <- getwd()
+
       # Ensure we're in the project directory
       if (!file.exists("scripts/functions.R")) {
         if (!is.null(.project_dir)) {
@@ -815,8 +841,28 @@ if (interactive()) {
       
       #The first time this is called it sources in the functions and runs itself. 
       #After it is replaced with the main function
-      source("scripts/functions.R")
-      update_database(integrate_files)
+      # Use tryCatch to ensure we return to original directory even if there's an error
+      tryCatch({
+        # The first time this is called it sources in the functions and runs itself. 
+        # After it is replaced with the main function
+        source("scripts/functions.R")
+        
+        # Call the actual update_database function from the sourced file
+        result <- update_database(integrate_files)
+        
+        # Return to the original directory
+        setwd(original_dir)
+        cat("\n📁 Returned to original directory:", original_dir, "\n")
+        
+        # Return whatever the update_database function returned
+        return(result)
+        
+      }, error = function(e) {
+        # If there's an error, still return to the original directory
+        setwd(original_dir)
+        cat("\n📁 Returned to original directory after error:", original_dir, "\n")
+        stop(e)
+      })
     }
     
     check_setup <- function() {
