@@ -904,8 +904,7 @@ if (interactive()) {
 
         # Call the actual update_database function from the sourced file
         result <- output_geome_metadata(extraction_ids, output_path, 
-                                      geome_ids, sequence_ids, 
-                                      write_files)
+                                      geome_ids, sequence_ids)
                 
         # Return whatever the update_database function returned
         return(result)
