@@ -865,6 +865,60 @@ if (interactive()) {
       })
     }
     
+    output_geome_metadata <- function(extraction_ids, output_path, 
+                                      geome_ids = NULL, sequence_ids = NULL, 
+                                      write_files = TRUE) {
+
+      original_dir <- getwd()
+
+      # Ensure we're in the project directory
+      if (!file.exists("scripts/functions.R")) {
+        if (!is.null(.project_dir)) {
+          setwd(.project_dir)
+        } else {
+          cat("❌ Error: Not in project directory\n")
+          cat("   Please navigate to the database_albatross_recollections folder\n")
+          return(invisible(NULL))
+        }
+      }
+      
+      # Quick dependency check if renv is available
+      if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
+        if (!.check_dependencies(silent = TRUE)) {
+          cat("\n⚠️  Some packages are missing!\n")
+          cat("   Run setup_project() first, then restart R.\n")
+          return(invisible(NULL))
+        }
+      }
+      
+      #The first time this is called it sources in the functions and runs itself. 
+      #After it is replaced with the main function
+      # Use tryCatch to ensure we return to original directory even if there's an error
+      tryCatch({
+        # The first time this is called it sources in the functions and runs itself. 
+        # After it is replaced with the main function
+        source("scripts/functions.R")
+        
+        # Call the actual update_database function from the sourced file
+        result <- output_geome_metadata(extraction_ids, output_path, 
+                                      geome_ids, sequence_ids, 
+                                      write_files)
+        
+        # Return to the original directory
+        setwd(original_dir)
+        cat("\n📁 Returned to original directory:", original_dir, "\n")
+        
+        # Return whatever the update_database function returned
+        return(result)
+        
+      }, error = function(e) {
+        # If there's an error, still return to the original directory
+        setwd(original_dir)
+        cat("\n📁 Returned to original directory after error:", original_dir, "\n")
+        stop(e)
+      })
+    }
+
     check_setup <- function() {
       cat("\n📋 DETAILED STATUS CHECK\n")
       cat("========================\n")
