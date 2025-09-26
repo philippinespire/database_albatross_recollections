@@ -865,8 +865,8 @@ if (interactive()) {
       })
     }
     
-    output_geome_metadata <- function(extraction_ids, output_path = NULL, 
-                                      geome_ids = NULL, sequence_ids = NULL) {
+    output_geome_metadata <- function(extraction_ids, sequence_ids = NULL,
+                                      output_path = NULL) {
 
       original_dir <- getwd()
 
@@ -903,8 +903,7 @@ if (interactive()) {
         cat("\n📁 Returned to original directory:", original_dir, "\n")
 
         # Call the actual update_database function from the sourced file
-        result <- output_geome_metadata(extraction_ids, output_path, 
-                                      geome_ids, sequence_ids)
+        result <- output_geome_metadata(extraction_ids, sequence_ids, output_path)
                 
         # Return whatever the update_database function returned
         return(result)
