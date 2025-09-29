@@ -1734,11 +1734,26 @@ update_database <- function(integrate_files = TRUE){
     select(out, -collection_site, -collection_era)
 }
 
+.message_and_log <- function(..., file = NULL) {
+    # Combine all arguments into a single string
+    text <- paste0(..., collapse = "")
+    
+    message(text)  # Display on console
+    if(!is.null(file)) {
+        cat(text, "\n", file = file, append = TRUE, sep = "")  # Write to file only if path provided
+    }
+}
+
+
 output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_path = NULL){
     if(!is.null(output_path)){
-        dir.create(output_path, showWarnings = FALSE)
-        #dir.create(str_c(output_path, 'sample_files', sep = '/'), showWarnings = FALSE)
-        #dir.create(str_c(output_path, 'fastq_data', sep = '/'), showWarnings = FALSE)
+        dir.create(output_path, showWarnings = FALSE, recursive = TRUE)
+        # output_file <- file.path(output_path, "upload_guidance.txt")
+        # sink(output_file, split = TRUE)
+        
+        output_file <- file.path(output_path, "upload_guidance.txt")
+    } else {
+        output_file <- NULL
     }
     
     seq_type <- case_when(all(str_detect(sequence_ids, 'CSSL')) ~ 'cssl',
@@ -1746,14 +1761,28 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
                           all(str_detect(sequence_ids, 'SSL')) ~ 'SSL')
     
     # Get data and prep names
-    output <- .make_geome_metadata(extraction_ids) %>%
-        inner_join(tibble(catalogNumber = extraction_ids,
-                          original_sequence_id = sequence_ids),
-                  .,
-                  by = 'catalogNumber') %>%
+    captured_output <- capture.output({
+        output <- .make_geome_metadata(extraction_ids) %>%
+            inner_join(tibble(catalogNumber = extraction_ids,
+                              original_sequence_id = sequence_ids),
+                       .,
+                       by = 'catalogNumber') %>%
             relocate(catalogNumber, .after = 'preservative') %>%
-        mutate(materialSampleID = str_c(materialSampleID, '_lib', 1:n()),
-               .by = materialSampleID)
+            mutate(materialSampleID = str_c(materialSampleID, '_lib', 1:n()),
+                   .by = materialSampleID)
+    }, type = "message") 
+    
+    # Display captured output to screen
+    if(length(captured_output) > 0) {
+        message(str_c(captured_output, collapse = '\n'))
+        
+        # Also write to file if output_path is not NULL
+        if(!is.null(output_path)) {
+            cat(captured_output, sep = "\n", file = output_file, append = TRUE)
+            cat("\n", file = output_file, append = TRUE)  # Add extra newline
+        }
+    }
+    
     
     expeditions <- distinct(output, species_code, yearCollected, locality) %>%
         mutate(expedition_name = str_c(species_code, yearCollected, locality, seq_type, sep = '_')) %>%
@@ -1763,43 +1792,42 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
         select(-species_code) %>%
         nest(data = -c(expedition_name))
     
-    
     #Output metadata
     if(!is.null(output_path)){
-        message('\nSaving GEOME Metadata files to: ', output_path)
-        message('  Saving Samples CSV files to: ', str_c(output_path, sep = '/'))
+        .message_and_log('\nSaving GEOME Metadata files to: ', output_path, file = output_file)
+        .message_and_log('  Saving Samples CSV files to: ', str_c(output_path, sep = '/'), file = output_file)
         with(expeditions,
              walk2(expedition_name,
                    data,
                    ~{
                        file <- file.path(output_path, paste0(.x, ".csv"))
                        readr::write_csv(select(.y, -original_sequence_id), file)
-                       message("    Saved file: ", file)
+                       .message_and_log("    Saved file: ", file, file = output_file)
                    }))
     }
 
     
     #Output fasta renaming script
     if(!is.null(sequence_ids)){
-        message('  \nFASTQ Library Metadata:')
-        message('    Library Layout: Paired-End')
+        .message_and_log('  \nFASTQ Library Metadata:', file = output_file)
+        .message_and_log('    Library Layout: Paired-End', file = output_file)
         if(all(str_detect(sequence_ids, 'CSSL'))){
-            message('    Library Strategy: OTHER')
+            .message_and_log('    Library Strategy: OTHER', file = output_file)
         } else {
-            message('    Library Strategy: WGS')
+            .message_and_log('    Library Strategy: WGS', file = output_file)
         }
-        message('    Library Source: GENOMIC')
+        .message_and_log('    Library Source: GENOMIC', file = output_file)
         # Library Selection
         if(all(str_detect(sequence_ids, 'CSSL'))){
-            message('    Library Selection: "Reduced Representation"')
+            .message_and_log('    Library Selection: "Reduced Representation"', file = output_file)
         } else if(all(str_detect(sequence_ids, 'wgs'))){
-            message('    Library Selection: "Other"')
+            .message_and_log('    Library Selection: "Other"', file = output_file)
         } else if(all(str_detect(sequence_ids, 'SSL'))){
-            message('    Library Selection: "size fractionation"')
+            .message_and_log('    Library Selection: "size fractionation"', file = output_file)
         }
-        message('    Platform: ILLUMINA')
-        message('    Instrument Model: Illumina NovaSeq 6000')
-        message('    Protocol Citation or Website: KAPA HyperPlus Kit')
+        .message_and_log('    Platform: ILLUMINA', file = output_file)
+        .message_and_log('    Instrument Model: Illumina NovaSeq 6000', file = output_file)
+        .message_and_log('    Protocol Citation or Website: KAPA HyperPlus Kit', file = output_file)
         
         fastq_info <- unnest(expeditions, data) %>%
             select(expedition_name, materialSampleID, catalogNumber,
@@ -1809,10 +1837,10 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
                                              materialSampleID))
         
         if(!is.null(output_path)){
-            message('\n  Saving FASTQ renaming script to: ', 
-                    str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'))
-            message('    Copy this script to the "./fq_raw" directory and run to create ')
-            message('    softlinks with the proper names in "./fq_raw/ncbi_upload"')
+            .message_and_log('\n  Saving FASTQ renaming script to: ', 
+                    str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'), file = output_file)
+            .message_and_log('    Copy this script to the "./fq_raw" directory and run to create ', file = output_file)
+            .message_and_log('    softlinks with the proper names in "./fq_raw/ncbi_upload"', file = output_file)
             sequence_rename <- select(fastq_info,
                                       expedition_name,
                                       original_sequence_id, sequence_id) %>%
@@ -1861,7 +1889,7 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
     
         
         if(!is.null(output_path)){
-            message('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, sep = '/'))
+            .message_and_log('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, sep = '/'), file = output_file)
             fastq_csv_files <- fastq_info %>%
                 select(expedition_name, sequence_id) %>%
                 expand_grid(direction = c('1', '2')) %>%
@@ -1875,7 +1903,7 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
                        ~{
                            file <- file.path(output_path, paste0(.x, ".txt"))
                            readr::write_tsv(.y, file, col_names = FALSE)
-                           message("    Saved file: ", file)
+                           .message_and_log("    Saved file: ", file, file = output_file)
                        }))
         }
  
@@ -1884,6 +1912,6 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
     }
     
     
-    message('-----------------------------------------------\n')
+    .message_and_log('-----------------------------------------------\n', file = output_file)
     arrange(expeditions, expedition_name)
 }
