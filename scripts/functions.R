@@ -1613,7 +1613,8 @@ update_database <- function(integrate_files = TRUE){
                   identifiedBy = species_verified, 
                   preservative = storage_solution,
                   collection_era,
-                  collection_site) %>%
+                  collection_site,
+                  identificationRemarks1 = notes) %>%
         
         dm_select(sampling_sites_sheets, 
                   lot_id,
@@ -1632,7 +1633,7 @@ update_database <- function(integrate_files = TRUE){
                   voucherCatalogNumber = new_usnm, 
                   lot_id,
                   yearIdentified = species_id_year,
-                  identificationRemarks = species_id_notes) %>%
+                  identificationRemarks2 = species_id_notes) %>%
         
         dm_select(dna_extractions_sheets, 
                   individual_id, 
@@ -1659,6 +1660,9 @@ update_database <- function(integrate_files = TRUE){
                locality = str_c(locality, province, sep = '_'),
                country = 'Philippines',
                lifeStage = 'adult',
+               across(c(identificationRemarks1, identificationRemarks2),
+                      ~str_replace_na(., replacement = '')),
+               identificationRemarks = str_c(identificationRemarks1, identificationRemarks2, sep = '; '),
                georeferenceProtocol = 'GoogleMaps',
                permitInformation = case_when(str_detect(province, 'Palawan') & collection_era == 'Contemporary' ~ 
                                                  "Palawan Council for Sustainable Development GP# 2022-4(R1)",
