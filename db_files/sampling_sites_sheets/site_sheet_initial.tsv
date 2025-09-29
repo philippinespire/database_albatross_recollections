@@ -1,6 +1,6 @@
 lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_government_unit	province	region	island_group	notes
-94530	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-96400	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+94530	NA	NA	NA	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+96400	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96429	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96459	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96463	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
@@ -8,13 +8,13 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 97439	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 97440	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 97445	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
-97449	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+97449	NA	NA	NA	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 97475	Mar	PGal	Maricaban_Is	13.6791984	120.840502	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
-97487	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+97487	NA	NA	NA	13.125825	122.9757	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 97491	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
 97497	Mar	PGal	Maricaban_Is	13.6791984	120.840502	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
-97503	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97513	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+97503	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97513	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 97514	Tat	Tata	NA	5.1114486	119.78744	Mandulan	Bongao	Tawi-tawi	BARMM	Mindanao	NA
 97518	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 97521	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
@@ -24,31 +24,31 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 97562	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 97579	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
 97580	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
-97583	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97585	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+97583	NA	NA	NA	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97585	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 97593	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 97594	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97607	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97608	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97609	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97610	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97611	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97612	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+97607	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97608	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97609	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97610	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97611	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97612	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 97614	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
 97617	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
-97638	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+97638	NA	NA	NA	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 97660	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
 97661	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
-97662	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97665	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+97662	NA	NA	NA	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97665	NA	NA	NA	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 97670	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 97672	Mar	PGal	Maricaban_Is	13.6791984	120.840502	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
 97675	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 97686	Gal	PGal	Puerto_Galera	13.5722403	121.085873	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
-97690	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97693	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-97714	NA	NA	Maricaban_Is	NA	NA	NA	NA	NA	NA	NA	NA
-97715	NA	NA	Maricaban_Is	NA	NA	NA	NA	NA	NA	NA	NA
+97690	NA	NA	NA	13.091115	122.9513	NA	San Pascual	Masbate	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97693	NA	NA	NA	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97714	NA	NA	Maricaban_Is	13.679198	120.8405	San Andres	Batangas	Batangas	CALABARXON	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+97715	NA	NA	Maricaban_Is	13.679198	120.8405	San Andres	Batangas	Batangas	CALABARXON	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 97783	Pnd	Pand	Pandanon_Id	10.1796678	124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	NA
 99660	Bit	Bito	Bito_River	NA	NA	NA	NA	NA	NA	NA	NA
 112159	Ros	Rosa	Rosa_Id	13.7167102	123.576012	San Andres	Batangas	Batangas	CALABARXON	Luzon	NA
@@ -92,7 +92,7 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 138650	Gal	PGal	NA	NA	NA	NA	NA	NA	NA	NA	NA
 138704	Dup	Dupo	Dupon_Bay	10.931896	124.426504	Monte Alegre	Isabel	Leyte	Eastern Visayas	Visayas	NA
 138826	Pnd	Pand	Pandanon_Id	10.1796678	124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	NA
-138831	Pnd	Pand	Pandanon_Id	NA	NA	NA	NA	NA	NA	NA	NA
+138831	Pnd	Pand	Pandanon_Id	10.295031	123.9126	NA	Cebu City	Cebu	Central Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 138933	Jol	Jolo	Tutu_Bay	6.1098091	120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	NA
 138934	Sur	Suri	NA	9.8011514	125.488763	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
 138936	Pal	Samr	Port_Palapag	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
@@ -207,7 +207,7 @@ Cam-2019-013_018	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-013_019	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-014_021	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-014_022	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
-Cam-2019-015_023	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
+Cam-2019-015_023	Pas	RagR	Pasacao	13.4983	123.0566	NA	Pasacao	Camarines Sur	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Cam-2019-016_030	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-017_028	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-017_029	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
@@ -217,7 +217,7 @@ Cam-2019-021_035	Atu	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-023_038	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 DAP-2022_01_01	Dap	Dapi	Selinog_Id_Dapitan	8.8421993	123.41175	NA	Dapitan City	Zamboanga del Norte	Northern Mindanao	Mindanao	NA
 Jol-2021-01_01	Jol	Jolo	"Panglima_Tahil,_Jolo"	6.1098091	120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	NA
-Jol-2021-01_02	NA	NA	Jolo	NA	NA	NA	NA	NA	NA	NA	NA
+Jol-2021-01_02	NA	NA	Jolo	5.924969	121.2113	NA	Panglima Estino	Sulu	BARMM	Mindanao	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Jol-2021-01_03	NA	NA	Jolo	NA	NA	NA	NA	NA	NA	NA	NA
 Jol-2021-02_01	Jol	Jolo	NA	5.9249685	121.211343	NA	Panglima Estino	Sulu	BARMM	Mindanao	NA
 Jol-2021-04_02	Jol	Jolo	Jolo	NA	NA	NA	NA	NA	NA	NA	NA
@@ -226,7 +226,7 @@ Kal-2019-002_002	Kal	NA	Kalibo	NA	NA	NA	NA	NA	NA	NA	NA
 Kal-2019-002_003	Kal	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Kal-2019-003_004	Kal	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 LEY-2022_04_02	Dup	Dupo	Dupon_Bay	10.9468872	124.417243	NA	Isabel	Leyte	Eastern Visayas	Visayas	Isabel Bay
-Luz-2017-036_001	Tic	MatB	Ticao_Pass	NA	NA	NA	NA	NA	NA	NA	NA
+Luz-2017-036_001	Tic	MatB	Ticao_Pass	12.666467	123.8709	NA	Bulan	Sorsogon	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Luz-2017-044_001	Mig	SMig	San_Miguel_Bay	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-045_001	Mat	MatB	Bulan	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-047_001	Rag	CanB	Ragay_Gulf	12.9520333	123.994789	NA	Sorsogon City	Sorsogon	Bicol Region	Luzon	Sorsogon Bay
@@ -247,9 +247,9 @@ PAL-2022_06_04	Mal	Mala	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Pal-2022-01_08	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 PAL-2022-02_03	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Pal-2022-03_05	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-PAL-2022-05_05	Mal	Mala	Malampaya	NA	NA	NA	NA	NA	NA	NA	NA
-Pga-2018-001_001	NA	NA	Puerto_Galera	NA	NA	NA	NA	NA	NA	NA	NA
-RAG-2022-01_01	Rag	RagR	Ragay	13.8105766	122.72906	NA	Ragay	Camarines Sur	Bicol Region	Luzon	NA
+PAL-2022-05_05	Mal	Mala	Malampaya	NA	NA	Liminangcong	Taytay	Palawan	NA	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+Pga-2018-001_001	NA	NA	Puerto_Galera	13.496494	120.9579	NA	Puerto Galera	Oriental Mindoro	MIMAROPA Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+RAG-2022-01_01	Rag	RagR	Ragay	13.8105766	122.72906	NA	Ragay	Camarines Sur	Bicol Region		NA
 RAG-2022-01_03	NA	NA	NA	13.8105766	122.72906	NA	Ragay	Camarines Sur	Bicol Region	Luzon	NA
 REU-2019-001_001	Dgt	NA	Dumaguete	NA	NA	NA	NA	NA	NA	NA	NA
 REU-2019-002_002	Dgt	NA	Dumaguete	NA	NA	NA	NA	NA	NA	NA	NA
@@ -269,9 +269,9 @@ Sam-2022-01_06	Cat	Catb	NA	11.7734659	124.879118	NA	Catbalogan	Samar	Eastern Vis
 Sam-2022-01_08	Cat	Catb	NA	11.7746792	124.878165	NA	Catbalogan	Samar	Eastern Visayas	Visayas	NA
 Sam-2022-01_09	Cat	Catb	NA	11.7734659	124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	NA
 Sam-2022-01_10	Cat	Catb	NA	11.7734659	124.879118	NA	Catbalogan	Samar	Eastern Visayas	Visayas	NA
-Sam-2022-02_05	Cab	Bali	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Sam-2022-02_06	Cab	Bali	"Sto_Nino,_Biri_Island"	NA	NA	NA	NA	NA	NA	NA	NA
-Sam-2022-02_07	Cab	Bali	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Sam-2022-02_05	Cab	Bali	NA	NA	NA	Cabacungan	Allen	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+Sam-2022-02_06	Cab	Bali	"Sto_Nino,_Biri_Island"	NA	NA	NA	NA	NA		NA	NA
+Sam-2022-02_07	Cab	Bali	NA	NA	NA	Cabacungan	Allen	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Sam-2022-02_11	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Sul-2019-05_01	Taw	Tawi	Bongao_Fish_Market_Tawi-Tawi	5.029866	119.775417	Tubig-Mampallam	Bongao	Tawi-tawi	BARMM	Mindanao	NA
 Sul-2019-07_01	Ban	Basi	Lamitan_Fish_Market_Basilan	6.9455558	122.248907	NA	Zamboanga City	Zamboanga del Sur	Zamboanga Peninsula	Mindanao	NA
@@ -281,19 +281,19 @@ Sul-2021-01_02	Taw	Tawi	Tataan_Pass	5.2272706	119.89344	Mandulan	Bongao	Tawi-taw
 Sul-2021-02_01	Tum	Tumi	Tumindao	4.6778438	119.415194	NA	Sitangkai	Tawi-tawi	BARMM	Mindanao	NA
 Sul-2021-03_01	Taw	Tawi	Tawi_Tawi	5.0345263	119.744525	Pahut	Bongao	Tawi-tawi	BARMM	Mindanao	NA
 Sul-2021-04_02	Tum	Tumi	Simunul_Id_Sibutu_Channel	4.8374273	119.817665	NA	Simunul	Tawi-tawi	BARMM	Mindanao	NA
-Sul-2021-05_02	Taw	Tawi	Bongao_Channel	NA	NA	NA	NA	NA	NA	NA	NA
+Sul-2021-05_02	Taw	Tawi	Bongao_Channel	5.034526	119.7445	Pahut	Bongao	Tawi-tawi	BARMM	Mindanao	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 SUR-2022_01_01	Sur	Suri	Surigao_Fish_Market	9.7903696	125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
 SUR-2022_01_02	Sur	Suri	Surigao_Fish_Market	9.7903696	125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
 TIC-2022-01_03	NA	NA	Masbate_City_Fish_Market	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_001	Gal	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
-VER-2022-01_002	Ver	PGal	NA	NA	NA	NA	NA	NA	NA	NA	NA
+VER-2022-01_002	Ver	PGal	NA	NA	NA		Batangas	Batangas	CALABARXON	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 VER-2022-01_003	Ver	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_007	Gal	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-001_001	Sub	SubB	Silanguin	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-002_003	Sub	SubB	Subic_City_Municipal_Fish_Port	NA	NA	NA	NA	NA	NA	NA	NA
-Zam-2019-003_005	Sub	SubB	Subic_City_Municipal_Fish_Port	NA	NA	NA	NA	NA	NA	NA	NA
+Zam-2019-003_005	Sub	SubB	Subic_City_Municipal_Fish_Port	14.874624	120.2175	NA	Subic	Zambales	Central Luzon	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Zam-2019-004_006	Mvi	Masi	Mansiloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
-Zam-2019-004_007	NA	NA	Masinloc_Public_Market	NA	NA	NA	NA	NA	NA	NA	NA
+Zam-2019-004_007	NA	NA	Masinloc_Public_Market	15.489188	119.9111	NA	Palaulg	Zambales	Central Luzon	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Zam-2019-004_011	Mvi	Masi	Mansiloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
 Zam-2019-004_012	Mvi	Masi	Masinloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
 Zam-2019-006_020	Mvi	Masi	Masinloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay

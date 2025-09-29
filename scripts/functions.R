@@ -1651,10 +1651,11 @@ update_database <- function(integrate_files = TRUE){
                  into = c('genus', 'specificEpithet'),
                  sep = '_', remove = FALSE) %>% #select(individual_id)
         
-        mutate(#materialSampleID = if (is.null(.env$geome_ids)) str_sub(species_code, 1, 2) else .env$geome_ids,
-               principalInvestigator = 'Kent_Carpenter',
+        mutate(principalInvestigator = 'Kent_Carpenter',
                across(c(locality, province),
                       ~str_replace_all(., ' ', '')), 
+               across(c(locality, province),
+                      ~str_replace_na(., replacement = 'NA')), 
                locality = str_c(locality, province, sep = '_'),
                country = 'Philippines',
                lifeStage = 'adult',
