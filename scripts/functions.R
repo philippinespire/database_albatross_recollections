@@ -1583,6 +1583,14 @@ update_database <- function(integrate_files = TRUE){
 }
 
 #### GEOME Utilities ####
+.message_tibble <- function(x) {
+    stopifnot(inherits(x, "tbl_df"))
+    msg <- paste(capture.output(print(x)), collapse = "\n")
+    message(msg)
+    invisible(x)
+}
+
+
 .make_geome_metadata <- function(extraction_ids, geome_ids = NULL){
     #extraction is required and is a character vector of the extraction IDs used.
     #geome_ids is optional. If included it is the values to be assigned to 
@@ -1726,7 +1734,7 @@ update_database <- function(integrate_files = TRUE){
     message('User needs to fill "fieldNotes')
     message('    For Albatross, copy from the site notes here https://www.google.com/maps/d/edit?mid=1leLurkYXC3FezrY59AhoU0QTjvi4fsIl&usp=sharing')
     message('    For Contemporary, copy or summarize from the field notes (file path: ODUOneDrive/Field Collections)\n')
-    print(field_notes_locations)
+    .message_tibble(field_notes_locations)
     message('\nUser needs to modify "tissueRecordedBy" to fit GEOME format: ')
     message("   List names with an underscore between the first and last name. If there is more than one name, use a space and the pipe operator '|' between each name (the pipe operator is specified to be used in the GEOME FAQs). Example: Kent_Carpenter | Maddy_Kenton.\n")
     
