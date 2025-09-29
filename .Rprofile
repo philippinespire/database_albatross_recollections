@@ -145,16 +145,16 @@ if (interactive()) {
   #      }
   #    }
   #  }
-    
-    # Try to unload packages that might conflict
-    safe_unload("stringr")
-    safe_unload("janitor")
-    safe_unload("purrr")
-    
-  }, error = function(e) {
-    # If unloading fails, we'll handle it silently
-    NULL
-  })
+  #  
+  #  # Try to unload packages that might conflict
+  #  safe_unload("stringr")
+  #  safe_unload("janitor")
+  #  safe_unload("purrr")
+  #  
+  #}, error = function(e) {
+  #  # If unloading fails, we'll handle it silently
+  #  NULL
+  #})
 
   # Clear line and start our output
   cat("\n============================================================\n")
