@@ -130,15 +130,29 @@ if (!is.null(.project_dir)) {
 if (interactive()) {
   
   # Ensure clean namespace before loading
-  tryCatch({
-    if ("stringr" %in% loadedNamespaces()) {
-      unloadNamespace("stringr")
-    }
-    if ("janitor" %in% loadedNamespaces()) {
-      unloadNamespace("janitor")
-    }
+  # tryCatch({
+  #  # Function to safely unload a package if possible
+  #  safe_unload <- function(pkg) {
+  #    if (pkg %in% loadedNamespaces()) {
+  #      # Check if any loaded namespaces depend on this package
+  #      deps <- sapply(loadedNamespaces(), function(ns) {
+  #        imports <- getNamespaceImports(ns)
+  #        pkg %in% names(imports)
+  #      })
+  #      
+  #      if (!any(deps)) {
+  #        try(unloadNamespace(pkg), silent = TRUE)
+  #      }
+  #    }
+  #  }
+    
+    # Try to unload packages that might conflict
+    safe_unload("stringr")
+    safe_unload("janitor")
+    safe_unload("purrr")
+    
   }, error = function(e) {
-    # If unloading fails, we'll handle it
+    # If unloading fails, we'll handle it silently
     NULL
   })
 
