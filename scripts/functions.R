@@ -1782,6 +1782,7 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
                        by = 'catalogNumber') %>%
             relocate(catalogNumber, .after = 'preservative') %>%
             mutate(materialSampleID = str_c(materialSampleID, '_lib', 1:n()),
+                   tissueID = materialSampleID,
                    .by = materialSampleID)
     }, type = "message") 
     
