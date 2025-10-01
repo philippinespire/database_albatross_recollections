@@ -1743,6 +1743,10 @@ update_database <- function(integrate_files = TRUE){
     message('\nUser needs to modify "tissueRecordedBy" to fit GEOME format: ')
     message("   List names with an underscore between the first and last name. If there is more than one name, use a space and the pipe operator '|' between each name (the pipe operator is specified to be used in the GEOME FAQs). Example: Kent_Carpenter | Maddy_Kenton.\n")
     
+    message("   Other resources to find missing information:")
+    message("      * https://drive.google.com/file/d/1CLNuOJJAoEva_7wqxqVX3mDaNFH0cr-r/view")
+    message("      * ODUOneDrive/ALBATROSS_1907-1910updatedALLrecordsNotations.xlsx\n")
+    
     
     select(out, -collection_site, -collection_era)
 }
