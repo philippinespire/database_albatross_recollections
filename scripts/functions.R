@@ -1929,6 +1929,56 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
         
     }
     
+    ncbi_text_out <- select(expeditions, expedition_name) %>%
+        separate(expedition_name, 
+                 into = c('species_code', 'year',
+                          'local', 'region', 'study_type'),
+                 sep = '_',
+                 remove = FALSE) %>%
+        nest(location_info = -c(species_code)) %>%
+        inner_join(pire_database() %>% 
+                       pull_tbl('species_sheets') %>%
+                       select(species_code, species_valid_name),
+                   by = 'species_code') %>%
+        unnest(location_info) %>%
+        mutate(ncbi_title = str_c("Project Title:",
+                                  str_replace(expedition_name,
+                                        species_code,
+                                        species_valid_name)),
+               ncbi_description = str_c("Project Description:",
+                                        str_replace_all(study_type, 
+                                                        c('lcwgs' = 'Low coverage whole genome',
+                                                          'cssl' = 'Capture',
+                                                          'ssl' = 'Shotgun')),
+                                        'sequencing data for the fish',
+                                        str_replace_all(species_valid_name, 
+                                                    '_', ' '),
+                                        'collected in',
+                                        year, 'in',
+                                        str_c(local, 
+                                              region, 
+                                              'Philippines.',
+                                              sep = ', '),
+                                        sep = ' '),
+               .keep = 'none')
+    
+    for(i in 1:nrow(ncbi_text_out)){
+        .message_and_log('\n', file = output_file)
+        .message_and_log(ncbi_text_out$ncbi_title[i], file = output_file)
+        .message_and_log(ncbi_text_out$ncbi_description[i], file = output_file)
+    }
+    
+    .message_and_log("\n", file = output_file)
+    .message_and_log("Relevance: Evolution", file = output_file)
+    .message_and_log("  External links:", file = output_file)
+    .message_and_log("    - Description: Philippines PIRE Project: Centennial Genetic and Species Transformations in the Epicenter of Marine Biodiversity URL: https://sites.wp.odu.edu/PIRE/philippines/", file = output_file)
+    .message_and_log("    - Description: Philippines PIRE Project Metadata URL: https://geome-db.org/workbench/project-overview?projectId=511", file = output_file)
+    
+    .message_and_log("\n", file = output_file)
+    .message_and_log("Grant ID: OISE-1743711", file = output_file)
+    .message_and_log("Grant Title: Centennial Genetic and Species Transformations in the Epicenter of Marine Biodiversity", file = output_file)
+    .message_and_log("Agency: National Science Foundation", file = output_file)
+    .message_and_log("Agency Abbreviation: NSF", file = output_file)
     
     .message_and_log('-----------------------------------------------\n', file = output_file)
     arrange(expeditions, expedition_name)
