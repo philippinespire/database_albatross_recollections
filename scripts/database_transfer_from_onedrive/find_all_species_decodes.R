@@ -66,12 +66,14 @@ get_tamucc_hpc_data <- function(){
   out
 }
 
-# decode_file <- file.path(tamucc_onedrive, "Plotosus lineatus/Pli-LCWGS-FullSeq_SequenceNameDecode.tsv")
+# decode_file <- file.path(tamucc_onedrive, "Spratelloides delicatulus/Sde_CSSL-Full_SequenceNameDecode.txt")
 read_decode_file <- function(decode_file){
   read_delim(decode_file,
              delim = '\t', 
              show_col_types = FALSE,
              col_names = FALSE) %>% #View
+        
+        # filter(str_detect(X1, 'cont')) %>%
         
         
     
@@ -91,6 +93,10 @@ read_decode_file <- function(decode_file){
                                 str_detect(val, "_1$|_2$") ~ "original_file",
                             str_detect(decode_file, "Pli-LCWGS-Reseq_SequenceNameDecode.tsv") & 
                                 str_detect(val, "_1$|_2$") ~ "original_file",
+                            str_detect(decode_file, "Pli-A-LCWGS-Seq_SequenceNameDecode.txt") & 
+                                str_detect(val, "_1$|_2$") ~ "original_file",
+                            str_detect(decode_file, "Sde_CSSL-Full_SequenceNameDecode.txt") & 
+                                str_detect(val, "Sde_cont") ~ "original_file",
                             str_detect(val, "[-_]") ~ "renamed_file",
                             TRUE ~ "original_file")) %>%
     group_by(.row_id, kind) %>% 
@@ -103,7 +109,7 @@ read_decode_file <- function(decode_file){
 get_decodes <- function(){
   list.files(path = tamucc_onedrive, 
              recursive = TRUE, 
-             pattern = 'tsv$') %>%
+             pattern = 'tsv|txt$') %>%
     str_subset('[Dd]ecode') %>%
     tibble(decode_file = .) %>%
     rowwise(decode_file) %>%
@@ -131,7 +137,8 @@ find_extraction_ids <- function(decode_data,
                                  "ARag-" = "ARag_",
                                  "Och_CTum" = "Och-CTum",
                                  "_Ex2" = "-Ex2",
-                                 "_E1" = "-Ex1")),
+                                 "_E1" = "-Ex1",
+                                 'Sde-C01_061' = "Sde-CMat_061")),
            extraction_id = case_when(str_detect(extraction_id, 'Aen-AHam_') & !str_detect(extraction_id, 'Ex*$') ~ str_c(extraction_id, '-Ex1'),
                                      str_detect(extraction_id, 'Aen-CBat_') & !str_detect(extraction_id, 'Ex*$') ~ str_c(extraction_id, '-Ex1'),
                                      str_detect(extraction_id, 'Lle-AHam_') & !str_detect(extraction_id, 'Ex*$') ~ str_c(extraction_id, '-Ex1'),
@@ -144,7 +151,8 @@ find_extraction_ids <- function(decode_data,
                   by = c('renamed_sequence_id',
                          'extraction_id')) %>% #filter(!is.na(fixed_extraction_id)) %>%
         mutate(extraction_id = coalesce(fixed_extraction_id, extraction_id),
-               .keep = 'unused')
+               .keep = 'unused') %>%
+        distinct()
 }
 
 #### Find all Species Decodes ####
@@ -154,38 +162,29 @@ blat2 <- blat %>%
     find_extraction_ids()
 
 
-filter(blat2,
-       str_detect(extraction_id, 'Pba-AGal'))
-
-
-pire_database() %>%
-    dm_filter(dna_extractions_sheets = (str_detect(extraction_id, "Adu-CMat_001"))) %>%
-    pull_tbl('dna_extractions_sheets') %>%
-    select(extraction_id)
 
 blamo <- pull_tbl(pire_database(),
          'dna_extractions_sheets') %>%
     select(individual_id, extraction_id)
 
-problem_ids <- tibble(extraction_id = c("Adu-AMat_001-Ex1",
-                                        'Adu-AMat_003-Ex1',
-                                        "Adu-AMat_089-Ex1",
-                                        "Adu-CMat_097-Ex1",
-                                        "Adu-CMat_099-Ex1",
-                                        "Sde-C01_061-Ex1"))
-anti_join(blat, 
-          problem_ids,
-          by = join_by(extraction_id)) 
 
 blat2 %>%
     left_join(blamo,
           by = join_by(extraction_id)) %>%
-    filter(is.na(individual_id))
+    filter(is.na(individual_id)) %>% #count(decode_file) %>% pull(decode_file)
+    select(original_sequence_id, renamed_sequence_id, extraction_id)
 
-filter(blamo, str_detect(extraction_id, "Pba-AGal")) 
+blamo %>%
+    left_join(blat2,
+              by = join_by(extraction_id)) %>%
+    filter(is.na(original_sequence_id)) %>%
+    distinct %>% View
 
+filter(blamo, str_detect(extraction_id, "Adu-CMat_099")) 
 
-write_csv(blat, '')
+filter(blamo, str_detect(individual_id, "Sde-CHam_020|Sde-CVal_078|Sde-CHam_090|Sde-CVal_063|Sde-CHam_008|Sde-CVal_044"))
+
+write_csv(blat2, '../../sandbox/decode_file_with_extractionID.csv')
 #### associate with database extractions ####
 
 #### Get all PIRE fq files ####
