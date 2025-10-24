@@ -421,7 +421,7 @@ suppressPackageStartupMessages(library(here))
 # Compile database for use
 .compile_db_inputs <- function(verbose = FALSE){
     
-    list.files(here::here("db_files"), 
+    raw_files <- list.files(here::here("db_files"), 
                pattern = 'tsv$',
                full.names = TRUE, 
                recursive = TRUE) %>%
@@ -441,7 +441,9 @@ suppressPackageStartupMessages(library(here))
                       bind_rows() %>%
                       list(),
                   .by = file_type) %>%
-        rowwise %>%
+        rowwise 
+    
+    raw_files %>%
         mutate(sheet = .apply_corrections(sheet, file_type, verbose) %>%
                    list()) %>%
         ungroup %>%
