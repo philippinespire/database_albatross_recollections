@@ -1320,7 +1320,7 @@ pire_database <- function() {
 
 .format_extraction_id <- function(x) {
     # match pieces: 3 letters – 4 letters – digits – Ex + 1 digit
-    m <- str_match(x, "^([A-Za-z]{3})-([A-Za-z]{4})_([0-9]+)-Ex([0-9])$")
+    m <- str_match(x, "^([A-Za-z]{3})-([A-Za-z]{4})_([0-9]+)-E[xX]([0-9])$")
     out <- rep(NA_character_, length(x))
     ok <- !is.na(m[, 1])
     
@@ -1423,6 +1423,11 @@ pire_database <- function() {
             #Covert decode format to accepted format
             if (table_type == 'sequence_filename_sheets' & ncol(data) == 2){
                 data <- .convert_decode(data)
+            }
+            
+            #Ensure extraction ID is formatted properly
+            if (table_type == 'dna_extractions_sheets'){
+                data <- mutate(data, extraction_id = .format_extraction_id(extraction_id))
             }
             
             # Add to staging data list
