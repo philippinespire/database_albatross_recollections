@@ -575,6 +575,8 @@ suppressPackageStartupMessages(library(here))
                       columns = c(shipment_id, plate_box_id)) %>%
         dm::dm_add_pk(sequence_info_sheets,
                       columns = c(sequencing_batch_id)) %>%
+        dm::dm_add_pk(sequence_filename_sheets,
+                      columns = c(pire_sequence_id)) %>%
         identity()
     
     db_with_pk %>%
@@ -604,6 +606,9 @@ suppressPackageStartupMessages(library(here))
                   dna_extractions_gels, 
                   elution_plate_id) %>% 
         dm_add_fk(elution_junction, 
+                  extraction_id, 
+                  dna_extractions_sheets) %>%
+        dm_add_fk(sequence_filename_sheets, 
                   extraction_id, 
                   dna_extractions_sheets) %>%
         identity()
@@ -1313,6 +1318,43 @@ pire_database <- function() {
     return(TRUE)
 }
 
+.format_extraction_id <- function(x) {
+    # match pieces: 3 letters – 4 letters – digits – Ex + 1 digit
+    m <- str_match(x, "^([A-Za-z]{3})-([A-Za-z]{4})_([0-9]+)-Ex([0-9])$")
+    out <- rep(NA_character_, length(x))
+    ok <- !is.na(m[, 1])
+    
+    if (any(ok)) {
+        seg1 <- m[ok, 2]                         # 3 letters
+        seg2 <- m[ok, 3]                         # 4 letters
+        num  <- m[ok, 4]                         # digits
+        exd  <- m[ok, 5]                         # 1 digit after Ex
+        
+        seg1_fmt <- paste0(toupper(substr(seg1, 1, 1)),
+                           tolower(substr(seg1, 2, 3)))
+        seg2_fmt <- paste0(toupper(substr(seg2, 1, 2)),
+                           tolower(substr(seg2, 3, 4)))
+        num_fmt  <- sprintf("%03d", as.integer(num)) # zero-pad to 3
+        
+        out[ok] <- paste0(seg1_fmt, "-", seg2_fmt, "_", num_fmt, "-Ex", exd)
+    }
+    
+    out
+}
+
+.convert_decode <- function(decode_data){
+    decode_data %>%
+        rename(gcl_sequence_id = sequence_name,
+               pire_sequence_id = extraction_id) %>%
+        mutate(across(where(is.character), ~str_remove(., ' '))) %>%
+        mutate(extraction_id = str_extract(pire_sequence_id, 
+                                           "^.*[0-9]{3}([- _]E(x*)?[\\d\\?])?")) %>% 
+        #fix commong errors
+        mutate(extraction_id = str_replace_all(extraction_id, 
+                                               c('_Ex' = '-Ex')),
+               extraction_id = .format_extraction_id(extraction_id)) 
+}
+
 #' Main validation and integration pipeline
 #'
 #' @param staging_path Path to staging folder (defaults to here::here("staging"))
@@ -1366,13 +1408,22 @@ pire_database <- function() {
         
         # Read the file
         tryCatch({
+            enc <- stringi::stri_enc_detect(readr::read_file_raw(file))[[1]]
+            best <- enc$Encoding[which.max(enc$Confidence)]
+            
             data <- read_delim(file,
                                delim = '\t',
+                               locale = readr::locale(encoding = best),
                                show_col_types = FALSE,
                                na = c("", "NA", "None"),
                                guess_max = 1e6) %>%
                 rename_with(~str_to_lower(.x)) %>%
                 mutate(across(everything(), ~str_trim(.x)))
+            
+            #Covert decode format to accepted format
+            if (table_type == 'sequence_filename_sheets' & ncol(data) == 2){
+                data <- .convert_decode(data)
+            }
             
             # Add to staging data list
             if (table_type %in% names(staging_data_list)) {

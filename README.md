@@ -24,6 +24,7 @@
 - [Shipment Sheets](db_files/shipments_sheets/README.md) **Unlinked to main DB**
 - [Species Sheets](db_files/shipments_sheets/README.md)
 - [DNA Extraction Gels](db_files/dna_extractions_gels/README.md)
+- [Sequence Filenames Sheets](db_files/sequence_filename_sheets/README.md)
 
 ## Quick Start 
 Double click on `database_albatross_recollections.Rproj`
@@ -242,6 +243,35 @@ pire_db %>%
 6 Zam-2019-004_012 Masinloc_Public_Market     Palaulg               Zambales       Central Luzon   Luzon                         2019                2019 Contemporary  
 ```
 </details>
+
+```r
+#Get Sequence filenames for all Sgr species
+pire_db <- pire_database()
+pire_db %>%
+	dm_filter(species_sheets = (species_code == 'Sgr')) %>%
+    pull_tbl(sequence_filename_sheets)
+```
+
+<details>
+  <summary>Output</summary>
+
+```r
+# A tibble: 799 × 8
+   sequence_filename_sheetsfile_path                                                                      gcl_sequence_id pire_sequence_id extraction_id correction_applied correction_id correction_details correction_date
+   <chr>                                                                                                  <chr>           <chr>            <chr>         <lgl>              <chr>         <chr>              <chr>          
+ 1 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0103511C     Sgr-AMvi_035_Ex… Sgr-AMvi_035… FALSE              NA            NA                 NA             
+ 2 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0104307D     Sgr-AMvi_043_Ex… Sgr-AMvi_043… FALSE              NA            NA                 NA             
+ 3 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0104610D     Sgr-AMvi_046_Ex… Sgr-AMvi_046… FALSE              NA            NA                 NA             
+ 4 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0105406E     Sgr-AMvi_054_Ex… Sgr-AMvi_054… FALSE              NA            NA                 NA             
+ 5 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0104711D     Sgr-AMvi_047_Ex… Sgr-AMvi_047… FALSE              NA            NA                 NA             
+ 6 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0104408D     Sgr-AMvi_044_Ex… Sgr-AMvi_044… FALSE              NA            NA                 NA             
+ 7 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0104812D     Sgr-AMvi_048_Ex… Sgr-AMvi_048… FALSE              NA            NA                 NA             
+ 8 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0104206D     Sgr-AMvi_042_Ex… Sgr-AMvi_042… FALSE              NA            NA                 NA             
+ 9 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0103903D     Sgr-AMvi_039_Ex… Sgr-AMvi_039… FALSE              NA            NA                 NA             
+10 C:/Users/jdsel/Documents/Google Drive/TAMUCC-CORE/PIRE/database_albatross_recollections/db_files/sequ… SgA0106909F     Sgr-AMvi_069_Ex… Sgr-AMvi_069… FALSE              NA            NA                 NA             
+```
+</details>
+
 
 Make metadata sheets for GEOME upload. This will output csv files of the sites/sampling times for the specified list of extraction IDs into the specified path for upload to GEOME. The user need to update some columns (indicated in the messages output to the console) to match GEOME requirements.
 ```

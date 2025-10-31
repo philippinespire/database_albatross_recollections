@@ -1,6 +1,6 @@
 #### Setup & Get database ####
 #use github to clone the database repo into the top level of this repo
-source("../../.Rprofile")
+source(".Rprofile")
 
 ##
 
@@ -102,8 +102,8 @@ read_decode_file <- function(decode_file){
     group_by(.row_id, kind) %>% 
     summarise(val = dplyr::first(val), .groups = "drop") %>%
     pivot_wider(names_from = kind, values_from = val) %>%
-    select(original_sequence_id = original_file, 
-           renamed_sequence_id = renamed_file) 
+    select(gcl_sequence_id = original_file, 
+           pire_sequence_id = renamed_file) 
 }
 
 get_decodes <- function(){
@@ -117,15 +117,15 @@ get_decodes <- function(){
                                        decode_file)))
 }
 
-find_extraction_ids <- function(decode_data,
-                                mislabelled_ids_path = '../../db_files/extractions_mislabelling_sheet.csv'){
+extract_extraction_ids <- function(decode_data,
+                                mislabelled_ids_path = 'db_files/extractions_mislabelling_sheet.csv'){
     correction_data <- read_csv(mislabelled_ids_path, show_col_types = FALSE) %>%
-        select('renamed_sequence_id' = 'Original_Sequence_ID', 
+        select('pire_sequence_id' = 'Original_Sequence_ID', 
                'extraction_id' = "Original_Extraction_ID", 
                'fixed_extraction_id' = "Corrected_Extraction_ID")
     
     decode_data %>%
-        mutate(extraction_id = str_extract(renamed_sequence_id, 
+        mutate(extraction_id = str_extract(pire_sequence_id, 
                                        "^.*[0-9]{3}([- _]E(x*)?[\\d\\?])?") %>%
                str_replace_all(c('Exx1' = 'Ex1',
                                  " E1" = '-Ex1',
@@ -148,19 +148,33 @@ find_extraction_ids <- function(decode_data,
         distinct() %>%
         
         left_join(correction_data,
-                  by = c('renamed_sequence_id',
+                  by = c('pire_sequence_id',
                          'extraction_id')) %>% #filter(!is.na(fixed_extraction_id)) %>%
         mutate(extraction_id = coalesce(fixed_extraction_id, extraction_id),
                .keep = 'unused') %>%
-        distinct()
+        distinct() %>%
+        mutate(pire_sequence_id = case_when(pire_sequence_id == 'Psq-CGal_005-Ex1-5A-ssl-1-1' &
+                                                gcl_sequence_id == "PsC0700506A" ~ 'Psq-CGal_005-Ex1-5A-ssl-1-2',
+                                            TRUE ~ pire_sequence_id))
 }
 
 #### Find all Species Decodes ####
-blat <- get_decodes()
+combined_decode_files <- get_decodes() %>%
+    select(-decode_file)
 
-blat2 <- blat %>%
-    find_extraction_ids()
+combined_decode_files %>%
+    extract_extraction_ids() %>%
+    filter(.by = pire_sequence_id,
+           n() > 1) 
 
+combined_decode_files %>%
+    extract_extraction_ids() %>%
+    write_tsv("db_files/sequence_filename_sheets/sequence_filename_sheet_initial.tsv")
+
+
+## Experimental Beyond
+blat2 <- combined_decode_files %>%
+    extract_extraction_ids()
 
 
 blamo <- pull_tbl(pire_database(),
