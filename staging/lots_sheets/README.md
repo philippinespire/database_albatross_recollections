@@ -42,5 +42,3 @@ This table has a row for each lot. A "lot" is a jar of fish all taken from the s
 | **Collection\_status**               | Status of the collection effort (e.g., collected\_full, duplicate, collect\_more) |
 | **Duplicate\_count**                 | Number of duplicate individuals/specimens recorded                                |
 
-## Initial Sheet Conversion 
-Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.

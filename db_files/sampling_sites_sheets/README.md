@@ -21,4 +21,7 @@ Each line is a samping site.
 
 
 ## Initial Sheet Creation 
-Intial Sheet was created on XX-XX-XXXX. Using [`db_files/sampling_sites_sheets/initialize_sampling_sites_sheets.R`](db_files/sampling_sites_sheets/initialize_sampling_sites_sheets.R). Extra information added by manually looking up sites with coordinates using https://wikimapia.org/#lang=en and https://www.philatlas.com/search.html
+Intial Sheet was created on 29 Sept 2025. Using [`db_files/sampling_sites_sheets/initialize_sampling_sites_sheets.R`](db_files/sampling_sites_sheets/initialize_sampling_sites_sheets.R). Extra information added by manually looking up sites with coordinates using https://wikimapia.org/#lang=en and https://www.philatlas.com/search.html
+
+#Todo
+- make site_id primary key & remove lot_id (maybe use collection_site too

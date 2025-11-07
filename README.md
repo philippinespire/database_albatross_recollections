@@ -224,6 +224,7 @@ pire_db %>%
     dm_select(sampling_sites_sheets, lot_id, 
               collection_site, local_government_unit:island_group) %>%
     dm_flatten_to_tbl(start = lots_sheets,
+                      individuals_sheets,
                       sampling_sites_sheets,
                       .join = dplyr::full_join)
 ```

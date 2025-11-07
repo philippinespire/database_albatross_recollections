@@ -23,5 +23,3 @@ These files are compiled into the individuals sheet of the database. All .tsv fi
 | **Species\_ID\_day**                     | Day when the species identification was made                                 |
 | **Species\_ID\_date\_originallyEntered** | Original date entry for species identification (raw format). This is not in a consistent date format (Malin's note 08/2025).                 |
 
-## Initial Sheet Conversion 
-Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.

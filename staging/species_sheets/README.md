@@ -36,5 +36,3 @@ Each line is a species.
 | **Red\_list\_status**                                     | IUCN Red List conservation status                                                |
 | **References**                                            | References for taxonomy, ecology, or conservation status                         |
 
-## Initial Sheet Conversion 
-Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.

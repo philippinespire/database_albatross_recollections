@@ -30,4 +30,7 @@ Each line a DNA sequencing run.
 | **Bioinformatics\_Notes**               | Notes on bioinformatic challenges and discoveries. See the species-specific git repo for more details.                                                           |
 
 ## Initial Sheet Conversion 
-Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.
+Conversion from onedrive excel file database to github based database on 7 November 2025. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.
+
+todo - remove site_id, era, match_id, collection_year_start
+- make have foreign key to link with others

@@ -32,15 +32,15 @@ This table has a row for each lot. A "lot" is a jar of fish all taken from the s
 | **taxonomic\_notes**   | Notes on the species name of the majority of individuals in the lot. This isn't definitive and is sometimes a note. Not useful as a database key. Use Individuals sheet instead.                           |
 | **Collection\_site**                 | Name of the collection site. This field is not standardized. See Site_ID.                                |
 | **Site\_ID**                         | A three letter site abbreviation. This same abbreviation may have been used for different locations in a different species, and it is applied to multiple nearby locations in the same species (<80 km apart or so)                                                |
-| **Match\_ID**                        | A four letter code to link Albatross sites to Contemporary sites across time.                                        |
-| **latitude**                         | Latitude of collection site                                                       |
-| **longitude**                        | Longitude of collection site                                                      |
 | **Lot\_status**                      | Current status of the lot (e.g., collected, pending, to\_collect)                 |
 | **Priority**                         | Priority level for processing or study                                            |
 | **project\_owner**                   | Name of the project owner or PI                                                   |
-| **Notes**                            | Free-text notes about the lot                                                     |
 | **Collection\_status**               | Status of the collection effort (e.g., collected\_full, duplicate, collect\_more) |
 | **Duplicate\_count**                 | Number of duplicate individuals/specimens recorded                                |
+| **Notes**                            | Free-text notes about the lot                                                     |
 
 ## Initial Sheet Conversion 
-Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.
+Conversion from onedrive excel file database to github based database on 7 November 2025. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.
+
+#TODO - 
+- make collection_site foreign key for site sheet

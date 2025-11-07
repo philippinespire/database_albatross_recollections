@@ -3,6 +3,11 @@ the_db <- pire_database()
 
 dm_examine_constraints(the_db)
 
+anti_join(pull_tbl(the_db, "sequence_filename_sheets"),
+          pull_tbl(the_db, "dna_extractions_sheets"),
+          by = 'extraction_id')
+
+
 pull_tbl(the_db, "individuals_sheets")
 pull_tbl(the_db, "lots_sheets")
 

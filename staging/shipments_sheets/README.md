@@ -22,5 +22,3 @@ Each line a shipment.
 | **filter\_out\_this\_row**                           | Flag indicating whether to exclude this row from analysis/processing                          |
 | **Notes**                                            | Free-text notes about the shipment                                                            |
 
-## Initial Sheet Conversion 
-Conversion from onedrive excel file database to github based database on XX-XX-XXXX. Using [`scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R`](scripts/database_transfer_from_onedrive/transfer_sheets_to_repo.R). OneDrive database no longer maintained or added to after this date.
