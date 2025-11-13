@@ -1,0 +1,15 @@
+PIRE Database Validation Report
+Generated: 2025-11-13 16:52:04.699661
+============================================================
+
+
+File: individuals_sheets/add_missing_Hte_gitIssue56_jds.tsv.tsv
+Table Type: individuals_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Missing required columns in individuals_sheets:
+  - field_id
+
+Fix: Add these columns to your TSV file with appropriate data
+----------------------------------------
