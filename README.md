@@ -276,7 +276,40 @@ pire_db %>%
 ```
 </details>
 
-**Example 5: Prepare for GEOME upload**  
+**Example 5: Get selected metadata for a batch of sequence_ids (in filenames)**
+- change contents of `dm_select` to choose what columns to keep from each sheet
+```
+sequence_id <- c("Hte-ATic_096-Ex1-cssl", "Sde-AMat_069_Ex1-9E-WGS-2-Zymo", "Hte-AMvi_039-Ex1-cssl", "Hmi-CPar_042-Ex1-4E-cssl-2", "Gmi-CBat_094_Ex1")
+
+filtered_db <- pire_database() %>%
+    dm_filter(sequence_filename_sheets = (pire_sequence_id %in% sequence_id)) %>%
+    dm_select(sequence_filename_sheets, 
+              gcl_sequence_id, pire_sequence_id,
+              extraction_id) %>%
+    dm_select(dna_extractions_sheets,
+              individual_id, extraction_id) %>%
+    dm_select(individuals_sheets,
+              individual_id, lot_id) %>%
+    dm_select(lots_sheets,
+              lot_id, era = collection_era) %>%
+    dm_select(sampling_sites_sheets,
+              lot_id, site = site_id,
+              latitude, longitude)
+
+sample_metadata <- full_join(pull_tbl(filtered_db, "sequence_filename_sheets"),
+                             pull_tbl(filtered_db, "dna_extractions_sheets"),
+                             by = 'extraction_id') %>%
+    full_join(pull_tbl(filtered_db, "individuals_sheets"),
+              by = 'individual_id') %>%
+    full_join(pull_tbl(filtered_db, "lots_sheets"),
+              by = 'lot_id') %>%
+    full_join(pull_tbl(filtered_db, "sampling_sites_sheets"),
+              by = 'lot_id')
+
+sample_metadata
+```
+
+**Example 6: Prepare for GEOME upload**  
 Make metadata sheets for GEOME upload. This will output csv files of the sites/sampling times for the specified list of extraction IDs into the specified path for upload to GEOME. The user need to update some columns (indicated in the messages output to the console) to match GEOME requirements.
 ```
 output_geome_metadata(extraction_ids, path/for/output, sequence_ids = original_sequence_id)
