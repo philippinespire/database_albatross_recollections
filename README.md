@@ -190,6 +190,7 @@ pull_tbl(pire_db, "individuals_sheets") %>%
 
 <br>
 
+**Example 2: Identify the lot numbers for a set of Individual IDs**
 ```r
 #Filter the database to only include certain individuals and identify the lots associated with those samples:
 pire_db <- pire_database()
@@ -210,6 +211,7 @@ dm_filter(pire_db,
            collection_era, site_id)
 ```
 
+**Example 3: Identify the site and lot numbers for a set of Extraction IDs**
 ```r
 #Get Site/Lot info for a set of extractions
 extraction_ids <- c("Sgr-CBir_004-Ex1", "Sgr-AMvi_035-Ex1", "Sgr-AMvi_046-Ex1", "Sgr-CMvi_052-Ex1", "Sgr-AJol_091-Ex1")
@@ -245,6 +247,7 @@ pire_db %>%
 ```
 </details>
 
+**Example 4: Identify the DNA sequence filenames for a species** 
 ```r
 #Get Sequence filenames for all Sgr species
 pire_db <- pire_database()
@@ -273,7 +276,7 @@ pire_db %>%
 ```
 </details>
 
-
+**Example 5: Prepare for GEOME upload**  
 Make metadata sheets for GEOME upload. This will output csv files of the sites/sampling times for the specified list of extraction IDs into the specified path for upload to GEOME. The user need to update some columns (indicated in the messages output to the console) to match GEOME requirements.
 ```
 output_geome_metadata(extraction_ids, path/for/output, sequence_ids = original_sequence_id)
