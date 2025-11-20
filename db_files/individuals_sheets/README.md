@@ -8,7 +8,6 @@ These files are compiled into the individuals sheet of the database. All .tsv fi
 | **Species\_valid\_name**                 | Our best attempt at identifying this individual taxonomically. This may or may not be a Latin binomial. It may be a genus or a couple species. This field links to the [species sheet](../species_sheets/README.md).                    |
 | **Lot\_ID**                              | Identifier for the lot (group of collected individuals). Links to the [Lot sheet](../lots_sheets/README.md).                      |
 | **Individual\_ID**                       | Unique identifier for the individual specimen (**Primary Key**)                               |
-| **Field\_ID**                       | Identification number assigned during field collection (not all individuals will have)                               |
 | **New\_USNM**                            | New U.S. National Museum (Smithsonian) catalog number                        |
 | **USNM\_Biorepository**                  | Biorepository code or accession at USNM                                      |
 | **Species\_ID\_method**                  | Method used to determine species identification (e.g., morphology, genetics) |

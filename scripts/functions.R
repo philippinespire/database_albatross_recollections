@@ -577,6 +577,8 @@ suppressPackageStartupMessages(library(here))
                       columns = c(sequencing_batch_id)) %>%
         dm::dm_add_pk(sequence_filename_sheets,
                       columns = c(pire_sequence_id)) %>%
+        dm::dm_add_pk(tissues_sheets,
+                      columns = c(tissue_id)) %>%
         identity()
     
     db_with_pk %>%
@@ -611,6 +613,12 @@ suppressPackageStartupMessages(library(here))
         dm_add_fk(sequence_filename_sheets, 
                   extraction_id, 
                   dna_extractions_sheets) %>%
+        dm_add_fk(tissues_sheets,
+                  individual_id,
+                  individuals_sheets) %>%
+        dm_add_fk(dna_extractions_sheets,
+                  tissue_id,
+                  tissues_sheets) %>%
         identity()
 }
 

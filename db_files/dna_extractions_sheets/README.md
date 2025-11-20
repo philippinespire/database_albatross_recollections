@@ -7,7 +7,8 @@ Details of the DNA extraction lab work
 ## Extraction Sheet Column Description
 | Column Name                      | Description                                                                     |
 | -------------------------------- | ------------------------------------------------------------------------------- |
-| **Individual\_ID**               | Unique identifier for the biological individual sampled. Links to [Individual Sheet](../individuals_sheets/README.md)                         |
+| **Individual\_ID**               | Unique identifier for the biological individual sampled. Links to [Individual Sheet](../individuals_sheets/README.md) |
+| **Tissue\_ID**               | Unique identifier for the biological tissue sampled from individual (default is muscle). Links to [Tissue Sheet](../tissues_sheets/README.md) |
 | **Extraction\_ID**               | Unique identifier for the extraction event (**Primary Key**)           |
 | **Storage\_solution**            | Solution used to preserve the sample prior to extraction (e.g., EtOH, RNAlater) |
 | **Date\_Subsampling**            | Date when a subsample was taken for extraction                                  |

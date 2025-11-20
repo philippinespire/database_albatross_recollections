@@ -1,6 +1,8 @@
 pire_db <- pire_database()
 
 
+dm::dm_examine_constraints(pire_db)
+
 
 #### Identify Duplicate IDs differentiated by '-' vs '_' ####
 pull_tbl(pire_db, "dna_extractions_sheets") %>%
