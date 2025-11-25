@@ -11,6 +11,7 @@ suppressPackageStartupMessages(library(purrr))
 suppressPackageStartupMessages(library(tibble))
 suppressPackageStartupMessages(library(cli))
 suppressPackageStartupMessages(library(here))
+suppressPackageStartupMessages(library(vctrs))
 
 #### Compile Database Files ####
 #### Function to Apply Corrections ####
@@ -579,6 +580,9 @@ suppressPackageStartupMessages(library(here))
                       columns = c(pire_sequence_id)) %>%
         dm::dm_add_pk(tissues_sheets,
                       columns = c(tissue_id)) %>%
+        dm::dm_add_pk(xray_sheets,
+                      columns = c(xray_file_base_name, 
+                                  specimen_position)) %>%
         identity()
     
     db_with_pk %>%
@@ -600,9 +604,9 @@ suppressPackageStartupMessages(library(here))
                   columns = species_valid_name,
                   ref_table = species_sheets,
                   ref_columns = species_valid_name) %>%
-        dm_add_fk(table = dna_extractions_sheets, 
-                  columns = individual_id, 
-                  ref_table = individuals_sheets) %>%
+        # dm_add_fk(table = dna_extractions_sheets, 
+        #           columns = individual_id, 
+        #           ref_table = individuals_sheets) %>%
         dm_add_fk(elution_junction,
                   elution_plate_id,
                   dna_extractions_gels, 
@@ -619,6 +623,23 @@ suppressPackageStartupMessages(library(here))
         dm_add_fk(dna_extractions_sheets,
                   tissue_id,
                   tissues_sheets) %>%
+        dm_add_fk(xray_sheets,
+                  individual_id,
+                  individuals_sheets) %>%
+        
+        #Failed attempt ot join sequence info in based solely on metadata
+        # dm_add_fk(table = sequence_info_sheets,
+        #           columns = species_code,
+        #           ref_table = species_sheets,
+        #           ref_columns = species_code) %>%
+        # dm_add_fk(table = sequence_info_sheets,
+        #           columns = c(era, collection_year_start),
+        #           ref_table = lots_sheets,
+        #           ref_columns = c(collection_era, collection_year_start)) %>%
+        # dm_add_fk(table = sequence_info_sheets,
+        #           columns = c(site_id),
+        #           ref_table = sampling_sites_sheets,
+        #           ref_columns = c(site_id)) %>%
         identity()
 }
 
@@ -1363,6 +1384,47 @@ pire_database <- function() {
                extraction_id = .format_extraction_id(extraction_id)) 
 }
 
+
+.match_column_types <- function(x, template, verbose = TRUE) {
+    common <- intersect(names(x), names(template))
+    
+    safe_cast <- function(col, tmpl, nm) {
+        # Special case: character -> numeric/integer
+        if (is.character(col) && is.numeric(tmpl)) {
+            out <- suppressWarnings(as.numeric(col))
+            return(out)
+        }
+        if (is.character(col) && is.integer(tmpl)) {
+            out <- suppressWarnings(as.integer(col))
+            return(out)
+        }
+        
+        # General case
+        tryCatch(
+            vec_cast(col, tmpl),
+            vctrs_error_incompatible_type = function(e) {
+                if (verbose) {
+                    message(sprintf(
+                        "Column `%s`: cannot cast <%s> to <%s>; leaving unchanged.",
+                        nm, vec_ptype_full(col), vec_ptype_full(tmpl)
+                    ))
+                }
+                col  # return original unchanged column
+            }
+        )
+    }
+    
+    x %>%
+        mutate(
+            across(
+                all_of(common),
+                ~ safe_cast(.x, template[[cur_column()]], cur_column())
+            )
+        )
+}
+
+
+
 #' Main validation and integration pipeline
 #'
 #' @param staging_path Path to staging folder (defaults to here::here("staging"))
@@ -1426,7 +1488,11 @@ pire_database <- function() {
                                na = c("", "NA", "None"),
                                guess_max = 1e6) %>%
                 rename_with(~str_to_lower(.x)) %>%
-                mutate(across(everything(), ~str_trim(.x)))
+                mutate(across(everything(), ~str_trim(.x))) %>%
+                .match_column_types(pull_tbl(db, !!sym(table_type)), verbose = FALSE)
+            
+            #
+            
             
             #Covert decode format to accepted format
             if (table_type == 'sequence_filename_sheets' & ncol(data) == 2){

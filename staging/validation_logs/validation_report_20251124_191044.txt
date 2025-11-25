@@ -1,0 +1,45 @@
+PIRE Database Validation Report
+Generated: 2025-11-24 19:10:44.031583
+============================================================
+
+
+File: individuals_sheets/collections_summer2025_complete_Individual_sheet_2025.tsv
+Table Type: individuals_sheets
+Status: PASSED ✓
+
+WARNINGS:
+  - 
+Extra columns found (will be removed):
+  - extracted?
+----------------------------------------
+
+File: lots_sheets/collections_summer2025_complete_lot_sheet_2024-2025.tsv
+Table Type: lots_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: sampling_sites_sheets/collections_summer2025_complete_site_sheet_2024-2025.tsv
+Table Type: sampling_sites_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: xray_sheets/sde_xray-log_2025-09.tsv
+Table Type: xray_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Foreign key constraint violation in xray_sheets:
+References to non-existent records in individuals_sheets:
+  - Sde-ATum_053
+
+Fix options:
+1. Correct the individual_id values in your TSV
+2. Ensure the parent records are in the staging folder or database
+3. Remove these rows if they're invalid
+WARNINGS:
+  - 
+Extra columns found (will be removed):
+  - id_fish_whole
+----------------------------------------

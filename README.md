@@ -315,6 +315,33 @@ Make metadata sheets for GEOME upload. This will output csv files of the sites/s
 output_geome_metadata(extraction_ids, path/for/output, sequence_ids = original_sequence_id)
 ```
 
+**Example 7: Count number of individuals sequenced at each site/era by species**
+```
+species <- 'Adu'
+pire_db <- pire_database()
+
+filtered_db <- pire_db %>%
+    dm_filter(species_sheets = (species_code %in% species)) 
+
+full_join(pull_tbl(filtered_db, "sequence_filename_sheets"),
+          pull_tbl(filtered_db, "dna_extractions_sheets"),
+          by = 'extraction_id') %>%
+    full_join(pull_tbl(filtered_db, "individuals_sheets"),
+              by = 'individual_id') %>% 
+    full_join(pull_tbl(filtered_db, "lots_sheets"),
+              by = 'lot_id') %>%
+    full_join(pull_tbl(filtered_db, "sampling_sites_sheets"),
+              by = 'lot_id') %>%
+    full_join(pull_tbl(filtered_db, "species_sheets"),
+              by = 'species_valid_name') %>%
+    filter(!is.na(pire_sequence_id)) %>% 
+    distinct(species_code, species_valid_name,
+             collection_era, site_id = site_id.x,
+             individual_id) %>% 
+    count(species_code, species_valid_name,
+          collection_era, site_id)
+```
+
 ## Adding Data to the Database
 After cloning the repo locally:
 * Add a new table to the relevant subdirectory in [`staging`](staging). Each folder contains an "EXAMPLE" file with the proper file header to use and a readme describing what the columns should contain. Be sure to use the exact same column names and cell formatting as the existing table in that directory. 

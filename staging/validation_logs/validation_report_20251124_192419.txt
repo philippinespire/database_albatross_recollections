@@ -1,0 +1,32 @@
+PIRE Database Validation Report
+Generated: 2025-11-24 19:24:19.362788
+============================================================
+
+
+File: individuals_sheets/collections_summer2025_complete_Individual_sheet_2025.tsv
+Table Type: individuals_sheets
+Status: PASSED ✓
+
+WARNINGS:
+  - 
+Extra columns found (will be removed):
+  - extracted?
+----------------------------------------
+
+File: lots_sheets/collections_summer2025_complete_lot_sheet_2024-2025.tsv
+Table Type: lots_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: sampling_sites_sheets/collections_summer2025_complete_site_sheet_2024-2025.tsv
+Table Type: sampling_sites_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: xray_sheets/sde_xray-log_2025-09.tsv
+Table Type: xray_sheets
+Status: PASSED ✓
+
+----------------------------------------
