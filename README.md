@@ -25,12 +25,13 @@
 - [Species Sheets](db_files/shipments_sheets/README.md)
 - [DNA Extraction Gels](db_files/dna_extractions_gels/README.md)
 - [Sequence Filenames Sheets](db_files/sequence_filename_sheets/README.md)
+- [X-Ray Sheets](db_files/xray_sheets/README.md)
 
 ## Quick Start 
 Double click on `database_albatross_recollections.Rproj`
 Run `pire_database()` in R to access the database
 
-## How to use this repo
+## Setting up the database
 This repository uses [renv](https://rstudio.github.io/renv/) to create a reproductible R environment. 
 
 
