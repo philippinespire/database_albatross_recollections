@@ -11,7 +11,7 @@ Each line is a species.
 | **Spp\_in\_Fam**                                          | Number of species in the family                                                  |
 | **Spp\_in\_genus**                                        | Number of species in the genus                                                   |
 | **Species\_Albatross\_name**                              | Species name as recorded in Albatross expedition records                         |
-| **Species\_valid\_name**                                  | Currently accepted valid scientific species name (**Primary Key**)                                |
+| **Species\_valid\_name**                                  | Currently accepted valid scientific species name (genus capitalized, underscore between genus and species). Because some individuals cannot be identified to a single species, this column also contains composite names (e.g., spp1/spp2) or genera (e.g., Genus_sp). (**Primary Key**)                                |
 | **Species\_Code**                                         | Abbreviated species code used in project                                         |
 | **Common\_name**                                          | Common name of the species                                                       |
 | **General\_Fishing\_Pressure**                            | General fishing pressure on the species (e.g., unfished, minor commercial, bait) |
