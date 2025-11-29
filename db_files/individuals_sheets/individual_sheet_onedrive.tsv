@@ -1167,7 +1167,7 @@ Doboatherina_duodecimalis	Bat-2019-010_020	Adu-CHam_024	NA	NA	NA	NA	NA	NA	NA	NA	
 Doboatherina_duodecimalis	Bat-2019-010_020	Adu-CHam_025	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Bat-2019-010_020	Adu-CHam_026	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Bat-2019-010_020	Adu-CHam_027	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Doboatherina_duodecimalis	Bat-2019-010_020	Adu-CHam_028	NA	NA	NA	NA	NA	NA	NA	NA	NA	Used_for_de_novo_genome_assembly
+Doboatherina_balabacensis	Bat-2019-010_020	Adu-CHam_028	NA	NA	Morphology	Whalen_John	GEOME entry by John says Matched D. balabacensis morphologically (Carpenter & Niem 1999; Motomura et al. 2017; Kimura et al. 2001; Sasaki et al. 2020; Kimura et al. 2002) & COI.	NA	NA	NA	11/29/25	Used_for_de_novo_genome_assembly
 Doboatherina_duodecimalis	Bat-2019-010_020	Adu-CHam_029	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Bat-2019-010_020	Adu-CHam_030	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Bat-2019-010_020	Adu-CHam_031	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
@@ -1332,7 +1332,7 @@ Doboatherina_duodecimalis	Pal-2022-03_05	Adu-CMal_093	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Pal-2022-03_05	Adu-CMal_094	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Pal-2022-03_05	Adu-CMal_095	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Pal-2022-03_05	Adu-CMal_096	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Doboatherina_duodecimalis	Luz-2017-050_001	Adu-CMat_001	NA	NA	NA	NA	NA	NA	NA	NA	NA	Used_for_de_novo_genome_assembly. Could not be found
+Atherinomorus_lacunosus	Luz-2017-050_001	Adu-CMat_001	NA	NA	Morphology and genetics	Carpenter_Kent and Reid_Brendan	From Brendan's post to slack: mitochondrial genomes could be recovered from the two Adu individuals used for shotgun sequencing. Adu-CMat_001 was used to make the 500 library and its COI sequence groups with sequences from A. duodecimalis / A. lacunosus. According to Kent this one keys out as A. lacunosus. 	2023	4	19	11/29/25	Used_for_de_novo_genome_assembly. Could not be found
 Doboatherina_duodecimalis	Luz-2017-050_001	Adu-CMat_002	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Luz-2017-050_001	Adu-CMat_003	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Doboatherina_duodecimalis	Luz-2017-050_001	Adu-CMat_004	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
