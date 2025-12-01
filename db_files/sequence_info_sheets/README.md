@@ -5,7 +5,7 @@ Each line a DNA sequencing run.
 ## Sequencing Info Sheet Column Descriptions
 | Column Name                             | Description                                                                                              |
 | --------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| **sequencing\_batch\_id**               | Unique identifier for the sequencing batch (species, site, year, sequencing type, replicate) (**Primary Key**)             |
+| **sequencing\_batch\_id**               | Unique identifier for the sequencing batch (species, site, year, sequencing type, replicate). For SSL runs, this was instead the same as the individual ID. (**Primary Key**)             |
 | **Species\_Code**                       | Three letter code for this species (or group of species)                                                                                 |
 | **Era**                                 | Collection era (e.g., A = Albatross/historic, C = Contemporary)                                          |
 | **Site\_ID**                            | Identifier for the collection site                                                                       |
