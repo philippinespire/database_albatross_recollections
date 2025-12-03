@@ -1710,7 +1710,7 @@ pire_database <- function() {
 }
 
 
-update_database <- function(integrate_files = TRUE){
+update_database <- function(integrate_files = FALSE){
     .validate_staging_files(auto_integrate = integrate_files)
 }
 
