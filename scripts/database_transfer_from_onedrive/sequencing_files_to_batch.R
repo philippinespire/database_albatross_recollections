@@ -255,7 +255,7 @@ find_likely_match <- function(file, matched_data){
                 dplyr::across(dplyr::everything(),
                               stringr::str_replace_na)) |>
     dplyr::mutate(dplyr::across(dplyr::everything(),
-                                ~stringr::str_detect(stringr::str_to_lower(file), .)),
+                                ~stringr::str_detect(adjust_ids(file), .)),
                   row_id = dplyr::row_number()) |>
     dplyr::rowwise() |>
     dplyr::mutate(n_hits = sum(dplyr::c_across(dplyr::where(is.logical)))) |>
@@ -294,6 +294,68 @@ if(file.exists(filter_matched_file) & !overwrite_files){
   mirai::daemons(n = 0)
   write_csv(filter_matched, filter_matched_file)
 }
+
+
+filter_matched
+all_metadata %>%
+  unnest(seqs) %>%
+  anti_join(filter_matched)
+#### Research what files that were found but not associated with sample go with ####
+filter_matched %>% 
+  # filter(file == 'Sde-AMat_002-Ex1-cssl2.2.fq.gz') %>%
+  # select(-species_code:-pire_sequence_id) %>%
+  # distinct()
+  filter(n() > 1,
+         .by = file) %>%
+  nest(data = -c(file)) 
+
+tmp <- filter_matched %>%
+  nest(data = -c(file))
+
+in_wahab <- select(wahab_seq_joined, wahab_seqs) %>%
+  unnest(wahab_seqs) %>%
+  left_join(tmp, by = 'file') %>%
+  # slice(10422)
+  mutate(has_hits = !map_lgl(data, is.null)) 
+
+in_wahab %>%
+  # filter(has_hits)
+  count(has_hits) 
+
+filter(in_wahab, !has_hits) %>%
+  filter(!is.na(file),
+         !str_detect(file, '[uU]ndetermined'),
+         !str_detect(file, 'depracated'),
+         !str_detect(file, 'repr'),
+         !str_detect(file, 'clmp')) %>%
+  select(file)
+
+  
+in_opensci <- select(open_tracker_seqs, wahab_seqs) %>%
+  unnest(wahab_seqs) %>%
+  left_join(tmp, by = 'file') %>%
+  mutate(has_hits = !map_lgl(data, is.null)) 
+
+in_opensci %>%
+  # filter(has_hits)
+  count(has_hits)
+
+filter(in_opensci, !has_hits) %>%
+  filter(!is.na(file),
+         !str_detect(file, '[uU]ndetermined')) %>%
+  select(file) %>%
+  filter(!str_detect(file, 'Shotgun'),
+         !str_detect(file, 'GEOME'))
+
+anti_join(tmp,
+          select(open_tracker_seqs, wahab_seqs) %>%
+            unnest(wahab_seqs) %>%
+            left_join(tmp, by = 'file'),
+          by = 'file') %>%
+  anti_join(select(wahab_seq_joined, wahab_seqs) %>%
+              unnest(wahab_seqs),
+            by = 'file')
+
 
 
 
