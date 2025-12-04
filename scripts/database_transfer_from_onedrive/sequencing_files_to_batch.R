@@ -29,6 +29,7 @@ library(googlesheets4)
 library(forcats)
 library(ssh)
 library(fuzzyjoin)
+library(mirai)
 
 #### Functions ####
 get_wahab_fq_list <- function(ssh_connection, directory, depth){
@@ -85,11 +86,42 @@ get_wahab_data <- function(df, depth = 2, func = get_wahab_fq_list){
 }
 
 adjust_ids <- function(string){
-    str_to_lower(string) %>%
-        str_remove_all(' |-|_|:|\\.')
+    stringr::str_to_lower(string) |>
+        stringr::str_remove_all(' |-|_|:|\\.')
 }
 
-adjust_ids('this.is-a_test:hereAAA')
+# adjust_ids('this.is-a_test:hereAAA')
+
+match_wahab_parallel <- purrr::in_parallel(
+    \(wahab_seqs,
+      extraction_id,
+      pire_sequence_id,
+      gcl_sequence_id,
+      individual_id) {
+        
+        # handle empty / NULL cases defensively
+        if (is.null(wahab_seqs) || nrow(wahab_seqs) == 0) {
+            return(wahab_seqs)
+        }
+        
+        ids <- c(extraction_id, pire_sequence_id, gcl_sequence_id, individual_id)
+        ids <- ids[!is.na(ids) & nzchar(ids)]
+        
+        if (!length(ids)) {
+            return(wahab_seqs[0, , drop = FALSE])
+        }
+        
+        # your matching logic, slightly tidied
+        dplyr::filter(
+            wahab_seqs,
+            stringr::str_detect(adjust_ids(file), adjust_ids(extraction_id)) |
+                stringr::str_detect(adjust_ids(file), adjust_ids(pire_sequence_id)) |
+                stringr::str_detect(adjust_ids(file), adjust_ids(gcl_sequence_id)) |
+                stringr::str_detect(adjust_ids(file), adjust_ids(individual_id))
+        )
+    },
+    adjust_ids = adjust_ids
+)
 
 #### Get all Wahab Decodes ####
 # wahab_decodes <- tibble(hpc_path = c('/home/e1garcia',
@@ -178,92 +210,93 @@ matchID_file <- here::here('scripts/database_transfer_from_onedrive/intermediate
 if(file.exists(matchID_file) & !overwrite_files){
     matchID_file <- read_rds(matchID_file)
 } else {
-    library(multidplyr)
-    cluster <- new_cluster(parallelly::availableCores() - 1)
-    cluster_library(cluster, c('dplyr', 'stringr'))
-    cluster_copy(cluster, c('adjust_ids'))
-    
-    
-    matched_ids <- wahab_seq_joined %>%
-        unnest(data) %>%
-        nest(data = -c(species_code)) %>%
-        full_join(rename(open_tracker_seqs,
-                         os_path = hpc_path,
-                         os_seqs = wahab_seqs),
-                  by = c('species_code')) %>%
-        unnest(data) %>%
-        rename(db_path = hpc_path,
-               db_seqs = wahab_seqs) %>%
-        pivot_longer(cols = c(starts_with('db'),
-                              starts_with('os')),
-                     names_to = c("seqs_type", ".value"),
-                     names_pattern = "(db|os)_(.*)",
-                     names_transform = ~str_c('wahab_', .)) %>%
-        mutate(seqs_type = case_when(str_detect(seqs_type, 'db') ~ 'database',
-                                     str_detect(seqs_type, 'os') ~ 'open_science')) %>%
-        unnest(seqs) %>%
-        # sample_n(100) %>%
-        filter(!map_lgl(wahab_seqs, is.null)) %>%
-        rowwise %>%
-        partition(cluster) %>%
-        mutate(wahab_seqs = filter(wahab_seqs, 
-                                   str_detect(adjust_ids(file), 
-                                              adjust_ids(extraction_id)) |
-                                       str_detect(adjust_ids(file), 
-                                                  adjust_ids(pire_sequence_id)) |
-                                       str_detect(adjust_ids(file), 
-                                                  adjust_ids(gcl_sequence_id)) |
-                                       str_detect(adjust_ids(file), 
-                                                  adjust_ids(individual_id))) %>%
-                   list()) %>%
-        collect() %>%
-        identity()
-    write_rds(matched_ids, matchID_file, compress = 'xz')
+  mirai::daemons(n = parallelly::availableCores())
+  
+  matched_ids <- wahab_seq_joined %>%
+    unnest(data) %>%
+    nest(data = -c(species_code)) %>%
+    full_join(rename(open_tracker_seqs,
+                     os_path = hpc_path,
+                     os_seqs = wahab_seqs),
+              by = c('species_code')) %>%
+    unnest(data) %>%
+    rename(db_path = hpc_path,
+           db_seqs = wahab_seqs) %>%
+    pivot_longer(cols = c(starts_with('db'),
+                          starts_with('os')),
+                 names_to = c("seqs_type", ".value"),
+                 names_pattern = "(db|os)_(.*)",
+                 names_transform = ~str_c('wahab_', .)) %>%
+    mutate(seqs_type = case_when(str_detect(seqs_type, 'db') ~ 'database',
+                                 str_detect(seqs_type, 'os') ~ 'open_science')) %>%
+    unnest(seqs) %>%
+    filter(!map_lgl(wahab_seqs, is.null)) %>%
+    # sample_n(1000) %>%
+    mutate(wahab_seqs = pmap(list(wahab_seqs,
+                                  extraction_id,
+                                  pire_sequence_id,
+                                  gcl_sequence_id,
+                                  individual_id),
+                             match_wahab_parallel,
+                             .progress = TRUE))
+  
+  mirai::daemons(n = 0)
+  
+  write_rds(matched_ids, matchID_file, compress = 'xz')
 }
-
 
 matched_ids
 
 # file <- tmp$file[[1]]; matched_data <- tmp$data[[1]]
 find_likely_match <- function(file, matched_data){
-    mutate(matched_data,
-           across(everything(),
-                  adjust_ids),
-           across(everything(),
-                  str_replace_na)) %>%
-        mutate(across(everything(),
-                      ~str_detect(str_to_lower(file), .)),
-               row_id = row_number()) %>%
-        rowwise %>%
-        mutate(n_hits = sum(c_across(where(is.logical)))) %>%
-        ungroup %>%
-        filter(n_hits == max(n_hits)) %>%
-        select(row_id) %>%
-        left_join(mutate(matched_data, 
-                         row_id = row_number()),
-                  by = 'row_id') %>%
-        select(-row_id)
+  dplyr::mutate(matched_data,
+                dplyr::across(dplyr::everything(),
+                              adjust_ids),
+                dplyr::across(dplyr::everything(),
+                              stringr::str_replace_na)) |>
+    dplyr::mutate(dplyr::across(dplyr::everything(),
+                                ~stringr::str_detect(stringr::str_to_lower(file), .)),
+                  row_id = dplyr::row_number()) |>
+    dplyr::rowwise() |>
+    dplyr::mutate(n_hits = sum(dplyr::c_across(dplyr::where(is.logical)))) |>
+    dplyr::ungroup() |>
+    dplyr::filter(n_hits == max(n_hits)) |>
+    dplyr::select(row_id) |>
+    dplyr::left_join(dplyr::mutate(matched_data, 
+                         row_id = dplyr::row_number()),
+                  by = 'row_id') |>
+    dplyr::select(-row_id)
 }
-cluster_copy(cluster, c('find_likely_match'))
 
-tmp <- matched_ids2 %>%
-    unnest(wahab_seqs, keep_empty = FALSE) %>%
-    # select(-hpc_path:-species_code) %>%
-    # filter(str_detect(file, 'fq_raw')) %>%
-    # filter(file == 'fq_raw/Sde-AMar_061-Ex1b-cssl2.2.fq.gz')
-    # sample_n(10) %>%
-    nest_by(file) %>%
-    partition(cluster) %>%
-    mutate(data = find_likely_match(file, data) %>%
-               list()) %>%
-    collect() %>%
-    ungroup %>%
+find_likely_match_parallel <- purrr::in_parallel(
+  \(file, matched_data) {
+    find_likely_match(file, matched_data)
+  },
+  # captured for the workers:
+  adjust_ids = adjust_ids,
+  find_likely_match = find_likely_match
+)
+
+filter_matched_file <- here::here('scripts/database_transfer_from_onedrive/intermediate_files', 
+                                  str_c("filterMatchID_files_d", search_depth,".csv.xz"))
+if(file.exists(filter_matched_file) & !overwrite_files){
+  filter_matched_file <- read_csv(filter_matched_file, show_col_types = FALSE)
+} else {
+  mirai::daemons(n = parallelly::availableCores())
+  filter_matched <- matched_ids %>%
+    unnest(wahab_seqs, keep_empty = FALSE) %>% 
+    nest(data = -c(file)) %>%
+    # sample_n(1000) %>%
+    mutate(data = pmap(list(file, data),
+                       find_likely_match_parallel,
+                       .progress = TRUE)) %>%
     unnest(data)
+  mirai::daemons(n = 0)
+  write_csv(filter_matched, filter_matched_file)
+}
 
 
-tmp
 
-unnest(matched_ids, wahab_seqs)
 
 select(wahab_seq_joined, hpc_path, wahab_seqs) %>%
     unnest(wahab_seqs) %>%
