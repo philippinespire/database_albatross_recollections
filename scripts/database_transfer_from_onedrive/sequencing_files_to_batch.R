@@ -208,7 +208,7 @@ open_tracker_seqs %>%
 matchID_file <- here::here('scripts/database_transfer_from_onedrive/intermediate_files', 
                                str_c("matchID_files_d", search_depth,".rds.xz"))
 if(file.exists(matchID_file) & !overwrite_files){
-    matchID_file <- read_rds(matchID_file)
+    matched_ids <- read_rds(matchID_file)
 } else {
   mirai::daemons(n = parallelly::availableCores())
   
@@ -280,7 +280,7 @@ find_likely_match_parallel <- purrr::in_parallel(
 filter_matched_file <- here::here('scripts/database_transfer_from_onedrive/intermediate_files', 
                                   str_c("filterMatchID_files_d", search_depth,".csv.xz"))
 if(file.exists(filter_matched_file) & !overwrite_files){
-  filter_matched_file <- read_csv(filter_matched_file, show_col_types = FALSE)
+    filter_matched <- read_csv(filter_matched_file, show_col_types = FALSE)
 } else {
   mirai::daemons(n = parallelly::availableCores())
   filter_matched <- matched_ids %>%
