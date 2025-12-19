@@ -829,7 +829,7 @@ if (interactive()) {
       })
     }
     
-    update_database <- function(integrate_files = TRUE) {
+    update_database <- function(integrate_files = FALSE) {
 
       original_dir <- getwd()
 
