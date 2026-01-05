@@ -24,3 +24,8 @@ fixes <- select(missing_site_info,
   mutate(across(c(latitude, longitude), as.numeric)) 
 
 write_csv(fixes, '../../problem_notes/fix_site_info.csv')
+
+
+fixes %>%
+  filter(if_any(everything(), is.na)) %>%
+  write_csv('../../problem_notes/sites_missing_info_1.5.26.csv')
