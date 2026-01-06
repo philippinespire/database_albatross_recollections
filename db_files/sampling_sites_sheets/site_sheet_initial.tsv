@@ -1,6 +1,6 @@
 lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_government_unit	province	region	island_group	notes
 94530	Bir	Bali	Biri_Channel	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
-96400	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+96400	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96429	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96459	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96463	Pal	Bali	NA	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
@@ -92,7 +92,7 @@ lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_govern
 138650	Gal	PGal	NA	NA	NA	NA	NA	NA	NA	NA	NA
 138704	Dup	Dupo	Dupon_Bay	10.931896	124.426504	Monte Alegre	Isabel	Leyte	Eastern Visayas	Visayas	NA
 138826	Pnd	Pand	Pandanon_Id	10.1796678	124.090001	Pandanon	Getafe	Bohol	Central Visayas	Visayas	NA
-138831	Pnd	Pand	Pandanon_Id	10.295031	123.9126	NA	Cebu City	Cebu	Central Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+138831	Pnd	Pand	Pandanon_Id	10.295031	123.9126	NA	Cebu City	Cebu	Central Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 138933	Jol	Jolo	Tutu_Bay	6.1098091	120.977508	NA	Hadji Panglima Tahil	Sulu	BARMM	Mindanao	NA
 138934	Sur	Suri	NA	9.8011514	125.488763	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
 138936	Pal	Samr	Port_Palapag	12.6347634	125.00979	NA	Salvacion	Northern Samar	Eastern Visayas	Visayas	Port Palapag
@@ -207,7 +207,7 @@ Cam-2019-013_018	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-013_019	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-014_021	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-014_022	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
-Cam-2019-015_023	Pas	RagR	Pasacao	13.4983	123.0566	NA	Pasacao	Camarines Sur	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+Cam-2019-015_023	Pas	RagR	Pasacao	13.4983	123.0566	NA	Pasacao	Camarines Sur	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Cam-2019-016_030	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-017_028	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
 Cam-2019-017_029	Pas	RagR	Pasacao	NA	NA	NA	NA	NA	NA	NA	NA
@@ -226,7 +226,7 @@ Kal-2019-002_002	Kal	NA	Kalibo	NA	NA	NA	NA	NA	NA	NA	NA
 Kal-2019-002_003	Kal	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Kal-2019-003_004	Kal	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 LEY-2022_04_02	Dup	Dupo	Dupon_Bay	10.9468872	124.417243	NA	Isabel	Leyte	Eastern Visayas	Visayas	Isabel Bay
-Luz-2017-036_001	Tic	MatB	Ticao_Pass	12.666467	123.8709	NA	Bulan	Sorsogon	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+Luz-2017-036_001	Tic	MatB	Ticao_Pass	12.666467	123.8709	NA	Bulan	Sorsogon	Bicol Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Luz-2017-044_001	Mig	SMig	San_Miguel_Bay	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-045_001	Mat	MatB	Bulan	NA	NA	NA	NA	NA	NA	NA	NA
 Luz-2017-047_001	Rag	CanB	Ragay_Gulf	12.9520333	123.994789	NA	Sorsogon City	Sorsogon	Bicol Region	Luzon	Sorsogon Bay
@@ -248,7 +248,7 @@ Pal-2022-01_08	Nar	Narr	"Narra, Palawan"	NA	NA	NA	NA	NA	NA	NA	NA
 PAL-2022-02_03	Tay	TayT	"Taytay,  Palawan"	NA	NA	NA	NA	NA	NA	NA	NA
 Pal-2022-03_05	Mal	Mala	"Malampaya, Palawan"	NA	NA	NA	NA	NA	NA	NA	NA
 PAL-2022-05_05	Mal	Mala	Malampaya	NA	NA	Liminangcong	Taytay	Palawan	NA	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
-Pga-2018-001_001	Gal	PGal	Varadero_Bay	13.496494	120.9579	NA	Puerto Galera	Oriental Mindoro	MIMAROPA Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+Pga-2018-001_001	Gal	PGal	Varadero_Bay	13.496494	120.9579	NA	Puerto Galera	Oriental Mindoro	MIMAROPA Region	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 RAG-2022-01_01	Rag	RagR	Ragay	13.8105766	122.72906	NA	Ragay	Camarines Sur	Bicol Region		NA
 RAG-2022-01_03	NA	NA	Ragay	13.8105766	122.72906	NA	Ragay	Camarines Sur	Bicol Region	Luzon	NA
 REU-2019-001_001	Dgt	NA	Dumaguete	NA	NA	NA	NA	NA	NA	NA	NA
@@ -291,7 +291,7 @@ VER-2022-01_003	Ver	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
 VER-2022-01_007	Gal	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-001_001	Sub	SubB	Silanguin	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-002_003	Sub	SubB	Subic_City_Municipal_Fish_Port	NA	NA	NA	NA	NA	NA	NA	NA
-Zam-2019-003_005	Sub	SubB	Subic_City_Municipal_Fish_Port	14.874624	120.2175	NA	Subic	Zambales	Central Luzon	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
+Zam-2019-003_005	Sub	SubB	Subic_City_Municipal_Fish_Port	14.874624	120.2175	NA	Subic	Zambales	Central Luzon	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Zam-2019-004_006	Mvi	Masi	Mansiloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
 Zam-2019-004_007	Mvi	Masi	Masinloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
 Zam-2019-004_011	Mvi	Masi	Mansiloc_Public_Market	15.489188	119.911051	NA	Palaulg	Zambales	Central Luzon	Luzon	Oyon Bay
