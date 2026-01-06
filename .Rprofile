@@ -3,44 +3,50 @@
 
 # Determine the project directory based on where this .Rprofile is located
 .determine_project_dir <- function() {
-
-  # 1) Best: detect the path of the currently-sourced file (.Rprofile)
-  for (i in rev(seq_along(sys.frames()))) {
-    of <- sys.frames()[[i]]$ofile
-    if (!is.null(of) && is.character(of) && length(of) == 1) {
-      of <- normalizePath(of, winslash = "/", mustWork = FALSE)
-      if (grepl("\\.Rprofile$", of, ignore.case = TRUE)) {
-        return(dirname(of))
-      }
-    }
-  }
-
-  # 2) If already in the right place (RStudio project file)
+  # Try to find where this .Rprofile was sourced from
+  # This works by looking for the .Rprofile file itself
+  
+  # First check if we're already in the right directory
   if (file.exists("database_albatross_recollections.Rproj")) {
-    return(normalizePath(getwd(), winslash = "/", mustWork = FALSE))
+    return(getwd())
   }
-
-  # 3) If .Rprofile in wd looks like the right one
+  
+  # Check if .Rprofile exists in current directory
   if (file.exists(".Rprofile")) {
+    # Read it to see if it's the right one (contains our project name)
     profile_content <- readLines(".Rprofile", n = 50, warn = FALSE)
     if (any(grepl("database_albatross_recollections", profile_content))) {
-      return(normalizePath(getwd(), winslash = "/", mustWork = FALSE))
+      return(getwd())
     }
   }
-
-  # 4) Look in immediate subdirectories
+  
+  # Look in subdirectories for the project
   subdirs <- list.dirs(path = ".", recursive = FALSE, full.names = TRUE)
   for (dir in subdirs) {
     proj_file <- file.path(dir, "database_albatross_recollections.Rproj")
-    rprofile  <- file.path(dir, ".Rprofile")
+    rprofile <- file.path(dir, ".Rprofile")
     if (file.exists(proj_file) && file.exists(rprofile)) {
-      return(normalizePath(dir, winslash = "/", mustWork = FALSE))
+      return(normalizePath(dir))
     }
   }
-
-  NULL
+  
+  # If we can't find it, check if we're being sourced with a full path
+  # This requires checking the call stack
+  if (sys.nframe() > 0) {
+    for (i in sys.nframe():1) {
+      call_info <- sys.call(i)
+      if (length(call_info) > 1 && deparse(call_info[[1]]) == "source") {
+        source_file <- as.character(call_info[[2]])
+        if (grepl("\\.Rprofile$", source_file)) {
+          return(normalizePath(dirname(source_file)))
+        }
+      }
+    }
+  }
+  
+  # Last resort: ask the user
+  return(NULL)
 }
-
 
 # Store original working directory to potentially restore later
 .original_wd <- getwd()
