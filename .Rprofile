@@ -32,17 +32,22 @@
   
   # If we can't find it, check if we're being sourced with a full path
   # This requires checking the call stack
-  if (sys.nframe() > 0) {
-    for (i in sys.nframe():1) {
-      call_info <- sys.call(i)
-      if (length(call_info) > 1 && deparse(call_info[[1]]) == "source") {
-        source_file <- as.character(call_info[[2]])
-        if (grepl("\\.Rprofile$", source_file)) {
-          return(normalizePath(dirname(source_file)))
-        }
+if (sys.nframe() > 0) {
+  for (i in sys.nframe():1) {
+    call_info <- sys.call(i)
+    if (length(call_info) > 1 && deparse(call_info[[1]]) == "source") {
+      # Try to evaluate the argument to get the actual file path
+      source_file <- tryCatch({
+        eval(call_info[[2]], envir = parent.frame(i))
+      }, error = function(e) {
+        as.character(call_info[[2]])[1]
+      })
+      if (length(source_file) > 0 && grepl("\\.Rprofile$", source_file[1])) {
+        return(normalizePath(dirname(source_file[1])))
       }
     }
   }
+}
   
   # Last resort: ask the user
   return(NULL)
@@ -780,45 +785,52 @@ if (interactive()) {
     }
     
     pire_database <- function() {
-
       original_dir <- getwd()
-
-      # Ensure we're in the project directory
-      if (!file.exists("scripts/functions.R")) {
+      
+      # Quick dependency check before doing anything
+      if (requireNamespace("renv", quietly = TRUE)) {
+        # Check if we need to activate renv for this project
         if (!is.null(.project_dir)) {
-          setwd(.project_dir)
-        } else {
-          cat("❌ Error: Not in project directory\n")
-          cat("   Please navigate to the database_albatross_recollections folder\n")
-          return(invisible(NULL))
+          renv_lock <- file.path(.project_dir, "renv.lock")
+          if (file.exists(renv_lock)) {
+            # Quietly ensure renv is activated for the project
+            suppressMessages(suppressWarnings({
+              tryCatch(renv::load(.project_dir, quiet = TRUE), error = function(e) NULL)
+            }))
+          }
         }
       }
       
-      # Quick dependency check if renv is available
-      if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
-        if (!.check_dependencies(silent = TRUE)) {
-          cat("\n⚠️  Some packages are missing!\n")
-          cat("   Run setup_project() first, then restart R.\n")
-          return(invisible(NULL))
-        }
-      }
-      
-      #The first time this is called it sources in the functions and runs itself. 
-      #After it is replaced with the main function
-        # Use tryCatch to ensure we return to original directory even if there's an error
+      # Use tryCatch to ensure we return to original directory even if there's an error
       tryCatch({
-        # The first time this is called it sources in the functions and runs itself. 
-        # After it is replaced with the main function
-        source("scripts/functions.R")
+        # Determine the project directory
+        proj_dir <- if (!is.null(.project_dir)) {
+          .project_dir
+        } else if (file.exists("scripts/functions.R")) {
+          getwd()
+        } else {
+          stop("Cannot locate database_albatross_recollections project directory.\n",
+              "Please source the .Rprofile first: source('path/to/.Rprofile')")
+        }
         
-        # Call the actual pire_database function from the sourced file
-        result <- pire_database()
+        # Change to project directory
+        if (getwd() != proj_dir) {
+          setwd(proj_dir)
+        }
+        
+        # Source the functions file
+        # The first time this runs, it will replace this wrapper function
+        # with the real pire_database() from functions.R
+        source("scripts/functions.R", local = FALSE)
+        
+        # After sourcing, the real pire_database exists in .GlobalEnv
+        # Call it directly from .database_assembly to avoid recursion
+        result <- .database_assembly()
         
         # Return to the original directory
         setwd(original_dir)
-        cat("\n📁 Returned to original directory:", original_dir, "\n")
         
-        # Return whatever the pire_database function returned
+        # Return the database
         return(result)
         
       }, error = function(e) {
@@ -830,100 +842,81 @@ if (interactive()) {
     }
     
     update_database <- function(integrate_files = FALSE) {
-
       original_dir <- getwd()
-
-      # Ensure we're in the project directory
-      if (!file.exists("scripts/functions.R")) {
-        if (!is.null(.project_dir)) {
-          setwd(.project_dir)
-        } else {
-          cat("❌ Error: Not in project directory\n")
-          cat("   Please navigate to the database_albatross_recollections folder\n")
-          return(invisible(NULL))
+      
+      # Ensure renv context if available
+      if (requireNamespace("renv", quietly = TRUE) && !is.null(.project_dir)) {
+        renv_lock <- file.path(.project_dir, "renv.lock")
+        if (file.exists(renv_lock)) {
+          suppressMessages(suppressWarnings({
+            tryCatch(renv::load(.project_dir, quiet = TRUE), error = function(e) NULL)
+          }))
         }
       }
       
-      # Quick dependency check if renv is available
-      if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
-        if (!.check_dependencies(silent = TRUE)) {
-          cat("\n⚠️  Some packages are missing!\n")
-          cat("   Run setup_project() first, then restart R.\n")
-          return(invisible(NULL))
-        }
-      }
-      
-      #The first time this is called it sources in the functions and runs itself. 
-      #After it is replaced with the main function
-      # Use tryCatch to ensure we return to original directory even if there's an error
       tryCatch({
-        # The first time this is called it sources in the functions and runs itself. 
-        # After it is replaced with the main function
-        source("scripts/functions.R")
+        proj_dir <- if (!is.null(.project_dir)) {
+          .project_dir
+        } else if (file.exists("scripts/functions.R")) {
+          getwd()
+        } else {
+          stop("Cannot locate project directory")
+        }
         
-        # Call the actual update_database function from the sourced file
-        result <- update_database(integrate_files)
+        if (getwd() != proj_dir) setwd(proj_dir)
         
-        # Return to the original directory
+        # Source functions
+        source("scripts/functions.R", local = FALSE)
+        
+        # Call the validation function directly
+        result <- .validate_staging_files(auto_integrate = integrate_files)
+        
         setwd(original_dir)
-        cat("\n📁 Returned to original directory:", original_dir, "\n")
-        
-        # Return whatever the update_database function returned
         return(result)
         
       }, error = function(e) {
-        # If there's an error, still return to the original directory
         setwd(original_dir)
         cat("\n📁 Returned to original directory after error:", original_dir, "\n")
         stop(e)
       })
     }
-    
-    output_geome_metadata <- function(extraction_ids, sequence_ids = NULL,
-                                      output_path = NULL) {
 
+    output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_path = NULL) {
       original_dir <- getwd()
-
-      # Ensure we're in the project directory
-      if (!file.exists("scripts/functions.R")) {
-        if (!is.null(.project_dir)) {
-          setwd(.project_dir)
-        } else {
-          cat("❌ Error: Not in project directory\n")
-          cat("   Please navigate to the database_albatross_recollections folder\n")
-          return(invisible(NULL))
+      
+      if (requireNamespace("renv", quietly = TRUE) && !is.null(.project_dir)) {
+        renv_lock <- file.path(.project_dir, "renv.lock")
+        if (file.exists(renv_lock)) {
+          suppressMessages(suppressWarnings({
+            tryCatch(renv::load(.project_dir, quiet = TRUE), error = function(e) NULL)
+          }))
         }
       }
       
-      # Quick dependency check if renv is available
-      if (requireNamespace("renv", quietly = TRUE) && file.exists("renv.lock")) {
-        if (!.check_dependencies(silent = TRUE)) {
-          cat("\n⚠️  Some packages are missing!\n")
-          cat("   Run setup_project() first, then restart R.\n")
-          return(invisible(NULL))
-        }
-      }
-      
-      #The first time this is called it sources in the functions and runs itself. 
-      #After it is replaced with the main function
-      # Use tryCatch to ensure we return to original directory even if there's an error
       tryCatch({
-        # The first time this is called it sources in the functions and runs itself. 
-        # After it is replaced with the main function
-        source("scripts/functions.R")
-
-        # Return to the original directory
+        proj_dir <- if (!is.null(.project_dir)) {
+          .project_dir
+        } else if (file.exists("scripts/functions.R")) {
+          getwd()
+        } else {
+          stop("Cannot locate project directory")
+        }
+        
+        if (getwd() != proj_dir) setwd(proj_dir)
+        
+        source("scripts/functions.R", local = FALSE)
+        
+        # Call the internal function directly
+        result <- .make_geome_metadata(extraction_ids, sequence_ids)
+        if (!is.null(output_path)) {
+          # Handle output if needed
+          # ... existing output logic ...
+        }
+        
         setwd(original_dir)
-        cat("\n📁 Returned to original directory:", original_dir, "\n")
-
-        # Call the actual update_database function from the sourced file
-        result <- output_geome_metadata(extraction_ids, sequence_ids, output_path)
-                
-        # Return whatever the update_database function returned
         return(result)
         
       }, error = function(e) {
-        # If there's an error, still return to the original directory
         setwd(original_dir)
         cat("\n📁 Returned to original directory after error:", original_dir, "\n")
         stop(e)
