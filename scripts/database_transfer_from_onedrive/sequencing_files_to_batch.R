@@ -24,11 +24,9 @@ the_db <- pire_db %>%
               sequencing_batch_id, species_code,
               era, site_id, hpc_path)
 
-pull_tbl(pire_db, 'dna_extractions_sheets') %>%
-    distinct()
-
 #### Extra Libraries ####
 library(googlesheets4)
+library(tidytable)
 library(forcats)
 library(ssh)
 library(fuzzyjoin)
@@ -36,22 +34,38 @@ library(mirai)
 
 #### Functions ####
 get_wahab_fq_list <- function(ssh_connection, directory, depth){
-    #-maxdepth 2 #add after %s to set max depth to search
+  #-maxdepth 2 #add after %s to set max depth to search
+  if(is.null(ssh_connection)){
+    res <- system2(
+      "find",
+      c(directory,
+        "-maxdepth", as.character(depth),
+        "-type", "f",
+        "\\(", "-iname", "*.fq.gz", "-o", "-iname", "*.fastq.gz", "\\)",
+        "-print"),
+      stdout = TRUE
+    )
+    
+    files <- sub(paste0("^", normalizePath(directory), "/"), "", res)
+    files <- files[nzchar(files)]
+    
+  } else {
     the_command <- sprintf(
-        str_c('find %s -maxdepth ', depth,' -type f \\( -iname "*.fq.gz" -o -iname "*.fastq.gz" \\) -printf "%%P\\n"'),
-        shQuote(directory)
+      str_c('find %s -maxdepth ', depth,' -type f \\( -iname "*.fq.gz" -o -iname "*.fastq.gz" \\) -printf "%%P\\n"'),
+      shQuote(directory)
     )
     
     res <- ssh::ssh_exec_internal(ssh_connection, the_command, error = FALSE)
     
     files <- strsplit(rawToChar(res$stdout), "\n", fixed = TRUE)[[1]]
     files <- files[nzchar(files)]
-    
-    if (length(files) == 0) {
-        tibble::tibble(directory = directory, file = NA_character_)
-    } else {
-        tibble::tibble(directory = directory, file = files)
-    }
+  }
+  
+  if (length(files) == 0) {
+    tibble::tibble(directory = directory, file = NA_character_)
+  } else {
+    tibble::tibble(directory = directory, file = files)
+  }
 }
 
 get_wahab_decode_files <- function(ssh_connection, directory){
@@ -75,17 +89,26 @@ get_wahab_decode_files <- function(ssh_connection, directory){
 # get_wahab_fq_list(ssh_connection, directory = all_metadata$hpc_path[10])
 
 get_wahab_data <- function(df, depth = 2, func = get_wahab_fq_list, password){
-    #func either can be get_wahab_decode_files or get_wahab_fq_list
+  #func either can be get_wahab_decode_files or get_wahab_fq_list
+  
+  if(str_detect(Sys.info()['nodename'], '[a-z][0-9]-[a-z0-9]{6}-[0-9]{2}')){
+    ssh_connection <- NULL
+  } else {
     ssh_connection <- ssh_connect('jselwyn@wahab.hpc.odu.edu', passwd = password)
-    out <- map_dfr(df$hpc_path,
-                   func, 
-               ssh_connection = ssh_connection,
-               depth = depth) %>%
-        nest(wahab_seqs = -c(directory))
-    
+  }
+  
+  out <- map_dfr(df$hpc_path,
+                 func, 
+                 ssh_connection = ssh_connection,
+                 depth = depth) %>%
+    nest(wahab_seqs = -c(directory))
+  
+  if(!is.null(ssh_connection)){
     ssh_disconnect(ssh_connection)
-    full_join(df, out,
-              by = c('hpc_path' = 'directory'))
+  }
+  
+  full_join(df, out,
+            by = c('hpc_path' = 'directory'))
 }
 
 adjust_ids <- function(string){
@@ -118,13 +141,26 @@ match_wahab_parallel <- purrr::in_parallel(
         # your matching logic, slightly tidied
         dplyr::filter(
             wahab_seqs,
-            stringr::str_detect(adjust_ids(file), adjust_ids(extraction_id)) |
-                stringr::str_detect(adjust_ids(file), adjust_ids(pire_sequence_id)) |
-                stringr::str_detect(adjust_ids(file), adjust_ids(gcl_sequence_id)) |
-                stringr::str_detect(adjust_ids(file), adjust_ids(individual_id))
+            stringr::str_detect(adjust_ids(file_prefix), adjust_ids(extraction_id)) |
+                stringr::str_detect(adjust_ids(file_prefix), adjust_ids(pire_sequence_id)) |
+                stringr::str_detect(adjust_ids(file_prefix), adjust_ids(gcl_sequence_id)) |
+                stringr::str_detect(adjust_ids(file_prefix), adjust_ids(individual_id))
         )
     },
     adjust_ids = adjust_ids
+)
+
+hash_md5 <- function(hpc_path, file) {
+  full_path <- file.path(hpc_path, file)
+  # tools::md5sum() returns a named vector; take the single value
+  tools::md5sum(full_path)[[1]]
+}
+
+hash_parallel <- purrr::in_parallel(
+  \(path, file) {
+    hash_md5(path, file)
+  },
+  hash_md5 = hash_md5
 )
 
 #### Get all Wahab Decodes ####
@@ -173,7 +209,8 @@ if(file.exists(wahab_file) & !overwrite_files){
         wahab_seq_joined <- filter(all_metadata, 
                                    !is.na(hpc_path)) %>%
             nest(data = -hpc_path) %>%
-            get_wahab_data(depth = search_depth, password = the_pw)
+            get_wahab_data(depth = search_depth, password = the_pw) %>%
+          mutate(match = str_c('wahab_row', row_number()))
         write_rds(wahab_seq_joined, wahab_file, compress = 'xz')
     })
     the_pw <- NULL
@@ -201,21 +238,156 @@ if(file.exists(openScience_file) & !overwrite_files){
         filter(!if_any(everything(), is.na)) %>%
         rowwise(species_code) %>%
         reframe(hpc_path = str_split(raw_sequence_directory, '\n') %>%
-                    unlist) 
+                    unlist)
     
     job::job({
         open_tracker_seqs <- open_tracker_prep %>%
-            get_wahab_data(depth = search_depth, password = the_pw)
+            get_wahab_data(depth = search_depth, password = the_pw) %>%
+          mutate(match = str_c('osci_row', row_number()))
         write_rds(open_tracker_seqs, openScience_file, compress = 'xz')
     })
     the_pw <- NULL
 }
 
-
 open_tracker_seqs %>%
     mutate(hpc_path = dirname(hpc_path)) %>%
     left_join(wahab_seq_joined,
               by = c('hpc_path'))
+
+#### Get all raw files ####
+all_raw_files <- bind_rows(select(wahab_seq_joined, -data),
+                           select(open_tracker_seqs, -species_code)) %>%
+  unnest(wahab_seqs) %>%
+  filter(!is.na(file)) %>%
+  mutate(file = file.path(hpc_path, file),
+         hpc_path = dirname(file),
+         file = basename(file)) %>%
+  summarise(.by = c(hpc_path, file),
+            match = unique(match) %>% sort %>% str_c(collapse = ';')) %>%
+  
+  #remove files & directories definitely not raw
+  filter(!is.na(file),
+         !str_detect(file, '(tagged_filter)|(fail.fq.gz$)|(unprd.fq.gz$)|(unpaired)|(cor.fastq.gz$)|(trimmed_merged.fastq.gz$)')) %>%
+  filter(!str_detect(hpc_path, '(_fp1)|(mkBAM)|(GenErode)|(mkVCF)|(mitoZ)|(oldfqgz)|(dDocentHPC/test)')) %>%
+  
+  #Split forward/reverse reads
+  mutate(read_suffix = str_extract(file, '([._-])?([rR])?[12](.tagged)?(_filter)?(ed)?(_trimmed)?(_unmerged)?.f(ast)?q.gz$'),
+         file_prefix = str_remove(file, read_suffix),
+         read_direction = str_extract(read_suffix, '[12]'),
+         read_direction = if_else(read_direction == '1', 'forward', 'reverse')) %>%
+  select(-read_suffix) %>%
+  distinct() %>%
+  pivot_wider(names_from = read_direction,
+              values_from = file)
+
+#### Get Hashes for all files ####
+# use to check not missing things later after the matching step
+hash_file <- here::here('scripts/database_transfer_from_onedrive/intermediate_files', 
+                        str_c("hash_file_d", search_depth,".csv.xz"))
+if(file.exists(hash_file) & !overwrite_files){
+  all_raw_files_hash <- read_csv(hash_file, show_col_types = FALSE)
+} else {
+  mirai::daemons(n = parallelly::availableCores())
+  
+  all_raw_files_hash <- all_raw_files %>%
+    
+    # sample_n(10) %>%
+    
+    pivot_longer(cols = c(forward, reverse),
+                 names_to = 'read_direction',
+                 values_to = 'file') %>%
+    mutate(hash = purrr::map2_chr(hpc_path, file,
+                                  hash_parallel,
+                                  .progress = TRUE)) %>%
+    pivot_wider(names_from = read_direction,
+                values_from = c('file', 'hash'))
+  mirai::daemons(n = 0)
+  
+  write_csv(all_raw_files_hash, hash_file)
+}
+
+deduped_files <- all_raw_files_hash %>%
+  # filter(n() > 1, 
+  #        .by = c(hash_forward, hash_reverse)) %>%
+  summarise(.by = c(hash_forward, hash_reverse),
+            match = str_split(match, ';') %>%
+              unlist %>%
+              unique %>%
+              sort %>%
+              str_c(collapse = ';'),
+            file_info = tibble(file_prefix, hpc_path, file_forward, file_reverse) %>%
+              distinct %>% list) %>%
+  mutate(file_pair = str_c('file_pair.', row_number()),
+         .before = match) %>%
+  select(-starts_with('hash'))
+
+deduped_files
+
+#### Relink the raw files and the metadata ####
+metadata_flat <- wahab_seq_joined %>%
+  select(-wahab_seqs, 
+         -hpc_path) %>%
+  unnest(data) %>%
+  nest(data = -c(species_code)) %>%
+  full_join(select(open_tracker_seqs, 
+                   -hpc_path, -wahab_seqs) %>%
+              rename(os_match = match),
+            by = c('species_code')) %>%
+  unnest(data) %>%
+  rename(db_match = match) %>%
+  pivot_longer(cols = c(starts_with('db'),
+                        starts_with('os')),
+               names_to = c("seqs_type", ".value"),
+               names_pattern = "(db|os)_(.*)") %>%
+  mutate(seqs_type = case_when(str_detect(seqs_type, 'db') ~ 'database',
+                               str_detect(seqs_type, 'os') ~ 'open_science')) %>%
+  unnest(seqs) %>%
+  
+  #Remove rows that the species/era/site from the sequence batch sheet doesn't match the individual ID from the individuals_sheet
+  filter(str_detect(individual_id, 
+                    str_c(species_code, '-', str_sub(era, 1, 1), site_id))) %>%
+  select(-seqs_type) 
+
+metadata_flat
+
+#### Match Metadata with Files ####
+matchID_file <- here::here('scripts/database_transfer_from_onedrive/intermediate_files', 
+                           str_c("matchID_files_d", search_depth,".csv.xz"))
+if(file.exists(matchID_file) & !overwrite_files){
+  matched_ids <- read_csv(matchID_file, show_col_types = FALSE)
+} else {
+  mirai::daemons(n = parallelly::availableCores())
+  
+  matched_ids <- deduped_files %>%
+    unnest(file_info) %>%
+    mutate(file_prefix_simp = adjust_ids(file_prefix),
+           match = str_split(match, ';')) %>%
+    unnest(match) %>%
+    nest(file_data = -c(match)) %>%
+    inner_join(nest(metadata_flat,
+                    metadata = -c(match)),
+               by = 'match') %>%
+    tidyr::unnest(metadata) 
+  
+  matched_ids$file_data[[1]]
+  #need to match files with individuals and choose which of duplicated files to keep
+  
+  %>%
+    # sample_n(1000) %>%
+    mutate(file_data = purrr::pmap(list(file_data,
+                                         extraction_id,
+                                         pire_sequence_id,
+                                         gcl_sequence_id,
+                                         individual_id),
+                                    match_wahab_parallel,
+                                    .progress = TRUE)) %>%
+    tidyr::unnest(file_data, keep_empty = FALSE)
+  mirai::daemons(n = 0)
+  
+  write_csv(matched_ids, matchID_file)
+}
+
+matched_ids 
 
 
 #### Filter to match ids with wahab seqs ####
@@ -260,27 +432,60 @@ if(file.exists(matchID_file) & !overwrite_files){
   write_csv(matched_ids, matchID_file)
 }
 
-
-unnest(matched_ids, wahab_seqs, keep_empty = TRUE) %>%
-    write_csv(matchID_file)
-
-
- %>%
+tmp <- matched_ids %>%
     filter(!is.na(file),
-           !is.na(extraction_id)) %>%
-    nest(data = -c(extraction_id)) %>%
-    full_join(pull_tbl(pire_db, 'dna_extractions_sheets') %>%
-                  filter(!is.na(date_subsampling)),
-              by = 'extraction_id') %>%
-    filter(is.na(individual_id))
+           !is.na(extraction_id),
+           !str_detect(file, '(tagged_filter)|(fail.fq.gz$)|(unprd.fq.gz$)|(unpaired)|(cor.fastq.gz$)|(trimmed_merged.fastq.gz$)')) %>%
+  
+  #Remove rows that the species/era/site from the sequence batch sheet doesn't match the individual ID from the individuals_sheet
+  filter(str_detect(individual_id, 
+                    str_c(species_code, '-', str_sub(era, 1, 1), site_id))) %>%
+  
+  #Split forward and reverse reads up
+  mutate(file = file.path(wahab_path, file),
+         wahab_path = dirname(file),
+         file = basename(file)) %>%
+  mutate(read_suffix = str_extract(file, '([._-])?([rR])?[12](.tagged)?(_filter)?(ed)?(_trimmed)?(_unmerged)?.f(ast)?q.gz$'),
+         file_prefix = str_remove(file, read_suffix),
+         read_direction = str_extract(read_suffix, '[12]'),
+         read_direction = if_else(read_direction == '1', 'forward', 'reverse')) %>%
+  select(-read_suffix) %>%
+  distinct() %>%
+  pivot_wider(names_from = 'read_direction',
+              values_from = file) %>%
+  
+  #Remove paths that don't contain raw reads
+  filter(!str_detect(wahab_path, '(_fp1)|(mkBAM)|(GenErode)|(mkVCF)|(mitoZ)|(oldfqgz)')) %>%
+  
+  #remove mismatches btwn seq types
+  filter(((str_detect(str_to_lower(sequencing_batch_id), 'lcwgs') & 
+             str_detect(str_to_lower(wahab_path), 'lcwgs')) |
+            (str_detect(str_to_lower(sequencing_batch_id), '(?<!c)ssl') & 
+               str_detect(str_to_lower(wahab_path), '(?<!c)ssl|shotgun')) |
+            (str_detect(str_to_lower(sequencing_batch_id), 'cssl') & 
+               str_detect(str_to_lower(wahab_path), 'cssl')) |
+            (!str_detect(str_to_lower(wahab_path), 'ssl|shotgun|lcwgs|cssl')))) %>%
+  
+  #Remove duplicates from simply different original sourcing pointing to the same files/paths
+  select(-seqs_type) %>%
+  distinct %>%
+  
+  #If no sequencing run match with batch_id that says 1. If there is a sequencing run then match the numbers
+  filter(case_when(!str_detect(wahab_path, '(1st|2nd|3rd|4th|5th)_sequencing_run') & str_detect(sequencing_batch_id, '1$') ~ TRUE,
+                   str_detect(wahab_path, '(1st|2nd|3rd|4th|5th)_sequencing_run') & 
+                     str_detect(str_extract(wahab_path, '(1st|2nd|3rd|4th|5th)_sequencing_run'), str_sub(sequencing_batch_id, -1)) ~ TRUE,
+                   TRUE ~ FALSE))
 
- %>%
-    distinct() %>%
-    full_join(nest(matched_ids,
-                   data = -c(extraction_id)),
-              by = 'extraction_id') %>%
-    mutate(has_hits = )
+nest(tmp,
+     data = -c(wahab_path, file_prefix, forward, reverse)) %>%
+  full_join(all_raw_files,
+            by = c('wahab_path' = 'hpc_path', 'file_prefix', 
+                   'forward', 'reverse')) %>%
+  filter(map_lgl(data, is.null)) %>%
+  distinct(wahab_path)
 
+
+#### Testing Below ####
 
 # file <- tmp$file[[1]]; matched_data <- tmp$data[[1]]
 find_likely_match <- function(file, matched_data){
