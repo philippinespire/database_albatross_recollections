@@ -191,12 +191,14 @@ all_metadata <- full_join(pull_tbl(the_db, "sequence_filename_sheets"),
               by = c('species_code', 'era')) %>%
     filter(!is.na(sequencing_batch_id))
 
-
 # !map_lgl(seqs, is.null)
 # filter(all_metadata, is.na(hpc_path)) %>%
 #     select(sequencing_batch_id) %>%
 #     write_csv('problem_notes/missing_hpc_path.csv')
 
+select(all_metadata, seqs) %>%
+  unnest(seqs) %>%
+  distinct()
 
 #### Get wahab sequences from specified directories ####
 wahab_file <- here::here('scripts/database_transfer_from_onedrive/intermediate_files', 
@@ -346,7 +348,8 @@ metadata_flat <- wahab_seq_joined %>%
   #Remove rows that the species/era/site from the sequence batch sheet doesn't match the individual ID from the individuals_sheet
   filter(str_detect(individual_id, 
                     str_c(species_code, '-', str_sub(era, 1, 1), site_id))) %>%
-  select(-seqs_type) 
+  select(-seqs_type) %>%
+  distinct()
 
 metadata_flat
 
@@ -369,10 +372,13 @@ if(file.exists(matchID_file) & !overwrite_files){
                by = 'match') %>%
     tidyr::unnest(metadata) 
   
-  matched_ids$file_data[[1]]
+  
+  # matched_ids$file_data[[1]] %>%
+  #   filter(str_detect(file_prefix, 'Mat'))
   #need to match files with individuals and choose which of duplicated files to keep
   
-  %>%
+  matched_ids <- matched_ids %>%
+    # slice(1) %>%
     # sample_n(1000) %>%
     mutate(file_data = purrr::pmap(list(file_data,
                                          extraction_id,
@@ -381,15 +387,39 @@ if(file.exists(matchID_file) & !overwrite_files){
                                          individual_id),
                                     match_wahab_parallel,
                                     .progress = TRUE)) %>%
-    tidyr::unnest(file_data, keep_empty = FALSE)
+    tidyr::unnest(file_data, keep_empty = FALSE) %>%
+    distinct
   mirai::daemons(n = 0)
   
   write_csv(matched_ids, matchID_file)
 }
 
-matched_ids 
+n_distinct(matched_ids$match) 
+n_distinct(matched_ids$file_pair) 
+distinct(matched_ids, ends_with('_id'), -sequencing_batch_id, -site_id)
+
+matched_ids %>%
+  summarise(.by = c(gcl_sequence_id, pire_sequence_id, extraction_id, individual_id),
+            across(everything(), n_distinct)) %>%
+  summarise(across(where(is.numeric), mean))
+
+matched_ids %>%
+  summarise(.by = c(file_pair),
+            n = n(),
+            across(everything(), n_distinct)) %>%
+  summarise(across(where(is.numeric), mean))
 
 
+matched_ids %>%
+  filter(file_pair == 'file_pair.100') %>%
+  select(-file_prefix_simp) %>%
+  select(where(~ n_distinct(.) > 1)) %>%
+  select(-file_forward, -file_reverse, -match) %>%
+  select(-hpc_path)
+  distinct(file_prefix, hpc_path)
+
+#### OLD BELOW ####
+  
 #### Filter to match ids with wahab seqs ####
 matchID_file <- here::here('scripts/database_transfer_from_onedrive/intermediate_files', 
                                str_c("matchID_files_d", search_depth,".csv.xz"))
