@@ -2291,7 +2291,7 @@ Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_035	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_036	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_037	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_038	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_039	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
+Ambassis_kopsii	Luz-2017-047_001	Aur-CRag_039	NA	NA	COI barcode	Brendan Reid	"Summarized by Chris Bird in a Slack post Feb 10, 2022 in sp_hypoatherina-temminckii"	2022	2	10	3/12/26	Entered by Malin Pinsky
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_040	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_041	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_042	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
@@ -5822,7 +5822,7 @@ Hypoatherina_temminckii	Luz-2017-036_001	Hte-CTic_066	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Hypoatherina_temminckii	Luz-2017-036_001	Hte-CTic_067	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Hypoatherina_temminckii	Luz-2017-036_001	Hte-CTic_068	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Hypoatherina_temminckii	Luz-2017-036_001	Hte-CTic_069	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Hypoatherina_temminckii	Luz-2017-036_001	Hte-CTic_070	NA	NA	NA	NA	NA	NA	NA	NA	NA	Used_for_de_novo_genome_assembly
+Ambassis_sp	Luz-2017-036_001	Hte-CTic_070	NA	NA	COI barcode	Brendan Reid and Jem Baldisimo	"Summarized by Chris Bird in a Slack post Feb 10, 2022 in sp_hypoatherina-temminckii. Identified as Ambassis kopsii (3 mtDNA genomes) or Ambassis nalua (one genome). Brendan thinks the evidence supports kopsii. However, uploaded to Genbank as both Ambassis urotaenia (SAMN39830500) from sequencing_batch_id Hte-CTic_070 and as Ambassis kopsii (SAMN39830499) from  sequencing_batch_id Hte-CTic_070_Ex2"	2022	2	10	3/12/26	Used_for_de_novo_genome_assembly
 Hypoatherina_temminckii	Luz-2017-036_001	Hte-CTic_071	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Hypoatherina_temminckii	Luz-2017-036_001	Hte-CTic_072	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Hypoatherina_temminckii	Luz-2017-036_001	Hte-CTic_073	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
