@@ -1,6 +1,6 @@
 lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_government_unit	province	region	island_group	notes	correction_applied	correction_id	correction_details	correction_date
-MAT-2024-05_01	Mat		Matnog Bay	12.586108	124.087275	Camcaman	Matnog	Sorsogon	Bicol	Luzon		FALSE			
-TLK-2024-08_01	Tlk		Taluksangay	6.953627	122.183942	Taluksangay	Zamboanga City	Zamboanga del Sur	Zamboanga Peninsula	Mindanao		FALSE			
-BAU-2025-01_01	Bau		Bauan	13.79332791	121.0072349		Bauan	Batangas	Calabrazon	Luzon		FALSE			
-PLA-2025-04_01	Pla		Plaridel	8.6388566	123.6851631	Usocan	Plaridel	Misamis-Occidental	Northern Mindanao	Mindanao		FALSE			
-LIM-2025-07_01	Lim		Liminangcong	11.01118	119.302732	Liminangcong	Liminangcong	Palawan	Mimaropa	Luzon		FALSE			
+MAT-2024-05_01	Mat	MatB	Matnog Bay	12.586108	124.087275	Camcaman	Matnog	Sorsogon	Bicol	Luzon		FALSE			
+TLK-2024-08_01	Tlk	Basi	Taluksangay	6.953627	122.183942	Taluksangay	Zamboanga City	Zamboanga del Sur	Zamboanga Peninsula	Mindanao		FALSE			
+BAU-2025-01_01	Bau	Pmar	Bauan	13.79332791	121.0072349		Bauan	Batangas	Calabrazon	Luzon		FALSE			
+PLA-2025-04_01	Pla	Dapi	Plaridel	8.6388566	123.6851631	Usocan	Plaridel	Misamis-Occidental	Northern Mindanao	Mindanao		FALSE			
+LIM-2025-07_01	Lim	Mala	Liminangcong	11.01118	119.302732	Liminangcong	Liminangcong	Palawan	Mimaropa	Luzon		FALSE			
