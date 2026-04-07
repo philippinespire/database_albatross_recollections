@@ -283,8 +283,4 @@ Pli_AMvi_1908_LCWGS_2	Pli	Albatross	Mvi	Masi	1908	LCWGS	48	1	No	wahab.hpc.odu.ed
 Pli_CMvi_2019_LCWGS_2	Pli	Contemporary	Mvi	Masi	2019	LCWGS	48	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_plotosus_lineatus_lcwgs/2nd_sequencing_run	PE_150	Marianne_Dehasque	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Pli_AMvi_1908_LCWGS_3	Pli	Albatross	Mvi	Masi	1908	LCWGS	42	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_plotosus_lineatus_lcwgs/3rd_sequencing_run	PE_150	Marianne_Dehasque	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Pli_CMvi_2019_LCWGS_3	Pli	Contemporary	Mvi	Masi	2019	LCWGS	48	1	No	wahab.hpc.odu.edu	/archive/carpenterlab/pire/pire_plotosus_lineatus_lcwgs/3rd_sequencing_run	PE_150	Marianne_Dehasque	NA	NA	NA	NA	NA	NA	NA	NA	NA
-<<<<<<< HEAD
-Pba_ABur_1908_LCWGS_	Pba	Albatross	Bur	Buri	1908	LCWGS	NA	NA	NA	wahab.hpc.odu.edu	NA	NA	NA	Jason Selwyn	Pbr_1909_SanPascual_Masbate_lcwgs	https://n2t.net/ark:/21547/Gfc2	PRJNA1348188	NA	Pomacentrus_brachialis_1909_SanPascual_Masbate_lcwgs	NA	Row not entered until after sequence upload. Missing data as a result	changed species code to Pba from Pbr to match individual IDs (Malin Pinsky)
-=======
-Pba_ABur_1908_LCWGS_	Pbr	Albatross	Bur	Buri	1908	LCWGS	NA	NA	NA	wahab.hpc.odu.edu	NA	NA	NA	Jason Selwyn	Pbr_1909_SanPascual_Masbate_lcwgs	https://n2t.net/ark:/21547/Gfc2	PRJNA1348188	NA	Pomacentrus_brachialis_1909_SanPascual_Masbate_lcwgs	NA	Row not entered until after sequence upload. Missing data as a result	NA
->>>>>>> 8e2c350fabc59d2304ec229f1fedda3dd9583523
+Pba_ABur_1908_LCWGS_	Pba	Albatross	Bur	Buri	1908	LCWGS	NA	NA	NA	wahab.hpc.odu.edu	NA	NA	NA	Jason Selwyn	Pbr_1909_SanPascual_Masbate_lcwgs	https://n2t.net/ark:/21547/Gfc2	PRJNA1348188	NA	Pomacentrus_brachialis_1909_SanPascual_Masbate_lcwgs	NA	Row not entered until after sequence upload. Missing data as a result	Changed species code from Pbr to Pba to match individual IDs. Note geome entry uses Pbr (Malin Pinsky).
