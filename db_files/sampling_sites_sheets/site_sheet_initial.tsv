@@ -285,10 +285,10 @@ Sul-2021-05_02	Taw	Tawi	Bongao_Channel	5.034526	119.7445	Pahut	Bongao	Tawi-tawi	
 SUR-2022_01_01	Sur	Suri	Surigao_Fish_Market	9.7903696	125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
 SUR-2022_01_02	Sur	Suri	Surigao_Fish_Market	9.7903696	125.497978	NA	Surigao City	Surigao del Norte	Caraga	Mindanao	NA
 TIC-2022-01_03	Mas	Samr	Masbate_City_Fish_Market	12.3831716	123.62196	NA	NA	NA	NA	NA	NA
-VER-2022-01_001	Gal	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
-VER-2022-01_002	Ver	PGal	NA	NA	NA		Batangas	Batangas	CALABARXON	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
-VER-2022-01_003	Ver	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
-VER-2022-01_007	Gal	PGal	Verde_Island	NA	NA	NA	NA	NA	NA	NA	NA
+VER-2022-01_001	Gal	PGal	Verde_Island	13.5722403	121.0858726	San Andres	Batangas	Batangas	CALABARXON	Luzon	location info from Albatross collection site google map (Malin 2026-04-08)
+VER-2022-01_002	Ver	PGal	Verde_Island	13.5722403	121.0858726	San Andres	Batangas	Batangas	CALABARXON	Luzon	location info from Albatross collection site google map (Malin 2026-04-08)
+VER-2022-01_003	Ver	PGal	Verde_Island	13.5722403	121.0858726	San Andres	Batangas	Batangas	CALABARXON	Luzon	location info from Albatross collection site google map (Malin 2026-04-08)
+VER-2022-01_007	Gal	PGal	Verde_Island	13.5722403	121.0858726	San Andres	Batangas	Batangas	CALABARXON	Luzon	location info from Albatross collection site google map (Malin 2026-04-08)
 Zam-2019-001_001	Sub	SubB	Silanguin	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-002_003	Sub	SubB	Subic_City_Municipal_Fish_Port	NA	NA	NA	NA	NA	NA	NA	NA
 Zam-2019-003_005	Sub	SubB	Subic_City_Municipal_Fish_Port	14.874624	120.2175	NA	Subic	Zambales	Central Luzon	Luzon	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
