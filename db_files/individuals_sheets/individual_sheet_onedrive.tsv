@@ -2282,7 +2282,7 @@ Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_026	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_027	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_028	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_029	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
-Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_030	NA	NA	NA	NA	NA	NA	NA	NA	NA	Used_for_de_novo_genome_assembly
+Ambassis_sp	Luz-2017-047_001	Aur-CRag_030	NA	NA	NA	NA	NA	NA	NA	NA	NA	"Used_for_de_novo_genome_assembly. Chris Bird reported that, ""The noWGA sequence for shotgun library that was supposed to be sample Hte-CTic_070_Ex2 was actually sample Aur-CRag_030_Ex4"" (slack post 2026-04-09). Sequencing_batch_id Hte-CTic_070_Ex2 was identifed based on COI as Ambassis kopsii, so this might be kopsii. Leaving as unknown Ambassis for now (Malin Pinsky 2026-04-15)."
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_031	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_032	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
 Ambassis_urotaenia	Luz-2017-047_001	Aur-CRag_033	NA	NA	NA	NA	NA	NA	NA	NA	NA	NA
