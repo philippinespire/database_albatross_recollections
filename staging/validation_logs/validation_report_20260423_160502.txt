@@ -1,0 +1,31 @@
+PIRE Database Validation Report
+Generated: 2026-04-23 16:05:02.294506
+============================================================
+
+
+File: dna_extractions_sheets/jds-2026-04-23-hifi_hic_extractions.tsv
+Table Type: dna_extractions_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Duplicate primary key issues in dna_extractions_sheets:
+
+Duplicates within your file:
+  - Sde-CLim_108-Ex1
+
+Fix: Remove or modify duplicate rows in your TSV
+
+Keys that already exist in database:
+  - Sde-CMat_061-Ex1
+
+Fix: These records already exist. Either:
+  1. Remove these rows if they're duplicates
+  2. Update the keys if these are new records
+
+----------------------------------------
+
+File: tissues_sheets/jds-2026-04-23-hifi_hic_tissues.tsv
+Table Type: tissues_sheets
+Status: PASSED ✓
+
+----------------------------------------

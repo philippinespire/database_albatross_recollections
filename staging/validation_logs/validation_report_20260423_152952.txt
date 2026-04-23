@@ -1,0 +1,47 @@
+PIRE Database Validation Report
+Generated: 2026-04-23 15:29:52.939258
+============================================================
+
+
+File: dna_extractions_sheets/jds-2026-04-23-hifi_hic_extractions.tsv
+Table Type: dna_extractions_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Found 31 rows with missing primary key values in dna_extractions_sheets
+Rows with issues: 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23...
+Missing values: extraction_id: 31 NAs
+
+Fix in your TSV file:
+1. Check rows 4-34
+2. Fill in missing values for: extraction_id
+3. Ensure every row has complete primary key information
+  - Foreign key constraint violation in dna_extractions_sheets:
+References to non-existent records in tissues_sheets:
+  - Sde-C-1003-E-brn
+  - Sde-C-1007-P-mus
+  - Sde-C-1008-E-mus
+  - Sde-C-1008-D-mus
+  - Sde-C-1001-E-brn
+  - Sde-C-1006-E-brn
+  - Sde-C-1017-E-brn
+  - Sde-C-1012-N-brn
+  - Sde-C-1024-E-brn
+  - Sde-C-1019-D-brn
+  - Sde-C-1020-P-brn
+  - Sde-C-1021-E-brn
+  - Sde-C-1017-E-eye
+  - Sde-C-1019-D-eye
+  - Sde-C-1017-D-mus
+  - Sde-C-1021-E-eye
+  - Sde-C-1023-N-hrt
+  - Sde-C-1023-N-eye
+  - Sde-C-1007-N-eye
+  - Sde-C-1018-N-eye
+  ... and 12 more
+
+Fix options:
+1. Correct the tissue_id values in your TSV
+2. Ensure the parent records are in the staging folder or database
+3. Remove these rows if they're invalid
+----------------------------------------
