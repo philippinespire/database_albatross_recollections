@@ -1,0 +1,28 @@
+PIRE Database Validation Report
+Generated: 2026-04-27 13:53:21.186994
+============================================================
+
+
+File: dna_extractions_sheets/add_missing_Adu_jds.tsv
+Table Type: dna_extractions_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: tissues_sheets/add_missing_Adu_jds.tsv
+Table Type: tissues_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Duplicate primary key issues in tissues_sheets:
+
+Keys that already exist in database:
+  - Adu-AMat_001-mus
+  - Adu-AMat_003-mus
+  - Adu-AMat_089-mus
+
+Fix: These records already exist. Either:
+  1. Remove these rows if they're duplicates
+  2. Update the keys if these are new records
+
+----------------------------------------
