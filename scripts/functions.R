@@ -423,9 +423,10 @@ suppressPackageStartupMessages(library(vctrs))
 .compile_db_inputs <- function(verbose = FALSE){
     
     raw_files <- list.files(here::here("db_files"), 
-               pattern = 'tsv$',
-               full.names = TRUE, 
-               recursive = TRUE) %>%
+                            pattern = 'tsv$',
+                            full.names = TRUE, 
+                            recursive = TRUE) %>%
+        str_subset('deprecated', negate = TRUE) %>%
         tibble(file = .) %>%
         mutate(file_type = dirname(file) %>%
                    str_remove('^.*/db_files/')) %>%
@@ -577,7 +578,8 @@ suppressPackageStartupMessages(library(vctrs))
         dm::dm_add_pk(sequence_info_sheets,
                       columns = c(sequencing_batch_id)) %>%
         dm::dm_add_pk(sequence_filename_sheets,
-                      columns = c(pire_sequence_id)) %>%
+                      columns = c(file_prefix, hpc_path, hpc_name,
+                                  extraction_id)) %>%
         dm::dm_add_pk(tissues_sheets,
                       columns = c(tissue_id)) %>%
         dm::dm_add_pk(xray_sheets,
@@ -1735,7 +1737,7 @@ update_database <- function(integrate_files = FALSE){
         }
     }
     
-    out <- pire_database() %>%
+    filtered_db <- pire_database() %>%
         dm_filter(dna_extractions_sheets = (extraction_id %in% extraction_ids)) %>%
         
         dm_select(lots_sheets, lot_id,
@@ -1772,14 +1774,17 @@ update_database <- function(integrate_files = FALSE){
                   extraction_id,
                   date_subsampling,
                   tissueRecordedBy = subsampler,
-                  tissueRemarks = notes) %>%
-        
-        dm_flatten_to_tbl(start = individuals_sheets,
-                          dna_extractions_sheets,
-                          lots_sheets,
-                          sampling_sites_sheets,
-                          species_sheets,
-                          .recursive = TRUE) %>% #count(collection_era) #colnames()
+                  tissueRemarks = notes) 
+    
+    out <- pull_tbl(filtered_db, 'dna_extractions_sheets') %>%
+        full_join(pull_tbl(filtered_db, 'individuals_sheets'),
+                  by = 'individual_id') %>%
+        full_join(pull_tbl(filtered_db, 'lots_sheets'),
+                  by = 'lot_id') %>%
+        full_join(pull_tbl(filtered_db, 'sampling_sites_sheets'),
+                  by = 'lot_id') %>%
+        full_join(pull_tbl(filtered_db, 'species_sheets'),
+                  by = 'species_valid_name') %>% #count(collection_era) #colnames()
         separate(species_valid_name, 
                  into = c('genus', 'specificEpithet'),
                  sep = '_', remove = FALSE) %>% #select(individual_id)
@@ -1876,7 +1881,7 @@ update_database <- function(integrate_files = FALSE){
     message("   List names with an underscore between the first and last name. If there is more than one name, use a space and the pipe operator '|' between each name (the pipe operator is specified to be used in the GEOME FAQs). Example: Kent_Carpenter | Maddy_Kenton.\n")
     
     message("   Other resources to find missing information:")
-    message("      * https://drive.google.com/file/d/1CLNuOJJAoEva_7wqxqVX3mDaNFH0cr-r/view")
+    #message("      * https://drive.google.com/file/d/1CLNuOJJAoEva_7wqxqVX3mDaNFH0cr-r/view")
     message("      * ODUOneDrive/ALBATROSS_1907-1910updatedALLrecordsNotations.xlsx\n")
     
     
@@ -1894,7 +1899,7 @@ update_database <- function(integrate_files = FALSE){
 }
 
 
-output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_path = NULL){
+output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, seq_type = NULL, output_path = NULL){
     if(!is.null(output_path)){
         dir.create(output_path, showWarnings = FALSE, recursive = TRUE)
         # output_file <- file.path(output_path, "upload_guidance.txt")
@@ -1904,10 +1909,6 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
     } else {
         output_file <- NULL
     }
-    
-    seq_type <- case_when(all(str_detect(sequence_ids, 'CSSL')) ~ 'cssl',
-                          all(str_detect(sequence_ids, 'wgs')) ~ 'lcwgs',
-                          all(str_detect(sequence_ids, 'SSL')) ~ 'SSL')
     
     # Get data and prep names
     captured_output <- capture.output({
@@ -1961,18 +1962,18 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, output_pa
     if(!is.null(sequence_ids)){
         .message_and_log('  \nFASTQ Library Metadata:', file = output_file)
         .message_and_log('    Library Layout: Paired-End', file = output_file)
-        if(all(str_detect(sequence_ids, 'CSSL'))){
+        if(all(str_detect(seq_type, 'CSSL|cssl'))){
             .message_and_log('    Library Strategy: OTHER', file = output_file)
         } else {
             .message_and_log('    Library Strategy: WGS', file = output_file)
         }
         .message_and_log('    Library Source: GENOMIC', file = output_file)
         # Library Selection
-        if(all(str_detect(sequence_ids, 'CSSL'))){
+        if(all(str_detect(seq_type, 'CSSL|cssl'))){
             .message_and_log('    Library Selection: "Reduced Representation"', file = output_file)
-        } else if(all(str_detect(sequence_ids, 'wgs'))){
+        } else if(all(str_detect(seq_type, 'wgs'))){
             .message_and_log('    Library Selection: "Other"', file = output_file)
-        } else if(all(str_detect(sequence_ids, 'SSL'))){
+        } else if(all(str_detect(seq_type, 'SSL|ssl'))){
             .message_and_log('    Library Selection: "size fractionation"', file = output_file)
         }
         .message_and_log('    Platform: ILLUMINA', file = output_file)
