@@ -1899,7 +1899,7 @@ update_database <- function(integrate_files = FALSE){
 }
 
 
-output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, seq_type = NULL, output_path = NULL){
+output_geome_metadata <- function(extraction_ids, forward_reads, reverse_reads, seq_type = NULL, output_path = NULL){
     if(!is.null(output_path)){
         dir.create(output_path, showWarnings = FALSE, recursive = TRUE)
         # output_file <- file.path(output_path, "upload_guidance.txt")
@@ -1914,7 +1914,8 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, seq_type 
     captured_output <- capture.output({
         output <- .make_geome_metadata(extraction_ids) %>%
             inner_join(tibble(catalogNumber = extraction_ids,
-                              original_sequence_id = sequence_ids),
+                              forward_files = forward_reads,
+                              reverse_files = reverse_reads),
                        .,
                        by = 'catalogNumber') %>%
             relocate(catalogNumber, .after = 'preservative') %>%
@@ -1936,7 +1937,8 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, seq_type 
     
     
     expeditions <- distinct(output, species_code, yearCollected, locality) %>%
-        mutate(expedition_name = str_c(species_code, yearCollected, locality, seq_type, sep = '_')) %>%
+        mutate(expedition_name = str_c(species_code, yearCollected, locality, seq_type, sep = '_'),
+               expedition_name = str_remove_all(expedition_name, ',( )?')) %>%
         right_join(output,
                    ., 
                    by = c('species_code', 'yearCollected', 'locality')) %>%
@@ -1947,20 +1949,22 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, seq_type 
     if(!is.null(output_path)){
         .message_and_log('\nSaving GEOME Metadata files to: ', output_path, file = output_file)
         .message_and_log('  Saving Samples CSV files to: ', str_c(output_path, sep = '/'), file = output_file)
-        with(expeditions,
-             walk2(expedition_name,
-                   data,
-                   ~{
-                       file <- file.path(output_path, paste0(.x, ".csv"))
-                       readr::write_csv(select(.y, -original_sequence_id), file)
-                       .message_and_log("    Saved file: ", file, file = output_file)
-                   }))
+            with(expeditions,
+                 walk2(expedition_name,
+                       data,
+                       ~{
+                           file <- file.path(output_path, paste0(.x, ".csv"))
+                           readr::write_csv(select(.y, -forward_files, -reverse_files), file)
+                           .message_and_log("    Saved file: ", file, file = output_file)
+                       }))
+        .message_and_log('    Number of samples: ', nrow(output), file = output_file)
     }
 
     
     #Output fasta renaming script
-    if(!is.null(sequence_ids)){
+    if(!is.null(forward_reads)){
         .message_and_log('  \nFASTQ Library Metadata:', file = output_file)
+        .message_and_log('    Number of SRA Files: ', length(forward_reads) + length(reverse_reads), file = output_file)
         .message_and_log('    Library Layout: Paired-End', file = output_file)
         if(all(str_detect(seq_type, 'CSSL|cssl'))){
             .message_and_log('    Library Strategy: OTHER', file = output_file)
@@ -1982,33 +1986,33 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, seq_type 
         
         fastq_info <- unnest(expeditions, data) %>%
             select(expedition_name, materialSampleID, catalogNumber,
-                   original_sequence_id) %>%
-            mutate(sequence_id = str_replace(basename(original_sequence_id),
-                                             catalogNumber, 
-                                             materialSampleID))
+                   forward_files, reverse_files) %>%
+            pivot_longer(cols = c(forward_files, reverse_files),
+                         names_to = 'direction',
+                         values_to = 'original_file') %>%
+            mutate(ncbi_file = str_c(materialSampleID, 
+                                     str_extract(basename(original_file), 
+                                                 '.[12].fq.gz')))
         
         if(!is.null(output_path)){
             .message_and_log('\n  Saving FASTQ renaming script to: ', 
                     str_c(output_path, 'rename_seqs_for_ncbi.slurm', sep = '/'), file = output_file)
-            .message_and_log('    Copy this script to the "./fq_raw" directory and run to create ', file = output_file)
-            .message_and_log('    softlinks with the proper names in "./fq_raw/ncbi_upload"', file = output_file)
+            .message_and_log('    Copy this script to your "~/open_science/" directory on WAHAB and run to copy ', file = output_file)
+            .message_and_log('    and rename all files into "./ncbi_upload"', file = output_file)
             sequence_rename <- select(fastq_info,
                                       expedition_name,
-                                      original_sequence_id, sequence_id) %>%
-                expand_grid(direction = c('1', '2')) %>%
-                mutate(original_sequence_id = str_c(original_sequence_id, direction, 'fq.gz', sep = '.'),
-                       sequence_id = str_c(sequence_id, direction, 'fq.gz', sep = '.') %>%
-                           str_c('./ncbi_upload/', expedition_name, '/', .),
+                                      original_file, ncbi_file) %>%
+                mutate(ncbi_file = str_c('./ncbi_upload/', expedition_name, '/', ncbi_file),
                        .keep = 'unused') 
             
             
-            dirs <- unique(dirname(sequence_rename$sequence_id))
+            dirs <- unique(dirname(sequence_rename$ncbi_file))
             
             
             # make a list of rsync commands
             cmds <- apply(sequence_rename, 1, function(r) {
-                src <- r[["original_sequence_id"]]
-                dst <- r[["sequence_id"]]
+                src <- r[["original_file"]]
+                dst <- r[["ncbi_file"]]
                 sprintf('rsync -a --partial --inplace --info=progress2 "%s" "%s"', src, dst)
             })
             
@@ -2042,11 +2046,8 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, seq_type 
         if(!is.null(output_path)){
             .message_and_log('\n  Saving FASTQ Data CSV files to: ', str_c(output_path, sep = '/'), file = output_file)
             fastq_csv_files <- fastq_info %>%
-                select(expedition_name, sequence_id) %>%
-                expand_grid(direction = c('1', '2')) %>%
-                mutate(sequence_id = str_c(sequence_id, direction, 'fq.gz', sep = '.'),
-                       .keep = 'unused') %>%
-                nest(data = -c(expedition_name))
+                select(expedition_name, ncbi_file) %>%
+                nest(data = -c(expedition_name)) 
             
             with(fastq_csv_files,
                  walk2(expedition_name,
@@ -2071,10 +2072,11 @@ output_geome_metadata <- function(extraction_ids, sequence_ids = NULL, seq_type 
         nest(location_info = -c(species_code)) %>%
         inner_join(pire_database() %>% 
                        pull_tbl('species_sheets') %>%
-                       select(species_code, species_valid_name),
+                       select(species_code, species_valid_name) %>%
+                       mutate(species_code = str_remove_all(species_code, ',( )?')),
                    by = 'species_code') %>%
         unnest(location_info) %>%
-        mutate(ncbi_title = str_c("Project Title:",
+        mutate(ncbi_title = str_c("Project Title: ",
                                   str_replace(expedition_name,
                                         species_code,
                                         species_valid_name)),
