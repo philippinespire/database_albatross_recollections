@@ -1,6 +1,6 @@
 lot_id	site_id	match_id	collection_site	latitude	longitude	barangay	local_government_unit	province	region	island_group	notes
 94530	Bir	Bali	Biri_Channel	12.621885	124.3965	NA	Biri	Northern Samar	Eastern Visayas	Visayas	"location info infered from lotID sheet and other lots with same ""collection_site"" column. JDS 9.29.2025"
-96400	Pal	Bali	NA	12.6347634	125.00979	NA	Laoang	Northern Samar	Eastern Visayas	Visayas	Port Palapag
+96400	Pal	Bali	NA	12.6347634	125.00979	NA	Laoang	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96429	Pal	Bali	NA	12.6347634	125.00979	NA	Laoang	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96459	Pal	Bali	NA	12.6347634	125.00979	NA	Laoang	Northern Samar	Eastern Visayas	Visayas	Port Palapag
 96463	Pal	Bali	NA	12.6347634	125.00979	NA	Laoang	Northern Samar	Eastern Visayas	Visayas	Port Palapag
