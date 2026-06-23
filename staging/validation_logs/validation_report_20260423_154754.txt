@@ -1,0 +1,33 @@
+PIRE Database Validation Report
+Generated: 2026-04-23 15:47:54.695802
+============================================================
+
+
+File: dna_extractions_sheets/jds-2026-04-23-hifi_hic_extractions.tsv
+Table Type: dna_extractions_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Found 1 rows with missing primary key values in dna_extractions_sheets
+Rows with issues: 31
+Missing values: extraction_id: 1 NAs
+
+Fix in your TSV file:
+1. Check rows 31-31
+2. Fill in missing values for: extraction_id
+3. Ensure every row has complete primary key information
+  - Duplicate primary key issues in dna_extractions_sheets:
+
+Duplicates within your file:
+  - Sde-CLim_108-Ex1
+
+Fix: Remove or modify duplicate rows in your TSV
+
+
+----------------------------------------
+
+File: tissues_sheets/jds-2026-04-23-hifi_hic_tissues.tsv
+Table Type: tissues_sheets
+Status: PASSED ✓
+
+----------------------------------------

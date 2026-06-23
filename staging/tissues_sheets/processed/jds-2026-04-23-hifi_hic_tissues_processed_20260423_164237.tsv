@@ -1,0 +1,34 @@
+individual_id	tissue_id	tissue_type	notes	correction_applied	correction_id	correction_details	correction_date
+Sde-CTlk_101	Sde-C-1001-E-brn	Brain & Heart		FALSE			
+Sde-CTlk_101	Sde-C-1001-E-eye	Eyes		FALSE			
+Sde-CTlk_101	Sde-C-1001-P-mus	Muscle		FALSE			
+Sde-CTlk_103	Sde-C-1003-E-brn	Brain		FALSE			
+Sde-CTlk_104	Sde-C-1004-N-eye	Eyes		FALSE			
+Sde-CTlk_104	Sde-C-1004-N-mus	Muscle		FALSE			
+Sde-CMat_202	Sde-C-1006-E-brn	Brain & Heart		FALSE			
+Sde-CMat_203	Sde-C-1007-E-mus	Muscle		FALSE			
+Sde-CMat_203	Sde-C-1007-N-eye	Eyes		FALSE			
+Sde-CMat_203	Sde-C-1007-N-mus	Muscle		FALSE			
+Sde-CMat_203	Sde-C-1007-P-mus	Muscle		FALSE			
+Sde-CMat_204	Sde-C-1008-D-mus	Muscle		FALSE			
+Sde-CMat_204	Sde-C-1008-E-mus	Muscle		FALSE			
+Sde-CBau_104	Sde-C-1012-N-brn	Brain & Heart		FALSE			
+Sde-CBau_104	Sde-C-1012-N-eye	Eyes		FALSE			
+Sde-CBau_104	Sde-C-1012-P-mus	Muscle		FALSE			
+Sde-CPla_114	Sde-C-1017-D-mus	Muscle		FALSE			
+Sde-CPla_114	Sde-C-1017-E-brn	Brain & Heart		FALSE			
+Sde-CPla_114	Sde-C-1017-E-eye	Eyes		FALSE			
+Sde-CPla_115	Sde-C-1018-N-eye	Eyes		FALSE			
+Sde-CPla_115	Sde-C-1018-N-mus	Muscle		FALSE			
+Sde-CPla_115	Sde-C-1018-P-mus	Muscle		FALSE			
+Sde-CPla_116	Sde-C-1019-D-brn	Brain & Heart		FALSE			
+Sde-CPla_116	Sde-C-1019-D-eye	Eyes		FALSE			
+Sde-CPla_117	Sde-C-1020-P-brn	Brain & Heart		FALSE			
+Sde-CLim_108	Sde-C-1021-E-brn	Brain & Heart		FALSE			
+Sde-CLim_108	Sde-C-1021-E-eye	Eyes		FALSE			
+Sde-CLim_110	Sde-C-1023-E-mus	Muscle		FALSE			
+Sde-CLim_110	Sde-C-1023-N-eye	Eyes		FALSE			
+Sde-CLim_110	Sde-C-1023-N-hrt	Heart		FALSE			
+Sde-CLim_110	Sde-C-1023-P-mus	Muscle		FALSE			
+Sde-CLim_111	Sde-C-1024-E-brn	Brain & Heart		FALSE			
+Sde-CMat_061	Sde-CMat_061-mix	Muscle & eyeball		FALSE			

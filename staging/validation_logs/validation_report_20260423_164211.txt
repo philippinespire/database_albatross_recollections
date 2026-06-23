@@ -1,0 +1,16 @@
+PIRE Database Validation Report
+Generated: 2026-04-23 16:42:11.283333
+============================================================
+
+
+File: dna_extractions_sheets/jds-2026-04-23-hifi_hic_extractions.tsv
+Table Type: dna_extractions_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: tissues_sheets/jds-2026-04-23-hifi_hic_tissues.tsv
+Table Type: tissues_sheets
+Status: PASSED ✓
+
+----------------------------------------

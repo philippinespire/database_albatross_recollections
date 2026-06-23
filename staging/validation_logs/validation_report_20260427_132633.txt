@@ -1,0 +1,23 @@
+PIRE Database Validation Report
+Generated: 2026-04-27 13:26:33.530165
+============================================================
+
+
+File: individuals_sheets/add_missing_Adu_jds.tsv
+Table Type: individuals_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Foreign key constraint violation in individuals_sheets:
+References to non-existent records in species_sheets:
+  - Atherinomorus duodecimalis
+
+Fix options:
+1. Correct the species_valid_name values in your TSV
+2. Ensure the parent records are in the staging folder or database
+3. Remove these rows if they're invalid
+  - Invalid species names found:
+  - Atherinomorus duodecimalis
+
+Fix: Use valid species names from species_sheets table
+----------------------------------------

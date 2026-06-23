@@ -1,0 +1,25 @@
+PIRE Database Validation Report
+Generated: 2026-04-23 16:41:52.951263
+============================================================
+
+
+File: dna_extractions_sheets/jds-2026-04-23-hifi_hic_extractions.tsv
+Table Type: dna_extractions_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Foreign key constraint violation in dna_extractions_sheets:
+References to non-existent records in tissues_sheets:
+  - Sde-CMat_061-mix
+
+Fix options:
+1. Correct the tissue_id values in your TSV
+2. Ensure the parent records are in the staging folder or database
+3. Remove these rows if they're invalid
+----------------------------------------
+
+File: tissues_sheets/jds-2026-04-23-hifi_hic_tissues.tsv
+Table Type: tissues_sheets
+Status: PASSED ✓
+
+----------------------------------------

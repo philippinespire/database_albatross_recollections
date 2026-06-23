@@ -1,0 +1,16 @@
+PIRE Database Validation Report
+Generated: 2026-04-27 13:54:11.031014
+============================================================
+
+
+File: dna_extractions_sheets/add_missing_Adu_jds.tsv
+Table Type: dna_extractions_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: tissues_sheets/add_missing_Adu_jds.tsv
+Table Type: tissues_sheets
+Status: PASSED ✓
+
+----------------------------------------
