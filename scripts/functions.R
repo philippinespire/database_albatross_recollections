@@ -2104,6 +2104,9 @@ output_geome_metadata <- function(extraction_ids, forward_reads, reverse_reads, 
     }
     
     .message_and_log("\n", file = output_file)
+    .message_and_log("Is your project part of an umbrella project which is already registered with NCBI?: Yes", file = output_file)
+    .message_and_log("  - Umbrella BioProject description: Sequencing data from historical (1908-1909) fishes sampled by the USS Albatross in the Philippines and modern re-collections (2020s) to understand century-scale evolutionary and ecological changes.", file = output_file)
+    .message_and_log("  - BioProject accession: PRJNA1480780", file = output_file)
     .message_and_log("Relevance: Evolution", file = output_file)
     .message_and_log("  External links:", file = output_file)
     .message_and_log("    - Description: Philippines PIRE Project: Centennial Genetic and Species Transformations in the Epicenter of Marine Biodiversity URL: https://sites.wp.odu.edu/PIRE/philippines/", file = output_file)

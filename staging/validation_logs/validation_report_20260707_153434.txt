@@ -1,0 +1,39 @@
+PIRE Database Validation Report
+Generated: 2026-07-07 15:34:34.413025
+============================================================
+
+
+File: sequence_filename_sheets/jds_20260629_Sde-lcwgs_sequences_7.7.26.tsv
+Table Type: sequence_filename_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Foreign key constraint violation in sequence_filename_sheets:
+References to non-existent records in dna_extractions_sheets:
+  - Sde-AGui_001
+  - Sde-AGui_002
+  - Sde-AGui_003
+  - Sde-AGui_004
+  - Sde-AGui_005
+  - Sde-AGui_006
+  - Sde-AGui_007
+  - Sde-AGui_008
+  - Sde-AGui_009
+  - Sde-AGui_010
+  - Sde-AGui_011
+  - Sde-AGui_012
+  - Sde-AGui_013
+  - Sde-AGui_014
+  - Sde-AGui_015
+  - Sde-AGui_016
+  - Sde-AGui_017
+  - Sde-AGui_018
+  - Sde-AGui_019
+  - Sde-AGui_020
+  ... and 508 more
+
+Fix options:
+1. Correct the extraction_id values in your TSV
+2. Ensure the parent records are in the staging folder or database
+3. Remove these rows if they're invalid
+----------------------------------------

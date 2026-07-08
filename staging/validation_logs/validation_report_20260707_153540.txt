@@ -1,0 +1,19 @@
+PIRE Database Validation Report
+Generated: 2026-07-07 15:35:40.673064
+============================================================
+
+
+File: sequence_filename_sheets/jds_20260629_Sde-lcwgs_sequences_7.7.26.tsv
+Table Type: sequence_filename_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Found 776 rows with missing primary key values in sequence_filename_sheets
+Rows with issues: 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388...
+Missing values: file_prefix: 0 NAs, hpc_path: 0 NAs, hpc_name: 0 NAs, extraction_id: 776 NAs
+
+Fix in your TSV file:
+1. Check rows 369-1160
+2. Fill in missing values for: file_prefix, hpc_path, hpc_name, extraction_id
+3. Ensure every row has complete primary key information
+----------------------------------------

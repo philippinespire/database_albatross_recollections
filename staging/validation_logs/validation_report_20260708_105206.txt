@@ -1,0 +1,22 @@
+PIRE Database Validation Report
+Generated: 2026-07-08 10:52:06.841717
+============================================================
+
+
+File: dna_extractions_sheets/jds_20260629_Sde-lcwgs_extractions_7.7.26.tsv
+Table Type: dna_extractions_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: sequence_filename_sheets/jds_20260629_Sde-lcwgs_sequences_7.7.26.tsv
+Table Type: sequence_filename_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: tissues_sheets/jds_20260629_Sde-lcwgs_tissues_7.7.26.tsv
+Table Type: tissues_sheets
+Status: PASSED ✓
+
+----------------------------------------
