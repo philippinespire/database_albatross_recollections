@@ -1,0 +1,22 @@
+PIRE Database Validation Report
+Generated: 2026-09-22 11:17:49.379336
+============================================================
+
+
+File: dna_extractions_sheets/jds_20260922_Sde-hic_extractions_9.22.26.tsv
+Table Type: dna_extractions_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: sequence_filename_sheets/jds_20260922_Sde-hic_sequences_9.22.26.tsv
+Table Type: sequence_filename_sheets
+Status: PASSED ✓
+
+----------------------------------------
+
+File: tissues_sheets/jds_20260922_Sde-hic_tissues_9.22.26.tsv
+Table Type: tissues_sheets
+Status: PASSED ✓
+
+----------------------------------------

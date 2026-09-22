@@ -1,0 +1,25 @@
+PIRE Database Validation Report
+Generated: 2026-09-22 11:11:47.567895
+============================================================
+
+
+File: dna_extractions_sheets/jds_20260922_Sde-hic_extractions_9.22.26.tsv
+Table Type: dna_extractions_sheets
+Status: FAILED ✗
+
+ERRORS:
+  - Foreign key constraint violation in dna_extractions_sheets:
+References to non-existent records in tissues_sheets:
+  - Sde-C-1004-E-mus
+
+Fix options:
+1. Correct the tissue_id values in your TSV
+2. Ensure the parent records are in the staging folder or database
+3. Remove these rows if they're invalid
+----------------------------------------
+
+File: sequence_filename_sheets/jds_20260922_Sde-hic_sequences_9.22.26.tsv
+Table Type: sequence_filename_sheets
+Status: PASSED ✓
+
+----------------------------------------
