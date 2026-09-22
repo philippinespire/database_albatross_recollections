@@ -17,7 +17,7 @@ pull_tbl(the_db, 'sequence_filename_sheets') %>%
 #1. make filelist.txt `ls /archive/carpenterlab/pire/raw_sequence_archive/spratelloides_delicatulus/20260629_Sde-lcwgs/*fq.gz > /archive/carpenterlab/pire/raw_sequence_archive/spratelloides_delicatulus/20260629_Sde-lcwgs/filelist.txt`
 #2. Get SequenceDecode from sequencing facility/Sharon
 
-file_info <- read_tsv('~/../Downloads/filelist.txt',
+file_info <- read_tsv('~/../../Downloads/filelist.txt',
          col_names = 'full_path',
          show_col_types = FALSE) %>%
     mutate(hpc_path = dirname(full_path),
@@ -31,7 +31,7 @@ file_info <- read_tsv('~/../Downloads/filelist.txt',
     mutate(join_term = str_extract(file_prefix, '[0-9A-Za-z]+')) %>%
     select(join_term, file_prefix, hpc_path, file_forward, file_reverse)
 
-decode_names <- read_tsv('~/../Downloads/Sde_WGS-June2026_SequenceNameDecode.tsv',
+decode_names <- read_tsv('~/../../Downloads/Sde_WGS-Sept2026_SequenceNameDecode.tsv',
          col_names = c('join_term', 'extraction_treatment'),
          skip = 1, show_col_types = FALSE) %>%
     mutate(extraction_id = str_extract(extraction_treatment, 'Sde-[A-Z]{2}[a-z]{2}_[0-9]{3}[-_]E([xX])?[0-9]'),
@@ -50,9 +50,9 @@ anti_join(file_info,
           decode_names,
           by = 'join_term')
 
-joined_files <- full_join(decode_names,
-          file_info,
-          by = 'join_term') %>%
+joined_files <- inner_join(decode_names,
+                          file_info,
+                          by = 'join_term') %>%
     select(-join_term, -extraction_treatment) %>%
     mutate(hpc_name = 'wahab',
            sequencing_type = 'lcwgs',
@@ -71,7 +71,8 @@ tissue_sheet_cols <- read_tsv('staging/tissues_sheets/EXAMPLE_tissues_sheet.tsv'
                               show_col_types = FALSE) %>%
     colnames()
 
-updated_full_extractions <- read_tsv("C:/Users/jdsel/Texas A&M University-Corpus Christi/Bird, Chris - GCL_2.0/Customers/Bird, Chris/prj_bird_spratelloides-delicatulus_albatross-recollection/dna_extraction/Extractions_sheet_2024-2025.txt",
+
+updated_full_extractions <- read_tsv("C:/Users/jselwyn/Texas A&M University-Corpus Christi/Bird, Chris - GCL_2.0/Customers/Bird, Chris/prj_bird_spratelloides-delicatulus_albatross-recollection/dna_extraction/Extractions_sheet_2024-2025.txt",
          show_col_types = FALSE) %>%
     janitor::clean_names() %>% 
     rename(extraction_tubeid = extraction_tube_id,
@@ -117,9 +118,15 @@ anti_join(new_tissue_update,
           by = 'individual_id')
 
 #### Write files ####
-write_tsv(new_extractions_update, 'staging/dna_extractions_sheets/jds_20260629_Sde-lcwgs_extractions_7.7.26.tsv')
-write_tsv(joined_files, 'staging/sequence_filename_sheets/jds_20260629_Sde-lcwgs_sequences_7.7.26.tsv')
-write_tsv(new_tissue_update, 'staging/tissues_sheets/jds_20260629_Sde-lcwgs_tissues_7.7.26.tsv')
+if(nrow(new_extractions_update) > 0){
+    write_tsv(new_extractions_update, 'staging/dna_extractions_sheets/jds_20260922_Sde-lcwgs_extractions_9.22.26.tsv') 
+}
+if(nrow(joined_files) > 0){
+    write_tsv(joined_files, 'staging/sequence_filename_sheets/jds_20260922_Sde-lcwgs_sequences_9.22.26.tsv') 
+}
+if(nrow(new_tissue_update) > 0){
+    write_tsv(new_tissue_update, 'staging/tissues_sheets/jds_20260922_Sde-lcwgs_tissues_9.22.26.tsv') 
+}
 
 
 #### Update ####

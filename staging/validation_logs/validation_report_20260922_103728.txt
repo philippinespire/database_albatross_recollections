@@ -1,0 +1,10 @@
+PIRE Database Validation Report
+Generated: 2026-09-22 10:37:28.473249
+============================================================
+
+
+File: sequence_filename_sheets/jds_20260922_Sde-lcwgs_sequences_9.22.26.tsv
+Table Type: sequence_filename_sheets
+Status: PASSED ✓
+
+----------------------------------------
