@@ -661,6 +661,19 @@ if (interactive()) {
     
     setup_project <- function(binary_only = FALSE) {
       cat("\n🔧 Setting up project environment...\n\n")
+
+      # Minimum supported R version
+      min_r_version <- numeric_version("4.4.1")
+
+      if (getRversion() < min_r_version) {
+        stop(
+          "This project requires R >= 4.4.1.\n",
+          "Current version: ", R.version.string
+        )
+      }
+
+      cat("   R version:", R.version.string, "\n")
+      cat("   ✓ Meets minimum requirement (R >= 4.4.1)\n\n")
       
       # Ensure we're in the project directory
       if (!file.exists("renv.lock")) {
