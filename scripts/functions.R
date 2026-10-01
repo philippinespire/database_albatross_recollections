@@ -1781,7 +1781,8 @@ update_database <- function(integrate_files = FALSE){
                   by = 'individual_id') %>%
         full_join(pull_tbl(filtered_db, 'lots_sheets'),
                   by = 'lot_id') %>%
-        full_join(pull_tbl(filtered_db, 'sampling_sites_sheets'),
+        full_join(pull_tbl(filtered_db, 'sampling_sites_sheets') %>%
+                      distinct(),
                   by = 'lot_id') %>%
         full_join(pull_tbl(filtered_db, 'species_sheets'),
                   by = 'species_valid_name') %>% #count(collection_era) #colnames()

@@ -1,0 +1,53 @@
+Accession	Title	Links	Status	Release Date	Created	Updated	Submission	BioSample.name	BioSample.organism_name
+SAMN40962536	Taeniamia_biguttata_Clade_B	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.290Z	2026-09-02T09:32:33.986Z	SUB14377019	TbiCJos036_R_32	Taeniamia biguttata complex sp. Clade B
+SAMN40962535	Taeniamia_biguttata_Clade_B	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.276Z	2026-09-02T09:32:33.890Z	SUB14377019	TbiCJos036_R_3	Taeniamia biguttata complex sp. Clade B
+SAMN40962534	Taeniamia_biguttata_Clade_B	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.266Z	2026-09-02T09:32:33.810Z	SUB14377019	TbiCJos036_R_10	Taeniamia biguttata complex sp. Clade B
+SAMN40962533	Taeniamia_biguttata_Clade_B	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.250Z	2026-09-02T09:32:33.726Z	SUB14377019	TbiCJos036_R_1	Taeniamia biguttata complex sp. Clade B
+SAMN40962532	Taeniamia_biguttata_Clade_B	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.230Z	2026-09-02T09:32:33.656Z	SUB14377019	TbiCJos036_NR_32	Taeniamia biguttata complex sp. Clade B
+SAMN40962531	Taeniamia_biguttata_Clade_B	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.220Z	2026-09-02T09:32:33.590Z	SUB14377019	TbiCJos036_NR_3	Taeniamia biguttata complex sp. Clade B
+SAMN40962530	Taeniamia_biguttata_Clade_B	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.193Z	2026-09-02T09:32:33.523Z	SUB14377019	TbiCJos036_NR_10	Taeniamia biguttata complex sp. Clade B
+SAMN40962529	Taeniamia_biguttata_Clade_B	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.176Z	2026-09-02T09:32:33.476Z	SUB14377019	TbiCJos036_NR_1	Taeniamia biguttata complex sp. Clade B
+SAMN40962528	Taeniamia_biguttata_Clade_A	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.163Z	2026-09-02T09:32:33.390Z	SUB14377019	TbiCJos033_NR_500	Taeniamia biguttata complex sp. Clade A
+SAMN40962527	Taeniamia_biguttata_Clade_A	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T13:09:06.143Z	2026-09-02T09:32:33.336Z	SUB14377019	TbiCJos031_NR_500	Taeniamia biguttata complex sp. Clade A
+SAMN39976570	Hypoatherina_temminckii	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T15:31:06.086Z	2026-09-02T08:22:45.670Z	SUB14256118	HteCTic093_NR_500	Hypoatherina temminckii
+SAMN39976569	Hypoatherina_temminckii	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T15:31:06.070Z	2026-09-02T08:22:45.626Z	SUB14256118	HteCTic077_R_32	Hypoatherina temminckii
+SAMN39976568	Hypoatherina_temminckii	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T15:31:06.050Z	2026-09-02T08:22:45.563Z	SUB14256118	HteCTic077_NR_32	Hypoatherina temminckii
+SAMN39971308	Equulites_laterofenestra	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T02:11:07.120Z	2026-09-02T08:22:10.250Z	SUB14255378	ElaCNas054_R_32	Equulites laterofenestra
+SAMN39971307	Equulites_laterofenestra	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T02:11:07.100Z	2026-09-02T08:22:10.220Z	SUB14255378	ElaCNas054_R_3	Equulites laterofenestra
+SAMN39971306	Equulites_laterofenestra	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T02:11:07.086Z	2026-09-02T08:22:10.186Z	SUB14255378	ElaCNas054_R_10	Equulites laterofenestra
+SAMN39971305	Equulites_laterofenestra	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T02:11:07.066Z	2026-09-02T08:22:10.153Z	SUB14255378	ElaCNas054_R_1	Equulites laterofenestra
+SAMN39971304	Equulites_laterofenestra	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T02:11:07.043Z	2026-09-02T08:22:10.123Z	SUB14255378	ElaCNas054_NR_500	Equulites laterofenestra
+SAMN39971303	Equulites_laterofenestra	SRA: 1, BioProject: 1	Released	2025-02-14	2024-02-17T02:11:07.026Z	2026-09-02T08:22:10.090Z	SUB14255378	ElaCNas054_NR_32	Equulites laterofenestra
+SAMN39971302	Equulites_laterofenestra	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T02:11:07.010Z	2026-09-02T08:22:10.040Z	SUB14255378	ElaCNas054_NR_3	Equulites laterofenestra
+SAMN39971301	Equulites_laterofenestra	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T02:11:06.993Z	2026-09-02T08:22:09.970Z	SUB14255378	ElaCNas054_NR_10	Equulites laterofenestra
+SAMN39971300	Equulites_laterofenestra	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-17T02:11:06.953Z	2026-09-02T08:22:09.930Z	SUB14255378	ElaCNas054_NR_1	Equulites laterofenestra
+SAMN39968561	Doboatherina_balabacensis	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T21:32:08.213Z	2026-09-02T08:21:33.380Z	SUB14255165	DbaCHam028_R_3	Doboatherina balabacensis
+SAMN39968560	Doboatherina_balabacensis	SRA: 1, BioProject: 1	Released	2025-02-14	2024-02-16T21:32:08.196Z	2026-09-02T08:21:33.350Z	SUB14255165	DbaCHam028_R_10	Doboatherina balabacensis
+SAMN39968559	Doboatherina_balabacensis	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T21:32:08.183Z	2026-09-02T08:21:33.310Z	SUB14255165	DbaCHam028_R_1	Doboatherina balabacensis
+SAMN39968558	Doboatherina_balabacensis	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T21:32:08.170Z	2026-09-02T08:21:33.276Z	SUB14255165	DbaCHam028_NR_3	Doboatherina balabacensis
+SAMN39968557	Doboatherina_balabacensis	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T21:32:08.160Z	2026-09-02T08:21:33.240Z	SUB14255165	DbaCHam028_NR_10	Doboatherina balabacensis
+SAMN39968556	Doboatherina_balabacensis	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T21:32:08.143Z	2026-09-02T08:21:33.200Z	SUB14255165	DbaCHam028_NR_1	Doboatherina balabacensis
+SAMN39967328	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.690Z	2026-09-02T08:21:18.453Z	SUB14255014	AurCRag030_NR_500	Ambassis urotaenia
+SAMN39967327	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.676Z	2026-09-02T08:21:18.420Z	SUB14255014	AurCRag022_R_32	Ambassis urotaenia
+SAMN39967326	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.663Z	2026-09-02T08:21:18.383Z	SUB14255014	AurCRag022_R_3	Ambassis urotaenia
+SAMN39967325	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.650Z	2026-09-02T08:21:18.346Z	SUB14255014	AurCRag022_R_10	Ambassis urotaenia
+SAMN39967324	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.633Z	2026-09-02T08:21:18.306Z	SUB14255014	AurCRag022_R_1	Ambassis urotaenia
+SAMN39967323	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.616Z	2026-09-02T08:21:18.270Z	SUB14255014	AurCRag022_NR_500	Ambassis urotaenia
+SAMN39967322	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.603Z	2026-09-02T08:21:18.230Z	SUB14255014	AurCRag022_NR_32	Ambassis urotaenia
+SAMN39967321	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.590Z	2026-09-02T08:21:18.193Z	SUB14255014	AurCRag022_NR_3	Ambassis urotaenia
+SAMN39967320	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.573Z	2026-09-02T08:21:18.156Z	SUB14255014	AurCRag022_NR_10	Ambassis urotaenia
+SAMN39967319	Ambassis_urotaenia	BioProject: 1, SRA: 1	Released	2025-02-14	2024-02-16T20:02:06.556Z	2026-09-02T08:21:18.113Z	SUB14255014	AurCRag022_NR_1	Ambassis urotaenia
+SAMN40951442	Siganus_spinus	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T00:32:07.140Z	2025-04-01T04:51:41.940Z	SUB14376984	SspCGub043_R_3	Siganus spinus
+SAMN40951441	Siganus_spinus	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T00:32:07.096Z	2025-04-01T04:51:41.930Z	SUB14376984	SspCGub043_R_10	Siganus spinus
+SAMN40951440	Siganus_spinus	SRA: 1, BioProject: 1	Released	2025-04-01	2024-04-14T00:32:07.050Z	2025-04-01T04:51:41.913Z	SUB14376984	SspCGub043_R_1	Siganus spinus
+SAMN40951439	Siganus_spinus	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T00:32:07Z	2025-04-01T04:51:41.896Z	SUB14376984	SspCGub043_NR_3	Siganus spinus
+SAMN40951438	Siganus_spinus	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T00:32:06.950Z	2025-04-01T04:51:41.880Z	SUB14376984	SspCGub043_NR_10	Siganus spinus
+SAMN40951437	Siganus_spinus	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-14T00:32:06.890Z	2025-04-01T04:51:41.863Z	SUB14376984	SspCGub043_NR_1	Siganus spinus
+SAMN40951411	Ambassis_kopsii	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-13T22:57:06.170Z	2025-04-01T04:51:41.850Z	SUB14376865	AurCRag_R_32_CKDL210002318	Ambassis kopsii
+SAMN40951410	Ambassis_kopsii	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-13T22:57:06.160Z	2025-04-01T04:50:46.426Z	SUB14376865	AurCRag_R_3.2_CKDL210002318	Ambassis kopsii
+SAMN40951409	Ambassis_kopsii	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-13T22:57:06.146Z	2025-04-01T04:50:46.413Z	SUB14376865	AurCRag_R_1_CKDL210002318	Ambassis kopsii
+SAMN40951408	Ambassis_kopsii	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-13T22:57:06.133Z	2025-04-01T04:50:46.400Z	SUB14376865	AurCRag_R_10_CKDL210002318	Ambassis kopsii
+SAMN40951407	Ambassis_kopsii	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-13T22:57:06.120Z	2025-04-01T04:50:46.390Z	SUB14376865	AurCRag_NR_32_CKDL210002318	Ambassis kopsii
+SAMN40951406	Ambassis_kopsii	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-13T22:57:06.106Z	2025-04-01T04:50:46.376Z	SUB14376865	AurCRag_NR_3.2_CKDL210002318	Ambassis kopsii
+SAMN40951405	Ambassis_kopsii	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-13T22:57:06.090Z	2025-04-01T04:50:46.360Z	SUB14376865	AurCRag_NR_1_CKDL210002318	Ambassis kopsii
+SAMN40951404	Ambassis_kopsii	BioProject: 1, SRA: 1	Released	2025-04-01	2024-04-13T22:57:06.073Z	2025-04-01T04:50:46.343Z	SUB14376865	AurCRag_NR_10_CKDL210002318	Ambassis kopsii
